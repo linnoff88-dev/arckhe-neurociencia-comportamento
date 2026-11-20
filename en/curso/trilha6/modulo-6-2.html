@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>Module 6.2 — Epistemic Bubbles and Digital Polarization | MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{"course":"neurociencia-comportamento","tracks":[{"n":"1","title":"O Cérebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heurísticas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonância cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},{"n":"2","title":"Influência Social","modules":[{"id":"2-1","title":"Conformidade","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulação social","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},{"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},{"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},{"n":"5","title":"Filosofia da Mente","modules":[{"id":"5-1","title":"Livre-arbítrio","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciência","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiótica","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},{"n":"6","title":"IA, Vieses e Ética","modules":[{"id":"6-1","title":"Vieses algorítmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistêmicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Ética e espaço humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}]}
+</script>
+<style>
+body{font-family:'Inter',system-ui,sans-serif}.topic-explanation{display:none}.topic-explanation.active{display:block}
+html:not(.dark) body{background-color:#f8fafc}html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-rose-400{color:#9f1239}html:not(.dark) .bg-rose-500\/20{background-color:rgba(225,29,72,0.12)}html:not(.dark) .border-rose-500\/30{border-color:rgba(225,29,72,0.25)}html:not(.dark) .hover\:bg-rose-500\/10:hover{background-color:rgba(225,29,72,0.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,0.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+html:not(.dark) svg[role="img"]{filter:saturate(.82) brightness(.96)}
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha6/modulo-6-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha6/modulo-6-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha6/modulo-6-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-6-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha6/modulo-6-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Brain</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economics</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Philosophy</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-rose-400 bg-rose-500/10" href="../trilha6/index.html">T6 AI+Ethics</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()"><span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span></button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="6-2">
+<!-- BREADCRUMB -->
+<div class="flex items-center space-x-2 text-sm text-neutral-500 mb-8">
+<a class="hover:text-rose-400 transition-colors" href="../../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-rose-400 transition-colors" href="index.html">Track 6</a>
+<span>/</span>
+<span class="text-neutral-300">Module 6.2</span>
+</div>
+<!-- HEADER -->
+<section class="mb-10">
+<div class="bg-gradient-to-r from-rose-900/30 via-dark-800 to-dark-800 rounded-2xl p-8 border border-rose-500/30">
+<div class="inline-flex items-center space-x-2 bg-rose-500/20 border border-rose-500/30 rounded-full px-4 py-1.5 mb-4">
+<span class="text-rose-400 text-sm font-semibold">MODULE 6.2</span>
+</div>
+<h1 class="text-2xl font-bold mb-2">Epistemic Bubbles and Digital Polarization</h1>
+<p class="text-neutral-400 mb-4">Eli Pariser · Filter bubbles · Radicalization spiral · Digital literacy</p>
+<div class="flex items-center space-x-6 text-sm text-neutral-500">
+<span>6 topics</span>
+<span>~30 min</span>
+<span>Advanced</span>
+</div>
+</div>
+</section>
+<!-- SVG: Espiral de radicalização algorítmica -->
+<div class="rounded-2xl border border-rose-500/30 bg-dark-900/40 p-3 sm:p-4 mb-10 overflow-hidden">
+<svg aria-label="Diagram: a user starts with moderate interest; an engagement algorithm recommends increasingly extreme content, creating a radicalization spiral inside an epistemic bubble that filters out diverging perspectives" class="w-full h-auto" role="img" viewbox="0 0 800 360">
+<defs>
+<filter id="m62-glow"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="m62-arr" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#fb7185" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<marker id="m62-arr-g" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#4ade80" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<pattern height="40" id="m62-grid" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#3b1829" stroke-width="0.5"></path></pattern>
+</defs>
+<rect fill="#2a0f16" height="360" rx="12" width="800"></rect>
+<rect fill="url(#m62-grid)" height="360" rx="12" width="800"></rect>
+<!-- Título -->
+<rect fill="#3b1829" height="26" opacity="0.6" rx="10" width="360" x="220" y="12"></rect>
+<text fill="#fb7185" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="400" y="30">ALGORITHMIC RADICALIZATION SPIRAL</text>
+<!-- Bolha externa (contorno) -->
+<ellipse cx="320" cy="195" fill="none" opacity="0.3" rx="260" ry="145" stroke="#fb7185" stroke-dasharray="6,4" stroke-width="1.5"></ellipse>
+<text fill="#fb7185" font-family="Inter,sans-serif" font-size="9" opacity="0.5" text-anchor="middle" x="320" y="345">EPISTEMIC BUBBLE: divergent perspectives filtered out</text>
+<!-- Node 1: Usuário (moderado) -->
+<circle cx="120" cy="195" fill="#2a0f16" filter="url(#m62-glow)" r="35" stroke="#fb7185" stroke-width="2"></circle>
+<text fill="#fb7185" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="120" y="190">USER</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="120" y="204">interest</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="120" y="215">moderate</text>
+<!-- Arrow 1 -->
+<line marker-end="url(#m62-arr)" opacity="0.5" stroke="#fb7185" stroke-width="1.5" x1="155" x2="208" y1="185" y2="165"></line>
+<!-- Node 2: Algoritmo -->
+<rect fill="#2a0f16" filter="url(#m62-glow)" height="70" rx="16" stroke="#f43f5e" stroke-width="2" width="130" x="215" y="105"></rect>
+<text fill="#f43f5e" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="280" y="132">ALGORITHM</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="280" y="148">maximizes</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="280" y="160">engagement</text>
+<!-- gear -->
+<circle cx="230" cy="125" fill="none" opacity="0.5" r="5" stroke="#f43f5e" stroke-width="1"></circle>
+<circle cx="230" cy="125" fill="#f43f5e" opacity="0.5" r="2"></circle>
+<!-- Arrow 2 -->
+<line marker-end="url(#m62-arr)" opacity="0.5" stroke="#fb7185" stroke-width="1.5" x1="345" x2="398" y1="135" y2="115"></line>
+<!-- Node 3: Conteúdo extremo -->
+<rect fill="#2a0f16" filter="url(#m62-glow)" height="80" rx="16" stroke="#f43f5e" stroke-width="2" width="140" x="405" y="75"></rect>
+<text fill="#f43f5e" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="475" y="100">CONTENT</text>
+<text fill="#f43f5e" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="475" y="115">MORE EXTREME</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="475" y="133">fear, anger</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="475" y="145">indignation</text>
+<!-- warning -->
+<polygon fill="none" opacity="0.6" points="420,88 425,78 430,88" stroke="#f43f5e" stroke-width="1.2"></polygon>
+<!-- Feedback spiral: Conteúdo → Engajamento → Algoritmo reforça -->
+<path d="M 475 155 Q 500 220 400 240 Q 300 255 280 175" fill="none" marker-end="url(#m62-arr)" opacity="0.5" stroke="#fb7185" stroke-dasharray="5,3" stroke-width="1.5"></path>
+<text fill="#fb7185" font-family="Inter,sans-serif" font-size="8" font-weight="600" opacity="0.7" text-anchor="middle" x="420" y="230">high engagement</text>
+<text fill="#fb7185" font-family="Inter,sans-serif" font-size="8" font-weight="600" opacity="0.7" text-anchor="middle" x="420" y="242">= more of the same</text>
+<!-- Filtered out content (outside bubble) -->
+<rect fill="#0e1b26" height="90" opacity="0.5" rx="14" stroke="#4ade80" stroke-width="1.5" width="150" x="620" y="120"></rect>
+<text fill="#4ade80" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="695" y="148">PERSPECTIVES</text>
+<text fill="#4ade80" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="695" y="163">DIVERGENT</text>
+<text fill="#86efac" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="695" y="182">nuance, complexity</text>
+<text fill="#86efac" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="695" y="195">contradictory</text>
+<!-- X marks (filtered) -->
+<line opacity="0.6" stroke="#f43f5e" stroke-width="2" x1="600" x2="615" y1="155" y2="165"></line>
+<line opacity="0.6" stroke="#f43f5e" stroke-width="2" x1="615" x2="600" y1="155" y2="165"></line>
+<text fill="#f43f5e" font-family="Inter,sans-serif" font-size="7" opacity="0.6" text-anchor="middle" x="607" y="180">filtered</text>
+<!-- Node: Solução -->
+<rect fill="#0e1b26" filter="url(#m62-glow)" height="65" rx="14" stroke="#4ade80" stroke-width="2" width="150" x="620" y="250"></rect>
+<text fill="#4ade80" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="695" y="275">DIGITAL LITERACY</text>
+<text fill="#86efac" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="695" y="292">audit, transparency</text>
+<text fill="#86efac" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="695" y="304">diversity by default</text>
+</svg>
+</div>
+<!-- TÓPICO 1 -->
+<section class="mb-12" data-inema-topic="modulo-6-2#topico-1" id="topico-1">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<h2 class="text-2xl font-bold">Filter bubbles (Pariser)</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-2-t1-p1">In 2011, activist and entrepreneur Eli Pariser coined the term “filter bubble” in his book of the same name. The concept describes how personalization algorithms create a unique information environment for each user, systematically filtering out content that differs from their interests, opinions, and past behavior. The world in our feeds isn’t the world: it’s a personalized projection, optimized to keep users engaged.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-2-t1-p2">Pariser demonstrated the phenomenon with a simple example: he asked two friends with opposing political views to search for "Egypt" on Google during the Arab Spring. One got results about the political protests; the other got results about tourism. The same term, two completely different information worlds. The algorithm decided what each one "should" see, based on their click history, location, and inferred profile.</p>
+<!-- Tip box -->
+<div class="bg-rose-500/10 border border-rose-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-rose-400 font-semibold mb-1">The invisible problem</p>
+<p class="text-neutral-300 text-sm">The most insidious aspect of the filter bubble is its invisibility. You don’t know what you’re not seeing. You don’t notice the perspectives that were filtered out, the arguments that were removed, or the information that never reached your feed. The bubble is transparent from the inside.</p>
+</div>
+<!-- Grid -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">How the filter bubble works</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">1.</span><span>Algorithm monitors clicks, reading time, likes</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">2.</span><span>Infers interests, opinions, and ideological profile</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">3.</span><span>Filters out opposing content (lower predicted engagement)</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">4.</span><span>Reinforces existing beliefs in a continuous loop</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Consequences of the filter</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">!</span><span>Illusion of consensus: "everyone thinks like me"</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">!</span><span>Loss of exposure to opposing arguments</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">!</span><span>Reduced ability to empathize with people who are different</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">!</span><span>Erosion of rational public debate</span></li>
+</ul>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Pariser (2011)</p>
+<p class="text-neutral-400 text-xs mt-1">The Filter Bubble</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Personalization</p>
+<p class="text-neutral-400 text-xs mt-1">One world per user</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Invisibility</p>
+<p class="text-neutral-400 text-xs mt-1">You can't see what's missing</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">False consensus</p>
+<p class="text-neutral-400 text-xs mt-1">Illusion of unanimity</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="mb-12" data-inema-topic="modulo-6-2#topico-2" id="topico-2">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<h2 class="text-2xl font-bold">How algorithms maximize engagement</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-2-t2-p1">Recommendation algorithms on platforms such as YouTube, Facebook, TikTok, and Instagram are optimized for one central metric: engagement. Engagement means time on the platform, clicks, shares, and comments. The key empirical discovery by these companies’ machine learning teams was that engagement correlates strongly with intense emotion: fear, anger, outrage, indignation, and surprise generate more interaction than balanced, nuanced information.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-2-t2-p2">The mechanism is neurological: emotionally charged content activates the amygdala and the dopaminergic system, triggering quick responses (clicks, comments, shares) that the algorithm records as "high quality." Reflective, complex, nuanced content generates fewer immediate reactions and is therefore ranked as less relevant. The result is a structural bias in favor of sensationalism and against complexity.</p>
+<!-- Tip box -->
+<div class="bg-rose-500/10 border border-rose-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-rose-400 font-semibold mb-1">The engagement equation</p>
+<p class="text-neutral-300 text-sm">Engagement = intense emotion. Intense emotion = fear + anger + outrage. The algorithm doesn’t “want” to polarize. It optimizes a metric that, as a side effect, systematically selects polarizing content. Polarization is an output, not an input.</p>
+</div>
+<!-- Timeline: Como o loop funciona -->
+<div class="space-y-4 mb-6">
+<h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide">Emotional engagement cycle</h4>
+<div class="relative pl-6 border-l-2 border-rose-500/30 space-y-6">
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">Stimulus:</strong> Algorithm presents emotionally charged content in the feed</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">Reaction:</strong> The amygdala activates a rapid emotional response (outrage, anger)</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">Action:</strong> User clicks, comments, shares (dopamine reward)</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">Record:</strong> Algorithm interprets it as “high relevance”</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-red-500/30 border-2 border-red-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-red-400">Reinforcement:</strong> More emotional content, more extreme. Infinite loop.</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Engagement</p>
+<p class="text-neutral-400 text-xs mt-1">Key metric</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Amygdala</p>
+<p class="text-neutral-400 text-xs mt-1">Emotional driver</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Dopamine</p>
+<p class="text-neutral-400 text-xs mt-1">The reward of clicking</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Emotional bias</p>
+<p class="text-neutral-400 text-xs mt-1">Against nuance</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="mb-12" data-inema-topic="modulo-6-2#topico-3" id="topico-3">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<h2 class="text-2xl font-bold">Radicalization spiral</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-2-t3-p1">YouTube’s recommendation system was the subject of internal investigations (revealed by former Google engineer Guillaume Chaslot) and external investigations (Wall Street Journal, 2019). The studies showed that the “next video” algorithm systematically directed users to progressively more extreme content: a search about dieting could lead to videos about anorexia; a moderate political video could lead, within a few clicks, to conspiracy or supremacist content.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-2-t3-p2">The logic is simple and devastating: extreme content generates more watch time. More watch time means more ad impressions. More ads generate more revenue. The algorithm doesn't "radicalize" for ideological reasons; it radicalizes to optimize ad revenue. The result is an automated radicalization pipeline that operates 24 hours a day, on a global scale, without significant human oversight.</p>
+<!-- Alert box -->
+<div class="bg-red-500/10 border border-red-500/30 rounded-xl p-5 mb-6">
+<p class="text-red-400 font-semibold text-sm mb-1">Real consequences</p>
+<p class="text-neutral-300 text-sm">Facebook’s 2018 internal report (leaked by Frances Haugen in 2021) stated: “Our algorithms exploit the human brain’s attraction to division.” The company’s internal research confirmed that Instagram harmed teenagers’ mental health and that the algorithm amplified misinformation, but the company prioritized engagement.</p>
+</div>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">The spiral in action</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">1.</span><span>Healthy diet (legitimate interest)</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">2.</span><span>Restrictive diet (more engagement)</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">3.</span><span>Pro-anorexia content (high engagement)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">4.</span><span>Eating disorder communities (radicalization)</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Political spiral</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">1.</span><span>Moderate conservative (legitimate interest)</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">2.</span><span>Controversial commentator (more engagement)</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">3.</span><span>Conspiracy theories (high engagement)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">4.</span><span>Extremism and misinformation (radicalization)</span></li>
+</ul>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">YouTube</p>
+<p class="text-neutral-400 text-xs mt-1">Radicalization pipeline</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Chaslot</p>
+<p class="text-neutral-400 text-xs mt-1">Former Google engineer</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Haugen</p>
+<p class="text-neutral-400 text-xs mt-1">Facebook Papers, 2021</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Revenue</p>
+<p class="text-neutral-400 text-xs mt-1">Radicalization = profit</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="mb-12" data-inema-topic="modulo-6-2#topico-4" id="topico-4">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<h2 class="text-2xl font-bold">Cognitive biases amplified by AI</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-2-t4-p1">Recommendation algorithms do not create new biases: they amplify cognitive biases that already exist in the human brain. Confirmation bias, studied since the 1960s by Peter Wason, is the tendency to seek, interpret, and remember information that confirms preexisting beliefs. The personalization algorithm turns this individual bias into infrastructure: it systematizes confirmation and automates the filtering out of opposing views.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-2-t4-p2">Other biases are amplified just as much. The availability bias, identified by Kahneman and Tversky, makes emotionally striking events seem more frequent than they are. When the algorithm floods the feed with violent crimes or natural disasters (because they generate engagement), users overestimate how often these events occur. The bandwagon effect, in turn, makes viral content seem credible simply because it is popular: if many people share it, it must be true.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Cognitive biases exploited</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">!</span><span>Confirmation: the algorithm shows you what you already believe</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">!</span><span>Availability: rare events seem frequent</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">!</span><span>The bandwagon effect: viral seems credible</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">!</span><span>Anchoring: first information dominates judgment</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Scale of amplification</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">!</span><span>Individual bias: affects one person at a time</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">!</span><span>Algorithmic bias: affects billions simultaneously</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">!</span><span>24h/day, no breaks, no reflection</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">!</span><span>Personalized: everyone gets a custom-tailored bias</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-rose-500/10 border border-rose-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-rose-400 font-semibold mb-1">Confirmation bias + personalization = epistemic shielding</p>
+<p class="text-neutral-300 text-sm">When confirmation bias (a natural tendency) combines with algorithmic personalization (technological infrastructure), the result is an almost impenetrable epistemic shield. Users don’t just seek to confirm their beliefs: the entire information environment is built to confirm them.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Confirmation</p>
+<p class="text-neutral-400 text-xs mt-1">Wason (1960)</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Availability</p>
+<p class="text-neutral-400 text-xs mt-1">Kahneman &amp; Tversky</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Bandwagon Effect</p>
+<p class="text-neutral-400 text-xs mt-1">Viral = credible</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Safeguards</p>
+<p class="text-neutral-400 text-xs mt-1">Bias + algorithm</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="mb-12" data-inema-topic="modulo-6-2#topico-5" id="topico-5">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<h2 class="text-2xl font-bold">Echo chambers vs. epistemic bubbles</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-2-t5-p1">Philosopher C. Thi Nguyen (2020) proposed an important distinction between two often-confused phenomena. An epistemic bubble is an information environment that excludes relevant voices through omission. Someone living in a wealthy neighborhood who never hears accounts from people living on the outskirts is in an epistemic bubble: the information simply never reaches them. Bubbles are accidental, not intentional, and can be corrected by exposure to the missing information.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-2-t5-p2">An echo chamber, on the other hand, is an environment that actively discredits all outside sources. It’s not enough to filter out divergent information: the group itself must produce reasons to reject any contrary evidence. “The mainstream media lies,” “scientists have an agenda,” “anyone who disagrees is being manipulated.” An echo chamber is more resistant than a bubble because adding divergent information doesn’t break it: the information is interpreted as evidence of a conspiracy.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Epistemic bubble</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">-</span><span>Filters by omission (does not show it)</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">-</span><span>Accidental, unintentional</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">+</span><span>Correctable: exposure to new information works</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">-</span><span>Algorithms create filter bubbles at scale</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Echo chamber</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">!</span><span>Actively discredits external sources</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">!</span><span>Socially constructed, intentional</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">!</span><span>Resistant to correction: new information = conspiracy</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">!</span><span>Extremist groups, cults, conspiracy movements</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-rose-500/10 border border-rose-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-rose-400 font-semibold mb-1">The dangerous transition</p>
+<p class="text-neutral-300 text-sm">The risk is that algorithmic epistemic bubbles evolve into echo chambers. When the feed shows only one side for long enough, users begin to build narratives of distrust toward the other side. The accidental bubble becomes an intentional chamber. Recommendation algorithms accelerate this transition.</p>
+</div>
+<!-- Blue research box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5 mb-6">
+<p class="text-blue-400 font-semibold text-sm mb-1">Nguyen (2020): Escaping the Echo Chamber</p>
+<p class="text-neutral-300 text-sm">C. Thi Nguyen argues that echo chambers are epistemically more dangerous than bubbles because they are self-protecting: any attempt to break away is interpreted by the group as an external attack. The solution is not more information, but restoring trust in diverse sources, which is a slow social process.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Nguyen (2020)</p>
+<p class="text-neutral-400 text-xs mt-1">Bubble vs. chamber</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Omission</p>
+<p class="text-neutral-400 text-xs mt-1">Bubble: filters by omission</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Discredit</p>
+<p class="text-neutral-400 text-xs mt-1">Chamber: attacks sources</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Transition</p>
+<p class="text-neutral-400 text-xs mt-1">Bubble becomes chamber</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="mb-12" data-inema-topic="modulo-6-2#topico-6" id="topico-6">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<h2 class="text-2xl font-bold">Solutions and digital literacy</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-2-t6-p1">Solutions to the problem of epistemic bubbles and algorithmic polarization operate at multiple levels. At the regulatory level, researchers and lawmakers propose mandatory algorithmic audits: companies would have to demonstrate that their recommendation systems do not amplify misinformation or extremist content. The EU Digital Services Act (2022) already requires platforms to provide transparency about how their algorithms work and offer chronological feeds as an alternative.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-2-t6-p2">At the individual level, digital literacy becomes an essential skill. It's not enough to "use" technology: you need to understand how it works, what incentives shape its algorithms, and how they affect perception. This includes deliberately diversifying sources, seeking out opposing perspectives, recognizing emotional triggers before sharing, and questioning why certain content appeared in your feed. Defaults that favor diversity over engagement are a design change with massive impact.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Regulatory and design solutions</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">+</span><span>Mandatory algorithmic audits</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">+</span><span>Transparency about recommendations</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">+</span><span>Defaults that promote diversity</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">+</span><span>Chronological feed option (without an algorithm)</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Individual digital literacy</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">+</span><span>Deliberately diversify sources</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">+</span><span>Seek opposing perspectives</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">+</span><span>Recognize emotional triggers before reacting</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">+</span><span>Ask: why did this appear in my feed?</span></li>
+</ul>
+</div>
+</div>
+<!-- Timeline: Marcos regulatórios -->
+<div class="space-y-4 mb-6">
+<h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide">Regulatory and awareness frameworks</h4>
+<div class="relative pl-6 border-l-2 border-rose-500/30 space-y-6">
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">2011:</strong> Eli Pariser publishes "The Filter Bubble," coins the term</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">2018:</strong> Cambridge Analytica: manipulation of data from 87 million Facebook users</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">2020:</strong> "The Social Dilemma" (Netflix): former big tech employees expose business models</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">2021:</strong> Frances Haugen leaks internal Facebook documents to the U.S. Congress</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">2022+:</strong> EU Digital Services Act: algorithmic transparency, mandatory audits, alternative feeds</p>
+</div>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-teal-400 font-semibold mb-1">The default change matters</p>
+<p class="text-neutral-300 text-sm">Behavioral economics research (nudge theory, Trail 4) shows that defaults are extremely powerful: most users don’t change the default settings. If the feed’s default is “maximum engagement,” almost everyone will receive polarizing content. If the default is “informational diversity,” the impact is just as massive, but in the opposite direction.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Audit</p>
+<p class="text-neutral-400 text-xs mt-1">Required by law</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">DSA (2022)</p>
+<p class="text-neutral-400 text-xs mt-1">European law</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Literacy</p>
+<p class="text-neutral-400 text-xs mt-1">Critical competence</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Defaults</p>
+<p class="text-neutral-400 text-xs mt-1">Design is politics</p>
+</div>
+</div>
+</section>
+<!-- RESUMO DO MÓDULO -->
+<section class="bg-dark-800 border border-rose-500/30 rounded-xl p-6 sm:p-8 mb-8">
+<h2 class="text-xl font-bold mb-4 text-rose-400">Module 6.2 Summary</h2>
+<ul class="space-y-3 text-neutral-300 text-sm mb-6">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">+</span><span>Filter bubbles (Pariser, 2011): algorithms create personalized information environments, filtering out opposing perspectives</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">+</span><span>Engagement = intense emotion: algorithms optimize for fear, anger, and outrage, which drive more clicks</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">+</span><span>Radicalization spiral: recommendation systems progressively direct users toward more extreme content</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">+</span><span>Amplified cognitive biases: confirmation, availability, and bandwagon effects operate at algorithmic scale</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">+</span><span>Bubbles (omission) vs. echo chambers (active discrediting): bubbles can evolve into chambers under algorithmic pressure</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">+</span><span>Solutions: mandatory audits, transparency, diversity defaults, and digital literacy as an essential skill</span></li>
+</ul>
+<a class="inline-flex items-center justify-start bg-rose-500/20 border border-rose-500/30 text-rose-400 px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-rose-500/30 transition-colors" href="modulo-6-3.html">Next: Ethics and Human Space →</a>
+</section>
+<!-- NAV INFERIOR -->
+<div class="flex items-center justify-between pt-8 border-t border-dark-700">
+<a class="text-neutral-400 hover:text-rose-400 transition-colors text-sm font-medium" href="modulo-6-1.html">← Module 6.1: Algorithmic Biases</a>
+<a class="text-rose-400 hover:text-rose-300 transition-colors text-sm font-medium" href="modulo-6-3.html">Module 6.3: Ethics →</a>
+</div>
+</main>
+<footer class="border-t border-dark-700 py-8">
+<div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500">
+<a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mind, Power and Machine · 2026
+  </div>
+</footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

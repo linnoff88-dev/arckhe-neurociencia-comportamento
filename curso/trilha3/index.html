@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>Trilha 3: Neurociencia do Comportamento — MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<script data-inema-manifest="" type="application/json">
+{"course":"neurociencia-comportamento","tracks":[{"n":"1","title":"O Cerebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heuristicas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonancia cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},{"n":"2","title":"Influencia Social e Poder do Grupo","modules":[{"id":"2-1","title":"Conformidade","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediencia a autoridade","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulacao social","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},{"n":"3","title":"Neurociencia do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina e sistema de recompensa","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amigdala, medo e decisao emocional","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},{"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},{"n":"5","title":"Filosofia da Mente e Consciencia","modules":[{"id":"5-1","title":"Livre-arbitrio: Libet","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciencia: problema dificil","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiotica: Bruzzo","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},{"n":"6","title":"IA, Vieses e Etica","modules":[{"id":"6-1","title":"Vieses algoritmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistemicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Etica e espaco humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}]}
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+body{font-family:'Inter',system-ui,sans-serif}.topic-explanation{display:none}.topic-explanation.active{display:block}
+html:not(.dark) body{background-color:#f8fafc}html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-purple-400{color:#7c3aed}html:not(.dark) .bg-purple-500\/20{background-color:rgba(124,58,237,0.12)}html:not(.dark) .border-purple-500\/30{border-color:rgba(124,58,237,0.25)}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,0.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,0.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+html:not(.dark) svg[role="img"]{filter:saturate(.82) brightness(.96)}
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha3/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha3/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha3/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Cerebro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-purple-400 bg-purple-500/10" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economia</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Filosofia</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 IA+Etica</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()"><span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span></button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- HEADER -->
+<section class="mb-16">
+<div class="bg-gradient-to-r from-purple-900/30 to-transparent rounded-2xl p-8 md:p-12 border border-purple-500/30">
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+<div class="flex-1">
+<div class="inline-flex items-center space-x-2 bg-purple-500/20 border border-purple-500/30 rounded-full px-4 py-1.5 mb-4">
+<span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+<span class="text-purple-400 text-sm font-medium">TRILHA 3</span>
+</div>
+<h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">⚡ Neurociencia do Comportamento</h1>
+<p class="text-neutral-300 text-lg max-w-2xl mb-6">Neuroplasticidade, dopamina, sistema de recompensa, amigdala e aversao a perda. O hardware biologico por tras das decisoes que voce acredita serem racionais.</p>
+<div class="flex flex-wrap gap-4 text-sm">
+<span class="bg-dark-800 border border-dark-700 rounded-lg px-3 py-1.5 text-neutral-300">📦 3 Modulos</span>
+<span class="bg-dark-800 border border-dark-700 rounded-lg px-3 py-1.5 text-neutral-300">📝 18 Topicos</span>
+<span class="bg-dark-800 border border-dark-700 rounded-lg px-3 py-1.5 text-neutral-300">⏱ ~1.5h</span>
+<span class="bg-dark-800 border border-dark-700 rounded-lg px-3 py-1.5 text-purple-400">Fundamento</span>
+</div>
+</div>
+<!-- Hero SVG: Neural Pathways / Plasticity / Reward System -->
+<div class="w-full md:w-96 flex-shrink-0">
+<svg aria-label="Diagrama de vias neurais mostrando plasticidade, sistema de recompensa e circuitos emocionais" class="w-full h-auto" role="img" viewbox="0 0 400 320">
+<defs>
+<filter id="t3glow"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<lineargradient id="t3g1" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#c084fc"></stop><stop offset="100%" stop-color="#38bdf8"></stop></lineargradient>
+<lineargradient id="t3g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#a855f7"></stop><stop offset="100%" stop-color="#7c3aed"></stop></lineargradient>
+</defs>
+<!-- Background -->
+<rect fill="#1a1230" height="320" rx="16" width="400"></rect>
+<pattern height="20" id="t3grid" patternunits="userSpaceOnUse" width="20"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2d2150" stroke-width="0.5"></path></pattern>
+<rect fill="url(#t3grid)" height="320" opacity="0.5" rx="16" width="400"></rect>
+<!-- Brain outline (simplified cross-section) -->
+<ellipse cx="200" cy="140" fill="none" opacity="0.25" rx="140" ry="100" stroke="#c084fc" stroke-dasharray="4 3" stroke-width="1.5"></ellipse>
+<!-- Cortex region -->
+<path d="M 100 100 Q 200 40 300 100" fill="none" opacity="0.4" stroke="#a855f7" stroke-width="2"></path>
+<text fill="#c084fc" font-size="9" font-weight="600" opacity="0.7" text-anchor="middle" x="200" y="55">CORTEX</text>
+<!-- Neuron 1 (left - sensory) -->
+<circle cx="90" cy="140" fill="#1a1230" filter="url(#t3glow)" r="14" stroke="#c084fc" stroke-width="2"></circle>
+<circle cx="90" cy="140" fill="#c084fc" r="4"></circle>
+<!-- Dendrites -->
+<line opacity="0.5" stroke="#c084fc" stroke-width="1" x1="76" x2="60" y1="132" y2="118"></line>
+<line opacity="0.5" stroke="#c084fc" stroke-width="1" x1="76" x2="58" y1="140" y2="140"></line>
+<line opacity="0.5" stroke="#c084fc" stroke-width="1" x1="76" x2="60" y1="148" y2="162"></line>
+<!-- Synapse pathway 1 -->
+<path d="M 104 140 Q 140 110 170 130" fill="none" filter="url(#t3glow)" stroke="url(#t3g1)" stroke-width="2"></path>
+<!-- Signal dots -->
+<circle cx="130" cy="118" fill="#38bdf8" opacity="0.8" r="2"><animate attributename="opacity" dur="1.5s" repeatcount="indefinite" values="0.3;1;0.3"></animate></circle>
+<circle cx="150" cy="122" fill="#c084fc" opacity="0.8" r="2"><animate attributename="opacity" dur="1.5s" repeatcount="indefinite" values="1;0.3;1"></animate></circle>
+<!-- Neuron 2 (center - processing) -->
+<circle cx="185" cy="130" fill="#1a1230" filter="url(#t3glow)" r="16" stroke="#a855f7" stroke-width="2"></circle>
+<circle cx="185" cy="130" fill="#a855f7" r="5"></circle>
+<!-- Synapse pathway 2 (to VTA) -->
+<path d="M 201 130 Q 240 150 260 180" fill="none" filter="url(#t3glow)" stroke="url(#t3g1)" stroke-width="2"></path>
+<circle cx="230" cy="155" fill="#38bdf8" opacity="0.8" r="2"><animate attributename="opacity" dur="2s" repeatcount="indefinite" values="0.3;1;0.3"></animate></circle>
+<!-- VTA (Ventral Tegmental Area) -->
+<rect fill="#1a1230" filter="url(#t3glow)" height="30" rx="8" stroke="#38bdf8" stroke-width="2" width="50" x="245" y="170"></rect>
+<text fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle" x="270" y="189">VTA</text>
+<!-- Dopamine pathway to NAc -->
+<path d="M 250 185 Q 210 210 170 195" fill="none" filter="url(#t3glow)" stroke="#38bdf8" stroke-dasharray="4 2" stroke-width="2"></path>
+<text fill="#38bdf8" font-size="7" opacity="0.7" text-anchor="middle" x="210" y="215">DOPAMINA</text>
+<!-- Dopamine molecules -->
+<circle cx="220" cy="200" fill="#38bdf8" opacity="0.6" r="2.5"><animate attributename="r" dur="2s" repeatcount="indefinite" values="2;3.5;2"></animate></circle>
+<circle cx="195" cy="205" fill="#38bdf8" opacity="0.5" r="2"><animate attributename="r" dur="2.5s" repeatcount="indefinite" values="1.5;3;1.5"></animate></circle>
+<!-- Nucleus Accumbens -->
+<ellipse cx="155" cy="190" fill="#1a1230" filter="url(#t3glow)" rx="24" ry="16" stroke="#c084fc" stroke-width="2"></ellipse>
+<text fill="#c084fc" font-size="7" font-weight="700" text-anchor="middle" x="155" y="194">NAc</text>
+<!-- Amygdala -->
+<ellipse cx="120" cy="220" fill="#1a1230" filter="url(#t3glow)" rx="20" ry="14" stroke="#a855f7" stroke-width="2"></ellipse>
+<text fill="#a855f7" font-size="6" font-weight="700" text-anchor="middle" x="120" y="218">AMIGDALA</text>
+<text fill="#c084fc" font-size="5" text-anchor="middle" x="120" y="228">medo</text>
+<!-- Hippocampus -->
+<path d="M 230 225 Q 250 240 240 255 Q 230 270 215 265" fill="none" opacity="0.8" stroke="#c084fc" stroke-width="2"></path>
+<circle cx="230" cy="225" fill="#1a1230" r="12" stroke="#c084fc" stroke-width="1.5"></circle>
+<text fill="#c084fc" font-size="6" font-weight="600" text-anchor="middle" x="230" y="228">HIPO</text>
+<!-- Plasticity arrows (strengthening connections) -->
+<path d="M 185 146 Q 180 170 160 180" fill="none" marker-end="url(#t3arrow)" opacity="0.6" stroke="#a855f7" stroke-width="1.5"></path>
+<defs><marker id="t3arrow" markerheight="4" markerwidth="4" orient="auto" refx="5" refy="3" viewbox="0 0 6 6"><path d="M 0 0 L 6 3 L 0 6 z" fill="#a855f7"></path></marker></defs>
+<!-- Prefrontal cortex label -->
+<rect fill="#1a1230" height="22" opacity="0.7" rx="6" stroke="#c084fc" stroke-width="1" width="80" x="60" y="70"></rect>
+<text fill="#c084fc" font-size="7" font-weight="600" text-anchor="middle" x="100" y="84">PRE-FRONTAL</text>
+<line opacity="0.4" stroke="#c084fc" stroke-dasharray="2 2" stroke-width="1" x1="100" x2="100" y1="92" y2="110"></line>
+<!-- Labels -->
+<rect fill="#2d2150" height="30" opacity="0.7" rx="8" width="120" x="10" y="280"></rect>
+<text fill="#c084fc" font-size="8" font-weight="700" text-anchor="middle" x="70" y="293">PLASTICIDADE</text>
+<text fill="#38bdf8" font-size="7" text-anchor="middle" x="70" y="303">reconexao neural</text>
+<rect fill="#2d2150" height="30" opacity="0.7" rx="8" width="110" x="150" y="280"></rect>
+<text fill="#c084fc" font-size="8" font-weight="700" text-anchor="middle" x="205" y="293">RECOMPENSA</text>
+<text fill="#38bdf8" font-size="7" text-anchor="middle" x="205" y="303">VTA → NAc</text>
+<rect fill="#2d2150" height="30" opacity="0.7" rx="8" width="110" x="278" y="280"></rect>
+<text fill="#c084fc" font-size="8" font-weight="700" text-anchor="middle" x="333" y="293">EMOCAO</text>
+<text fill="#38bdf8" font-size="7" text-anchor="middle" x="333" y="303">amigdala + medo</text>
+<!-- Connection from amygdala to prefrontal -->
+<path d="M 120 206 Q 110 160 100 110" fill="none" opacity="0.4" stroke="#a855f7" stroke-dasharray="3 2" stroke-width="1"></path>
+<!-- Neuron 3 (right) -->
+<circle cx="320" cy="130" fill="#1a1230" r="12" stroke="#38bdf8" stroke-width="1.5"></circle>
+<circle cx="320" cy="130" fill="#38bdf8" r="3.5"></circle>
+<line opacity="0.5" stroke="#38bdf8" stroke-width="1" x1="332" x2="348" y1="126" y2="118"></line>
+<line opacity="0.5" stroke="#38bdf8" stroke-width="1" x1="332" x2="350" y1="134" y2="140"></line>
+<!-- Connection from VTA to right neuron -->
+<path d="M 295 178 Q 310 155 315 142" fill="none" opacity="0.5" stroke="#38bdf8" stroke-width="1.5"></path>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<!-- MAPA DA TRILHA -->
+<section class="mb-16">
+<h2 class="text-2xl font-bold mb-8">Mapa da Trilha</h2>
+<div class="grid md:grid-cols-3 gap-6">
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-purple-500/10 hover:border-purple-500/30 transition-all" href="#modulo-3-1">
+<div class="flex items-center space-x-3 mb-3">
+<span class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold text-sm">3.1</span>
+<h3 class="text-lg font-bold group-hover:text-purple-400 transition-colors">Neuroplasticidade</h3>
+</div>
+<p class="text-neutral-400 text-sm mb-3">O cerebro que se remodela. Hebb, neurogenese, reorganizacao cortical e pratica deliberada.</p>
+<span class="text-purple-400 text-sm font-medium">6 topicos →</span>
+</a>
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-purple-500/10 hover:border-purple-500/30 transition-all" href="#modulo-3-2">
+<div class="flex items-center space-x-3 mb-3">
+<span class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold text-sm">3.2</span>
+<h3 class="text-lg font-bold group-hover:text-purple-400 transition-colors">Dopamina e Recompensa</h3>
+</div>
+<p class="text-neutral-400 text-sm mb-3">O "quero" vs. o "gosto". Reforco variavel, redes sociais e mecanismos de dependencia comportamental.</p>
+<span class="text-purple-400 text-sm font-medium">6 topicos →</span>
+</a>
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-purple-500/10 hover:border-purple-500/30 transition-all" href="#modulo-3-3">
+<div class="flex items-center space-x-3 mb-3">
+<span class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold text-sm">3.3</span>
+<h3 class="text-lg font-bold group-hover:text-purple-400 transition-colors">Amigdala e Decisao</h3>
+</div>
+<p class="text-neutral-400 text-sm mb-3">Sequestro emocional, aversao a perda e como medo molda decisoes em marketing e politica.</p>
+<span class="text-purple-400 text-sm font-medium">6 topicos →</span>
+</a>
+</div>
+</section>
+<!-- CONTEUDO DETALHADO -->
+<section class="mb-16">
+<h2 class="text-2xl font-bold mb-8">Conteudo detalhado</h2>
+<!-- MODULO 3.1 -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6 md:p-8 mb-8" data-inema-module="3-1" id="modulo-3-1">
+<div class="flex items-center space-x-3 mb-2">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold text-xs">3.1</span>
+<h3 class="text-xl font-bold">Neuroplasticidade: o Cerebro que se Remodela</h3>
+</div>
+<p class="text-neutral-400 text-sm mb-6">Capacidade do cerebro de reorganizar estrutura e funcao em resposta a experiencia.</p>
+<div class="space-y-3">
+<div data-inema-topic="modulo-3-1#topico-1">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">01</span>
+<span class="font-medium">A visao antiga vs. a nova: cerebro fixo?</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>Ate meados do seculo XX, neurocientistas acreditavam que o cerebro adulto era uma estrutura fixa e imutavel. Uma vez formado, nao criaria novas conexoes nem se reorganizaria. Essa visao esta errada. Hoje sabemos que o cerebro se remodela continuamente em resposta a experiencia, aprendizado e ate lesoes.</p>
+</div>
+</div>
+<div data-inema-topic="modulo-3-1#topico-2">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">02</span>
+<span class="font-medium">Regra de Hebb e mecanismos celulares</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>"Neuronios que disparam juntos se conectam juntos" (Donald Hebb, 1949). A repeticao fortalece sinapses (consolidacao) e o desuso as enfraquece (podagem sinaptica). Esse e o mecanismo celular basico da aprendizagem.</p>
+</div>
+</div>
+<div data-inema-topic="modulo-3-1#topico-3">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">03</span>
+<span class="font-medium">Tipos de plasticidade neural</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>Tres formas principais: (1) plasticidade sinaptica, que altera a forca de conexoes existentes; (2) neurogenese, geracao de novos neuronios no hipocampo, essencial para memoria; (3) reorganizacao cortical, onde regioes cerebrais assumem novas funcoes apos lesao ou uso intenso.</p>
+</div>
+</div>
+<div data-inema-topic="modulo-3-1#topico-4">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">04</span>
+<span class="font-medium">Exemplos celebres: taxistas, musicos, meditadores</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>Taxistas de Londres possuem hipocampos maiores por navegar sem GPS. Musicos desenvolvem regioes motoras e auditivas mais robustas. Meditadores apresentam mudancas mensuaveis em atencao e regulacao emocional. Todos demonstram que o uso intenso remodela fisicamente o cerebro.</p>
+</div>
+</div>
+<div data-inema-topic="modulo-3-1#topico-5">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">05</span>
+<span class="font-medium">Pratica deliberada e consolidacao pelo sono</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>A pratica deliberada (Ericsson) ativa neuroplasticidade de forma dirigida. O sono consolida memorias, transferindo informacao do hipocampo para o neocortex. Sem sono adequado, a consolidacao falha e o aprendizado e prejudicado.</p>
+</div>
+</div>
+<div data-inema-topic="modulo-3-1#topico-6">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">06</span>
+<span class="font-medium">Estresse cronico e limites da plasticidade</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>O estresse cronico prejudica a neuroplasticidade, especialmente no hipocampo, reduzindo neurogenese e enfraquecendo conexoes. O cortisol elevado danifica neuronios. Embora o cerebro adulto seja muito mais maleavel do que se pensava, essa maleabilidade depende de condicoes favoraveis.</p>
+</div>
+</div>
+</div>
+<div class="mt-4 text-right">
+<a class="text-purple-400 hover:text-purple-300 text-sm font-medium" href="modulo-3-1.html">Abrir modulo completo →</a>
+</div>
+</div>
+<!-- MODULO 3.2 -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6 md:p-8 mb-8" data-inema-module="3-2" id="modulo-3-2">
+<div class="flex items-center space-x-3 mb-2">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold text-xs">3.2</span>
+<h3 class="text-xl font-bold">Dopamina e Sistema de Recompensa</h3>
+</div>
+<p class="text-neutral-400 text-sm mb-6">Dopamina nao e "prazer" -- e antecipacao e motivacao. O "quero" (wanting), nao o "gosto" (liking).</p>
+<div class="space-y-3">
+<div data-inema-topic="modulo-3-2#topico-1">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">01</span>
+<span class="font-medium">O mito do "neurotransmissor do prazer"</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>Dopamina nao e o neurotransmissor do prazer. E o neurotransmissor da antecipacao e motivacao. A distincao crucial: "wanting" (querer, buscar) vs. "liking" (gostar, sentir prazer). A dopamina media o querer, nao o gostar.</p>
+</div>
+</div>
+<div data-inema-topic="modulo-3-2#topico-2">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">02</span>
+<span class="font-medium">Circuito mesolimbico: VTA e Nucleus Accumbens</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>O sistema de recompensa e centrado no circuito mesolimbico: a Area Tegmental Ventral (VTA) produz dopamina e a envia para o Nucleus Accumbens (NAc). A dopamina e liberada em antecipacao, especialmente quando a recompensa e imprevisivel.</p>
+</div>
+</div>
+<div data-inema-topic="modulo-3-2#topico-3">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">03</span>
+<span class="font-medium">Reforco variavel e Skinner</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>Skinner (1950s) demonstrou que animais e humanos respondem mais intensamente a recompensas variaveis (imprevisiveis) do que constantes. Esse principio esta por tras de caca-niqueis, redes sociais e notificacoes. A variabilidade mantem neuronios dopaminergicos hiperativados.</p>
+</div>
+</div>
+<div data-inema-topic="modulo-3-2#topico-4">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">04</span>
+<span class="font-medium">Redes sociais e loops de dopamina</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>Sean Parker (co-fundador do Facebook, 2017) admitiu: o design das redes sociais explora deliberadamente "uma vulnerabilidade na psicologia humana". Likes criam loops de dopamina que geram dependencia comportamental. Voce nao sabe se o proximo scroll tera algo interessante -- essa incerteza mantem a mao rolando.</p>
+</div>
+</div>
+<div data-inema-topic="modulo-3-2#topico-5">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">05</span>
+<span class="font-medium">Aprendizagem por reforco e circuitos dopaminergicos</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>Os circuitos dopaminergicos sao centrais para o aprendizado por reforco. O cerebro aprende prevendo recompensas e ajustando comportamento com base no "erro de predicao". Quando a recompensa supera a expectativa, a dopamina dispara. Quando fica abaixo, diminui.</p>
+</div>
+</div>
+<div data-inema-topic="modulo-3-2#topico-6">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">06</span>
+<span class="font-medium">Tolerancia e mecanismo de vicio</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>A superativacao cronica dos circuitos dopaminergicos eleva o limiar de resposta. O cerebro precisa de mais estimulo para sentir o mesmo efeito. Esse e o mecanismo de tolerancia presente em todos os vicios, sejam quimicos ou comportamentais.</p>
+</div>
+</div>
+</div>
+<div class="mt-4 text-right">
+<a class="text-purple-400 hover:text-purple-300 text-sm font-medium" href="modulo-3-2.html">Abrir modulo completo →</a>
+</div>
+</div>
+<!-- MODULO 3.3 -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6 md:p-8 mb-8" data-inema-module="3-3" id="modulo-3-3">
+<div class="flex items-center space-x-3 mb-2">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold text-xs">3.3</span>
+<h3 class="text-xl font-bold">Amigdala, Medo e Tomada de Decisao Emocional</h3>
+</div>
+<p class="text-neutral-400 text-sm mb-6">A estrutura em amendoa que opera mais rapido que a logica e sequestra suas decisoes.</p>
+<div class="space-y-3">
+<div data-inema-topic="modulo-3-3#topico-1">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">01</span>
+<span class="font-medium">O que e a amigdala e onde ela opera</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>A amigdala e uma estrutura em forma de amendoa no sistema limbico, central no processamento do medo e das emocoes. Ela opera mais rapido que o cortex pre-frontal (a parte logica/racional do cerebro), o que significa que respostas emocionais podem preceder o pensamento consciente.</p>
+</div>
+</div>
+<div data-inema-topic="modulo-3-3#topico-2">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">02</span>
+<span class="font-medium">Sequestro emocional (Goleman)</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>Daniel Goleman cunhou o termo "amygdala hijack": a amigdala "sequestra" funcoes cognitivas superiores quando detecta ameaca. Respostas emocionais acontecem antes do processamento racional. E por isso que voce reage a um susto antes de entender o que aconteceu.</p>
+</div>
+</div>
+<div data-inema-topic="modulo-3-3#topico-3">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">03</span>
+<span class="font-medium">Aversao a perda (Kahneman/Tversky)</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>A dor de perder R$100 e 1.5 a 2 vezes mais intensa que o prazer de ganhar R$100. A amigdala esta diretamente envolvida: ameacas de perda ativam o circuito do medo com mais intensidade do que promessas de ganho ativam o circuito do prazer.</p>
+</div>
+</div>
+<div data-inema-topic="modulo-3-3#topico-4">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">04</span>
+<span class="font-medium">Medo no marketing e na politica</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>Mensagens de medo sao mais acessiveis e impactantes do que mensagens positivas. Campanhas baseadas em medo (imigrantes, crime, colapso economico) acessam o Sistema 1 e contornam o processamento racional. A amigdala torna essas mensagens viscerais e memoraveis.</p>
+</div>
+</div>
+<div data-inema-topic="modulo-3-3#topico-5">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">05</span>
+<span class="font-medium">A interacao amigdala-cortex pre-frontal</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>O cortex pre-frontal pode modular as respostas da amigdala, funcionando como um "freio" emocional. Porem, sob estresse, fadiga ou pressao de tempo, esse controle falha e a amigdala domina. E por isso que decisoes tomadas sob pressao tendem a ser mais emocionais que racionais.</p>
+</div>
+</div>
+<div data-inema-topic="modulo-3-3#topico-6">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="text-purple-400 font-mono text-sm">06</span>
+<span class="font-medium">Implicacoes para racionalidade e livre-arbitrio</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 text-neutral-300 text-sm leading-relaxed">
+<p>Se a amigdala pode sequestrar a razao e as emocoes precedem o pensamento consciente, o quanto de nossas decisoes e realmente "racional"? Essa questao conecta a neurociencia do comportamento diretamente a filosofia da mente e ao debate sobre livre-arbitrio da Trilha 5.</p>
+</div>
+</div>
+</div>
+<div class="mt-4 text-right">
+<a class="text-purple-400 hover:text-purple-300 text-sm font-medium" href="modulo-3-3.html">Abrir modulo completo →</a>
+</div>
+</div>
+</section>
+<!-- NAV TRILHAS -->
+<section class="flex justify-between items-center">
+<a class="flex items-center space-x-2 text-blue-400 hover:text-blue-300 font-medium" href="../trilha2/index.html">
+<span>←</span><span>Trilha 2: Influencia Social</span>
+</a>
+<a class="flex items-center space-x-2 text-amber-400 hover:text-amber-300 font-medium" href="../trilha4/index.html">
+<span>Trilha 4: Economia Comportamental</span><span>→</span>
+</a>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="border-t border-dark-700 py-8"><div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500"><a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mente, Poder e Maquina · 2026</div></footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

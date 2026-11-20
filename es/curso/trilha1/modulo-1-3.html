@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>Módulo 1.3 — Sesgos cognitivos: el mapa de los errores sistemáticos | MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "neurociencia-comportamento",
+  "tracks": [
+    {"n":"1","title":"O Cérebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heurísticas: os atalhos que enganam","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonância cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},
+    {"n":"2","title":"Influência Social e Poder do Grupo","modules":[{"id":"2-1","title":"Conformidade: por que seguimos o grupo","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência à autoridade","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulação social e dark patterns","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},
+    {"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina e sistema de recompensa","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala, medo e decisão emocional","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},
+    {"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"A crítica ao Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory: arquitetura de escolhas","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental e paradoxo da escolha","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},
+    {"n":"5","title":"Filosofia da Mente e Consciência","modules":[{"id":"5-1","title":"Livre-arbítrio: Libet","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciência: o problema difícil","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiótica da mente: Bruzzo","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},
+    {"n":"6","title":"IA, Vieses e Ética Comportamental","modules":[{"id":"6-1","title":"Vieses algorítmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistêmicas e polarização","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Ética, tecnologia e o espaço humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}
+  ]
+}
+</script>
+<style>
+body { font-family: 'Inter', system-ui, sans-serif; }
+.topic-explanation { display: none; }
+.topic-explanation.active { display: block; }
+html:not(.dark) body { background-color: #f8fafc; }
+html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+html:not(.dark) .text-neutral-100 { color: #111827; }
+html:not(.dark) .text-neutral-300 { color: #4b5563; }
+html:not(.dark) .text-neutral-400 { color: #6b7280; }
+html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+html:not(.dark) .text-emerald-400 { color: #059669; }
+html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+html:not(.dark) .text-primary { color: #a16207; }
+html:not(.dark) .text-sky-400 { color: #0369a1; }
+html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+.dark .border-dark-600 { border-color: #374151; }
+.dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha1/modulo-1-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha1/modulo-1-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha1/modulo-1-3.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-emerald-400 bg-emerald-500/10" href="../trilha1/index.html">T1 Cerebro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Filosofía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 IA+Ética</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()" title="Cambiar el tema">
+<span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="1-3">
+<!-- BREADCRUMB -->
+<div class="flex items-center space-x-2 text-sm text-neutral-500 mb-8">
+<a class="hover:text-emerald-400 transition-colors" href="../../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-emerald-400 transition-colors" href="index.html">Ruta 1</a>
+<span>/</span>
+<span class="text-neutral-300">Módulo 1.3</span>
+</div>
+<!-- HEADER -->
+<section class="mb-10">
+<div class="bg-gradient-to-r from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl p-8 border border-emerald-500/30">
+<div class="inline-flex items-center space-x-2 bg-emerald-500/20 border border-emerald-500/30 rounded-full px-4 py-1.5 mb-4">
+<span class="text-emerald-400 text-sm font-semibold">MÓDULO 1.3</span>
+</div>
+<h1 class="text-2xl font-bold mb-2">Sesgos cognitivos: el mapa de los errores sistemáticos</h1>
+<p class="text-neutral-400 mb-4">Patrones predecibles de irracionalidad · De la psicología experimental a la vida digital cotidiana</p>
+<div class="flex items-center space-x-6 text-sm text-neutral-500">
+<span>6 temas</span>
+<span>~35 min</span>
+<span>Fundamento</span>
+</div>
+</div>
+</section>
+<!-- SVG: Taxonomia de vieses cognitivos -->
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-10 overflow-hidden">
+<svg aria-label="Taxonomía de sesgos cognitivos: categorías de atención, memoria, ámbito social y decisión que convergen en un juicio distorsionado" class="w-full h-auto" role="img" viewbox="0 0 800 380">
+<defs>
+<filter id="m13-glow"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="m13-arr" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#34d399" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<marker id="m13-arr-c" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#38bdf8" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<marker id="m13-arr-r" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#f87171" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<pattern height="40" id="m13-grid" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#374151" stroke-width="0.5"></path></pattern>
+</defs>
+<rect fill="url(#m13-grid)" height="380" rx="12" width="800"></rect>
+<!-- Title -->
+<text fill="#34d399" filter="url(#m13-glow)" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="400" y="30">TAXONOMÍA DE SESGOS COGNITIVOS</text>
+<!-- Category: Atenção -->
+<rect fill="#0e2018" filter="url(#m13-glow)" height="120" rx="14" stroke="#10b981" stroke-width="2" width="160" x="30" y="60"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="110" y="85">ATENCIÓN</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="110" y="105">Disponibilidad</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="110" y="120">Anclaje</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="110" y="135">Encuadre</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="110" y="150">Enfoque ilusorio</text>
+<!-- Category: Memória -->
+<rect fill="#0e2018" filter="url(#m13-glow)" height="120" rx="14" stroke="#10b981" stroke-width="2" width="160" x="30" y="210"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="110" y="235">MEMORIA</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="110" y="255">Sesgo retrospectivo</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="110" y="270">Efecto de primacía</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="110" y="285">Falso recuerdo</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="110" y="300">Sesgo de confirmación</text>
+<!-- Category: Social -->
+<rect fill="#0e1b26" height="120" rx="14" stroke="#38bdf8" stroke-width="2" width="160" x="610" y="60"></rect>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="690" y="85">SOCIAL</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="690" y="105">Efecto halo</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="690" y="120">Efecto de manada</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="690" y="135">Atribución fundamental</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="690" y="150">Favoritismo hacia el grupo propio</text>
+<!-- Category: Decisão -->
+<rect fill="#0e1b26" height="120" rx="14" stroke="#38bdf8" stroke-width="2" width="160" x="610" y="210"></rect>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="690" y="235">DECISIÓN</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="690" y="255">Aversión a la pérdida</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="690" y="270">Dunning-Kruger</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="690" y="285">Exceso de confianza</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="690" y="300">Status quo</text>
+<!-- Central node: Julgamento Distorcido -->
+<rect fill="#0e2018" filter="url(#m13-glow)" height="80" rx="18" stroke="#f87171" stroke-width="2.5" width="200" x="300" y="150"></rect>
+<text fill="#f87171" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="400" y="180">JUICIO</text>
+<text fill="#fca5a5" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="400" y="198">DISTORSIONADO</text>
+<text fill="#fca5a5" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="400" y="218">sistemático y predecible</text>
+<!-- Arrows: categories → center -->
+<line marker-end="url(#m13-arr)" opacity="0.5" stroke="#34d399" stroke-width="2" x1="190" x2="298" y1="120" y2="175"></line>
+<line marker-end="url(#m13-arr)" opacity="0.5" stroke="#34d399" stroke-width="2" x1="190" x2="298" y1="270" y2="205"></line>
+<line marker-end="url(#m13-arr-c)" opacity="0.5" stroke="#38bdf8" stroke-width="2" x1="610" x2="502" y1="120" y2="175"></line>
+<line marker-end="url(#m13-arr-c)" opacity="0.5" stroke="#38bdf8" stroke-width="2" x1="610" x2="502" y1="270" y2="205"></line>
+<!-- Bottom label -->
+<rect fill="#1f2937" height="45" opacity="0.7" rx="10" stroke="#f87171" stroke-width="1.5" width="230" x="285" y="260"></rect>
+<text fill="#f87171" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="400" y="280">+200 sesgos catalogados</text>
+<text fill="#fca5a5" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="400" y="295">previsibles, universales, resistentes</text>
+<line marker-end="url(#m13-arr-r)" opacity="0.5" stroke="#f87171" stroke-dasharray="4,3" stroke-width="1.5" x1="400" x2="400" y1="230" y2="258"></line>
+<!-- Corner labels -->
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="8" opacity="0.6" text-anchor="middle" x="110" y="355">filtros de percepción</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="8" opacity="0.6" text-anchor="middle" x="690" y="355">distorsiones interpersonales</text>
+</svg>
+</div>
+<!-- TÓPICO 1 -->
+<section class="mb-12" data-inema-topic="modulo-1-3#topico-1" id="topico-1">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<h2 class="text-2xl font-bold">Qué son los sesgos cognitivos</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-3-t1-p1">Los sesgos cognitivos son patrones sistemáticos de desviación de la racionalidad en el juicio humano. A diferencia de los errores aleatorios, son predecibles, repetibles y universales. Aparecen en todas las culturas, edades y niveles educativos. Un profesor de estadística comete los mismos sesgos que una persona sin formación especializada, aunque quizá los reconozca después.</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-3-t1-p2">El término fue acuñado por Amos Tversky y Daniel Kahneman en los años 1970, durante sus investigaciones sobre heurísticas. Se dieron cuenta de que los atajos mentales del Sistema 1 no solo simplifican la realidad, sino que la distorsionan de maneras específicas y catalogables. Hasta hoy, se han identificado más de 200 sesgos en la literatura de psicología cognitiva.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-3-t1-p3">El aspecto más perturbador de los sesgos cognitivos es que conocerlos no los elimina. Saber que existe el sesgo de confirmación no te impide buscar información que confirme tus creencias. Ser consciente del error mejora marginalmente el rendimiento, pero no lo resuelve. Es como una ilusión óptica: incluso después de que alguien te explica el truco, sigues viendo la imagen distorsionada.</p>
+<!-- Tip box -->
+<div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-emerald-400 font-semibold mb-1">Concepto fundamental</p>
+<p class="text-neutral-300 text-sm">Los sesgos no son «bugs» de la mente. Son subproductos de heurísticas que, la mayoría de las veces, funcionan bien. El problema es que estos atajos útiles producen errores sistemáticos en contextos específicos. La evolución optimizó la velocidad, no la precisión.</p>
+</div>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-emerald-400 font-semibold text-sm mb-3">Características de los sesgos</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Sistemáticos: siguen patrones predecibles</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Universales: afectan a todas las poblaciones</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Inconscientes: operan sin percepción</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Catalogables: más de 200 identificados</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-red-400 font-semibold text-sm mb-3">Errores comunes</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>"Solo afecta a personas desinformadas"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>"Basta con conocer el sesgo para eliminarlo"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>"Es falta de inteligencia"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>"Son aleatorios e imprevisibles"</span></li>
+</ul>
+</div>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Sistemático</p>
+<p class="text-neutral-400 text-xs mt-1">Patrón predecible</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Universal</p>
+<p class="text-neutral-400 text-xs mt-1">Todas las culturas</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Persistente</p>
+<p class="text-neutral-400 text-xs mt-1">Se resiste al conocimiento</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Heurístico</p>
+<p class="text-neutral-400 text-xs mt-1">Subproducto de atajos</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="mb-12" data-inema-topic="modulo-1-3#topico-2" id="topico-2">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<h2 class="text-2xl font-bold">Sesgo de confirmación</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-3-t2-p1">El sesgo de confirmación es la tendencia a buscar, interpretar, favorecer y recordar información que confirma nuestras creencias preexistentes. Opera en tres niveles: en la búsqueda selectiva (buscamos pruebas que confirmen), en la interpretación sesgada (los datos ambiguos se leen como confirmación) y en la memoria selectiva (recordamos mejor lo que confirmó nuestra postura).</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-3-t2-p2">Desde el punto de vista neurológico, hay una explicación elegante. Cuando encontramos información que confirma nuestras creencias, el sistema dopaminérgico libera una pequeña recompensa. Literalmente sentimos placer al tener razón. Cuando nos enfrentamos a información contraria, la corteza insular y la amígdala generan malestar, una señal de amenaza. El cerebro trata la disonancia informativa como dolor.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-3-t2-p3">Marcus Bruzzo sostiene que los algoritmos de recomendación amplifican exponencialmente el sesgo de confirmación. Las redes sociales alimentan al usuario con contenido que confirma sus opiniones, creando ciclos de retroalimentación en los que el sesgo natural del cerebro y el sesgo del algoritmo se refuerzan mutuamente. El resultado es una versión hipertrofiada del sesgo de confirmación que ninguna generación anterior ha experimentado.</p>
+<!-- Tip box -->
+<div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-emerald-400 font-semibold mb-1">La trampa de la «investigación»</p>
+<p class="text-neutral-300 text-sm">Cuando alguien dice «investigué y confirmé que X es verdad», con frecuencia lo que pasó fue esto: buscó «X es verdad» en Google, encontró sitios que lo afirman (porque el algoritmo muestra lo que buscas) y lo interpretó como una validación. Casi nunca a alguien se le ocurre buscar «X es falso».</p>
+</div>
+<!-- Timeline: 3 níveis -->
+<div class="space-y-4 mb-6">
+<h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide">Los tres niveles del sesgo de confirmación</h4>
+<div class="relative pl-6 border-l-2 border-emerald-500/30 space-y-6">
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">Búsqueda selectiva:</strong> Buscamos fuentes que coinciden con nosotros</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">Interpretación sesgada:</strong> Los datos ambiguos se interpretan como confirmación</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">Memoria selectiva:</strong> Recordamos lo que confirmó, olvidamos lo que refutó</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-red-500/30 border-2 border-red-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-red-400">Amplificación digital:</strong> Los algoritmos crean ciclos de retroalimentación infinitos</p>
+</div>
+</div>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Búsqueda selectiva</p>
+<p class="text-neutral-400 text-xs mt-1">Fuentes que están de acuerdo</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Dopamina</p>
+<p class="text-neutral-400 text-xs mt-1">Recompensa al confirmar</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Disonancia</p>
+<p class="text-neutral-400 text-xs mt-1">Dolor al contradecir</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Algoritmos</p>
+<p class="text-neutral-400 text-xs mt-1">Amplifican el ciclo</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="mb-12" data-inema-topic="modulo-1-3#topico-3" id="topico-3">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<h2 class="text-2xl font-bold">Efecto halo</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-3-t3-p1">El efecto halo, descrito por Edward Thorndike en 1920, ocurre cuando una característica positiva de una persona contamina la evaluación de todas las demás. Si alguien es físicamente atractivo, tendemos a juzgarlo como más inteligente, más competente, más honesto y más confiable. Una sola cualidad percibida se irradia a todo el juicio, como un halo de luz alrededor de una figura sagrada.</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-3-t3-p2">Las investigaciones demuestran el efecto con una precisión perturbadora. En un experimento clásico, los mismos textos académicos fueron evaluados como significativamente más inteligentes y mejor escritos cuando iban acompañados de fotos de autores considerados atractivos. Los evaluadores no eran conscientes de que la apariencia del autor había influido en su análisis del contenido.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-3-t3-p3">En política, el efecto halo explica por qué los candidatos altos ganan más elecciones, por qué la apariencia influye en los resultados electorales y por qué los líderes carismáticos mantienen el apoyo a pesar de sus fallas objetivas. En el mercado laboral, los estudios muestran que las personas atractivas ganan, en promedio, entre un 10 y un 15 % más que sus colegas con las mismas calificaciones. El sesgo opera en la contratación, los ascensos y la evaluación del desempeño.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-emerald-400 font-semibold text-sm mb-3">Dónde opera el efecto halo</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Entrevistas de trabajo y promociones</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Evaluaciones académicas y profesionales</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Campañas políticas y elecciones</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Marketing: marcas y celebridades</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-red-400 font-semibold text-sm mb-3">Efecto cuerno (Horn Effect)</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Una característica negativa lo contamina todo</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Un solo error destruye toda la reputación</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Una apariencia desfavorable reduce la competencia percibida</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>El acento/origen genera juicios automáticos</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-emerald-400 font-semibold mb-1">Aplicación práctica</p>
+<p class="text-neutral-300 text-sm">Los procesos selectivos con evaluación a ciegas (sin foto, sin nombre, sin género) reducen significativamente el efecto halo. Las orquestas que adoptaron audiciones detrás de cortinas aumentaron la contratación de mujeres en un 25-46%.</p>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Thorndike</p>
+<p class="text-neutral-400 text-xs mt-1">1920: primer estudio</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Contaminación</p>
+<p class="text-neutral-400 text-xs mt-1">Una cualidad irradia</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Horn Effect</p>
+<p class="text-neutral-400 text-xs mt-1">Versión negativa</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Evaluación ciega</p>
+<p class="text-neutral-400 text-xs mt-1">Mitigación eficaz</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="mb-12" data-inema-topic="modulo-1-3#topico-4" id="topico-4">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<h2 class="text-2xl font-bold">Efecto Dunning-Kruger</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-3-t4-p1">El efecto Dunning-Kruger, documentado por David Dunning y Justin Kruger en 1999, revela una paradoja inquietante: las personas con poca habilidad en un ámbito tienden a sobreestimar drásticamente su competencia, mientras que los expertos tienden a subestimar la propia. La incompetencia le quita a la persona la capacidad de reconocer su propia incompetencia.</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-3-t4-p2">El efecto sigue cuatro etapas previsibles. En la incompetencia inconsciente, la persona no sabe lo suficiente para darse cuenta de lo que no sabe. En la incompetencia consciente, empieza a comprender la magnitud de su propia ignorancia. En la competencia consciente, tiene la habilidad, pero necesita un esfuerzo deliberado. En la competencia inconsciente, la habilidad se vuelve automática. El pico de confianza injustificada ocurre en la primera etapa.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-3-t4-p3">Bertrand Russell captó el fenómeno antes de que tuviera nombre científico: "El problema fundamental del mundo moderno es que los idiotas están llenos de certeza y los inteligentes, llenos de duda." Las redes sociales amplifican drásticamente la primera etapa: las plataformas les dan un megáfono a quienes tienen más certeza, y la certeza extrema genera más interacción. El resultado es un ecosistema informativo donde quienes tienen menos preparación hablan más fuerte.</p>
+<!-- Timeline: 4 estágios -->
+<div class="space-y-4 mb-6">
+<h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide">Las 4 etapas de la competencia</h4>
+<div class="relative pl-6 border-l-2 border-emerald-500/30 space-y-6">
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-red-500/30 border-2 border-red-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-red-400">Incompetencia inconsciente:</strong> "Lo sé todo sobre esto" (pico de confianza, mínimo de conocimiento)</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">Incompetencia consciente:</strong> "Me di cuenta de cuánto no sé" (valle de la desesperación)</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">Competencia consciente:</strong> "Lo sé, pero tengo que concentrarme" (crecimiento con esfuerzo)</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">Competencia inconsciente:</strong> "Lo hago de forma natural" (maestría automatizada)</p>
+</div>
+</div>
+</div>
+<!-- Alert box -->
+<div class="bg-red-500/10 border border-red-500/30 rounded-xl p-5 mb-6">
+<p class="text-red-400 font-semibold text-sm mb-1">La paradoja de las redes sociales</p>
+<p class="text-neutral-300 text-sm">Las plataformas recompensan la certeza con interacción. Quien está en la etapa 1 (incompetencia inconsciente) publica con más confianza, genera más interacción y obtiene más alcance. Los expertos cautelosos, que usan matices y reservas, pierden audiencia frente a simplificaciones erróneas pero seguras de sí mismas.</p>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Dunning-Kruger</p>
+<p class="text-neutral-400 text-xs mt-1">1999: paradoja de la competencia</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">4 etapas</p>
+<p class="text-neutral-400 text-xs mt-1">De inconsciente a inconsciente</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Metacognición</p>
+<p class="text-neutral-400 text-xs mt-1">Saber que no sabes</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Russell</p>
+<p class="text-neutral-400 text-xs mt-1">La certeza de los ignorantes</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="mb-12" data-inema-topic="modulo-1-3#topico-5" id="topico-5">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<h2 class="text-2xl font-bold">Sesgo de disponibilidad en la vida cotidiana</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-3-t5-p1">El sesgo de disponibilidad hace que estimemos la probabilidad de un evento según la facilidad con que nos vienen ejemplos a la mente, no según la frecuencia real. Después de ver un reportaje sobre un accidente aéreo, sentimos que volar es peligroso. Pero la probabilidad de morir en un accidente aéreo es de 1 entre 11 millones de vuelos. La probabilidad de morir por causas relacionadas con una alimentación inadecuada es cientos de veces mayor, pero no sentimos miedo al abrir el refrigerador.</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-3-t5-p2">Los medios son la mayor máquina de distorsión de la disponibilidad que existe. Las noticias sobre terrorismo, ataques de tiburón y accidentes espectaculares crean la percepción de que estos eventos son frecuentes. Mientras tanto, las enfermedades cardiovasculares, la diabetes y la depresión matan órdenes de magnitud más personas, pero su cobertura es proporcionalmente invisible. Lo dramático y memorable sustituye a lo estadísticamente relevante.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-3-t5-p3">En la vida cotidiana, el sesgo de disponibilidad moldea decisiones concretas: los padres sobreprotegen a sus hijos contra el secuestro (rarísimo), mientras descuidan el cinturón de seguridad (causa real de muertes infantiles). Los inversionistas venden acciones tras titulares de crisis, cuando estadísticamente lo mejor es mantenerlas. Los gobiernos destinan miles de millones a la seguridad contra el terrorismo y asignan fondos insuficientes a la prevención de enfermedades crónicas que matan mil veces más.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-emerald-400 font-semibold text-sm mb-3">Riesgos sobreestimados (disponibles)</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Accidentes aéreos (1 en 11M)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Ataques de tiburón (5 muertes al año)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Terrorismo (titulares constantes)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Secuestro de niños por parte de desconocidos</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-red-400 font-semibold text-sm mb-3">Riesgos subestimados (invisibles)</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Enfermedades cardiovasculares (~18M muertes/año)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Diabetes tipo 2 (prevenible, epidémica)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Accidentes domésticos (caídas, ahogamientos)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Contaminación del aire (7M muertes/año OMS)</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-emerald-400 font-semibold mb-1">Prueba rápida</p>
+<p class="text-neutral-300 text-sm">¿Qué mata a más personas al año: los rayos o los tornados? La mayoría responde que los tornados, pero los rayos matan a más personas. Los tornados aparecen en las noticias con imágenes devastadoras; las muertes por rayos son individuales y silenciosas. La disponibilidad, no la probabilidad, guía la respuesta.</p>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Disponibilidad</p>
+<p class="text-neutral-400 text-xs mt-1">Facilidad para recordar</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Medios</p>
+<p class="text-neutral-400 text-xs mt-1">Amplifica lo dramático</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Probabilidad</p>
+<p class="text-neutral-400 text-xs mt-1">vs. percepción del riesgo</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Saliencia</p>
+<p class="text-neutral-400 text-xs mt-1">Vívido &gt; estadístico</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="mb-12" data-inema-topic="modulo-1-3#topico-6" id="topico-6">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<h2 class="text-2xl font-bold">Sesgos y tecnología</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-3-t6-p1">Los algoritmos de recomendación amplifican los sesgos cognitivos. No crean sesgos nuevos, sino que toman los que ya existen en el cerebro humano y los escalan a proporciones inéditas. El sesgo de confirmación se convierte en una burbuja informativa. El sesgo de disponibilidad se convierte en un feed curado. El efecto halo se convierte en marketing de influencers. Cada sesgo natural obtiene un multiplicador tecnológico.</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-3-t6-p2">Las burbujas epistémicas se forman cuando el algoritmo ofrece solo contenido alineado con las creencias del usuario. A diferencia de las cámaras de eco (donde se rechaza activamente el desacuerdo), las burbujas son invisibles: la persona simplemente nunca se expone a perspectivas alternativas. Cree que está viendo "el mundo", cuando en realidad ve una selección editada por el algoritmo para maximizar la interacción.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-3-t6-p3">El ciclo de retroalimentación entre los sesgos cognitivos y los sesgos algorítmicos funciona así: tu cerebro tiene sesgo de confirmación, así que interactúas más con el contenido que confirma tus creencias. El algoritmo detecta ese patrón y te muestra más de lo mismo. Tu sesgo se refuerza. Interactúas aún más. El algoritmo optimiza todavía más. En pocas semanas, tu realidad informativa se estrecha sin que te des cuenta. Es un sistema de refuerzo mutuo sin freno natural.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-emerald-400 font-semibold text-sm mb-3">Sesgos cognitivos amplificados</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Confirmación → burbuja informativa</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Disponibilidad → feed curado</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Halo → economía de influencers</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Dunning-Kruger → megáfono digital</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-red-400 font-semibold text-sm mb-3">Consecuencias sistémicas</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Polarización política acelerada</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>La desinformación se viraliza más que los hechos</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Radicalizaciones progresivas mediante algoritmos</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Erosión del consenso factual compartido</span></li>
+</ul>
+</div>
+</div>
+<!-- Research box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5 mb-6">
+<p class="text-blue-400 font-semibold text-sm mb-1">Investigación: MIT, 2018</p>
+<p class="text-neutral-300 text-sm">Vosoughi, Roy y Aral (Science, 2018) analizaron 126.000 historias compartidas en Twitter a lo largo de 10 años. Las noticias falsas se difunden 6x más rápido que las verdaderas, llegan a más personas y penetran más profundamente en las redes. El motivo: las noticias falsas están más «disponibles» (son sorprendentes, emocionales, dramáticas) que la verdad, y activan los sesgos que maximizan el compartir.</p>
+</div>
+<!-- Tip box -->
+<div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-emerald-400 font-semibold mb-1">Contramedida: diversificación deliberada</p>
+<p class="text-neutral-300 text-sm">Seguir fuentes con las que no estás de acuerdo. Buscar activamente la postura opuesta antes de formar una opinión. Usar modos de navegación que no personalicen los resultados. Tratar el feed como una selección editada, no como un espejo de la realidad.</p>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Amplificación</p>
+<p class="text-neutral-400 text-xs mt-1">Sesgo x algoritmo</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Burbuja epistémica</p>
+<p class="text-neutral-400 text-xs mt-1">Invisible para el usuario</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Retroalimentación</p>
+<p class="text-neutral-400 text-xs mt-1">Ciclo sin freno</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Diversificación</p>
+<p class="text-neutral-400 text-xs mt-1">Contramedida activa</p>
+</div>
+</div>
+</section>
+<!-- RESUMO DO MÓDULO -->
+<section class="bg-dark-800 border border-emerald-500/30 rounded-xl p-6 sm:p-8 mb-8">
+<h2 class="text-xl font-bold mb-4 text-emerald-400">Resumen del Módulo 1.3</h2>
+<ul class="space-y-3 text-neutral-300 text-sm mb-6">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Los sesgos cognitivos son errores sistemáticos, predecibles y universales en el juicio humano</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>El sesgo de confirmación opera en tres niveles: búsqueda, interpretación y memoria selectivas</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>El efecto halo hace que una cualidad positiva contamine todo el juicio sobre una persona</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>El efecto Dunning-Kruger muestra que la incompetencia impide reconocer la propia incompetencia</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>El sesgo de disponibilidad hace que los eventos dramáticos parezcan más probables de lo que son</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Los algoritmos y los sesgos cognitivos se retroalimentan y crean burbujas epistémicas sin freno natural</span></li>
+</ul>
+<a class="inline-flex items-center justify-start bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-emerald-500/30 transition-colors" href="modulo-1-4.html">Siguiente: Disonancia cognitiva →</a>
+</section>
+<!-- NAV INFERIOR -->
+<div class="flex items-center justify-between pt-8 border-t border-dark-700">
+<a class="text-neutral-400 hover:text-emerald-400 transition-colors text-sm font-medium" href="modulo-1-2.html">← Módulo 1.2</a>
+<a class="text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium" href="modulo-1-4.html">Módulo 1.4 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-700 py-8">
+<div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500">
+<a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mente, Poder e Máquina · 2026
+  </div>
+</footer>
+<script>
+function toggleTheme() {
+  var html = document.documentElement;
+  html.classList.toggle('dark');
+  var isDark = html.classList.contains('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  html.style.colorScheme = isDark ? 'dark' : 'light';
+  try { var p = JSON.parse(localStorage.getItem('inema.prefs') || '{}'); p.theme = isDark ? 'inema-dark' : 'claro'; localStorage.setItem('inema.prefs', JSON.stringify(p)); } catch(e){}
+}
+function toggleTopic(btn) {
+  var exp = btn.nextElementSibling;
+  exp.classList.toggle('active');
+  var isOpen = exp.classList.contains('active');
+  btn.setAttribute('aria-expanded', isOpen);
+}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

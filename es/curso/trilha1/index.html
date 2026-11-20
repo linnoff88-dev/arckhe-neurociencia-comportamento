@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>Ruta 1 — El cerebro que decide | MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "neurociencia-comportamento",
+  "tracks": [
+    {"n":"1","title":"O Cérebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heurísticas: os atalhos que enganam","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonância cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},
+    {"n":"2","title":"Influência Social e Poder do Grupo","modules":[{"id":"2-1","title":"Conformidade: por que seguimos o grupo","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência à autoridade","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulação social e dark patterns","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},
+    {"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina e sistema de recompensa","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala, medo e decisão emocional","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},
+    {"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"A crítica ao Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory: arquitetura de escolhas","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental e paradoxo da escolha","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},
+    {"n":"5","title":"Filosofia da Mente e Consciência","modules":[{"id":"5-1","title":"Livre-arbítrio: Libet","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciência: o problema difícil","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiótica da mente: Bruzzo","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},
+    {"n":"6","title":"IA, Vieses e Ética Comportamental","modules":[{"id":"6-1","title":"Vieses algorítmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistêmicas e polarização","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Ética, tecnologia e o espaço humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}
+  ]
+}
+</script>
+<style>
+body { font-family: 'Inter', system-ui, sans-serif; }
+.topic-explanation { display: none; }
+.topic-explanation.active { display: block; }
+/* Light mode base */
+html:not(.dark) body { background-color: #f8fafc; }
+html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+html:not(.dark) .text-neutral-100 { color: #111827; }
+html:not(.dark) .text-neutral-300 { color: #4b5563; }
+html:not(.dark) .text-neutral-400 { color: #6b7280; }
+html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+/* Light mode accent (emerald) */
+html:not(.dark) .text-emerald-400 { color: #059669; }
+html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+/* Light mode special */
+html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+html:not(.dark) .text-primary { color: #a16207; }
+html:not(.dark) .text-sky-400 { color: #0369a1; }
+html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+/* Dark borders */
+.dark .border-dark-600 { border-color: #374151; }
+.dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+/* SVG light mode */
+html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha1/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha1/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha1/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-emerald-400 bg-emerald-500/10" href="../trilha1/index.html">T1 Cerebro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Filosofía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 IA+Ética</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()" title="Cambiar el tema">
+<span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- HEADER -->
+<section class="mb-12">
+<div class="bg-gradient-to-r from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl p-8 sm:p-12 border border-emerald-500/30">
+<div class="inline-flex items-center space-x-2 bg-emerald-500/20 border border-emerald-500/30 rounded-full px-4 py-1.5 mb-4">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="text-emerald-400 text-sm font-semibold tracking-wide">RUTA 1</span>
+</div>
+<h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">🧠 El cerebro que decide</h1>
+<p class="text-neutral-300 text-lg max-w-3xl mb-8">De Kahneman a los sesgos cognitivos: cómo el cerebro humano procesa información, crea atajos mentales, comete errores sistemáticos y lidia con contradicciones internas.</p>
+<!-- Stats grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-dark-900/60 rounded-xl p-4 text-center border border-dark-700">
+<span class="text-2xl font-bold text-emerald-400">4</span>
+<p class="text-neutral-400 text-sm mt-1">Módulos</p>
+</div>
+<div class="bg-dark-900/60 rounded-xl p-4 text-center border border-dark-700">
+<span class="text-2xl font-bold text-emerald-400">24</span>
+<p class="text-neutral-400 text-sm mt-1">Temas</p>
+</div>
+<div class="bg-dark-900/60 rounded-xl p-4 text-center border border-dark-700">
+<span class="text-2xl font-bold text-emerald-400">~2h</span>
+<p class="text-neutral-400 text-sm mt-1">Duración</p>
+</div>
+<div class="bg-dark-900/60 rounded-xl p-4 text-center border border-dark-700">
+<span class="text-2xl font-bold text-emerald-400">Fundamento</span>
+<p class="text-neutral-400 text-sm mt-1">Nivel</p>
+</div>
+</div>
+</div>
+</section>
+<!-- HERO SVG: Perception → S1 → S2 → Decision flow -->
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-12 overflow-hidden">
+<svg aria-label="Flujo de decisión: la percepción entra en el Sistema 1 (rápido), que puede resolver por sí solo o activar el Sistema 2 (lento); ambos convergen en la decisión final" class="w-full h-auto" role="img" viewbox="0 0 900 260">
+<defs>
+<filter id="t1-glow"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<lineargradient id="t1-grad" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#34d399"></stop><stop offset="100%" stop-color="#38bdf8"></stop></lineargradient>
+<marker id="t1-arrow" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#34d399" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<marker id="t1-arrow-cyan" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#38bdf8" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<pattern height="40" id="t1-grid" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#374151" stroke-width="0.5"></path></pattern>
+</defs>
+<rect fill="url(#t1-grid)" height="260" rx="12" width="900"></rect>
+<!-- Percepção -->
+<rect fill="#0e2018" filter="url(#t1-glow)" height="80" rx="16" stroke="#34d399" stroke-width="2" width="130" x="30" y="90"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="95" y="122">PERCEPCIÓN</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="95" y="140">estímulo sensorial</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="95" y="155">patrones, emociones</text>
+<!-- Arrow: Percepção → S1 -->
+<line marker-end="url(#t1-arrow)" opacity="0.5" stroke="#34d399" stroke-width="2" x1="160" x2="230" y1="130" y2="100"></line>
+<!-- Sistema 1 -->
+<rect fill="#0e2018" filter="url(#t1-glow)" height="90" rx="16" stroke="#10b981" stroke-width="2" width="160" x="240" y="55"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="320" y="82">SISTEMA 1</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="320" y="100">rápido, automático</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="320" y="115">emocional, paralelo</text>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="320" y="132">~95% de las decisiones</text>
+<!-- Arrow: S1 → Decisão (caminho direto) -->
+<path d="M 400 100 Q 500 70 600 100" fill="none" marker-end="url(#t1-arrow)" opacity="0.5" stroke="#34d399" stroke-width="2"></path>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="9" opacity="0.8" text-anchor="middle" x="500" y="65">camino rápido</text>
+<!-- Arrow: S1 → S2 (quando S1 falha) -->
+<line marker-end="url(#t1-arrow-cyan)" opacity="0.5" stroke="#38bdf8" stroke-width="2" x1="320" x2="320" y1="145" y2="170"></line>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="8" opacity="0.8" text-anchor="start" x="345" y="163">¿Falla S1?</text>
+<!-- Sistema 2 -->
+<rect fill="#0e1b26" height="70" rx="16" stroke="#38bdf8" stroke-width="2" width="160" x="240" y="175"></rect>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="320" y="200">SISTEMA 2</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="320" y="218">lento, deliberado</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="320" y="233">consciente, serial</text>
+<!-- Arrow: S2 → Decisão -->
+<path d="M 400 210 Q 500 230 600 140" fill="none" marker-end="url(#t1-arrow-cyan)" opacity="0.5" stroke="#38bdf8" stroke-width="2"></path>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" opacity="0.8" text-anchor="middle" x="510" y="228">camino lento</text>
+<!-- Decisão -->
+<rect fill="#0e2018" filter="url(#t1-glow)" height="70" rx="16" stroke="#34d399" stroke-width="2" width="140" x="610" y="85"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="680" y="114">DECISIÓN</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="680" y="134">comportamiento</text>
+<!-- Vieses (influência lateral) -->
+<rect fill="#1f2937" height="55" opacity="0.7" rx="12" stroke="#f87171" stroke-width="1.5" width="140" x="730" y="185"></rect>
+<text fill="#f87171" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="800" y="208">SESGOS + HEURÍSTICAS</text>
+<text fill="#fca5a5" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="800" y="225">errores sistemáticos</text>
+<line opacity="0.4" stroke="#f87171" stroke-dasharray="4,3" stroke-width="1.5" x1="750" x2="700" y1="185" y2="155"></line>
+</svg>
+</div>
+<!-- MAPA DA TRILHA -->
+<h2 class="text-2xl font-bold mb-6">Mapa de la ruta</h2>
+<div class="grid md:grid-cols-2 gap-4 mb-16">
+<!-- Card 1.1 -->
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all" href="#modulo-1-1">
+<div class="flex items-center justify-between mb-3">
+<span class="text-emerald-400 font-mono text-sm font-semibold">1.1</span>
+<span class="text-neutral-500 text-xs">~30 min</span>
+</div>
+<h3 class="text-lg font-bold mb-1 group-hover:text-emerald-400 transition-colors">🧠 Sistema 1 y Sistema 2</h3>
+<p class="text-neutral-400 text-sm">El modelo dual de Kahneman que explica por qué pensamos demasiado rápido</p>
+</a>
+<!-- Card 1.2 -->
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all" href="#modulo-1-2">
+<div class="flex items-center justify-between mb-3">
+<span class="text-emerald-400 font-mono text-sm font-semibold">1.2</span>
+<span class="text-neutral-500 text-xs">~30 min</span>
+</div>
+<h3 class="text-lg font-bold mb-1 group-hover:text-emerald-400 transition-colors">⚡ Heurísticas: los atajos que engañan</h3>
+<p class="text-neutral-400 text-sm">Disponibilidad, representatividad y anclaje: cuando los atajos mentales nos traicionan</p>
+</a>
+<!-- Card 1.3 -->
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all" href="#modulo-1-3">
+<div class="flex items-center justify-between mb-3">
+<span class="text-emerald-400 font-mono text-sm font-semibold">1.3</span>
+<span class="text-neutral-500 text-xs">~30 min</span>
+</div>
+<h3 class="text-lg font-bold mb-1 group-hover:text-emerald-400 transition-colors">🗺️ Sesgos cognitivos</h3>
+<p class="text-neutral-400 text-sm">Confirmación, efecto halo y Dunning-Kruger: el mapa de los errores que todos cometemos</p>
+</a>
+<!-- Card 1.4 -->
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all" href="#modulo-1-4">
+<div class="flex items-center justify-between mb-3">
+<span class="text-emerald-400 font-mono text-sm font-semibold">1.4</span>
+<span class="text-neutral-500 text-xs">~30 min</span>
+</div>
+<h3 class="text-lg font-bold mb-1 group-hover:text-emerald-400 transition-colors">🔄 Disonancia cognitiva</h3>
+<p class="text-neutral-400 text-sm">Festinger y el malestar de vivir en contradicción: por qué cambiar es tan difícil</p>
+</a>
+</div>
+<!-- CONTEÚDO DETALHADO -->
+<h2 class="text-2xl font-bold mb-8">Contenido detallado</h2>
+<!-- MÓDULO 1.1 -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6 sm:p-8 mb-8" id="modulo-1-1">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-sm">1.1</span>
+<div>
+<h3 class="text-xl font-bold">Sistema 1 y Sistema 2: dos modos de pensar</h3>
+<p class="text-neutral-400 text-sm">Daniel Kahneman (2011) · 6 temas</p>
+</div>
+</div>
+<div class="space-y-3">
+<!-- Tópico 1 -->
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="font-medium">El modelo dual de procesamiento</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">La teoría de que el cerebro opera en dos modos distintos: uno rápido y automático (Sistema 1), y otro lento y deliberado (Sistema 2). Kahneman y Tversky la propusieron basándose en décadas de experimentos.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Entender esta división es la base para comprender todos los sesgos y errores de juicio que estudiaremos en este curso.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Procesamiento dual, automaticidad, esfuerzo cognitivo, atención selectiva.</p></div>
+</div>
+</div>
+<!-- Tópico 2 -->
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="font-medium">Sistema 1: pensamiento rápido</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Procesamiento automático, involuntario, emocional y paralelo. Opera en milisegundos, reconociendo patrones, rostros y amenazas. Es responsable de ~95% de las decisiones cotidianas.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">La mayoría de los errores cognitivos se deben a que S1 actúa en situaciones que exigirían S2.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Intuición, memoria asociativa, WYSIATI ("lo que ves es todo lo que existe"), procesamiento inconsciente.</p></div>
+</div>
+</div>
+<!-- Tópico 3 -->
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="font-medium">Sistema 2: pensamiento lento</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Procesamiento lento, secuencial, consciente y deliberado. Exige atención y energía. Es perezoso por naturaleza: tiende a aceptar lo que propone S1 sin verificarlo.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Saber que S2 es limitado y se fatiga explica por qué las decisiones empeoran a lo largo del día.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Atención enfocada, memoria de trabajo, agotamiento del ego, fatiga cognitiva.</p></div>
+</div>
+</div>
+<!-- Tópico 4 -->
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="font-medium">Interacción entre S1 y S2</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">S1 genera impresiones, intuiciones e impulsos. S2 monitorea (débilmente) y puede vetar. Cuando S1 encuentra algo que no puede resolver, activa S2. Pero S2 no siempre se activa a tiempo.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">La falla de esta interacción es la raíz de los sesgos: S1 decide rápido, S2 respalda con pereza.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Sustitución de atributos, coherencia asociativa, pereza cognitiva, monitoreo deficiente.</p></div>
+</div>
+</div>
+<!-- Tópico 5 -->
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="font-medium">Aplicaciones prácticas: marketing, finanzas, justicia</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">El marketing explota S1 (imágenes emocionales, precios .99, música). Las malas decisiones financieras son resultado de S1 actuando donde debería hacerlo S2. Los jueces dictan sentencias más severas después de horas de trabajo.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Reconocer cuándo se está explotando el S1 es el primer paso para tomar mejores decisiones.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Priming, framing, fatiga decisoria, nudge (introducción).</p></div>
+</div>
+</div>
+<!-- Tópico 6 -->
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="font-medium">Daniel Kahneman: vida, obra y Nobel</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Kahneman, psicólogo israelí-estadounidense, recibió el Nobel de Economía en 2002 por demostrar que los seres humanos no son agentes racionales. Su libro "Pensar rápido, pensar despacio" (2011) sintetiza décadas de investigación con Amos Tversky.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Contextualizar el origen intelectual del modelo dual y entender el impacto académico y práctico de estos descubrimientos.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Psicología económica, Prospect Theory, racionalidad limitada, contribución de Kahneman y Tversky.</p></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-start space-x-3 mt-6">
+<a class="bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-emerald-500/30 transition-colors" href="modulo-1-1.html">Ver completo</a>
+</div>
+</div>
+<!-- MÓDULO 1.2 -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6 sm:p-8 mb-8" id="modulo-1-2">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-sm">1.2</span>
+<div>
+<h3 class="text-xl font-bold">Heurísticas: los atajos que nos engañan</h3>
+<p class="text-neutral-400 text-sm">Kahneman &amp; Tversky · 6 temas</p>
+</div>
+</div>
+<div class="space-y-3">
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="font-medium">Qué son las heurísticas</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Estrategias mentales simplificadas que el cerebro usa para decidir rápidamente en condiciones de incertidumbre. Son adaptaciones evolutivas, no "bugs".</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Son el puente entre S1 (que opera mediante atajos) y los sesgos (que son atajos aplicados en contextos equivocados).</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Heurísticas adaptativas, racionalidad ecológica, Gigerenzer vs. Kahneman.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="font-medium">Heurística de disponibilidad</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Estimamos la probabilidad de algo según la facilidad con que nos vienen ejemplos a la mente. Después de noticias sobre tiburones, sobrestimamos los ataques (los rayos matan a más personas). Las redes sociales explotan esto.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Los gobiernos, los medios y las plataformas manipulan la disponibilidad para distorsionar la percepción del riesgo.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Fluidez de recuperación, sesgo de saliencia, miedo desproporcionado, medios como amplificadores.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="font-medium">Heurística de representatividad</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Clasificamos según el parecido con un prototipo e ignoramos las estadísticas. «Steve, tímido y organizado» parece bibliotecario, pero hay más agricultores en el mundo.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Hace sobreestimar los estereotipos e ignorar las tasas base, lo que genera prejuicios y juicios erróneos.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Descuido de la tasa base, falacia de la conjunción, problema de Linda, estereotipación.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="font-medium">Heurística de anclaje</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">El primer número que vemos sirve de ancla para todas las evaluaciones posteriores. Experimento de la ruleta: quienes obtuvieron 10 estimaron que había 25 países africanos en la ONU; quienes obtuvieron 65 estimaron 45.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Negociaciones, precios, salarios: quien ancla primero controla el desenlace.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Efecto ancla, ajuste insuficiente, precio señuelo, primera oferta.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="font-medium">Heurística del afecto</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Juzgamos los riesgos y beneficios basándonos en sentimientos, no en datos. Si algo nos parece bueno, minimizamos los riesgos. Si parece malo, maximizamos los peligros.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Explica las decisiones de inversión, el apoyo a políticas públicas y la aceptación de tecnologías basadas en "gut feeling".</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Affect heuristic, evaluación emocional, riesgo percibido vs. real, Paul Slovic.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="font-medium">Cuándo funcionan las heurísticas (y cuándo fallan)</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Las heurísticas son eficientes en entornos estables y familiares (un bombero experimentado «siente» el peligro). Fallan en entornos complejos, nuevos o con retroalimentación tardía (mercado financiero, política).</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Saber distinguir los contextos adecuados de los inadecuados para las heurísticas es la metacognición que separa las buenas decisiones de las pésimas.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Entornos de alta y baja validez, intuición de expertos, ciclos de retroalimentación, deliberación estratégica.</p></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-start space-x-3 mt-6">
+<a class="bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-emerald-500/30 transition-colors" href="modulo-1-2.html">Ver completo</a>
+</div>
+</div>
+<!-- MÓDULO 1.3 -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6 sm:p-8 mb-8" id="modulo-1-3">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-sm">1.3</span>
+<div>
+<h3 class="text-xl font-bold">Sesgos cognitivos: el mapa de los errores sistemáticos</h3>
+<p class="text-neutral-400 text-sm">Kahneman, Dunning, Kruger · 6 temas</p>
+</div>
+</div>
+<div class="space-y-3">
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="font-medium">Qué son los sesgos cognitivos</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Patrones sistemáticos de desviación de la racionalidad. No son aleatorios: son predecibles, universales y persistentes incluso cuando conocemos su existencia.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Mapear los sesgos es el primer paso para construir contramedidas (debiasing).</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Sesgo frente al ruido, error sistemático, taxonomía de sesgos, códice de sesgos cognitivos.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="font-medium">Sesgo de confirmación</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Buscar, interpretar y recordar solo lo que confirma las creencias existentes. El cerebro activa dopamina cuando hay confirmación; la disonancia genera incomodidad, que evitamos.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Los algoritmos de las redes sociales amplifican el sesgo de confirmación y crean burbujas epistémicas (Bruzzo).</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Exposición selectiva, interpretación selectiva, memoria selectiva, burbujas de filtro.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="font-medium">Efecto halo</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Una característica positiva (belleza, estatus) contamina la percepción de todas las demás. Los textos se evaluaron como más inteligentes cuando la foto del autor era atractiva.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Afecta las contrataciones, las elecciones, los juicios legales y la evaluación de productos.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Efecto halo, efecto cuerno (inverso), primera impresión, atribución de competencia.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="font-medium">Efecto Dunning-Kruger</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Quien sabe poco sobreestima su competencia; quien sabe mucho la subestima. La incompetencia perjudica la metacognición. Russell: "idiotas llenos de certeza, inteligentes llenos de dudas".</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Las redes sociales dieron un megáfono a la etapa de máxima confianza con mínima competencia.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Metacognición, 4 etapas de competencia, ilusión de superioridad, calibración.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="font-medium">Sesgo de anclaje y encuadre</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">La misma información lleva a decisiones opuestas según cómo se presente. «90% de supervivencia» suena mejor que «10% de mortalidad», aunque sean expresiones idénticas.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">El framing es una de las herramientas de manipulación más poderosas, utilizada por políticos, vendedores y algoritmos.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Framing positivo/negativo, sesgo de opción predeterminada, opción de salida, arquitectura de la información.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="font-medium">Sesgos y tecnología: algoritmos como amplificadores</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Los algoritmos de recomendación intensifican los sesgos existentes al crear burbujas epistémicas. Bruzzo: las plataformas no crean sesgos, pero los convierten en infraestructura permanente.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">La convergencia entre los sesgos cognitivos y la tecnología es el tema central de este curso y de la Trilha 6.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Filter bubbles, echo chambers, feedback loops algorítmicos, polarización digital.</p></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-start space-x-3 mt-6">
+<a class="bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-emerald-500/30 transition-colors" href="modulo-1-3.html">Ver completo</a>
+</div>
+</div>
+<!-- MÓDULO 1.4 -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6 sm:p-8 mb-8" id="modulo-1-4">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-sm">1.4</span>
+<div>
+<h3 class="text-xl font-bold">Disonancia cognitiva y cambio de comportamiento</h3>
+<p class="text-neutral-400 text-sm">Leon Festinger (1957) · 6 temas</p>
+</div>
+</div>
+<div class="space-y-3">
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="font-medium">Qué es la disonancia cognitiva</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Estado de malestar psicológico cuando las creencias, actitudes o comportamientos entran en contradicción. Festinger (1957) mostró que los seres humanos están motivados a reducir esa tensión interna.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">La disonancia es el motor oculto detrás de la racionalización, la negación y la resistencia al cambio.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Disonancia, consistencia cognitiva, motivación para el equilibrio, tensión psicológica.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="font-medium">Mecanismos de reducción de la disonancia</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">4 estrategias: cambiar el comportamiento, cambiar la creencia, agregar cognición reconciliadora o reducir la importancia percibida del conflicto.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Saber cómo el cerebro «resuelve» las contradicciones revela por qué las personas racionalizan en vez de cambiar.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Racionalización, minimización, reconciliación, cambio de actitud.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="font-medium">El experimento clásico de Festinger ($1 frente a $20)</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Los participantes a quienes se les pagó $1 para mentir ("la tarea fue divertida") cambiaron genuinamente de opinión; quienes recibieron $20, no. Con $1, la disonancia era insoportable: "mentí por casi nada" los obligó a cambiar de creencia.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Demuestra la paradoja: las recompensas MENORES generan MÁS cambio de actitud.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Justificación insuficiente, internalización, paradigma de la complacencia inducida.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="font-medium">Disonancia y cambio de comportamiento</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Informar sobre los riesgos fracasa porque activa defensas contra la disonancia. Estrategias eficaces: compromiso público, pequeños pasos, cambio de identidad ("soy saludable" en lugar de "estoy intentando dejar de fumar").</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Para persuadir de verdad, hay que entender que el camino no es la información, sino la identidad.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Identidad narrativa, pie en la puerta, compromiso público, microhábitos.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="font-medium">Disonancia y política</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Los seguidores de líderes rara vez cambian de opinión ante los escándalos: racionalizan, minimizan y deslegitiman las fuentes. Esto explica la resiliencia de las bases políticas frente a evidencias contrarias.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Entender por qué «los hechos no cambian las opiniones» es esencial para una comunicación eficaz y el análisis político.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Efecto backfire, motivación tribal, identidad social, racionalización motivada.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="font-medium">Disonancia, tecnología y burbujas</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Las plataformas digitales reducen la exposición a la disonancia al filtrar contenido disonante. El resultado: las defensas contra la disonancia se vuelven más fuertes y la polarización aumenta.</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Conecta a Festinger (1957) con el debate contemporáneo sobre la polarización algorítmica (Bruzzo, Sunstein).</p></div>
+<div><h4 class="text-sm font-semibold text-emerald-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Burbuja de filtro, cámara de eco, algoritmo de comodidad, polarización asimétrica.</p></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-start space-x-3 mt-6">
+<a class="bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-emerald-500/30 transition-colors" href="modulo-1-4.html">Ver completo</a>
+</div>
+</div>
+<!-- NAVEGAÇÃO INFERIOR -->
+<div class="flex items-center justify-between mt-12 pt-8 border-t border-dark-700">
+<a class="text-neutral-400 hover:text-emerald-400 transition-colors text-sm font-medium" href="../../index.html">← Volver al curso</a>
+<a class="text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium" href="../trilha2/index.html">Ruta 2: Influencia social →</a>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="border-t border-dark-700 py-8">
+<div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500">
+<a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mente, Poder e Máquina · 2026
+  </div>
+</footer>
+<script>
+function toggleTheme() {
+  var html = document.documentElement;
+  html.classList.toggle('dark');
+  var isDark = html.classList.contains('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  html.style.colorScheme = isDark ? 'dark' : 'light';
+  try { var p = JSON.parse(localStorage.getItem('inema.prefs') || '{}'); p.theme = isDark ? 'inema-dark' : 'claro'; localStorage.setItem('inema.prefs', JSON.stringify(p)); } catch(e){}
+}
+function toggleTopic(btn) {
+  var exp = btn.nextElementSibling;
+  exp.classList.toggle('active');
+  var isOpen = exp.classList.contains('active');
+  btn.setAttribute('aria-expanded', isOpen);
+}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

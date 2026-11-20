@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>Module 2.2 — Obedience to Authority: The Milgram Experiment — MPC</title>
+<!-- Anti-FOUC (PRIMEIRO) -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "neurociencia-comportamento",
+  "tracks": [
+    {"n":"1","title":"O Cérebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heurísticas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonância cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},
+    {"n":"2","title":"Influência Social e Poder do Grupo","modules":[{"id":"2-1","title":"Conformidade: por que seguimos o grupo","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência à autoridade","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulação social e dark patterns","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},
+    {"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina e sistema de recompensa","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala, medo e decisão emocional","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},
+    {"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"A crítica ao Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},
+    {"n":"5","title":"Filosofia da Mente e Consciência","modules":[{"id":"5-1","title":"Livre-arbítrio: Libet","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciência: o problema difícil","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiótica da mente: Bruzzo","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},
+    {"n":"6","title":"IA, Vieses e Ética Comportamental","modules":[{"id":"6-1","title":"Vieses algorítmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistêmicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Ética, tecnologia e o espaço humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}
+  ]
+}
+</script>
+<style>
+body { font-family: 'Inter', system-ui, sans-serif; }
+.topic-explanation { display: none; }
+.topic-explanation.active { display: block; }
+html:not(.dark) body { background-color: #f8fafc; }
+html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+html:not(.dark) .text-neutral-100 { color: #111827; }
+html:not(.dark) .text-neutral-300 { color: #4b5563; }
+html:not(.dark) .text-neutral-400 { color: #6b7280; }
+html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+html:not(.dark) .text-blue-400 { color: #2563eb; }
+html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,0.12); }
+html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+html:not(.dark) .text-primary { color: #a16207; }
+html:not(.dark) .text-sky-400 { color: #0369a1; }
+html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+html:not(.dark) .text-emerald-400 { color: #059669; }
+html:not(.dark) .text-purple-400 { color: #7c3aed; }
+html:not(.dark) .text-amber-400 { color: #92400e; }
+html:not(.dark) .text-teal-400 { color: #0d9488; }
+html:not(.dark) .text-rose-400 { color: #9f1239; }
+html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+html:not(.dark) .hover\:bg-amber-500\/10:hover { background-color: rgba(217,119,6,0.08); }
+html:not(.dark) .hover\:bg-teal-500\/10:hover { background-color: rgba(13,148,136,0.08); }
+html:not(.dark) .hover\:bg-rose-500\/10:hover { background-color: rgba(225,29,72,0.08); }
+html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+.dark .border-dark-600 { border-color: #374151; }
+.dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha2/modulo-2-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha2/modulo-2-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha2/modulo-2-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Brain</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-blue-400 bg-blue-500/10" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economics</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Philosophy</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 AI+Ethics</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()" title="Switch theme">
+<span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="2-2">
+<!-- BREADCRUMB -->
+<nav class="mb-8 text-sm text-neutral-500">
+<a class="hover:text-blue-400 transition-colors" href="../../index.html">Start</a>
+<span class="mx-2">/</span>
+<a class="hover:text-blue-400 transition-colors" href="index.html">Track 2</a>
+<span class="mx-2">/</span>
+<span class="text-blue-400">Module 2.2</span>
+</nav>
+<!-- HEADER -->
+<header class="mb-12">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold text-lg">2.2</span>
+<span class="text-xs text-blue-400 font-mono bg-blue-500/20 border border-blue-500/30 rounded-full px-3 py-1">TRACK 2 · MODULE 2</span>
+</div>
+<h1 class="text-3xl md:text-4xl font-extrabold mb-4 leading-tight">Obedience to Authority: The Milgram Experiment</h1>
+<p class="text-lg text-neutral-300 max-w-3xl">In 1963, Stanley Milgram showed that ordinary people obey authority figures even when it means causing extreme suffering to another human being. 65% of participants went all the way to the maximum shock of 450 volts.</p>
+</header>
+<!-- ============================================================ -->
+<!-- TÓPICO 1: O Experimento de Milgram (1963) -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-2#topico-1">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">1</span>
+<span class="text-lg font-semibold">The Milgram Experiment (1963)</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">Stanley Milgram, a social psychologist at Yale, was intrigued by a question that haunted the post-Holocaust world: how did ordinary people manage to take part in atrocities? His answer was an experiment that would become one of psychology’s most famous and controversial.</p>
+<p class="text-neutral-300 leading-relaxed">The design was apparently simple. The participant (the "teacher") was instructed by a researcher in a white lab coat to administer increasingly strong electric shocks to another "participant" (actually an actor) each time he got a memory question wrong. The shocks ranged from 15 to 450 volts, in 15-volt increments. The labels on the panel ranged from "Mild Shock" to "XXX" (along with "Danger: Severe Shock").</p>
+<!-- SVG: Diagrama hierárquico autoridade → instrução → participante → vítima -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-4">DIAGRAM: Milgram's Obedience Chain</h4>
+<svg aria-label="Hierarchical diagram: authority gives an instruction to the participant, who administers a shock to the victim" class="w-full h-auto" role="img" viewbox="0 0 700 300">
+<defs>
+<filter id="m22-glow"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="m22-arrow" markerheight="6" markerwidth="8" orient="auto" refx="8" refy="3"><path d="M0,0 L8,3 L0,6" fill="#60a5fa"></path></marker>
+<marker id="m22-arrow-red" markerheight="6" markerwidth="8" orient="auto" refx="8" refy="3"><path d="M0,0 L8,3 L0,6" fill="#f87171"></path></marker>
+</defs>
+<rect fill="#0e1622" height="300" rx="12" width="700"></rect>
+<!-- Autoridade -->
+<rect fill="#1e3a5f" filter="url(#m22-glow)" height="80" rx="10" stroke="#3b82f6" stroke-width="2" width="140" x="40" y="30"></rect>
+<text fill="#60a5fa" font-size="11" font-weight="700" text-anchor="middle" x="110" y="60">AUTHORITY</text>
+<text fill="#93c5fd" font-size="9" text-anchor="middle" x="110" y="78">Researcher</text>
+<text fill="#93c5fd" font-size="9" text-anchor="middle" x="110" y="92">white lab coat</text>
+<!-- Seta Autoridade → Instrução -->
+<line marker-end="url(#m22-arrow)" stroke="#60a5fa" stroke-width="2" x1="180" x2="230" y1="70" y2="70"></line>
+<!-- Instrução -->
+<rect fill="none" height="60" rx="8" stroke="#38bdf8" stroke-width="1.5" width="130" x="235" y="40"></rect>
+<text fill="#38bdf8" font-size="10" font-weight="600" text-anchor="middle" x="300" y="65">"Continue."</text>
+<text fill="#7dd3fc" font-size="9" text-anchor="middle" x="300" y="80">"The experiment requires it."</text>
+<!-- Seta Instrução → Participante -->
+<line marker-end="url(#m22-arrow)" stroke="#60a5fa" stroke-width="2" x1="365" x2="415" y1="70" y2="70"></line>
+<!-- Participante -->
+<rect fill="#1e3a5f" height="80" rx="10" stroke="#3b82f6" stroke-width="2" width="120" x="420" y="30"></rect>
+<text fill="#60a5fa" font-size="11" font-weight="700" text-anchor="middle" x="480" y="60">PARTICIPANT</text>
+<text fill="#93c5fd" font-size="9" text-anchor="middle" x="480" y="78">"Professor"</text>
+<text fill="#93c5fd" font-size="9" text-anchor="middle" x="480" y="92">ordinary person</text>
+<!-- Seta Participante → Vítima -->
+<line stroke="#f87171" stroke-width="2" x1="540" x2="570" y1="70" y2="70"></line>
+<line stroke="#f87171" stroke-width="2" x1="570" x2="570" y1="70" y2="160"></line>
+<line marker-end="url(#m22-arrow-red)" stroke="#f87171" stroke-width="2" x1="570" x2="540" y1="160" y2="160"></line>
+<!-- Vítima -->
+<rect fill="#2d1a1a" height="70" rx="10" stroke="#f87171" stroke-width="2" width="140" x="400" y="130"></rect>
+<text fill="#f87171" font-size="11" font-weight="700" text-anchor="middle" x="470" y="155">VICTIM (actor)</text>
+<text fill="#fca5a5" font-size="9" text-anchor="middle" x="470" y="172">shouts, pleas</text>
+<text fill="#fca5a5" font-size="9" text-anchor="middle" x="470" y="186">silence at 330V+</text>
+<!-- Painel de choques -->
+<rect fill="none" height="120" rx="10" stroke="#374151" stroke-width="1.5" width="300" x="40" y="150"></rect>
+<text fill="#9ca3af" font-size="11" font-weight="700" text-anchor="middle" x="190" y="172">SHOCK PANEL</text>
+<!-- Barra de voltagem -->
+<rect fill="#1a1a2e" height="16" rx="4" width="260" x="60" y="188"></rect>
+<rect fill="#22c55e" height="16" rx="4" width="65" x="60" y="188"></rect>
+<rect fill="#eab308" height="16" width="65" x="125" y="188"></rect>
+<rect fill="#f97316" height="16" width="65" x="190" y="188"></rect>
+<rect fill="#ef4444" height="16" rx="0 4 4 0" width="65" x="255" y="188"></rect>
+<text fill="#0e1622" font-size="7" font-weight="700" text-anchor="middle" x="92" y="199">15V</text>
+<text fill="#0e1622" font-size="7" font-weight="700" text-anchor="middle" x="157" y="199">150V</text>
+<text fill="#0e1622" font-size="7" font-weight="700" text-anchor="middle" x="222" y="199">300V</text>
+<text fill="#fff" font-size="7" font-weight="700" text-anchor="middle" x="287" y="199">450V</text>
+<text fill="#6b7280" font-size="8" x="60" y="225">Mild</text>
+<text fill="#6b7280" font-size="8" x="170" y="225">Intense</text>
+<text fill="#ef4444" font-size="8" font-weight="700" x="265" y="225">XXX</text>
+<!-- Percentual -->
+<text fill="#9ca3af" font-size="9" x="60" y="255">Participants who administered the maximum shock:</text>
+<text fill="#f87171" font-size="16" font-weight="800" x="280" y="255">65%</text>
+</svg>
+</div>
+<p class="text-neutral-300 leading-relaxed">The actor never received real shocks. But his reactions were carefully staged: at 75 volts, he groaned; at 150, he asked to stop; at 300, he banged on the wall and refused to respond; at 330 volts and above, he fell completely silent. Even in the face of that silence, when the researcher said "please continue, the experiment requires you to continue," 65% of participants went up to 450 volts.</p>
+<!-- Tip box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5">
+<div class="flex items-start space-x-3">
+<span class="text-blue-400 text-lg mt-0.5">i</span>
+<div>
+<p class="text-blue-400 font-semibold text-sm mb-1">The prediction shock</p>
+<p class="text-neutral-300 text-sm">Before the experiment, Milgram asked 40 psychiatrists what they expected. They predicted that less than 1% would go up to 450 volts. The actual rate was 65%. Obedience far exceeds what anyone, including experts, predicts.</p>
+</div>
+</div>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Agentic state</p>
+<p class="text-neutral-400 text-xs">Person sees themselves as someone else’s instrument and transfers responsibility</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Gradual increase</p>
+<p class="text-neutral-400 text-xs">Each step is just 15V more, making escalation easier</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Destructive obedience</p>
+<p class="text-neutral-400 text-xs">Following orders that harm others</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- TÓPICO 2: Por que Obedecemos -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-2#topico-2">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">2</span>
+<span class="text-lg font-semibold">Why We Obey: Distance, Legitimacy, and Moral Disengagement</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">Milgram conducted 19 variations of the original experiment to understand the factors that increase or reduce obedience. The results revealed that obedience is not a fixed personality trait, but rather a behavior shaped by situational variables.</p>
+<!-- Timeline -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-6">VARIATIONS AND OBEDIENCE RATES</h4>
+<div class="space-y-6 border-l-2 border-blue-500/30 pl-6 ml-3">
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">REMOTE PROXIMITY</p>
+<p class="text-sm font-semibold mb-1">Victim in another room, no sound</p>
+<p class="text-neutral-400 text-sm">Obedience: 65%. Without sensory feedback, the victim is abstract. Psychological distance suppresses empathy.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">VOCAL PROXIMITY</p>
+<p class="text-sm font-semibold mb-1">Victim heard (screams, pleas)</p>
+<p class="text-neutral-400 text-sm">Obedience: 62.5%. The screams were disturbing, but most still continued. The authority figure’s presence was stronger than the distant screams.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">PHYSICAL PROXIMITY</p>
+<p class="text-sm font-semibold mb-1">Victim in the same room</p>
+<p class="text-neutral-400 text-sm">Obedience: 40%. Seeing the pain reduced obedience, but 4 in 10 still went all the way.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">DIRECT TOUCH</p>
+<p class="text-sm font-semibold mb-1">Participant forced the victim's hand onto the plate</p>
+<p class="text-neutral-400 text-sm">Obedience: 30%. Direct physical contact reduces obedience the most. Even so, nearly 1 in 3 obeyed.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">ABSENT AUTHORITY</p>
+<p class="text-sm font-semibold mb-1">Researcher gave instructions over the phone</p>
+<p class="text-neutral-400 text-sm">Obedience: 21%. The authority figure’s physical presence is crucial. Over the phone, many participants lied and said they were continuing.</p>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 leading-relaxed">The pattern is clear: the closer the victim is (and the farther away the authority is), the lower the obedience. But the perceived legitimacy of the authority is just as powerful. When the experiment was conducted at Yale (vs. an anonymous office), obedience was higher. The white coat, the professional tone, the institutional setting: all of this creates a perception of legitimate authority that suppresses moral resistance.</p>
+<!-- Certo/Errado Grid -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-4">FACTORS THAT MODULATE OBEDIENCE</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-3">
+<p class="text-sm font-semibold text-emerald-400 mb-2">Increase obedience</p>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">Victim distance</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">Physical presence of authority</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">Institutional legitimacy (Yale, lab coat)</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">Gradual increase (15V at a time)</span>
+</div>
+</div>
+<div class="space-y-3">
+<p class="text-sm font-semibold text-red-400 mb-2">Reduce obedience</p>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Physical proximity to the victim</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Authority giving orders from a distance</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Noninstitutional setting</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Presence of dissenters</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Psychological distance</p>
+<p class="text-neutral-400 text-xs">The less “real” the victim seems, the easier it is to obey</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Perceived legitimacy</p>
+<p class="text-neutral-400 text-xs">Authority symbols (lab coat, institution) suppress resistance</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Moral disengagement</p>
+<p class="text-neutral-400 text-xs">Mechanisms that allow harm to be caused without feeling guilt</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- TÓPICO 3: O Poder da Resistência Coletiva -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-2#topico-3">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">3</span>
+<span class="text-lg font-semibold">The Power of Collective Resistance</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">The most hopeful variation of Milgram’s experiment involved two actors who served as “teachers” alongside the real participant. All three were supposed to administer shocks together. At one point, the first actor refused to continue. Then the second also refused. The real participant was left alone with the researcher.</p>
+<p class="text-neutral-300 leading-relaxed">The result is extraordinary: when two “teachers” refused before the participant did, obedience plummeted from 65% to just 10%. The presence of people who resist completely changes the social calculus. Collective resistance is not merely additive: it transforms the dynamic.</p>
+<!-- Certo/Errado Grid -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-4">WITH RESISTORS vs. WITHOUT RESISTORS</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-red-400 font-semibold text-sm mb-3">No resisters (baseline)</p>
+<div class="space-y-2">
+<div class="flex items-start space-x-2"><span class="text-red-400">✗</span><span class="text-neutral-300 text-sm">Participant alone with an authority figure</span></div>
+<div class="flex items-start space-x-2"><span class="text-red-400">✗</span><span class="text-neutral-300 text-sm">No model of disobedience</span></div>
+<div class="flex items-start space-x-2"><span class="text-red-400">✗</span><span class="text-neutral-300 text-sm">65% go up to 450V</span></div>
+<div class="flex items-start space-x-2"><span class="text-red-400">✗</span><span class="text-neutral-300 text-sm">Disobeying = being "the different one"</span></div>
+</div>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-emerald-400 font-semibold text-sm mb-3">With 2 dissenters</p>
+<div class="space-y-2">
+<div class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span class="text-neutral-300 text-sm">Two models of disobedience</span></div>
+<div class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span class="text-neutral-300 text-sm">Social "permission" to refuse</span></div>
+<div class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span class="text-neutral-300 text-sm">Only 10% go up to 450V</span></div>
+<div class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span class="text-neutral-300 text-sm">Disobeying = following the majority</span></div>
+</div>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 leading-relaxed">This echoes Asch's variation with the ally: a single dissenter who breaks unanimity frees others to resist. Obedience and conformity share the same vulnerability: they depend on unanimity. Break the unanimity, and the system collapses.</p>
+<!-- Tip box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5">
+<div class="flex items-start space-x-3">
+<span class="text-blue-400 text-lg mt-0.5">!</span>
+<div>
+<p class="text-blue-400 font-semibold text-sm mb-1">The lesson for organizations</p>
+<p class="text-neutral-300 text-sm">Anonymous reporting channels, protection for whistleblowers, and cultures that celebrate (instead of punish) constructive dissent work because they create "resisters" within the system. An organization that silences dissenters removes the natural protection against destructive obedience.</p>
+</div>
+</div>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Modeled resistance</p>
+<p class="text-neutral-400 text-xs">Seeing others resist gives you “social permission” to disobey</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Breaking unanimity</p>
+<p class="text-neutral-400 text-xs">Obedience depends on no one else resisting</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">From 65% to 10%</p>
+<p class="text-neutral-400 text-xs">Two dissenters reduce obedience by ~85%</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- TÓPICO 4: Obediência e Golpes Digitais -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-2#topico-4">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">4</span>
+<span class="text-lg font-semibold">Obedience and Digital Scams</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">The most effective digital scams do not exploit technical flaws. They exploit the psychology of obedience. The pattern is consistent: an authority figure (a bank, government, Receita Federal, or police) issues an urgent instruction that requires immediate action. The victim obeys before thinking critically, just like Milgram’s participants.</p>
+<!-- Certo/Errado Grid -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-4">MILGRAM IN THE LAB vs. MILGRAM ON THE PHONE</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-neutral-300 font-semibold text-sm mb-3">Milgram (1963)</p>
+<div class="space-y-2">
+<div class="flex items-start space-x-2"><span class="text-blue-400">•</span><span class="text-neutral-300 text-sm">Researcher in a white lab coat</span></div>
+<div class="flex items-start space-x-2"><span class="text-blue-400">•</span><span class="text-neutral-300 text-sm">Laboratory setting at Yale</span></div>
+<div class="flex items-start space-x-2"><span class="text-blue-400">•</span><span class="text-neutral-300 text-sm">"Continue, the experiment requires it"</span></div>
+<div class="flex items-start space-x-2"><span class="text-blue-400">•</span><span class="text-neutral-300 text-sm">Gradual in-person pressure</span></div>
+</div>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-neutral-300 font-semibold text-sm mb-3">Digital scam (2020s)</p>
+<div class="space-y-2">
+<div class="flex items-start space-x-2"><span class="text-blue-400">•</span><span class="text-neutral-300 text-sm">Bank or Federal Revenue Service logo</span></div>
+<div class="flex items-start space-x-2"><span class="text-blue-400">•</span><span class="text-neutral-300 text-sm">Interface identical to the official website</span></div>
+<div class="flex items-start space-x-2"><span class="text-blue-400">•</span><span class="text-neutral-300 text-sm">"Your account will be blocked in 24h"</span></div>
+<div class="flex items-start space-x-2"><span class="text-blue-400">•</span><span class="text-neutral-300 text-sm">Artificial urgency + malicious link</span></div>
+</div>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 leading-relaxed">The elements are the same: perceived legitimacy (logos, formal language, domains that look official), urgency (a short deadline, a threat of consequences), and a specific request for action (click, transfer money, provide data). Urgency is especially effective because it activates System 1, preventing System 2 from conducting critical analysis.</p>
+<!-- Tip box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5">
+<div class="flex items-start space-x-3">
+<span class="text-blue-400 text-lg mt-0.5">!</span>
+<div>
+<p class="text-blue-400 font-semibold text-sm mb-1">Defense: the 5-minute rule</p>
+<p class="text-neutral-300 text-sm">Milgram showed that urgency is authority's weapon. Any message demanding immediate action deserves exactly the opposite: a pause. Wait 5 minutes. Verify through another channel (call the bank, visit the official website by typing the URL). If the threat is real, 5 minutes won't change anything. If it's a scam, those 5 minutes can save everything.</p>
+</div>
+</div>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Social engineering</p>
+<p class="text-neutral-400 text-xs">Manipulate people through authority and urgency, not code</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Urgency as a weapon</p>
+<p class="text-neutral-400 text-xs">Short deadlines prevent critical analysis by System 2</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Authority spoofing</p>
+<p class="text-neutral-400 text-xs">Imitate signs of legitimacy (logos, domains, language)</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- TÓPICO 5: Obediência Organizacional -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-2#topico-5">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">5</span>
+<span class="text-lg font-semibold">Organizational Obedience: Hierarchy and Unethical Decisions</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">The Milgram experiment is more than a chapter in the history of psychology. It precisely describes how organizational hierarchies produce unethical decisions in everyday life. Enron, Volkswagen (Dieselgate), Boeing (737 MAX): in every case, ordinary people carried out instructions they knew were wrong because the order came "from above".</p>
+<p class="text-neutral-300 leading-relaxed">Corporate structures amplify the same mechanisms as Milgram’s experiments. The chain of command diffuses responsibility (each link says, "I was just doing what I was told"). Specialization fragments the view (each person sees only their piece, not the total harm). And in crises, urgency suppresses dissent: "we don’t have time to question this; we need to act."</p>
+<!-- Timeline: Casos reais -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-6">MILGRAM IN ORGANIZATIONS: REAL CASES</h4>
+<div class="space-y-6 border-l-2 border-blue-500/30 pl-6 ml-3">
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">2001</p>
+<p class="text-sm font-semibold mb-1">Enron</p>
+<p class="text-neutral-400 text-sm">Employees manipulated the accounting at senior management's direction. Many knew it was fraud. No one challenged the authority of Kenneth Lay and Jeffrey Skilling.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">2015</p>
+<p class="text-sm font-semibold mb-1">Volkswagen (Dieselgate)</p>
+<p class="text-neutral-400 text-sm">Engineers implemented software to cheat emissions tests. The order came from the top. Engineers obeyed even though they knew it was illegal.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">2018-2019</p>
+<p class="text-sm font-semibold mb-1">Boeing 737 MAX</p>
+<p class="text-neutral-400 text-sm">Engineers reported problems with MCAS. Management prioritized the schedule over safety. 346 deaths in two crashes. The hierarchy silenced warnings.</p>
+</div>
+</div>
+</div>
+<!-- Concept box -->
+<div class="bg-dark-800 border border-blue-500/30 rounded-xl p-5">
+<p class="text-blue-400 text-xs font-mono mb-2">KEY MECHANISM</p>
+<p class="text-neutral-300 text-sm leading-relaxed">Crises increase submission because they activate survival mode (System 1): the brain seeks a leader, reduces critical thinking, and prioritizes quick action over analysis. Milgram demonstrated this in the lab; corporate history demonstrates it in the real world.</p>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Diffusion of responsibility</p>
+<p class="text-neutral-400 text-xs">Chain of command diffuses individual blame</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Moral fragmentation</p>
+<p class="text-neutral-400 text-xs">Each person does "just their part" without seeing the total harm</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Crisis obedience</p>
+<p class="text-neutral-400 text-xs">Urgency suppresses dissent and amplifies submission</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- TÓPICO 6: Ética do Experimento e Lições -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-2#topico-6">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">6</span>
+<span class="text-lg font-semibold">Ethics of Experimentation and Lessons on Human Nature</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">The Milgram experiment sparked one of the greatest ethical controversies in the history of psychological research. In 1964, Diana Baumrind published a devastating critique: participants experienced extreme stress, some trembled uncontrollably, and they had not given informed consent for the actual experiment (they believed they were administering real shocks). Milgram deceived them, and the debriefing afterward did not necessarily erase the trauma of discovering they were capable of obeying to that extent.</p>
+<!-- Certo/Errado Grid -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-4">ETHICAL ARGUMENTS</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-3">
+<p class="text-sm font-semibold text-emerald-400 mb-2">In favor of the experiment</p>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">Revealed a fundamental truth about human behavior</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">84% of participants were "glad" to have taken part</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">Impossible to obtain results any other way</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">Transformed ethics into a field of research forever</span>
+</div>
+</div>
+<div class="space-y-3">
+<p class="text-sm font-semibold text-red-400 mb-2">Against the experiment</p>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Participants did not give informed consent</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Extreme stress: trembling, crying, seizures</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Potentially lasting psychological damage</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Deliberate deception violates participant autonomy</span>
+</div>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 leading-relaxed">Ironically, Milgram's experiment directly contributed to the creation of research ethics committees (IRBs in the U.S., CEPs in Brazil). Today, a study like Milgram's would never be approved. But the paradox remains: we discovered the depth of human obedience only because the study was conducted in a way we now consider unethical.</p>
+<!-- Tip box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5">
+<div class="flex items-start space-x-3">
+<span class="text-blue-400 text-lg mt-0.5">i</span>
+<div>
+<p class="text-blue-400 font-semibold text-sm mb-1">Milgram's central lesson</p>
+<p class="text-neutral-300 text-sm">Evil doesn't require evil people. It requires ordinary people in systems that distribute responsibility, legitimize authority, and isolate the victim. Destructive obedience is not about who we are, but about the system we're part of. Knowing this is the first line of defense.</p>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 leading-relaxed">While covering Adolf Eichmann’s trial in Jerusalem, Hannah Arendt coined the term “banality of evil”: the idea that major atrocities don’t require monsters, only obedient bureaucrats. Milgram provided empirical support for this idea. Destructive obedience is not a personality trait. It is a situational response to which we are all vulnerable.</p>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Banality of evil</p>
+<p class="text-neutral-400 text-xs">Major atrocities committed by ordinary people in obedient systems</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Informed consent</p>
+<p class="text-neutral-400 text-xs">Participants must know what they will experience before agreeing</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Situationism</p>
+<p class="text-neutral-400 text-xs">Behavior determined by context, not personality</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- RESUMO -->
+<!-- ============================================================ -->
+<section class="mb-12">
+<div class="bg-gradient-to-r from-blue-900/30 to-transparent rounded-xl p-6 md:p-8 border border-blue-500/30">
+<h2 class="text-xl font-bold mb-4 text-blue-400">Module 2.2 Summary</h2>
+<div class="space-y-3 text-neutral-300 text-sm leading-relaxed">
+<p>Milgram demonstrated that 65% of ordinary people obey an authority figure to the point of causing extreme harm to another human being. Obedience is shaped by the victim's distance, the authority figure's physical presence, and perceived legitimacy (lab coat, institution). Collective resistance is the most powerful defense: when two others refuse, obedience drops from 65% to 10%. Digital scams and corporate hierarchies exploit exactly the same mechanisms. The central lesson: evil doesn't require monsters; it requires systems that distribute responsibility and legitimize authority. Knowing this is the first line of defense.</p>
+</div>
+</div>
+</section>
+<!-- NAV MÓDULOS -->
+<section>
+<div class="flex justify-between items-center">
+<a class="flex items-center space-x-2 text-neutral-400 hover:text-blue-400 transition-colors" href="modulo-2-1.html">
+<span>←</span>
+<span>Module 2.1: Conformity</span>
+</a>
+<a class="flex items-center space-x-2 text-neutral-400 hover:text-blue-400 transition-colors" href="modulo-2-3.html">
+<span>Module 2.3: Social Manipulation</span>
+<span>→</span>
+</a>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="border-t border-dark-700 py-8">
+<div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500">
+<a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mind, Power and Machine · 2026
+  </div>
+</footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

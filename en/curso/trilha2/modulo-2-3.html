@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>Module 2.3 — Social Manipulation: Influence, Persuasion, and Dark Patterns — MPC</title>
+<!-- Anti-FOUC (PRIMEIRO) -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "neurociencia-comportamento",
+  "tracks": [
+    {"n":"1","title":"O Cérebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heurísticas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonância cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},
+    {"n":"2","title":"Influência Social e Poder do Grupo","modules":[{"id":"2-1","title":"Conformidade: por que seguimos o grupo","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência à autoridade","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulação social e dark patterns","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},
+    {"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina e sistema de recompensa","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala, medo e decisão emocional","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},
+    {"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"A crítica ao Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},
+    {"n":"5","title":"Filosofia da Mente e Consciência","modules":[{"id":"5-1","title":"Livre-arbítrio: Libet","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciência: o problema difícil","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiótica da mente: Bruzzo","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},
+    {"n":"6","title":"IA, Vieses e Ética Comportamental","modules":[{"id":"6-1","title":"Vieses algorítmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistêmicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Ética, tecnologia e o espaço humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}
+  ]
+}
+</script>
+<style>
+body { font-family: 'Inter', system-ui, sans-serif; }
+.topic-explanation { display: none; }
+.topic-explanation.active { display: block; }
+html:not(.dark) body { background-color: #f8fafc; }
+html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+html:not(.dark) .text-neutral-100 { color: #111827; }
+html:not(.dark) .text-neutral-300 { color: #4b5563; }
+html:not(.dark) .text-neutral-400 { color: #6b7280; }
+html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+html:not(.dark) .text-blue-400 { color: #2563eb; }
+html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,0.12); }
+html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+html:not(.dark) .text-primary { color: #a16207; }
+html:not(.dark) .text-sky-400 { color: #0369a1; }
+html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+html:not(.dark) .text-emerald-400 { color: #059669; }
+html:not(.dark) .text-purple-400 { color: #7c3aed; }
+html:not(.dark) .text-amber-400 { color: #92400e; }
+html:not(.dark) .text-teal-400 { color: #0d9488; }
+html:not(.dark) .text-rose-400 { color: #9f1239; }
+html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+html:not(.dark) .hover\:bg-amber-500\/10:hover { background-color: rgba(217,119,6,0.08); }
+html:not(.dark) .hover\:bg-teal-500\/10:hover { background-color: rgba(13,148,136,0.08); }
+html:not(.dark) .hover\:bg-rose-500\/10:hover { background-color: rgba(225,29,72,0.08); }
+html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+.dark .border-dark-600 { border-color: #374151; }
+.dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha2/modulo-2-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha2/modulo-2-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha2/modulo-2-3.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Brain</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-blue-400 bg-blue-500/10" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economics</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Philosophy</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 AI+Ethics</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()" title="Switch theme">
+<span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="2-3">
+<!-- BREADCRUMB -->
+<nav class="mb-8 text-sm text-neutral-500">
+<a class="hover:text-blue-400 transition-colors" href="../../index.html">Start</a>
+<span class="mx-2">/</span>
+<a class="hover:text-blue-400 transition-colors" href="index.html">Track 2</a>
+<span class="mx-2">/</span>
+<span class="text-blue-400">Module 2.3</span>
+</nav>
+<!-- HEADER -->
+<header class="mb-12">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold text-lg">2.3</span>
+<span class="text-xs text-blue-400 font-mono bg-blue-500/20 border border-blue-500/30 rounded-full px-3 py-1">TRACK 2 · MODULE 3</span>
+</div>
+<h1 class="text-3xl md:text-4xl font-extrabold mb-4 leading-tight">Social Manipulation: Influence, Persuasion, and Dark Patterns</h1>
+<p class="text-lg text-neutral-300 max-w-3xl">Robert Cialdini identified six universal principles of influence that govern human behavior. When used ethically, they are persuasion. When used to deceive, they are manipulation. The line is thin, and the digital age has nearly erased it.</p>
+</header>
+<!-- ============================================================ -->
+<!-- TÓPICO 1: Os 6 Princípios de Cialdini -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-3#topico-1">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">1</span>
+<span class="text-lg font-semibold">Cialdini’s 6 Principles</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">In 1984, Robert Cialdini published “Influence: The Psychology of Persuasion” after spending three years undercover at car dealerships, telemarketing organizations, and religious cults, observing how persuasion professionals operated. He identified six principles that exploit cognitive shortcuts to gain compliance.</p>
+<!-- SVG: Fan-out dos 6 princípios -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-4">DIAGRAM: Persuasion Strategy and the 6 Principles</h4>
+<svg aria-label="Fan-out: persuasion strategy connects to Cialdini’s 6 principles and generates a manipulated decision" class="w-full h-auto" role="img" viewbox="0 0 700 340">
+<defs>
+<filter id="m23-glow"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="m23-arrow" markerheight="5" markerwidth="7" orient="auto" refx="7" refy="2.5"><path d="M0,0 L7,2.5 L0,5" fill="#60a5fa"></path></marker>
+<marker id="m23-arrow-cyan" markerheight="5" markerwidth="7" orient="auto" refx="7" refy="2.5"><path d="M0,0 L7,2.5 L0,5" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="#0e1622" height="340" rx="12" width="700"></rect>
+<!-- Nó central esquerdo -->
+<rect fill="#1e3a5f" filter="url(#m23-glow)" height="70" rx="10" stroke="#3b82f6" stroke-width="2" width="140" x="20" y="130"></rect>
+<text fill="#60a5fa" font-size="10" font-weight="700" text-anchor="middle" x="90" y="158">STRATEGY OF</text>
+<text fill="#60a5fa" font-size="10" font-weight="700" text-anchor="middle" x="90" y="174">PERSUASION</text>
+<!-- Linhas fan-out -->
+<line marker-end="url(#m23-arrow)" stroke="#60a5fa" stroke-width="1.5" x1="160" x2="230" y1="145" y2="40"></line>
+<line marker-end="url(#m23-arrow)" stroke="#60a5fa" stroke-width="1.5" x1="160" x2="230" y1="155" y2="100"></line>
+<line marker-end="url(#m23-arrow)" stroke="#60a5fa" stroke-width="1.5" x1="160" x2="230" y1="165" y2="160"></line>
+<line marker-end="url(#m23-arrow)" stroke="#60a5fa" stroke-width="1.5" x1="160" x2="230" y1="170" y2="220"></line>
+<line marker-end="url(#m23-arrow)" stroke="#60a5fa" stroke-width="1.5" x1="160" x2="230" y1="180" y2="280"></line>
+<line marker-end="url(#m23-arrow)" stroke="#60a5fa" stroke-width="1.5" x1="160" x2="230" y1="185" y2="320"></line>
+<!-- 6 Princípios (caixas) -->
+<rect fill="#0e1622" height="36" rx="6" stroke="#3b82f6" stroke-width="1.5" width="220" x="235" y="20"></rect>
+<text fill="#60a5fa" font-size="10" font-weight="700" x="250" y="43">1.</text>
+<text fill="#93c5fd" font-size="10" x="268" y="43">Reciprocity</text>
+<rect fill="#0e1622" height="36" rx="6" stroke="#3b82f6" stroke-width="1.5" width="220" x="235" y="80"></rect>
+<text fill="#60a5fa" font-size="10" font-weight="700" x="250" y="103">2.</text>
+<text fill="#93c5fd" font-size="10" x="268" y="103">Commitment / Consistency</text>
+<rect fill="#0e1622" height="36" rx="6" stroke="#3b82f6" stroke-width="1.5" width="220" x="235" y="140"></rect>
+<text fill="#60a5fa" font-size="10" font-weight="700" x="250" y="163">3.</text>
+<text fill="#93c5fd" font-size="10" x="268" y="163">Social Proof</text>
+<rect fill="#0e1622" height="36" rx="6" stroke="#3b82f6" stroke-width="1.5" width="220" x="235" y="200"></rect>
+<text fill="#60a5fa" font-size="10" font-weight="700" x="250" y="223">4.</text>
+<text fill="#93c5fd" font-size="10" x="268" y="223">Authority</text>
+<rect fill="#0e1622" height="36" rx="6" stroke="#3b82f6" stroke-width="1.5" width="220" x="235" y="260"></rect>
+<text fill="#60a5fa" font-size="10" font-weight="700" x="250" y="283">5.</text>
+<text fill="#93c5fd" font-size="10" x="268" y="283">Scarcity</text>
+<rect fill="#0e1622" height="36" rx="6" stroke="#3b82f6" stroke-width="1.5" width="220" x="235" y="300"></rect>
+<text fill="#60a5fa" font-size="10" font-weight="700" x="250" y="323">6.</text>
+<text fill="#93c5fd" font-size="10" x="268" y="323">Liking</text>
+<!-- Linhas convergindo -->
+<line marker-end="url(#m23-arrow-cyan)" stroke="#38bdf8" stroke-width="1.2" x1="455" x2="530" y1="38" y2="155"></line>
+<line marker-end="url(#m23-arrow-cyan)" stroke="#38bdf8" stroke-width="1.2" x1="455" x2="530" y1="98" y2="158"></line>
+<line marker-end="url(#m23-arrow-cyan)" stroke="#38bdf8" stroke-width="1.2" x1="455" x2="530" y1="158" y2="165"></line>
+<line marker-end="url(#m23-arrow-cyan)" stroke="#38bdf8" stroke-width="1.2" x1="455" x2="530" y1="218" y2="170"></line>
+<line marker-end="url(#m23-arrow-cyan)" stroke="#38bdf8" stroke-width="1.2" x1="455" x2="530" y1="278" y2="175"></line>
+<line marker-end="url(#m23-arrow-cyan)" stroke="#38bdf8" stroke-width="1.2" x1="455" x2="530" y1="318" y2="180"></line>
+<!-- Nó direito: decisão manipulada -->
+<rect fill="#1a2a3f" filter="url(#m23-glow)" height="70" rx="10" stroke="#38bdf8" stroke-width="2" width="145" x="535" y="130"></rect>
+<text fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle" x="607" y="158">DECISION</text>
+<text fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle" x="607" y="174">MANIPULATED</text>
+</svg>
+</div>
+<p class="text-neutral-300 leading-relaxed">Each principle exploits a mental shortcut that usually works well: returning favors, being consistent, following the majority, respecting experts, valuing what's rare, and trusting people we like. These are evolutionary heuristics. The problem is that when they're used deliberately and covertly, they become tools of manipulation.</p>
+<!-- Tip box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5">
+<div class="flex items-start space-x-3">
+<span class="text-blue-400 text-lg mt-0.5">i</span>
+<div>
+<p class="text-blue-400 font-semibold text-sm mb-1">Why it works</p>
+<p class="text-neutral-300 text-sm">The six principles operate through System 1 (Kahneman). They are automatic responses, not deliberate ones. That is why they work even when a person "knows" they are being influenced. Knowing the principles is necessary, but not sufficient, to resist them.</p>
+</div>
+</div>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Professional compliance</p>
+<p class="text-neutral-400 text-xs">Structured techniques for gaining compliance</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Click-whirr</p>
+<p class="text-neutral-400 text-xs">Automatic response triggered by a specific cue</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Persuasion vs. manipulation</p>
+<p class="text-neutral-400 text-xs">Transparency of intent separates one from the other</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- TÓPICO 2: Reciprocidade e Comprometimento -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-3#topico-2">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">2</span>
+<span class="text-lg font-semibold">Reciprocity and Commitment: The First Two Triggers</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">Reciprocity is possibly the most powerful social norm of the human species. When someone gives us something, we feel an almost physical obligation to give something back. Evolutionarily, this sustained cooperation: “I help you now, you help me later” is the basis of an alliance. The problem arises when someone deliberately exploits this norm.</p>
+<p class="text-neutral-300 leading-relaxed">Free samples at supermarkets, company giveaways, the salesperson who offers you coffee: these are calculated investments. Studies show that servers who leave a piece of candy with the bill receive 3% more in tips. Two pieces: 14% more. Two pieces, then stepping away and coming back to say “but I brought an extra one just for you”: 23% more. Reciprocity responds not only to the gift, but also to the personal touch.</p>
+<!-- Timeline -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-6">PROGRESSIVE COMMITMENT TECHNIQUES</h4>
+<div class="space-y-6 border-l-2 border-blue-500/30 pl-6 ml-3">
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">TECHNIQUE 1</p>
+<p class="text-sm font-semibold mb-1">Foot-in-the-door</p>
+<p class="text-neutral-400 text-sm">Start with a small request, then escalate. Freedman &amp; Fraser (1966): people who agreed to put a small sticker in their window later agreed to put a huge sign in their yard (76% vs. 17% in the control group).</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">TECHNIQUE 2</p>
+<p class="text-sm font-semibold mb-1">Door-in-the-face</p>
+<p class="text-neutral-400 text-sm">Start with an unreasonable request (which is refused), then make the real request (which seems reasonable by comparison). Cialdini: ask someone to chaperone delinquents for 2 years (refused), then ask them to spend an afternoon at the zoo (accepted by 50% vs. 17% without the prior request).</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">TECHNIQUE 3</p>
+<p class="text-sm font-semibold mb-1">Lowball</p>
+<p class="text-neutral-400 text-sm">Offer excellent terms, wait for commitment, then reveal the real costs. "The price was discounted, but unfortunately the offer has expired. But since you’ve already made a reservation..." Common at car dealerships and with online subscriptions.</p>
+</div>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5">
+<div class="flex items-start space-x-3">
+<span class="text-blue-400 text-lg mt-0.5">!</span>
+<div>
+<p class="text-blue-400 font-semibold text-sm mb-1">Consistency as a trap</p>
+<p class="text-neutral-300 text-sm">Commitment works because we value being consistent. Once we’ve said "yes" to something, saying "no" later contradicts our self-image. People would rather stick with a bad decision than admit they were manipulated. Cialdini calls this the "hobgoblin of little minds" (quoting Emerson).</p>
+</div>
+</div>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Reciprocity norm</p>
+<p class="text-neutral-400 text-xs">A felt obligation to return favors received</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Foot-in-the-door</p>
+<p class="text-neutral-400 text-xs">A small request paves the way for a larger request</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Public commitment</p>
+<p class="text-neutral-400 text-xs">A publicly stated position is much harder to change</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- TÓPICO 3: Prova Social e Autoridade -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-3#topico-3">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">3</span>
+<span class="text-lg font-semibold">Social Proof and Authority: What Others Do Is Right</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">Social proof is Asch’s principle (Module 2.1) industrialized. We determine what is right by observing what others do. “More than 10,000 satisfied customers,” “9 out of 10 dentists recommend it,” star reviews, like counters: all of these are social proof packaged for mass consumption.</p>
+<!-- Certo/Errado Grid -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-4">WHEN SOCIAL PROOF IS MOST POWERFUL</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-3">
+<p class="text-sm font-semibold text-emerald-400 mb-2">Conditions that amplify</p>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">Uncertainty about what to do</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">The "others" are similar to us</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">A large number of people doing the same thing</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">New or unfamiliar situation</span>
+</div>
+</div>
+<div class="space-y-3">
+<p class="text-sm font-semibold text-red-400 mb-2">Signs of manipulation</p>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Generic or suspiciously perfect reviews</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Counters that only go up, never down</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Testimonials without verifiable identification</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Artificially created "trend" driven by bots</span>
+</div>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 leading-relaxed">Authority works through a different but complementary mechanism. We follow experts and prestigious figures as an efficient shortcut: it's faster to trust someone who knows than to learn everything on our own. But the shortcut fails when signals of authority are faked: invented titles, lab coats with no doctor behind them, "Dr." before any name.</p>
+<p class="text-neutral-300 leading-relaxed">Hofling et al. (1966) demonstrated this alarmingly: 21 of 22 nurses administered a dangerous dose of a fictional medication when instructed over the phone by a “doctor” they had never seen. The voice of authority was enough to override their medical training and safety protocol.</p>
+<!-- Concept box -->
+<div class="bg-dark-800 border border-blue-500/30 rounded-xl p-5">
+<p class="text-blue-400 text-xs font-mono mb-2">EXPERIMENTAL DATA</p>
+<p class="text-neutral-300 text-sm leading-relaxed">In hotels, signs saying “75% of guests in this room reused their towels” led to 33% more towel reuse than generic signs about the environment (Goldstein, Cialdini &amp; Griskevicius, 2008). Specific social proof (“in this room”) is more powerful than abstract appeals.</p>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Social proof</p>
+<p class="text-neutral-400 text-xs">Correct = what most people do (especially similar people)</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Symbolic authority</p>
+<p class="text-neutral-400 text-xs">Titles and uniforms alone are enough to trigger obedience</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Pluralistic ignorance</p>
+<p class="text-neutral-400 text-xs">Everyone acts on social proof; no one knows what's real</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- TÓPICO 4: Dark Patterns -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-3#topico-4">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">4</span>
+<span class="text-lg font-semibold">Dark Patterns: Systematic Digital Manipulation</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">Harry Brignull coined the term “dark patterns” in 2010 to describe user interfaces deliberately designed to deceive or manipulate. They’re not bugs. They’re features. Every pixel is positioned to exploit cognitive biases and elicit behaviors the user wouldn’t engage in if fully aware.</p>
+<!-- Certo/Errado Grid -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-4">DARK PATTERNS CATALOG</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-3">
+<p class="text-sm font-semibold text-red-400 mb-2">Patterns of deception</p>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm"><strong>Roach Motel:</strong> easy to sign up, almost impossible to leave (cancel subscription)</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm"><strong>Confirmshaming:</strong> "No, thanks, I'd rather stay uninformed"</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm"><strong>Scarcity illusion:</strong> "Only 2 left!" (false)</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm"><strong>Fake countdown:</strong> timer that restarts on its own</span>
+</div>
+</div>
+<div class="space-y-3">
+<p class="text-sm font-semibold text-red-400 mb-2">Privacy patterns</p>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm"><strong>Privacy zooming:</strong> "Accept all" large, "Configure" microscopic</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm"><strong>Hidden costs:</strong> fees disclosed only at checkout</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm"><strong>Forced continuity:</strong> trial turns into a charge without clear notice</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm"><strong>Sneak into basket:</strong> items added to the cart without asking</span>
+</div>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 leading-relaxed">What makes dark patterns different from traditional advertising is their scale and precision. A/B tests with millions of users make it possible to optimize each variation to maximize clicks, purchases, or acceptances. The user is the subject of a continuous experiment to which they never consented, like a participant in Milgram’s experiment, but on a planetary scale.</p>
+<!-- Tip box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5">
+<div class="flex items-start space-x-3">
+<span class="text-blue-400 text-lg mt-0.5">!</span>
+<div>
+<p class="text-blue-400 font-semibold text-sm mb-1">Quick dark pattern test</p>
+<p class="text-neutral-300 text-sm">When an interface makes it harder to decline than to accept, or when the “natural” path leads to behavior that benefits the company (not you), you’re looking at a dark pattern. The golden rule: if canceling is 10x more complicated than signing up, it’s manipulative design.</p>
+</div>
+</div>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Dark pattern</p>
+<p class="text-neutral-400 text-xs">Interface designed to deceive, not inform</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Confirmshaming</p>
+<p class="text-neutral-400 text-xs">Text that shames the user for declining</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Roach motel</p>
+<p class="text-neutral-400 text-xs">Easy to get in, almost impossible to get out</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- TÓPICO 5: Mecanismos Cognitivos Explorados -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-3#topico-5">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">5</span>
+<span class="text-lg font-semibold">Cognitive Mechanisms Exploited</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">Dark patterns and persuasion techniques don't work by magic. They exploit specific cognitive biases that we studied in Track 1. Understanding which mechanisms are being activated is the first step toward resisting them.</p>
+<!-- Certo/Errado Grid -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-4">BIAS EXPLOITED → MANIPULATION TECHNIQUE</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 font-semibold text-sm mb-3">System 1 biases</p>
+<div class="space-y-2">
+<div class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span class="text-neutral-300 text-sm"><strong>Loss aversion:</strong> "You're going to LOSE this offer"</span></div>
+<div class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span class="text-neutral-300 text-sm"><strong>Anchoring:</strong> "From R$ 997 for just R$ 97"</span></div>
+<div class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span class="text-neutral-300 text-sm"><strong>Default effect:</strong> prechecked box = consent</span></div>
+<div class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span class="text-neutral-300 text-sm"><strong>Framing:</strong> "95% approval" vs. "5% fail"</span></div>
+</div>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 font-semibold text-sm mb-3">Exploration of limited resources</p>
+<div class="space-y-2">
+<div class="flex items-start space-x-2"><span class="text-red-400">✗</span><span class="text-neutral-300 text-sm"><strong>Choice overload:</strong> 47 cookie options</span></div>
+<div class="flex items-start space-x-2"><span class="text-red-400">✗</span><span class="text-neutral-300 text-sm"><strong>Decision fatigue:</strong> 12 pop-ups = accept any of them</span></div>
+<div class="flex items-start space-x-2"><span class="text-red-400">✗</span><span class="text-neutral-300 text-sm"><strong>Limited attention:</strong> important text in 8px gray</span></div>
+<div class="flex items-start space-x-2"><span class="text-red-400">✗</span><span class="text-neutral-300 text-sm"><strong>Artificial urgency:</strong> timer prevents reflection</span></div>
+</div>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 leading-relaxed">Loss aversion (Kahneman &amp; Tversky) is perhaps the most exploited mechanism: losing R$ 100 hurts ~2x more than gaining R$ 100 feels good. Every countdown, every "last spots," every "offer expires in 3:42" exploits this circuit. The brain interprets the possible loss of the offer as real pain and acts to avoid it before critical thinking can intervene.</p>
+<p class="text-neutral-300 leading-relaxed">Anchoring is just as insidious. The "original" price of R$ 997 doesn't need to be real to work as an anchor. Once the number is on the screen, it becomes an automatic reference, and R$ 97 "seems" like a bargain. Johnson et al. (2012) showed that even when people know the anchor is arbitrary, it still affects their judgment.</p>
+<!-- Tip box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5">
+<div class="flex items-start space-x-3">
+<span class="text-blue-400 text-lg mt-0.5">i</span>
+<div>
+<p class="text-blue-400 font-semibold text-sm mb-1">Defense against anchoring</p>
+<p class="text-neutral-300 text-sm">Always ask: “How much would I pay for this if there were no ‘original’ price shown?” Ignore the crossed-out price. Research the market value yourself. The anchor only works when it’s the first number you see.</p>
+</div>
+</div>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Loss aversion</p>
+<p class="text-neutral-400 text-xs">Losing hurts ~2x more than winning feels good (Kahneman)</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Anchoring</p>
+<p class="text-neutral-400 text-xs">The first number you see becomes a reference point for judgment</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Decision fatigue</p>
+<p class="text-neutral-400 text-xs">Too many decisions = choice quality deteriorates</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- TÓPICO 6: Regulação e Defesa -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-3#topico-6">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">6</span>
+<span class="text-lg font-semibold">Regulation and Defense: GDPR, LGPD, and Digital Literacy</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">The regulatory response to dark patterns is advancing, but it is still insufficient. The European GDPR (2018) and Brazil’s LGPD (2020) established that consent must be “freely given, informed, and unambiguous.” In practice, this should prohibit interfaces where “accept” is a huge green button and “decline” is an 8-pixel gray link. It should. But enforcement is uneven.</p>
+<!-- Timeline: Marco regulatório -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-6">REGULATORY FRAMEWORKS AGAINST DIGITAL MANIPULATION</h4>
+<div class="space-y-6 border-l-2 border-blue-500/30 pl-6 ml-3">
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">2018</p>
+<p class="text-sm font-semibold mb-1">GDPR (Europe)</p>
+<p class="text-neutral-400 text-sm">Consent must be freely given and informed. Refusing should be as easy as accepting. Fines of up to 4% of global revenue.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">2020</p>
+<p class="text-sm font-semibold mb-1">LGPD (Brazil)</p>
+<p class="text-neutral-400 text-sm">Brazilian legal basis for data protection. The necessity principle: collect only what is necessary. ANPD as the enforcement agency.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">2022</p>
+<p class="text-sm font-semibold mb-1">Digital Services Act (DSA, Europe)</p>
+<p class="text-neutral-400 text-sm">Explicitly prohibits dark patterns on digital platforms. Interfaces must be neutral, not manipulative. The first regulation to name dark patterns.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">2024-2026</p>
+<p class="text-sm font-semibold mb-1">FTC (U.S.) and emerging regulations</p>
+<p class="text-neutral-400 text-sm">FTC steps up enforcement against “negative option” subscriptions that are difficult to cancel. California passes specific laws against dark patterns in data consent.</p>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 leading-relaxed">Regulation alone doesn’t solve the problem. Digital literacy is the most effective individual defense. Just as we learn to recognize political propaganda, we need to learn to recognize patterns of digital manipulation. Some defensive heuristics work well.</p>
+<!-- Certo/Errado Grid -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-4">GUIDE TO DEFENDING AGAINST MANIPULATION</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-3">
+<p class="text-sm font-semibold text-emerald-400 mb-2">Strategies that work</p>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">24-hour rule: sleep on a purchase decision</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">Ignore the crossed-out "original" price</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">Ask "would I have wanted this BEFORE seeing the ad?"</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">Read the cancellation terms BEFORE subscribing</span>
+</div>
+</div>
+<div class="space-y-3">
+<p class="text-sm font-semibold text-red-400 mb-2">Warning signs</p>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Countdown timer</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">"X people are viewing this right now"</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Smaller/hidden decline button</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Canceling requires a phone call</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5">
+<div class="flex items-start space-x-3">
+<span class="text-blue-400 text-lg mt-0.5">i</span>
+<div>
+<p class="text-blue-400 font-semibold text-sm mb-1">The meta-defense</p>
+<p class="text-neutral-300 text-sm">The strongest defense against manipulation is metacognitive: ask yourself, "Why am I feeling urgency right now?" If the answer is "because the interface is pressuring me" (and not "because I genuinely need it"), you've identified the mechanism. Naming the bias is the first step toward neutralizing it.</p>
+</div>
+</div>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Digital literacy</p>
+<p class="text-neutral-400 text-xs">Ability to recognize and resist online manipulation</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Informed consent</p>
+<p class="text-neutral-400 text-xs">Legal basis: consent must be freely given, clear, and revocable</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPT</p>
+<p class="text-sm font-semibold mb-1">Defensive metacognition</p>
+<p class="text-neutral-400 text-xs">Asking "why am I feeling urgency?" neutralizes the bias</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- RESUMO -->
+<!-- ============================================================ -->
+<section class="mb-12">
+<div class="bg-gradient-to-r from-blue-900/30 to-transparent rounded-xl p-6 md:p-8 border border-blue-500/30">
+<h2 class="text-xl font-bold mb-4 text-blue-400">Module 2.3 Summary</h2>
+<div class="space-y-3 text-neutral-300 text-sm leading-relaxed">
+<p>Cialdini identified six universal principles of influence: reciprocity, commitment/consistency, social proof, authority, scarcity, and liking. These are cognitive shortcuts used by System 1 that usually work well but can be systematically exploited. Techniques such as the foot-in-the-door, door-in-the-face, and lowballing use these principles to gain gradual compliance. Dark patterns industrialize manipulation in digital interfaces, exploiting loss aversion, anchoring, and decision fatigue on a global scale. Defenses combine regulation (GDPR, LGPD, DSA) with individual digital literacy: recognize the mechanism, name the bias, and pause before acting under pressure.</p>
+</div>
+</div>
+</section>
+<!-- NAV MÓDULOS -->
+<section>
+<div class="flex justify-between items-center">
+<a class="flex items-center space-x-2 text-neutral-400 hover:text-blue-400 transition-colors" href="modulo-2-2.html">
+<span>←</span>
+<span>Module 2.2: Obedience</span>
+</a>
+<a class="flex items-center space-x-2 text-neutral-400 hover:text-blue-400 transition-colors" href="../trilha3/index.html">
+<span>Track 3: Neuroscience</span>
+<span>→</span>
+</a>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="border-t border-dark-700 py-8">
+<div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500">
+<a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mind, Power and Machine · 2026
+  </div>
+</footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

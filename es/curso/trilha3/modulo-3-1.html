@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>3.1 Neuroplasticidad — MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<script data-inema-manifest="" type="application/json">
+{"course":"neurociencia-comportamento","tracks":[{"n":"1","title":"O Cerebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heuristicas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonancia cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},{"n":"2","title":"Influencia Social e Poder do Grupo","modules":[{"id":"2-1","title":"Conformidade","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediencia a autoridade","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulacao social","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},{"n":"3","title":"Neurociencia do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina e sistema de recompensa","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amigdala, medo e decisao emocional","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},{"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},{"n":"5","title":"Filosofia da Mente e Consciencia","modules":[{"id":"5-1","title":"Livre-arbitrio: Libet","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciencia: problema dificil","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiotica: Bruzzo","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},{"n":"6","title":"IA, Vieses e Etica","modules":[{"id":"6-1","title":"Vieses algoritmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistemicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Etica e espaco humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}]}
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+body{font-family:'Inter',system-ui,sans-serif}.topic-explanation{display:none}.topic-explanation.active{display:block}
+html:not(.dark) body{background-color:#f8fafc}html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-purple-400{color:#7c3aed}html:not(.dark) .bg-purple-500\/20{background-color:rgba(124,58,237,0.12)}html:not(.dark) .border-purple-500\/30{border-color:rgba(124,58,237,0.25)}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,0.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,0.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+html:not(.dark) svg[role="img"]{filter:saturate(.82) brightness(.96)}
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha3/modulo-3-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha3/modulo-3-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha3/modulo-3-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen" data-inema-module="3-1"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha3/modulo-3-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-3-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Cerebro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-purple-400 bg-purple-500/10" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Filosofía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 IA+Ética</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()"><span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span></button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- BREADCRUMB -->
+<div class="flex items-center space-x-2 text-sm text-neutral-400 mb-8">
+<a class="hover:text-neutral-300" href="../../index.html">MPC</a>
+<span>/</span>
+<a class="hover:text-purple-400" href="index.html">Ruta 3</a>
+<span>/</span>
+<span class="text-purple-400">Módulo 3.1</span>
+</div>
+<!-- HEADER -->
+<section class="mb-12">
+<div class="bg-gradient-to-r from-purple-900/30 to-transparent rounded-2xl p-8 border border-purple-500/30">
+<div class="inline-flex items-center space-x-2 bg-purple-500/20 border border-purple-500/30 rounded-full px-3 py-1 mb-4">
+<span class="text-purple-400 text-xs font-mono font-bold">MÓDULO 3.1</span>
+</div>
+<h1 class="text-3xl md:text-4xl font-extrabold mb-3">Neuroplasticidad: el cerebro que se remodela</h1>
+<p class="text-neutral-300 text-lg mb-4">Capacidad del cerebro para reorganizar su estructura y función en respuesta a la experiencia. La idea de que el cerebro adulto es fijo e inmutable está completamente desactualizada.</p>
+<div class="flex flex-wrap gap-3 text-sm">
+<span class="bg-dark-800 border border-dark-700 rounded-lg px-3 py-1 text-neutral-300">📝 6 temas</span>
+<span class="bg-dark-800 border border-dark-700 rounded-lg px-3 py-1 text-neutral-300">⏱ ~30 min</span>
+<span class="bg-dark-800 border border-dark-700 rounded-lg px-3 py-1 text-purple-400">Fundamento</span>
+</div>
+</div>
+</section>
+<!-- SVG: Hebbian Learning Diagram -->
+<section class="mb-12">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h3 class="text-sm font-semibold text-purple-400 mb-4">REGLA DE HEBB: LAS NEURONAS QUE SE ACTIVAN JUNTAS</h3>
+<svg aria-label="Diagrama de la regla de Hebb que muestra el fortalecimiento sináptico por repetición" class="w-full h-auto" id="m31-hebb" role="img" viewbox="0 0 700 260">
+<defs>
+<filter id="m31glow"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<lineargradient id="m31g1" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#c084fc"></stop><stop offset="100%" stop-color="#38bdf8"></stop></lineargradient>
+<marker id="m31arr" markerheight="4" markerwidth="4" orient="auto" refx="5" refy="3" viewbox="0 0 6 6"><path d="M 0 0 L 6 3 L 0 6 z" fill="#c084fc"></path></marker>
+<marker id="m31arr2" markerheight="4" markerwidth="4" orient="auto" refx="5" refy="3" viewbox="0 0 6 6"><path d="M 0 0 L 6 3 L 0 6 z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="#1a1230" height="260" rx="12" width="700"></rect>
+<!-- ANTES (conexao fraca) -->
+<text fill="#c084fc" font-size="11" font-weight="700" text-anchor="middle" x="175" y="25">ANTES (conexión débil)</text>
+<!-- Neuronio A -->
+<circle cx="100" cy="100" fill="#1a1230" r="28" stroke="#c084fc" stroke-width="1.5"></circle>
+<circle cx="100" cy="100" fill="#c084fc" opacity="0.4" r="8"></circle>
+<text fill="#c084fc" font-size="10" font-weight="700" text-anchor="middle" x="100" y="104">A</text>
+<!-- Sinapse fraca -->
+<line opacity="0.3" stroke="#c084fc" stroke-dasharray="4 4" stroke-width="1" x1="128" x2="218" y1="100" y2="100"></line>
+<!-- Neuronio B -->
+<circle cx="248" cy="100" fill="#1a1230" r="28" stroke="#c084fc" stroke-width="1.5"></circle>
+<circle cx="248" cy="100" fill="#c084fc" opacity="0.4" r="8"></circle>
+<text fill="#c084fc" font-size="10" font-weight="700" text-anchor="middle" x="248" y="104">B</text>
+<text fill="#9ca3af" font-size="9" text-anchor="middle" x="175" y="155">descarga esporádica</text>
+<text fill="#9ca3af" font-size="9" text-anchor="middle" x="175" y="168">sinapsis débil</text>
+<!-- Seta de transicao -->
+<path d="M 310 100 L 370 100" marker-end="url(#m31arr2)" stroke="#38bdf8" stroke-width="2"></path>
+<text fill="#38bdf8" font-size="9" font-weight="600" text-anchor="middle" x="340" y="85">REPETICIÓN</text>
+<text fill="#38bdf8" font-size="8" text-anchor="middle" x="340" y="118">práctica</text>
+<!-- DEPOIS (conexao forte) -->
+<text fill="#a855f7" font-size="11" font-weight="700" text-anchor="middle" x="525" y="25">DESPUÉS (conexión fuerte)</text>
+<!-- Neuronio A' -->
+<circle cx="450" cy="100" fill="#1a1230" filter="url(#m31glow)" r="28" stroke="#a855f7" stroke-width="2.5"></circle>
+<circle cx="450" cy="100" fill="#a855f7" opacity="0.7" r="10"></circle>
+<text fill="#fff" font-size="10" font-weight="700" text-anchor="middle" x="450" y="104">A</text>
+<!-- Sinapse forte -->
+<line filter="url(#m31glow)" stroke="url(#m31g1)" stroke-width="4" x1="478" x2="568" y1="100" y2="100"></line>
+<!-- Pulsos -->
+<circle cx="500" cy="100" fill="#38bdf8" r="3"><animate attributename="opacity" dur="1s" repeatcount="indefinite" values="0.3;1;0.3"></animate></circle>
+<circle cx="523" cy="100" fill="#c084fc" r="3"><animate attributename="opacity" dur="1s" repeatcount="indefinite" values="1;0.3;1"></animate></circle>
+<circle cx="546" cy="100" fill="#38bdf8" r="3"><animate attributename="opacity" dur="1.2s" repeatcount="indefinite" values="0.3;1;0.3"></animate></circle>
+<!-- Neuronio B' -->
+<circle cx="598" cy="100" fill="#1a1230" filter="url(#m31glow)" r="28" stroke="#a855f7" stroke-width="2.5"></circle>
+<circle cx="598" cy="100" fill="#a855f7" opacity="0.7" r="10"></circle>
+<text fill="#fff" font-size="10" font-weight="700" text-anchor="middle" x="598" y="104">B</text>
+<text fill="#c084fc" font-size="9" font-weight="600" text-anchor="middle" x="525" y="155">descarga sincronizada</text>
+<text fill="#c084fc" font-size="9" font-weight="600" text-anchor="middle" x="525" y="168">sinapsis consolidada</text>
+<!-- Legenda -->
+<rect fill="#2d2150" height="44" opacity="0.5" rx="8" width="460" x="120" y="200"></rect>
+<text fill="#c084fc" font-size="10" font-weight="700" text-anchor="middle" x="350" y="218">"Neurons that fire together, wire together"</text>
+<text fill="#9ca3af" font-size="9" text-anchor="middle" x="350" y="234">Donald Hebb, 1949 — The Organization of Behavior</text>
+</svg>
+</div>
+</section>
+<!-- TOPICO 1 -->
+<section class="mb-10" data-inema-topic="modulo-3-1#topico-1">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">01</span>
+<h2 class="text-2xl font-bold">La visión antigua frente a la nueva: ¿un cerebro fijo?</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>Durante la mayor parte del siglo XX, la neurociencia operó bajo un dogma: el cerebro adulto es una estructura fija. Una vez que el desarrollo se completaba en la adolescencia, no se generarían nuevas neuronas ni habría una reorganización significativa de los circuitos. El cerebro que tenías a los 25 era, esencialmente, el cerebro con el que morirías.</p>
+<p>Esta visión estaba profundamente equivocada. A partir de los años 1960, con los trabajos pioneros de investigadores como Joseph Altman (quien demostró la neurogénesis en ratas adultas) y, más tarde, con técnicas de neuroimagen en humanos, quedó claro que el cerebro adulto se remodela continuamente. Crea nuevas conexiones, fortalece las existentes, poda las que no usa y, en ciertas regiones, incluso genera neuronas nuevas.</p>
+<!-- V/X Grid: Visao Antiga vs. Nova -->
+<div class="grid md:grid-cols-2 gap-4 my-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-red-400 mb-3">VISIÓN ANTIGUA (obsoleta)</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>El cerebro adulto es fijo e inmutable</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>No hay generación de nuevas neuronas</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Las regiones cerebrales tienen funciones permanentes</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Daño cerebral y siempre irreversible</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-green-400 mb-3">VISIÓN ACTUAL (neuroplasticidad)</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>El cerebro se remodela durante toda la vida</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>La neurogénesis ocurre en el hipocampo adulto</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Las regiones pueden asumir nuevas funciones</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>La recuperación parcial o total es posible</span></li>
+</ul>
+</div>
+</div>
+<p>El término <strong class="text-neutral-100">neuroplasticidad</strong> se refiere a esta capacidad del sistema nervioso para cambiar su estructura y función en respuesta a la experiencia. No es solo un detalle técnico. Es una revolución en la forma en que entendemos el aprendizaje, la recuperación de lesiones, el envejecimiento e incluso la salud mental.</p>
+</div>
+<!-- Conceitos-chave -->
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Neuroplasticidad</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Dogma del cerebro fijo</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Joseph Altman</span>
+</div>
+</section>
+<!-- TOPICO 2 -->
+<section class="mb-10" data-inema-topic="modulo-3-1#topico-2">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">02</span>
+<h2 class="text-2xl font-bold">Regla de Hebb y mecanismos celulares</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>En 1949, el psicólogo canadiense Donald Hebb publicó <em>The Organization of Behavior</em>, proponiendo lo que se convertiría en el principio más citado de la neurociencia: <strong class="text-neutral-100">"Las neuronas que se activan juntas se conectan entre sí."</strong></p>
+<p>En términos técnicos, cuando una neurona presináptica contribuye repetidamente a la activación de una neurona postsináptica, aumenta la eficacia de esa sinapsis. La conexión se vuelve más fuerte, más rápida y más confiable. Es la base celular del aprendizaje.</p>
+<!-- Tip box -->
+<div class="bg-purple-500/10 border border-purple-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-purple-400 text-lg mt-0.5">💡</span>
+<div>
+<h4 class="text-purple-400 font-semibold text-sm mb-1">ANALOGÍA</h4>
+<p class="text-sm">Piensa en un sendero en el bosque. Cuantas más personas caminan por él, más ancho y claro se vuelve. Un sendero abandonado desaparece gradualmente bajo la vegetación. Las sinapsis funcionan así: el uso repetido las fortalece; el desuso las debilita.</p>
+</div>
+</div>
+</div>
+<p>Lo contrario también es cierto. Las conexiones que no se usan se debilitan y pueden eliminarse, un proceso llamado <strong class="text-neutral-100">poda sináptica</strong>. El cerebro no es solo un acumulador; descarta activamente lo que no usa para optimizar sus recursos.</p>
+<p>Dos mecanismos complementarios rigen este proceso:</p>
+<div class="grid md:grid-cols-2 gap-4 my-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-purple-400 mb-2">LTP (Potenciación de larga duración)</h4>
+<p class="text-sm text-neutral-400">Fortalecimiento duradero de las sinapsis mediante estimulación repetida. Base molecular de la formación de recuerdos.</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-purple-400 mb-2">LTD (Depresión de larga duración)</h4>
+<p class="text-sm text-neutral-400">Debilitamiento de las sinapsis por falta de estimulación. Permite «olvidar» y liberar recursos para nuevas conexiones.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Regla de Hebb</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">LTP</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Poda sináptica</span>
+</div>
+</section>
+<!-- TOPICO 3 -->
+<section class="mb-10" data-inema-topic="modulo-3-1#topico-3">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">03</span>
+<h2 class="text-2xl font-bold">Tipos de plasticidad neural</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>La neuroplasticidad no es un fenómeno único. Se manifiesta de al menos tres formas distintas, cada una de las cuales opera a una escala diferente.</p>
+<!-- SVG: Three Types of Plasticity -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6 my-6">
+<svg aria-label="Tres tipos de plasticidad neural: sináptica, neurogénesis y reorganización cortical" class="w-full h-auto" id="m31-types" role="img" viewbox="0 0 700 200">
+<rect fill="#1a1230" height="200" rx="12" width="700"></rect>
+<!-- Type 1: Sinaptica -->
+<rect fill="#2d2150" height="160" rx="10" stroke="#c084fc" stroke-width="1.5" width="200" x="20" y="20"></rect>
+<text fill="#c084fc" font-size="10" font-weight="700" text-anchor="middle" x="120" y="45">1. SINÁPTICA</text>
+<text fill="#9ca3af" font-size="8" text-anchor="middle" x="120" y="62">fuerza de las conexiones</text>
+<!-- Two neurons with synapse -->
+<circle cx="70" cy="110" fill="#1a1230" r="16" stroke="#a855f7" stroke-width="1.5"></circle>
+<circle cx="70" cy="110" fill="#a855f7" r="5"></circle>
+<circle cx="170" cy="110" fill="#1a1230" r="16" stroke="#a855f7" stroke-width="1.5"></circle>
+<circle cx="170" cy="110" fill="#a855f7" r="5"></circle>
+<line filter="url(#m31glow)" stroke="#c084fc" stroke-width="3" x1="86" x2="154" y1="110" y2="110"></line>
+<circle cx="120" cy="110" fill="#38bdf8" r="4"><animate attributename="r" dur="1.5s" repeatcount="indefinite" values="3;5;3"></animate></circle>
+<text fill="#c084fc" font-size="8" text-anchor="middle" x="120" y="155">+ fuerte / - fuerte</text>
+<!-- Type 2: Neurogenese -->
+<rect fill="#2d2150" height="160" rx="10" stroke="#38bdf8" stroke-width="1.5" width="200" x="250" y="20"></rect>
+<text fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle" x="350" y="45">2. NEUROGÉNESIS</text>
+<text fill="#9ca3af" font-size="8" text-anchor="middle" x="350" y="62">nuevas neuronas</text>
+<!-- Hippocampus shape -->
+<path d="M 310 100 Q 330 80 350 95 Q 370 80 390 100" fill="none" stroke="#38bdf8" stroke-width="2"></path>
+<text fill="#38bdf8" font-size="7" text-anchor="middle" x="350" y="90">HIPOCAMPO</text>
+<!-- New neurons -->
+<circle cx="320" cy="120" fill="#1a1230" opacity="0.4" r="8" stroke="#38bdf8" stroke-width="1"></circle>
+<circle cx="350" cy="125" fill="#1a1230" filter="url(#m31glow)" r="10" stroke="#38bdf8" stroke-width="2"></circle>
+<circle cx="350" cy="125" fill="#38bdf8" r="3"></circle>
+<circle cx="380" cy="120" fill="#1a1230" opacity="0.4" r="8" stroke="#38bdf8" stroke-width="1"></circle>
+<text fill="#38bdf8" font-size="8" text-anchor="middle" x="350" y="155">nuevas neuronas (memoria)</text>
+<!-- Type 3: Reorganizacao -->
+<rect fill="#2d2150" height="160" rx="10" stroke="#a855f7" stroke-width="1.5" width="200" x="480" y="20"></rect>
+<text fill="#a855f7" font-size="10" font-weight="700" text-anchor="middle" x="580" y="45">3. REORGANIZACIÓN</text>
+<text fill="#9ca3af" font-size="8" text-anchor="middle" x="580" y="62">nuevas funciones</text>
+<!-- Brain regions remapping -->
+<rect fill="#1a1230" height="30" opacity="0.5" rx="6" stroke="#a855f7" stroke-width="1.5" width="40" x="520" y="80"></rect>
+<text fill="#a855f7" font-size="7" text-anchor="middle" x="540" y="99">VISIÓN</text>
+<rect fill="#1a1230" filter="url(#m31glow)" height="30" rx="6" stroke="#c084fc" stroke-width="2" width="40" x="600" y="80"></rect>
+<text fill="#c084fc" font-size="6" text-anchor="middle" x="620" y="95">TACTO</text>
+<text fill="#c084fc" font-size="5" text-anchor="middle" x="620" y="103">(¡nuevo!)</text>
+<path d="M 555 95 L 600 95" marker-end="url(#m31arr)" stroke="#c084fc" stroke-dasharray="3 2" stroke-width="1.5"></path>
+<text fill="#a855f7" font-size="8" text-anchor="middle" x="580" y="155">las regiones asumen funciones</text>
+</svg>
+</div>
+<p><strong class="text-neutral-100">Plasticidad sináptica</strong> altera la fuerza de conexiones ya existentes. Es el tipo más rápido y cotidiano. Cada vez que practicas una habilidad, las sinapsis relevantes se fortalecen.</p>
+<p><strong class="text-neutral-100">Neurogénesis</strong> es la generación de neuronas completamente nuevas. Ocurre principalmente en el hipocampo (vinculado a la memoria) y en el bulbo olfatorio. Durante décadas se consideró imposible en adultos, pero es real y medible.</p>
+<p><strong class="text-neutral-100">Reorganización cortical</strong> es lo más drástico: regiones enteras del cerebro pueden asumir funciones diferentes. En personas ciegas de nacimiento, por ejemplo, la corteza visual (que normalmente procesa imágenes) se recluta para procesar el tacto y el lenguaje. Es el cerebro reutilizando hardware inactivo.</p>
+</div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Plasticidad sináptica</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Neurogénesis</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Reorganización cortical</span>
+</div>
+</section>
+<!-- TOPICO 4 -->
+<section class="mb-10" data-inema-topic="modulo-3-1#topico-4">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">04</span>
+<h2 class="text-2xl font-bold">Ejemplos célebres: taxistas, músicos, meditadores</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>La neuroplasticidad no es solo teoría. Algunos de los estudios más famosos de la neurociencia demuestran cambios físicos medibles en el cerebro de personas que usan ciertas habilidades intensamente.</p>
+<!-- Timeline -->
+<div class="my-8 space-y-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-20 text-right">
+<span class="text-purple-400 font-mono text-sm font-bold">2000</span>
+</div>
+<div class="w-px bg-purple-500/30 self-stretch"></div>
+<div class="flex-1 bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="font-bold text-neutral-100 mb-1">Taxistas de Londres (Maguire et al.)</h4>
+<p class="text-sm text-neutral-400">Los taxistas que pasaron años navegando por las 25.000 calles de Londres sin GPS tenían hipocampos significativamente más grandes que los controles. Cuantos más años de experiencia, más grande el hipocampo. El cerebro literalmente creció para adaptarse a la necesidad de navegación espacial.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-20 text-right">
+<span class="text-purple-400 font-mono text-sm font-bold">2003</span>
+</div>
+<div class="w-px bg-purple-500/30 self-stretch"></div>
+<div class="flex-1 bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="font-bold text-neutral-100 mb-1">Músicos profesionales (Gaser &amp; Schlaug)</h4>
+<p class="text-sm text-neutral-400">Los músicos profesionales presentan una corteza motora y una corteza auditiva significativamente más desarrolladas. Los pianistas, en particular, muestran una representación cortical de los dedos más amplia y diferenciada. La práctica de miles de horas literalmente esculpió el cerebro.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-20 text-right">
+<span class="text-purple-400 font-mono text-sm font-bold">2005</span>
+</div>
+<div class="w-px bg-purple-500/30 self-stretch"></div>
+<div class="flex-1 bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="font-bold text-neutral-100 mb-1">Meditadores (Lazar et al., Harvard)</h4>
+<p class="text-sm text-neutral-400">Quienes practican meditación mindfulness durante años presentan una corteza prefrontal más gruesa (atención, planificación) y una ínsula anterior más desarrollada (conciencia corporal). Se observan cambios medibles en 8 semanas de práctica regular (estudio MBSR).</p>
+</div>
+</div>
+</div>
+<!-- Data box -->
+<div class="bg-dark-800 border border-purple-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-purple-400 text-lg mt-0.5">📊</span>
+<div>
+<h4 class="text-purple-400 font-semibold text-sm mb-1">DATO RELEVANTE</h4>
+<p class="text-sm text-neutral-400">En el estudio de Maguire (2000), el hipocampo posterior de los taxistas era, en promedio, un 7% más grande que el de los controles. Pero la diferencia no era genética: los taxistas jubilados desde hacía muchos años mostraban hipocampos que volvían a su tamaño normal. El cerebro se remodeló en ambas direcciones.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Taxistas de Londres</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Maguire (2000)</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Hipocampo</span>
+</div>
+</section>
+<!-- TOPICO 5 -->
+<section class="mb-10" data-inema-topic="modulo-3-1#topico-5">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">05</span>
+<h2 class="text-2xl font-bold">Práctica deliberada y consolidación durante el sueño</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>Si la neuroplasticidad es el mecanismo, la <strong class="text-neutral-100">práctica deliberada</strong> es el método para activarla de forma dirigida. El concepto, desarrollado por Anders Ericsson, distingue la práctica deliberada de la mera repetición.</p>
+<!-- V/X Grid: Pratica Deliberada vs. Repeticao -->
+<div class="grid md:grid-cols-2 gap-4 my-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-green-400 mb-3">PRÁCTICA DELIBERADA</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Enfoque en puntos débiles específicos</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Feedback inmediato y correctivo</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Incómodo (fuera de la zona de confort)</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Activa la neuroplasticidad dirigida</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-red-400 mb-3">MERA REPETICIÓN</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Repite lo que ya sabe hacer</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Sin retroalimentación ni análisis</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Cómodo (piloto automático)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Mantiene las conexiones existentes, no crea nuevas</span></li>
+</ul>
+</div>
+</div>
+<p>Pero la práctica por sí sola no basta. El <strong class="text-neutral-100">sueño</strong> es esencial para la consolidación de los recuerdos. Durante el sueño (especialmente las fases de ondas lentas y REM), el cerebro "reproduce" patrones neuronales del día y transfiere información del hipocampo (almacenamiento temporal) al neocórtex (almacenamiento a largo plazo).</p>
+<!-- Alert box -->
+<div class="bg-red-500/10 border border-red-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-red-400 text-lg mt-0.5">⚠️</span>
+<div>
+<h4 class="text-red-400 font-semibold text-sm mb-1">ATENCIÓN</h4>
+<p class="text-sm text-neutral-400">Los estudios muestran que una sola noche de privación del sueño puede reducir hasta en 40% la capacidad de formar nuevos recuerdos (Walker, 2017). El sueño no es un lujo; es parte integral del mecanismo de aprendizaje. Sin consolidación, la plasticidad inducida por la práctica no se convierte en un cambio duradero.</p>
+</div>
+</div>
+</div>
+<p>La implicación práctica es clara: aprender exige práctica deliberada <em>e</em> sueño adecuado. Uno sin el otro produce resultados muy inferiores.</p>
+</div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Práctica deliberada</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Ericsson</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Consolidación de la memoria</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Sueño REM</span>
+</div>
+</section>
+<!-- TOPICO 6 -->
+<section class="mb-10" data-inema-topic="modulo-3-1#topico-6">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">06</span>
+<h2 class="text-2xl font-bold">Estrés crónico y límites de la plasticidad</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>La neuroplasticidad es un arma de doble filo. El mismo mecanismo que permite que el cerebro se fortalezca con la práctica también lo hace vulnerable al daño causado por condiciones adversas crónicas.</p>
+<p>O <strong class="text-neutral-100">estrés crónico</strong> es el principal villano. Cuando el cuerpo permanece en un estado de estrés prolongado, el cortisol (hormona del estrés) se libera continuamente. En niveles elevados y sostenidos, el cortisol:</p>
+<ul class="list-disc list-inside space-y-2 ml-4 text-neutral-300">
+<li>Reduce la neurogénesis en el hipocampo</li>
+<li>Debilita las sinapsis existentes</li>
+<li>Puede causar atrofia de las dendritas (los "brazos" de las neuronas)</li>
+<li>Perjudica la consolidación de los recuerdos</li>
+<li>Altera la estructura de la amígdala (y la vuelve hiperreactiva)</li>
+</ul>
+<!-- Concept box -->
+<div class="bg-dark-800 border border-purple-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-purple-400 text-lg mt-0.5">🧩</span>
+<div>
+<h4 class="text-purple-400 font-semibold text-sm mb-1">CONCEPTO CENTRAL</h4>
+<p class="text-sm text-neutral-400">La plasticidad negativa es tan real como la positiva. Los entornos crónicamente estresantes, la falta de sueño y el aislamiento social «remodelan» el cerebro tanto como la práctica deliberada y el aprendizaje. La dirección depende del estímulo. El cerebro es plástico, no inherentemente positivo.</p>
+</div>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-purple-500/10 border border-purple-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-purple-400 text-lg mt-0.5">💡</span>
+<div>
+<h4 class="text-purple-400 font-semibold text-sm mb-1">IMPLICACIÓN PRÁCTICA</h4>
+<p class="text-sm text-neutral-400">Si quieres maximizar tu capacidad de aprender y adaptarte: (1) practica deliberadamente, (2) duerme bien, (3) controla el estrés crónico. Estos tres factores son más importantes para la plasticidad que cualquier suplemento, app o «entrenamiento cerebral» comercializado como milagroso.</p>
+</div>
+</div>
+</div>
+<p>La buena noticia: muchos de los efectos del estrés crónico son reversibles. Cuando las condiciones cambian (reducción del estrés, mejora del sueño, ejercicio físico regular), el hipocampo puede recuperarse, se forman nuevas sinapsis y la neurogénesis vuelve a niveles normales. La misma plasticidad que causó el daño es la que lo repara.</p>
+</div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Cortisol</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Estrés crónico</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Plasticidad negativa</span>
+</div>
+</section>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-dark-800 border border-purple-500/30 rounded-xl p-6 md:p-8">
+<h2 class="text-xl font-bold mb-4 text-purple-400">Resumen del Módulo 3.1</h2>
+<div class="space-y-3 text-neutral-300 text-sm leading-relaxed">
+<p>El cerebro adulto no es fijo. Se remodela continuamente en respuesta a la experiencia, mediante tres mecanismos: plasticidad sináptica (fortalecimiento o debilitamiento de conexiones), neurogénesis (nuevas neuronas en el hipocampo) y reorganización cortical (regiones que asumen nuevas funciones).</p>
+<p>La regla de Hebb («las neuronas que se activan juntas se conectan juntas») es el principio básico. La práctica deliberada activa la neuroplasticidad dirigida. El sueño consolida el aprendizaje. El estrés crónico causa daños, pero estos son reversibles.</p>
+<p>La implicación es profunda: no estás atrapado en el cerebro que tienes. Pero la dirección del cambio depende de lo que haces con él día a día.</p>
+</div>
+</div>
+</section>
+<!-- NAV -->
+<section class="flex justify-between items-center">
+<a class="flex items-center space-x-2 text-purple-400 hover:text-purple-300 font-medium" href="index.html">
+<span>←</span><span>Ruta 3</span>
+</a>
+<a class="flex items-center space-x-2 text-purple-400 hover:text-purple-300 font-medium" href="modulo-3-2.html">
+<span>Módulo 3.2: Dopamina</span><span>→</span>
+</a>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="border-t border-dark-700 py-8"><div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500"><a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mente, Poder e Maquina · 2026</div></footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>3.3 Amygdala, Fear, and Emotional Decision-Making — MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<script data-inema-manifest="" type="application/json">
+{"course":"neurociencia-comportamento","tracks":[{"n":"1","title":"O Cerebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heuristicas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonancia cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},{"n":"2","title":"Influencia Social e Poder do Grupo","modules":[{"id":"2-1","title":"Conformidade","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediencia a autoridade","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulacao social","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},{"n":"3","title":"Neurociencia do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina e sistema de recompensa","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amigdala, medo e decisao emocional","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},{"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},{"n":"5","title":"Filosofia da Mente e Consciencia","modules":[{"id":"5-1","title":"Livre-arbitrio: Libet","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciencia: problema dificil","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiotica: Bruzzo","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},{"n":"6","title":"IA, Vieses e Etica","modules":[{"id":"6-1","title":"Vieses algoritmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistemicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Etica e espaco humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}]}
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+body{font-family:'Inter',system-ui,sans-serif}.topic-explanation{display:none}.topic-explanation.active{display:block}
+html:not(.dark) body{background-color:#f8fafc}html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-purple-400{color:#7c3aed}html:not(.dark) .bg-purple-500\/20{background-color:rgba(124,58,237,0.12)}html:not(.dark) .border-purple-500\/30{border-color:rgba(124,58,237,0.25)}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,0.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,0.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+html:not(.dark) svg[role="img"]{filter:saturate(.82) brightness(.96)}
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha3/modulo-3-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha3/modulo-3-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha3/modulo-3-3.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen" data-inema-module="3-3"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-3-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha3/modulo-3-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Brain</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-purple-400 bg-purple-500/10" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economics</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Philosophy</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 AI+Ethics</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()"><span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span></button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- BREADCRUMB -->
+<div class="flex items-center space-x-2 text-sm text-neutral-400 mb-8">
+<a class="hover:text-neutral-300" href="../../index.html">MPC</a>
+<span>/</span>
+<a class="hover:text-purple-400" href="index.html">Track 3</a>
+<span>/</span>
+<span class="text-purple-400">Module 3.3</span>
+</div>
+<!-- HEADER -->
+<section class="mb-12">
+<div class="bg-gradient-to-r from-purple-900/30 to-transparent rounded-2xl p-8 border border-purple-500/30">
+<div class="inline-flex items-center space-x-2 bg-purple-500/20 border border-purple-500/30 rounded-full px-3 py-1 mb-4">
+<span class="text-purple-400 text-xs font-mono font-bold">MODULE 3.3</span>
+</div>
+<h1 class="text-3xl md:text-4xl font-extrabold mb-3">Amygdala, Fear, and Emotional Decision-Making</h1>
+<p class="text-neutral-300 text-lg mb-4">The amygdala processes threats faster than conscious thought. This saves lives, but it also distorts decisions, fuels market panics, and is exploited by marketing and politics.</p>
+<div class="flex flex-wrap gap-3 text-sm">
+<span class="bg-dark-800 border border-dark-700 rounded-lg px-3 py-1 text-neutral-300">📝 6 Topics</span>
+<span class="bg-dark-800 border border-dark-700 rounded-lg px-3 py-1 text-neutral-300">⏱ ~35 min</span>
+<span class="bg-dark-800 border border-dark-700 rounded-lg px-3 py-1 text-purple-400">Foundation</span>
+</div>
+</div>
+</section>
+<!-- SVG: Via rapida vs. Via lenta -->
+<section class="mb-12">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h3 class="text-sm font-semibold text-purple-400 mb-4">FAST PATHWAY (AMYGDALA) VS. SLOW PATHWAY (CORTEX)</h3>
+<svg aria-label="Flow: threatening stimulus, fast pathway through the amygdala generating an emotional response vs. slow pathway through the cortex generating a rational evaluation" class="w-full h-auto" id="m33-vias" role="img" viewbox="0 0 700 340">
+<defs>
+<filter id="m33glow"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<lineargradient id="m33g1" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#c084fc"></stop><stop offset="100%" stop-color="#38bdf8"></stop></lineargradient>
+<marker id="m33arr" markerheight="5" markerwidth="5" orient="auto" refx="5" refy="3" viewbox="0 0 6 6"><path d="M 0 0 L 6 3 L 0 6 z" fill="#c084fc"></path></marker>
+<marker id="m33arr2" markerheight="5" markerwidth="5" orient="auto" refx="5" refy="3" viewbox="0 0 6 6"><path d="M 0 0 L 6 3 L 0 6 z" fill="#38bdf8"></path></marker>
+<marker id="m33arr3" markerheight="5" markerwidth="5" orient="auto" refx="5" refy="3" viewbox="0 0 6 6"><path d="M 0 0 L 6 3 L 0 6 z" fill="#a855f7"></path></marker>
+</defs>
+<rect fill="#1a1230" height="340" rx="12" width="700"></rect>
+<!-- Titulo -->
+<text fill="#a855f7" font-size="12" font-weight="700" text-anchor="middle" x="350" y="28">DUAL THREAT PROCESSING</text>
+<!-- ESTIMULO (esquerda) -->
+<rect fill="#2d2150" height="70" rx="12" stroke="#c084fc" stroke-width="2" width="100" x="30" y="130"></rect>
+<text fill="#c084fc" font-size="9" font-weight="700" text-anchor="middle" x="80" y="155">STIMULUS</text>
+<text fill="#9ca3af" font-size="7" text-anchor="middle" x="80" y="170">threat</text>
+<text fill="#9ca3af" font-size="7" text-anchor="middle" x="80" y="182">potential</text>
+<!-- TALAMO (centro) -->
+<circle cx="210" cy="165" fill="#2d2150" r="30" stroke="#a855f7" stroke-width="1.5"></circle>
+<text fill="#a855f7" font-size="8" font-weight="700" text-anchor="middle" x="210" y="162">THALAMUS</text>
+<text fill="#9ca3af" font-size="7" text-anchor="middle" x="210" y="174">relay</text>
+<!-- Seta estimulo → talamo -->
+<line marker-end="url(#m33arr)" stroke="#c084fc" stroke-width="2" x1="130" x2="178" y1="165" y2="165"></line>
+<!-- === VIA RAPIDA (para baixo) === -->
+<text fill="#c084fc" font-size="10" font-weight="700" text-anchor="middle" x="300" y="58">FAST PATHWAY (~12ms)</text>
+<text fill="#9ca3af" font-size="8" text-anchor="middle" x="300" y="72">"low road" (LeDoux)</text>
+<!-- Seta talamo → amigdala (curva para baixo) -->
+<path d="M 230 190 Q 280 240 330 250" fill="none" filter="url(#m33glow)" marker-end="url(#m33arr)" stroke="#c084fc" stroke-width="3"></path>
+<!-- Pulso na via rapida -->
+<circle cx="270" cy="225" fill="#c084fc" r="3"><animate attributename="opacity" dur="0.6s" repeatcount="indefinite" values="0.3;1;0.3"></animate></circle>
+<!-- AMIGDALA -->
+<rect fill="#2d2150" filter="url(#m33glow)" height="70" rx="14" stroke="#c084fc" stroke-width="2.5" width="120" x="335" y="225"></rect>
+<text fill="#c084fc" font-size="10" font-weight="700" text-anchor="middle" x="395" y="252">AMYGDALA</text>
+<text fill="#c084fc" font-size="8" text-anchor="middle" x="395" y="267">fear / alarm</text>
+<text fill="#9ca3af" font-size="7" text-anchor="middle" x="395" y="280">automatic reaction</text>
+<!-- "Pulsacao" de alarme -->
+<circle cx="395" cy="248" fill="#c084fc" opacity="0.3" r="4"><animate attributename="r" dur="0.8s" repeatcount="indefinite" values="3;6;3"></animate><animate attributename="opacity" dur="0.8s" repeatcount="indefinite" values="0.2;0.6;0.2"></animate></circle>
+<!-- Seta amigdala → resposta emocional -->
+<line filter="url(#m33glow)" marker-end="url(#m33arr)" stroke="#c084fc" stroke-width="2.5" x1="455" x2="520" y1="260" y2="260"></line>
+<!-- RESPOSTA EMOCIONAL -->
+<rect fill="#2d2150" height="60" rx="10" stroke="#c084fc" stroke-width="1.5" width="140" x="525" y="230"></rect>
+<text fill="#c084fc" font-size="8" font-weight="700" text-anchor="middle" x="595" y="253">EMOTIONAL RESPONSE</text>
+<text fill="#9ca3af" font-size="7" text-anchor="middle" x="595" y="268">fight / flight / freeze</text>
+<text fill="#9ca3af" font-size="7" text-anchor="middle" x="595" y="280">cortisol + adrenaline</text>
+<!-- === VIA LENTA (para cima) === -->
+<text fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle" x="300" y="308">SLOW PATHWAY (~300ms)</text>
+<text fill="#9ca3af" font-size="8" text-anchor="middle" x="300" y="322">"high road" (deliberation)</text>
+<!-- Seta talamo → cortex (curva para cima) -->
+<path d="M 230 140 Q 280 90 330 85" fill="none" marker-end="url(#m33arr2)" stroke="#38bdf8" stroke-dasharray="5 3" stroke-width="2"></path>
+<!-- CORTEX PRE-FRONTAL -->
+<rect fill="#2d2150" height="60" rx="10" stroke="#38bdf8" stroke-width="1.5" width="120" x="335" y="60"></rect>
+<text fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle" x="395" y="82">CORTEX</text>
+<text fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle" x="395" y="95">PREFRONTAL</text>
+<text fill="#9ca3af" font-size="7" text-anchor="middle" x="395" y="110">rational analysis</text>
+<!-- Seta cortex → avaliacao racional -->
+<line marker-end="url(#m33arr2)" stroke="#38bdf8" stroke-dasharray="5 3" stroke-width="1.5" x1="455" x2="520" y1="90" y2="90"></line>
+<!-- AVALIACAO RACIONAL -->
+<rect fill="#2d2150" height="50" rx="10" stroke="#38bdf8" stroke-width="1.5" width="140" x="525" y="65"></rect>
+<text fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle" x="595" y="86">RATIONAL EVALUATION</text>
+<text fill="#9ca3af" font-size="7" text-anchor="middle" x="595" y="100">"is it a snake or a branch?"</text>
+<!-- Seta cortex → amigdala (modulacao) -->
+<path d="M 395 120 L 395 225" marker-end="url(#m33arr3)" stroke="#a855f7" stroke-dasharray="4 3" stroke-width="1.5"></path>
+<text fill="#a855f7" font-size="7" font-weight="600" x="420" y="175">modulation</text>
+<text fill="#a855f7" font-size="7" x="420" y="186">(inhibition)</text>
+<!-- Legenda -->
+<rect fill="#2d2150" height="22" opacity="0.5" rx="6" width="200" x="50" y="310"></rect>
+<text fill="#c084fc" font-size="8" font-weight="600" text-anchor="middle" x="150" y="324">The amygdala reacts BEFORE the cortex thinks</text>
+</svg>
+</div>
+</section>
+<!-- TOPICO 1 -->
+<section class="mb-10" data-inema-topic="modulo-3-3#topico-1">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">01</span>
+<h2 class="text-2xl font-bold">The amygdala: the brain's alarm</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>The amygdala is an almond-shaped structure located in the medial temporal lobe, within the limbic system. We have two, one in each hemisphere. Despite its small size (about 1.5 cm), it exerts a disproportionate influence on our behavior, emotions, and decisions.</p>
+<p>Its primary function is to detect and process threats. It is the brain’s alarm system. When activated, it triggers almost instantaneous physiological responses: release of cortisol and adrenaline, increased heart rate, pupil dilation, and blood redirected to the muscles. Everything prepares the body to fight, flee, or freeze.</p>
+<p>The key point, demonstrated by Joseph LeDoux (NYU) in the 1990s: the amygdala receives sensory information <em>before</em> of the prefrontal cortex. There is a direct pathway from the thalamus (sensory relay) to the amygdala that is faster (~12ms) than the thalamus → cortex → amygdala pathway (~300ms). LeDoux called this <strong class="text-neutral-100">"low road"</strong> (low road).</p>
+<!-- Tip box -->
+<div class="bg-purple-500/10 border border-purple-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-purple-400 text-lg mt-0.5">💡</span>
+<div>
+<h4 class="text-purple-400 font-semibold text-sm mb-1">WHY THE FAST TRACK EXISTS</h4>
+<p class="text-sm">On the African savanna, a 200ms difference between reacting and thinking was the difference between life and death. The brain evolved to err on the side of caution: reacting to a branch as if it were a snake (a false positive) is safer than stopping to think and getting bitten (a false negative). The amygdala sacrifices accuracy for speed.</p>
+</div>
+</div>
+</div>
+<p>This means you're already reacting emotionally to a situation <em>before</em> being rationally aware of what is happening. Fear, anger, and startle come first. Thought comes later.</p>
+</div>
+<!-- Conceitos-chave -->
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Amygdala</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Joseph LeDoux</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Low road / high road</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Limbic system</span>
+</div>
+</section>
+<!-- TOPICO 2 -->
+<section class="mb-10" data-inema-topic="modulo-3-3#topico-2">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">02</span>
+<h2 class="text-2xl font-bold">Emotional Hijacking (Goleman)</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>In 1995, Daniel Goleman popularized the concept of <strong class="text-neutral-100">amygdala hijack</strong> (amygdala hijack) in the book <em>Emotional Intelligence</em>. The term describes moments when the amygdala "hijacks" cognitive processing, triggering intense and immediate emotional responses that bypass rational thought.</p>
+<p>The mechanism is as follows: when the amygdala detects a stimulus as a threat (real or perceived), it can temporarily suppress activity in the prefrontal cortex. Higher executive functions (planning, analysis, impulse control) are partially switched off. The result is reactive, impulsive, emotional behavior.</p>
+<!-- V/X Grid: Durante vs. Fora do sequestro -->
+<div class="grid md:grid-cols-2 gap-4 my-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-red-400 mb-3">DURING THE HIJACKING</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Prefrontal cortex partially inhibited</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>"Tunnel" thinking (narrow outlook)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Reduced working memory</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Disproportionate reactions to the stimulus</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-green-400 mb-3">NORMAL PROCESSING</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Prefrontal cortex integrates information</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Complete contextual assessment</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Consideration of consequences</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Proportional, modulated response</span></li>
+</ul>
+</div>
+</div>
+<p>Everyday examples of emotional hijacking: firing off a reply to your boss’s email before reading to the end, reacting furiously to being cut off in traffic, panicking when the stock market drops 5% and selling everything. In every case, the person acts first and thinks later. When they "come to their senses," they often regret it.</p>
+<!-- Data box -->
+<div class="bg-dark-800 border border-purple-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-purple-400 text-lg mt-0.5">📊</span>
+<div>
+<h4 class="text-purple-400 font-semibold text-sm mb-1">RELEVANT DATA</h4>
+<p class="text-sm text-neutral-400">A typical emotional hijacking lasts 18–20 minutes (the time it takes for cortisol and adrenaline to be metabolized). But decisions made during those minutes can have consequences lasting years. An impulsive firing, a fight that ends a relationship, a panic sale in the financial market.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Amygdala hijack</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Daniel Goleman</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Emotional intelligence</span>
+</div>
+</section>
+<!-- TOPICO 3 -->
+<section class="mb-10" data-inema-topic="modulo-3-3#topico-3">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">03</span>
+<h2 class="text-2xl font-bold">Loss aversion: Kahneman and Tversky</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>In 1979, Daniel Kahneman and Amos Tversky published the <em>Prospect Theory</em>, demonstrating that humans do not evaluate gains and losses symmetrically. The <strong class="text-neutral-100">the pain of losing R$100 is approximately 1.5 to 2 times more intense than the pleasure of gaining R$100.</strong></p>
+<p>This bias, called <strong class="text-neutral-100">loss aversion</strong> (loss aversion), isn't just a psychological preference. It has a measurable neural basis. Neuroimaging studies (De Martino et al., 2006) show that losses activate the amygdala significantly more intensely than gains activate reward circuits.</p>
+<!-- Timeline: Experimentos sobre aversao a perda -->
+<div class="my-8 space-y-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-20 text-right">
+<span class="text-purple-400 font-mono text-sm font-bold">1979</span>
+</div>
+<div class="w-px bg-purple-500/30 self-stretch"></div>
+<div class="flex-1 bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="font-bold text-neutral-100 mb-1">Prospect Theory (Kahneman &amp; Tversky)</h4>
+<p class="text-sm text-neutral-400">They demonstrate that the value function is asymmetric: losses weigh about 2x more than equivalent gains. People would rather avoid losing R$50 than gain R$50. This violates the classical economic theory of expected utility.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-20 text-right">
+<span class="text-purple-400 font-mono text-sm font-bold">2006</span>
+</div>
+<div class="w-px bg-purple-500/30 self-stretch"></div>
+<div class="flex-1 bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="font-bold text-neutral-100 mb-1">Neural basis of aversion (De Martino et al.)</h4>
+<p class="text-sm text-neutral-400">Using fMRI, they demonstrate that the amygdala is the neural mediator of loss aversion. Participants with bilateral damage to the amygdala (patient SM) do not exhibit loss aversion. The asymmetry isn’t “cultural”; it’s amygdalar.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-20 text-right">
+<span class="text-purple-400 font-mono text-sm font-bold">2010</span>
+</div>
+<div class="w-px bg-purple-500/30 self-stretch"></div>
+<div class="flex-1 bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="font-bold text-neutral-100 mb-1">Patients with amygdala lesions (Sokol-Hessner)</h4>
+<p class="text-sm text-neutral-400">Confirmation: people without a functional amygdala accept bets that people with a normal amygdala reject. They assess gains and losses symmetrically. Loss aversion disappears without the amygdala. Decisions become "more rational," but also more vulnerable to real risks.</p>
+</div>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-purple-500/10 border border-purple-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-purple-400 text-lg mt-0.5">💡</span>
+<div>
+<h4 class="text-purple-400 font-semibold text-sm mb-1">PRACTICAL IMPLICATION</h4>
+<p class="text-sm">That's why "free shipping" works better than "10% off" (even when the discount is worth more). That's why "cancel with no penalty" sells more than "subscribe for R$X." Framing it as "avoiding a loss" activates the amygdala in a way that "gaining something" cannot. All effective marketing exploits this.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Loss aversion</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Kahneman &amp; Tversky</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Prospect Theory</span>
+</div>
+</section>
+<!-- TOPICO 4 -->
+<section class="mb-10" data-inema-topic="modulo-3-3#topico-4">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">04</span>
+<h2 class="text-2xl font-bold">Fear and decision-making</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>Fear doesn't just distort how we evaluate gains and losses. It fundamentally changes how we assess risk, probability, and options. When the amygdala is activated, the brain shifts how it processes decisions in specific, measurable ways.</p>
+<!-- V/X Grid: Decisao com medo vs. sem medo -->
+<div class="grid md:grid-cols-2 gap-4 my-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-red-400 mb-3">UNDER FEAR (amygdala active)</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Overestimation of risks and threats</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Focus on the worst-case scenario</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Reduced options (cognitive tunnel)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Preference for "safe" options, even when suboptimal</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-green-400 mb-3">IN A NEUTRAL STATE (active cortex)</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Calibrated probability assessment</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Consideration of multiple scenarios</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Complete set of options</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Weighted risk/return trade-off</span></li>
+</ul>
+</div>
+</div>
+<p><strong class="text-neutral-100">Financial decisions</strong> are particularly vulnerable. Behavioral economist Cass Sunstein documented how fear distorts risk assessments: after 9/11, Americans started driving instead of flying, resulting in ~1,600 extra deaths in car crashes in 2002. Fear of a rare risk (terrorism) led to behavior that increased the actual risk (car crash).</p>
+<p><strong class="text-neutral-100">Decision paralysis</strong> is another effect. When fear is diffuse (the threat cannot be identified), the prefrontal cortex receives conflicting signals: the amygdala screams "danger," but there's no clear target. The result is inaction, procrastination, avoidance. It's not laziness; it's fear without direction.</p>
+<!-- Data box -->
+<div class="bg-dark-800 border border-purple-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-purple-400 text-lg mt-0.5">📊</span>
+<div>
+<h4 class="text-purple-400 font-semibold text-sm mb-1">RELEVANT DATA</h4>
+<p class="text-sm text-neutral-400">Lerner &amp; Keltner (2001) study: Participants induced to feel fear made risk estimates 20-30% higher than the controls. Interestingly, participants induced to feel anger (also a negative emotion) made risk estimates <em>smaller</em> that control. Fear and anger, both negative, produce opposite effects on risk assessment because they activate different neural circuits.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Risk distortion</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Decision paralysis</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Cass Sunstein</span>
+</div>
+</section>
+<!-- TOPICO 5 -->
+<section class="mb-10" data-inema-topic="modulo-3-3#topico-5">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">05</span>
+<h2 class="text-2xl font-bold">Marketing and the politics of fear</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>If fear activates the amygdala faster and more intensely than any other emotion, and if the amygdala bypasses rational thought, then fear-based messages are the most powerful persuasion tool there is. Marketing and politics have known this for decades.</p>
+<p>The principle is simple: <strong class="text-neutral-100">a fear-based message accesses System 1 (Kahneman) and bypasses the rational processing of System 2.</strong> The person reacts emotionally before they can critically evaluate the message. By the time the cortex "wakes up," emotion has already colored perception.</p>
+<!-- Timeline: Medo como ferramenta -->
+<div class="my-8 space-y-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-20 text-right">
+<span class="text-purple-400 font-mono text-sm font-bold">1960s</span>
+</div>
+<div class="w-px bg-purple-500/30 self-stretch"></div>
+<div class="flex-1 bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="font-bold text-neutral-100 mb-1">"Daisy" campaign (Lyndon Johnson, 1964)</h4>
+<p class="text-sm text-neutral-400">A single ad: a girl counting flower petals, cut to a nuclear countdown. It never mentions opponent Goldwater by name. It aired only once on TV. Considered the most effective political ad in history. Pure amygdala-driven fear.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-20 text-right">
+<span class="text-purple-400 font-mono text-sm font-bold">1990s</span>
+</div>
+<div class="w-px bg-purple-500/30 self-stretch"></div>
+<div class="flex-1 bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="font-bold text-neutral-100 mb-1">Fear appeals in health advertising</h4>
+<p class="text-sm text-neutral-400">Anti-smoking campaigns with shocking images on cigarette packs. Meta-analysis by Witte &amp; Allen (2000): fear appeals work, but only when accompanied by "perceived efficacy" (the person believes they can take action). Fear without a way out → paralysis or denial. Fear with a way out → behavior change.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-20 text-right">
+<span class="text-purple-400 font-mono text-sm font-bold">2010s</span>
+</div>
+<div class="w-px bg-purple-500/30 self-stretch"></div>
+<div class="flex-1 bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="font-bold text-neutral-100 mb-1">Social media and viral fear</h4>
+<p class="text-sm text-neutral-400">Algorithms prioritize engagement. Content that triggers fear/outrage drives more engagement. An MIT study (Vosoughi et al., 2018): fake news spreads 6x faster than true news on Twitter. Fake news involving fear spreads even faster.</p>
+</div>
+</div>
+</div>
+<!-- Alert box -->
+<div class="bg-red-500/10 border border-red-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-red-400 text-lg mt-0.5">⚠️</span>
+<div>
+<h4 class="text-red-400 font-semibold text-sm mb-1">MECHANISM OF EXPLOITATION</h4>
+<p class="text-sm text-neutral-400">The formula is consistent: (1) Activate fear (amygdala), (2) Offer a culprit or simple solution while the cortex is inhibited, (3) Repeat to consolidate the association. It works in politics ("they're going to destroy the country"), marketing ("your body is aging without you noticing") and news ("the danger you don't know about"). The amygdala's fast pathway is the entry point.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Fear appeals</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Daisy campaign</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Disinformation</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">System 1</span>
+</div>
+</section>
+<!-- TOPICO 6 -->
+<section class="mb-10" data-inema-topic="modulo-3-3#topico-6">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">06</span>
+<h2 class="text-2xl font-bold">Neuroscience-based emotional regulation</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>If the amygdala can hijack rational thought, the practical question is: can you train the prefrontal cortex to regulate the amygdala? The answer is yes, and neuroscience has identified three strategies backed by solid evidence.</p>
+<p><strong class="text-neutral-100">1. Cognitive restructuring (reappraisal):</strong> Consciously reinterpret the meaning of an emotional stimulus. "My boss is criticizing me" → "My boss is pointing out something I can improve." Studies by Ochsner &amp; Gross (2005) show that reappraisal activates the dorsolateral prefrontal cortex and reduces amygdala activity in real time, visible on fMRI. It’s the cortex consciously "calming" the amygdala.</p>
+<p><strong class="text-neutral-100">2. Mindfulness:</strong> Regular mindfulness meditation (MBSR, Kabat-Zinn) changes functional connectivity between the amygdala and prefrontal cortex. Studies by Creswell et al. (2007) and Desbordes et al. (2012) show a lasting reduction in amygdala reactivity among regular meditators, even outside meditation. The amygdala does not switch off, but its “tuning” changes: it reacts less intensely.</p>
+<p><strong class="text-neutral-100">3. Gradual exposure:</strong> The basis for cognitive behavioral therapy for phobias and PTSD. Repeated exposure to the feared stimulus in a safe environment recalibrates the amygdala. The mechanism is not to "forget" the fear (the amygdala retains the memory), but to create new associations that compete with the fear response. It is neuroplasticity applied to emotional regulation.</p>
+<!-- V/X Grid: Estrategias que funcionam vs. nao -->
+<div class="grid md:grid-cols-2 gap-4 my-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-green-400 mb-3">WORKS (solid evidence)</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Reappraisal (cognitive restructuring)</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Regular mindfulness (8+ weeks)</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Controlled gradual exposure</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Emotional labeling (naming the emotion)</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-red-400 mb-3">DOES NOT WORK (or makes it worse)</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Suppression (“don’t think about it”)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Rumination (obsessive replaying)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Total avoidance (never face it)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>"Think positive" without restructuring</span></li>
+</ul>
+</div>
+</div>
+<!-- Concept box -->
+<div class="bg-dark-800 border border-purple-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-purple-400 text-lg mt-0.5">🧩</span>
+<div>
+<h4 class="text-purple-400 font-semibold text-sm mb-1">CENTRAL CONCEPT: AFFECT LABELING</h4>
+<p class="text-sm text-neutral-400">A surprising finding by Lieberman et al. (2007): simply <strong>name the emotion</strong> ("I'm scared," "this makes me angry") reduces activity in the amygdala. Putting emotions into words activates the ventrolateral prefrontal cortex, which automatically modulates the amygdala. It's the simplest possible form of emotional regulation, and it works even when the person doesn't "try" to calm down.</p>
+</div>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-purple-500/10 border border-purple-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-purple-400 text-lg mt-0.5">💡</span>
+<div>
+<h4 class="text-purple-400 font-semibold text-sm mb-1">PRACTICAL APPLICATION</h4>
+<p class="text-sm">Before making an important decision under stress: (1) Name what you’re feeling (affect labeling). (2) Wait at least 20 minutes (for cortisol levels to drop). (3) Reinterpret the situation ("what would I think about this tomorrow?"). These three steps use three neural regulation mechanisms: labeling, biological timing, and reappraisal. This isn’t self-help. It’s neurochemistry.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Cognitive restructuring</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Mindfulness</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Gradual exposure</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Affect labeling</span>
+</div>
+</section>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-dark-800 border border-purple-500/30 rounded-xl p-6 md:p-8">
+<h2 class="text-xl font-bold mb-4 text-purple-400">Module 3.3 Summary</h2>
+<div class="space-y-3 text-neutral-300 text-sm leading-relaxed">
+<p>The amygdala is the brain's alarm system. It processes threats via the "fast pathway" (~12ms), long before the prefrontal cortex can analyze them rationally (~300ms). This saves lives, but it also causes the "emotional hijacking" described by Goleman: intense emotional reactions that bypass rational thought.</p>
+<p>Loss aversion (Kahneman/Tversky) is mediated by the amygdala: the pain of losing is ~2x as intense as the pleasure of gaining. This distorts financial decisions and risk assessments, and is systematically exploited by marketing and fear-based politics. Fear messages access System 1 and bypass critical processing.</p>
+<p>Emotional regulation is possible through three mechanisms with neural evidence: cognitive reappraisal, mindfulness, and gradual exposure. The simplest finding: naming an emotion (affect labeling) already reduces amygdala activity. It’s not about eliminating emotions, but about giving the cortex time and tools to modulate the amygdala’s response.</p>
+</div>
+</div>
+</section>
+<!-- NAV -->
+<section class="flex justify-start items-center space-x-6">
+<a class="flex items-center space-x-2 text-purple-400 hover:text-purple-300 font-medium" href="modulo-3-2.html">
+<span>←</span><span>Module 3.2: Dopamine</span>
+</a>
+<a class="flex items-center space-x-2 text-purple-400 hover:text-purple-300 font-medium" href="../trilha4/index.html">
+<span>Track 4</span><span>→</span>
+</a>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="border-t border-dark-700 py-8"><div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500"><a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mind, Power and Machine · 2026</div></footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

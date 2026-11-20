@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>Módulo 2.1 — Conformidad: por qué seguimos al grupo — MPC</title>
+<!-- Anti-FOUC (PRIMEIRO) -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "neurociencia-comportamento",
+  "tracks": [
+    {"n":"1","title":"O Cérebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heurísticas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonância cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},
+    {"n":"2","title":"Influência Social e Poder do Grupo","modules":[{"id":"2-1","title":"Conformidade: por que seguimos o grupo","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência à autoridade","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulação social e dark patterns","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},
+    {"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina e sistema de recompensa","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala, medo e decisão emocional","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},
+    {"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"A crítica ao Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},
+    {"n":"5","title":"Filosofia da Mente e Consciência","modules":[{"id":"5-1","title":"Livre-arbítrio: Libet","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciência: o problema difícil","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiótica da mente: Bruzzo","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},
+    {"n":"6","title":"IA, Vieses e Ética Comportamental","modules":[{"id":"6-1","title":"Vieses algorítmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistêmicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Ética, tecnologia e o espaço humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}
+  ]
+}
+</script>
+<style>
+body { font-family: 'Inter', system-ui, sans-serif; }
+.topic-explanation { display: none; }
+.topic-explanation.active { display: block; }
+html:not(.dark) body { background-color: #f8fafc; }
+html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+html:not(.dark) .text-neutral-100 { color: #111827; }
+html:not(.dark) .text-neutral-300 { color: #4b5563; }
+html:not(.dark) .text-neutral-400 { color: #6b7280; }
+html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+html:not(.dark) .text-blue-400 { color: #2563eb; }
+html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,0.12); }
+html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+html:not(.dark) .text-primary { color: #a16207; }
+html:not(.dark) .text-sky-400 { color: #0369a1; }
+html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+html:not(.dark) .text-emerald-400 { color: #059669; }
+html:not(.dark) .text-purple-400 { color: #7c3aed; }
+html:not(.dark) .text-amber-400 { color: #92400e; }
+html:not(.dark) .text-teal-400 { color: #0d9488; }
+html:not(.dark) .text-rose-400 { color: #9f1239; }
+html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+html:not(.dark) .hover\:bg-amber-500\/10:hover { background-color: rgba(217,119,6,0.08); }
+html:not(.dark) .hover\:bg-teal-500\/10:hover { background-color: rgba(13,148,136,0.08); }
+html:not(.dark) .hover\:bg-rose-500\/10:hover { background-color: rgba(225,29,72,0.08); }
+html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+.dark .border-dark-600 { border-color: #374151; }
+.dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha2/modulo-2-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha2/modulo-2-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha2/modulo-2-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha2/modulo-2-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-2-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Cerebro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-blue-400 bg-blue-500/10" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Filosofía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 IA+Ética</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()" title="Cambiar el tema">
+<span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="2-1">
+<!-- BREADCRUMB -->
+<nav class="mb-8 text-sm text-neutral-500">
+<a class="hover:text-blue-400 transition-colors" href="../../index.html">Inicio</a>
+<span class="mx-2">/</span>
+<a class="hover:text-blue-400 transition-colors" href="index.html">Ruta 2</a>
+<span class="mx-2">/</span>
+<span class="text-blue-400">Módulo 2.1</span>
+</nav>
+<!-- HEADER -->
+<header class="mb-12">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold text-lg">2.1</span>
+<span class="text-xs text-blue-400 font-mono bg-blue-500/20 border border-blue-500/30 rounded-full px-3 py-1">RUTA 2 · MÓDULO 1</span>
+</div>
+<h1 class="text-3xl md:text-4xl font-extrabold mb-4 leading-tight">Conformidad: por qué seguimos al grupo</h1>
+<p class="text-lg text-neutral-300 max-w-3xl">Solomon Asch demostró que la mayoría de las personas niega la evidencia de sus propios ojos para estar de acuerdo con un grupo unánime. La conformidad no es una debilidad: es un circuito cerebral profundo de supervivencia.</p>
+</header>
+<!-- ============================================================ -->
+<!-- TÓPICO 1: O Experimento de Asch -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-1#topico-1">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">1</span>
+<span class="text-lg font-semibold">El experimento de Asch: diseño y resultados</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">En 1951, Solomon Asch realizó uno de los experimentos más elegantes e inquietantes de la historia de la psicología social. La pregunta era sencilla: ¿negarían las personas la evidencia de sus propios ojos para estar de acuerdo con un grupo?</p>
+<!-- SVG: Diagrama do experimento de Asch (linhas comparativas) -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-4">DIAGRAMA: El experimento de las líneas de Asch</h4>
+<svg aria-label="Experimento de Asch: línea estándar y tres líneas comparativas" class="w-full h-auto" role="img" viewbox="0 0 700 260">
+<defs>
+<filter id="m21-glow"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+</defs>
+<rect fill="#0e1622" height="260" rx="12" width="700"></rect>
+<!-- Card "Padrão" -->
+<rect fill="none" height="200" rx="8" stroke="#3b82f6" stroke-width="2" width="140" x="40" y="20"></rect>
+<text fill="#60a5fa" font-size="12" font-weight="700" text-anchor="middle" x="110" y="16">PATRÓN</text>
+<!-- Linha padrão -->
+<line filter="url(#m21-glow)" stroke="#60a5fa" stroke-width="4" x1="110" x2="110" y1="50" y2="180"></line>
+<text fill="#93c5fd" font-size="10" text-anchor="middle" x="110" y="200">Línea X</text>
+<!-- Card "Comparativas" -->
+<rect fill="none" height="200" rx="8" stroke="#374151" stroke-width="2" width="300" x="240" y="20"></rect>
+<text fill="#9ca3af" font-size="12" font-weight="700" text-anchor="middle" x="390" y="16">COMPARACIONES</text>
+<!-- Linha A (curta) -->
+<line stroke="#9ca3af" stroke-width="3" x1="310" x2="310" y1="110" y2="180"></line>
+<text fill="#9ca3af" font-size="11" font-weight="600" text-anchor="middle" x="310" y="200">A</text>
+<!-- Linha B (igual ao padrão = resposta correta) -->
+<line filter="url(#m21-glow)" stroke="#38bdf8" stroke-width="4" x1="390" x2="390" y1="50" y2="180"></line>
+<text fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle" x="390" y="200">B (correcta)</text>
+<!-- Linha C (mais longa) -->
+<line stroke="#9ca3af" stroke-width="3" x1="470" x2="470" y1="30" y2="180"></line>
+<text fill="#9ca3af" font-size="11" font-weight="600" text-anchor="middle" x="470" y="200">C</text>
+<!-- Resultado -->
+<rect fill="#1e3a5f" height="80" rx="8" stroke="#3b82f6" stroke-width="1.5" width="100" x="580" y="40"></rect>
+<text fill="#60a5fa" font-size="10" font-weight="700" text-anchor="middle" x="630" y="62">RESULTADO</text>
+<text fill="#38bdf8" font-size="22" font-weight="800" text-anchor="middle" x="630" y="85">75%</text>
+<text fill="#7dd3fc" font-size="9" text-anchor="middle" x="630" y="105">cedieron a</text>
+<text fill="#7dd3fc" font-size="9" text-anchor="middle" x="630" y="116">grupo</text>
+<!-- Seta "Atores dizem A" -->
+<rect fill="#0e1622" height="65" rx="8" stroke="#f87171" stroke-width="1.5" width="100" x="580" y="145"></rect>
+<text fill="#f87171" font-size="10" font-weight="700" text-anchor="middle" x="630" y="165">ACTORES</text>
+<text fill="#fca5a5" font-size="9" text-anchor="middle" x="630" y="180">dicen "A"</text>
+<text fill="#fca5a5" font-size="9" text-anchor="middle" x="630" y="195">(equivocada)</text>
+</svg>
+</div>
+<p class="text-neutral-300 leading-relaxed">El diseño era ingeniosamente sencillo. Se colocaba a un participante real en una sala con 7 actores. Todos miraban unas líneas en el cuadro y debían decir cuál de las tres líneas de comparación tenía la misma longitud que la línea estándar. La respuesta era visualmente obvia. El participante real siempre respondía al final (o penúltimo), después de escuchar a todos los actores dar la misma respuesta equivocada.</p>
+<!-- Tip box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5">
+<div class="flex items-start space-x-3">
+<span class="text-blue-400 text-lg mt-0.5">i</span>
+<div>
+<p class="text-blue-400 font-semibold text-sm mb-1">Por qué funciona el diseño</p>
+<p class="text-neutral-300 text-sm">La respuesta era tan obvia que, sin la presión del grupo, el porcentaje de error era inferior al 1%. El 75% de concordancia con la respuesta equivocada se debe por completo a la influencia social, no a la ambigüedad visual.</p>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 leading-relaxed">Asch realizó 18 rondas con cada grupo. En 12 de ellas, los actores dieron respuestas equivocadas (rondas críticas). Los resultados: aproximadamente el 75% de los participantes estuvo de acuerdo con la respuesta equivocada al menos en una ronda. En promedio, los participantes se conformaron en cerca del 37% de las rondas críticas. Solo el 25% nunca cedió. Y cuando los entrevistaron después, muchos admitieron que sabían que la respuesta del grupo era equivocada, pero no querían ser "el diferente".</p>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">Ronda crítica</p>
+<p class="text-neutral-400 text-xs">Ronda en la que los actores dan unánimemente la respuesta incorrecta</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">Conformidad pública</p>
+<p class="text-neutral-400 text-xs">Estar de acuerdo en voz alta aunque no se esté de acuerdo internamente</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">El 25% que se resiste</p>
+<p class="text-neutral-400 text-xs">Minoría que nunca cedió, ni siquiera ante la presión total del grupo</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- TÓPICO 2: Influência Informacional -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-1#topico-2">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">2</span>
+<span class="text-lg font-semibold">Influencia informativa: el grupo como fuente de verdad</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">Deutsch y Gerard (1955) formalizaron la distinción entre dos mecanismos de conformidad. El primero, la influencia informativa, ocurre cuando genuinamente aceptamos la información del grupo como evidencia de la realidad. En situaciones ambiguas, el comportamiento de los demás es una heurística poderosa: "si todos creen que es A, quizá me equivoque".</p>
+<!-- Certo/Errado Grid -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-4">CUÁNDO OPERA LA INFLUENCIA INFORMATIVA</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-3">
+<p class="text-sm font-semibold text-emerald-400 mb-2">Situaciones que aumentan</p>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">Tarea ambigua o compleja</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">Grupo percibido como experto</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">Situación de crisis o urgencia</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-emerald-400 mt-0.5">✓</span>
+<span class="text-neutral-300 text-sm">Persona con baja autoconfianza</span>
+</div>
+</div>
+<div class="space-y-3">
+<p class="text-sm font-semibold text-red-400 mb-2">Situaciones que reducen</p>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Evidencia clara e inequívoca</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Grupo desacreditado o sin experiencia</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Experiencia previa del individuo</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="text-red-400 mt-0.5">✗</span>
+<span class="text-neutral-300 text-sm">Tiempo para la reflexión individual</span>
+</div>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 leading-relaxed">Desde el punto de vista evolutivo, este mecanismo tiene sentido. Durante milenios, el grupo generalmente tenía razón: si todos corren, hay un depredador; si todos comen esa fruta, probablemente no es venenosa. La influencia informativa es un atajo que funciona en la mayoría de los contextos, pero falla cuando todo el grupo está sistemáticamente equivocado, como en el experimento de Asch.</p>
+<p class="text-neutral-300 leading-relaxed">El experimento autocinético de Muzafer Sherif (1935) ya lo había demostrado: en una sala oscura, un punto de luz parece moverse (ilusión autocinética), y los participantes convergen en una estimación grupal de la "distancia recorrida" por la luz. Cuando la realidad es realmente ambigua, el grupo se convierte en el punto de referencia.</p>
+<!-- Data box -->
+<div class="bg-dark-800 border border-blue-500/30 rounded-xl p-5">
+<p class="text-blue-400 text-xs font-mono mb-2">DATOS EXPERIMENTALES</p>
+<p class="text-neutral-300 text-sm leading-relaxed">En el experimento de Sherif, los participantes que formaron normas grupales las mantuvieron incluso cuando se les evaluó individualmente meses después. La influencia informativa no es temporal: remodela la percepción de forma duradera.</p>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">Influencia informativa</p>
+<p class="text-neutral-400 text-xs">Aceptar al grupo como fuente de información sobre la realidad</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">Efecto autocinético</p>
+<p class="text-neutral-400 text-xs">Ilusión de movimiento de un punto fijo en la oscuridad (Sherif, 1935)</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">Conversión genuina</p>
+<p class="text-neutral-400 text-xs">Cuando la persona realmente cambia de opinión (no solo finge)</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- TÓPICO 3: Influência Normativa -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-1#topico-3">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">3</span>
+<span class="text-lg font-semibold">Influencia normativa: pertenecer o ser excluido</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">El segundo mecanismo de conformidad es más visceral. La influencia normativa no tiene que ver con la información, sino con la pertenencia. Estamos de acuerdo no porque creamos que el grupo tiene razón, sino porque disentir tiene un costo social: rechazo, exclusión, humillación. Queremos que nos acepten, y disentir en público lo pone en riesgo.</p>
+<p class="text-neutral-300 leading-relaxed">En la mayoría de los casos de Asch, los participantes sabían que la respuesta del grupo era incorrecta. Cuando los entrevistaron después, muchos dijeron que habían estado de acuerdo «para no parecer raros». Esto es influencia normativa pura: la percepción no cambió, solo la respuesta pública.</p>
+<!-- Tip box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5">
+<div class="flex items-start space-x-3">
+<span class="text-blue-400 text-lg mt-0.5">!</span>
+<div>
+<p class="text-blue-400 font-semibold text-sm mb-1">Exclusión = dolor físico</p>
+<p class="text-neutral-300 text-sm">Los estudios de neuroimagen (Eisenberger et al., 2003) demuestran que la exclusión social activa la corteza cingulada anterior dorsal, la misma región que procesa el dolor físico. Para el cerebro, ser excluido del grupo literalmente duele.</p>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 leading-relaxed">Desde el punto de vista evolutivo, la exclusión del grupo significaba una muerte segura. Los humanos somos primates sociales obligatorios. Ser expulsado de la tribu en entornos ancestrales era una sentencia de muerte por depredación, hambre o exposición. Este circuito de «dolor social = dolor físico» evolucionó porque la supervivencia dependía absolutamente de pertenecer al grupo.</p>
+<!-- Certo/Errado Grid 2 -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-4">INFORMATIVA vs NORMATIVA</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 font-semibold text-sm mb-2">Informativo</p>
+<div class="space-y-2">
+<div class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span class="text-neutral-300 text-sm">Grupo = fuente de información</span></div>
+<div class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span class="text-neutral-300 text-sm">La persona cambia de opinión genuinamente</span></div>
+<div class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span class="text-neutral-300 text-sm">Opera más en situaciones ambiguas</span></div>
+<div class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span class="text-neutral-300 text-sm">Conformidad pública y privada</span></div>
+</div>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 font-semibold text-sm mb-2">Normativa</p>
+<div class="space-y-2">
+<div class="flex items-start space-x-2"><span class="text-red-400">✗</span><span class="text-neutral-300 text-sm">Grupo = fuente de presión social</span></div>
+<div class="flex items-start space-x-2"><span class="text-red-400">✗</span><span class="text-neutral-300 text-sm">La persona está de acuerdo sin creerlo</span></div>
+<div class="flex items-start space-x-2"><span class="text-red-400">✗</span><span class="text-neutral-300 text-sm">Opera incluso cuando la respuesta es obvia</span></div>
+<div class="flex items-start space-x-2"><span class="text-red-400">✗</span><span class="text-neutral-300 text-sm">Solo conformidad pública (la privada se mantiene)</span></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">Influencia normativa</p>
+<p class="text-neutral-400 text-xs">Conformarse para evitar el rechazo, no porque se haya creído</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">Corteza cingulada anterior</p>
+<p class="text-neutral-400 text-xs">Región que procesa el dolor físico Y social</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">Cumplimiento vs. internalización</p>
+<p class="text-neutral-400 text-xs">Estar de acuerdo sin creer vs. cambiar genuinamente</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- TÓPICO 4: Neurociência da Conformidade -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-1#topico-4">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">4</span>
+<span class="text-lg font-semibold">Neurociencia de la conformidad: amígdala y recompensa</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">Los estudios de fMRI revelaron que la conformidad no es solo un fenómeno social: también es fisiológica. Klucharev et al. (2009) demostraron que, cuando un participante discrepaba de la opinión del grupo, ocurrían dos cosas simultáneamente en el cerebro: se activaba la amígdala (circuito del miedo y la amenaza) y disminuía la actividad en el estriado ventral (circuito de recompensa).</p>
+<!-- SVG: Brain regions -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-4">CIRCUITOS CEREBRALES DE LA CONFORMIDAD</h4>
+<svg aria-label="Circuitos cerebrales: la amígdala se activa al discrepar; el sistema de recompensa, al estar de acuerdo" class="w-full h-auto" role="img" viewbox="0 0 700 220">
+<defs>
+<filter id="m21-glow2"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+</defs>
+<rect fill="#0e1622" height="220" rx="12" width="700"></rect>
+<!-- DISCORDAR -->
+<rect fill="none" height="180" rx="10" stroke="#f87171" stroke-dasharray="4" stroke-width="1.5" width="300" x="30" y="20"></rect>
+<text fill="#f87171" font-size="12" font-weight="700" text-anchor="middle" x="180" y="42">DISCREPAR DEL GRUPO</text>
+<circle cx="110" cy="110" fill="#1e1622" filter="url(#m21-glow2)" r="38" stroke="#f87171" stroke-width="2"></circle>
+<text fill="#f87171" font-size="11" font-weight="700" text-anchor="middle" x="110" y="105">AMÍGDALA</text>
+<text fill="#fca5a5" font-size="9" text-anchor="middle" x="110" y="120">activa</text>
+<text fill="#fca5a5" font-size="10" text-anchor="middle" x="110" y="165">Miedo / amenaza</text>
+<circle cx="250" cy="110" fill="#1e1622" r="38" stroke="#9ca3af" stroke-width="2"></circle>
+<text fill="#9ca3af" font-size="10" font-weight="700" text-anchor="middle" x="250" y="100">ESTRIADO</text>
+<text fill="#9ca3af" font-size="10" font-weight="700" text-anchor="middle" x="250" y="115">VENTRAL</text>
+<text fill="#6b7280" font-size="9" text-anchor="middle" x="250" y="130">reducido</text>
+<text fill="#6b7280" font-size="10" text-anchor="middle" x="250" y="165">Sin recompensa</text>
+<!-- CONCORDAR -->
+<rect fill="none" height="180" rx="10" stroke="#38bdf8" stroke-dasharray="4" stroke-width="1.5" width="300" x="370" y="20"></rect>
+<text fill="#38bdf8" font-size="12" font-weight="700" text-anchor="middle" x="520" y="42">ESTAR DE ACUERDO CON EL GRUPO</text>
+<circle cx="450" cy="110" fill="#0e1622" r="38" stroke="#6b7280" stroke-width="2"></circle>
+<text fill="#6b7280" font-size="11" font-weight="700" text-anchor="middle" x="450" y="105">AMÍGDALA</text>
+<text fill="#4b5563" font-size="9" text-anchor="middle" x="450" y="120">quieta</text>
+<text fill="#4b5563" font-size="10" text-anchor="middle" x="450" y="165">Sin amenaza</text>
+<circle cx="590" cy="110" fill="#0e1622" filter="url(#m21-glow2)" r="38" stroke="#38bdf8" stroke-width="2"></circle>
+<text fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle" x="590" y="100">NÚCLEO</text>
+<text fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle" x="590" y="115">ACCUMBENS</text>
+<text fill="#7dd3fc" font-size="9" text-anchor="middle" x="590" y="130">activo</text>
+<text fill="#7dd3fc" font-size="10" text-anchor="middle" x="590" y="165">Recompensa</text>
+</svg>
+</div>
+<p class="text-neutral-300 leading-relaxed">En otras palabras, conformarse es neurológicamente placentero y discrepar es fisiológicamente doloroso. Esto explica por qué es tan difícil resistirse a la conformidad: no estamos luchando contra una decisión racional, sino contra circuitos de recompensa y miedo que evolucionaron a lo largo de millones de años.</p>
+<!-- Concept box -->
+<div class="bg-dark-800 border border-blue-500/30 rounded-xl p-5">
+<p class="text-blue-400 text-xs font-mono mb-2">IMPLICACIÓN CLAVE</p>
+<p class="text-neutral-300 text-sm leading-relaxed">Berns et al. (2005) fueron aún más lejos: demostraron que, en algunos casos, la conformidad no es solo emocional, sino también perceptiva. Cuando los participantes estaban de acuerdo con el grupo, la actividad en la corteza visual primaria cambiaba, lo que sugiere que el grupo puede cambiar literalmente lo que "ves", no solo lo que dices que ves.</p>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">Amígdala</p>
+<p class="text-neutral-400 text-xs">Se activa cuando discrepamos del grupo: circuito de amenaza</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">Núcleo accumbens</p>
+<p class="text-neutral-400 text-xs">Se activa al estar de acuerdo: la conformidad resulta placentera</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">Conformidad perceptiva</p>
+<p class="text-neutral-400 text-xs">El grupo puede alterar lo que el cerebro procesa visualmente</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- TÓPICO 5: Fatores que Modulam a Conformidade -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-1#topico-5">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">5</span>
+<span class="text-lg font-semibold">Factores que Modulan la Conformidad</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">Asch no se detuvo en el experimento básico. Varió sistemáticamente las condiciones para entender qué factores amplifican o reducen la conformidad. Estas variaciones son tan informativas como el resultado original.</p>
+<!-- Timeline -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-6">VARIACIONES DEL EXPERIMENTO DE ASCH</h4>
+<div class="space-y-6 border-l-2 border-blue-500/30 pl-6 ml-3">
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">VARIACIÓN 1</p>
+<p class="text-sm font-semibold mb-1">Un aliado</p>
+<p class="text-neutral-400 text-sm">Cuando un actor daba la respuesta correcta, la conformidad cayó de ~37% a ~5%. Basta con un solo aliado para romper la unanimidad.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">VARIACIÓN 2</p>
+<p class="text-sm font-semibold mb-1">Tamaño del grupo</p>
+<p class="text-neutral-400 text-sm">La conformidad aumenta con el tamaño del grupo, pero se satura con ~4 miembros. De 4 a 15 no hay una diferencia significativa. Lo que importa es la unanimidad, no la cantidad.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">VARIACIÓN 3</p>
+<p class="text-sm font-semibold mb-1">Respuesta privada</p>
+<p class="text-neutral-400 text-sm">Cuando los participantes escribían la respuesta en vez de decirla en voz alta, la conformidad cayó drásticamente. Prueba de que gran parte es normativa (miedo a ser diferente), no informativa.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">VARIACIÓN 4</p>
+<p class="text-sm font-semibold mb-1">Dificultad de la tarea</p>
+<p class="text-neutral-400 text-sm">Cuando las líneas tenían longitudes más parecidas (una tarea más difícil), aumentaba la conformidad. Más ambigüedad = más espacio para que opere la influencia informativa.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] w-4 h-4 rounded-full bg-blue-500/20 border-2 border-blue-400"></div>
+<p class="text-blue-400 text-xs font-mono mb-1">VARIACIÓN 5</p>
+<p class="text-sm font-semibold mb-1">Estatus del grupo</p>
+<p class="text-neutral-400 text-sm">Los grupos percibidos como de alto estatus o con experiencia generan más conformidad. Las replicaciones transculturales muestran que las culturas colectivistas (Japón, China) presentan tasas más altas.</p>
+</div>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5">
+<div class="flex items-start space-x-3">
+<span class="text-blue-400 text-lg mt-0.5">i</span>
+<div>
+<p class="text-blue-400 font-semibold text-sm mb-1">La lección del aliado</p>
+<p class="text-neutral-300 text-sm">La variante más poderosa de Asch: una sola persona disidente reduce la conformidad de ~37% a ~5%. La unanimidad es frágil. Una voz discordante da permiso a otras personas para que también discrepen. Esto tiene profundas implicaciones para las organizaciones, la política y las redes sociales.</p>
+</div>
+</div>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">Efecto del aliado</p>
+<p class="text-neutral-400 text-xs">Un solo disidente reduce la conformidad en ~85%</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">Saturación del grupo</p>
+<p class="text-neutral-400 text-xs">Por encima de ~4 miembros, el tamaño no aumenta la conformidad</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">Unanimidad</p>
+<p class="text-neutral-400 text-xs">Factor más fuerte: romper la unanimidad = romper la conformidad</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- TÓPICO 6: Conformidade Digital -->
+<!-- ============================================================ -->
+<section class="mb-12" data-inema-topic="modulo-2-1#topico-6">
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-4 rounded-xl bg-dark-800 border border-dark-700 hover:border-blue-500/30 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-bold flex-shrink-0">6</span>
+<span class="text-lg font-semibold">Conformidad digital: likes, viralidad y manadas en línea</span>
+</button>
+<div class="topic-explanation mt-4 space-y-6">
+<p class="text-neutral-300 leading-relaxed">El experimento de Asch se realizó en una sala con 8 personas. Las redes sociales reproducen el mismo mecanismo con 8.000 millones. Los likes, las veces que se comparte y los contadores de visualizaciones son los actores unánimes del Asch digital. Cuando una publicación tiene 50.000 likes, tu cerebro lo interpreta como 50.000 personas de acuerdo. La unanimidad percibida es abrumadora.</p>
+<!-- Certo/Errado Grid -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h4 class="text-sm font-semibold text-blue-400 mb-4">ASCH ANALÓGICO vs. ASCH DIGITAL</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-neutral-300 font-semibold text-sm mb-3">Asch (1951)</p>
+<div class="space-y-2">
+<div class="flex items-start space-x-2"><span class="text-blue-400">•</span><span class="text-neutral-300 text-sm">7 actores en la sala</span></div>
+<div class="flex items-start space-x-2"><span class="text-blue-400">•</span><span class="text-neutral-300 text-sm">Respuesta verbal presencial</span></div>
+<div class="flex items-start space-x-2"><span class="text-blue-400">•</span><span class="text-neutral-300 text-sm">Tarea visual simple</span></div>
+<div class="flex items-start space-x-2"><span class="text-blue-400">•</span><span class="text-neutral-300 text-sm">75% ceden ante el grupo</span></div>
+</div>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-neutral-300 font-semibold text-sm mb-3">Redes sociales (2020s)</p>
+<div class="space-y-2">
+<div class="flex items-start space-x-2"><span class="text-blue-400">•</span><span class="text-neutral-300 text-sm">Miles/millones de «me gusta»</span></div>
+<div class="flex items-start space-x-2"><span class="text-blue-400">•</span><span class="text-neutral-300 text-sm">Métricas numéricas visibles</span></div>
+<div class="flex items-start space-x-2"><span class="text-blue-400">•</span><span class="text-neutral-300 text-sm">Temas complejos y ambiguos</span></div>
+<div class="flex items-start space-x-2"><span class="text-blue-400">•</span><span class="text-neutral-300 text-sm">Unanimidad artificial por algoritmo</span></div>
+</div>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 leading-relaxed">Los algoritmos de recomendación amplifican el efecto: muestran preferentemente contenido popular, creando una aparente unanimidad que no refleja la diversidad real de opiniones. El contenido viral no es necesariamente verdadero. Cuenta con aprobación social, que es algo fundamentalmente diferente.</p>
+<p class="text-neutral-300 leading-relaxed">La conformidad digital también opera por omisión: cuando una opinión domina el feed, quienes discrepan guardan silencio (espiral del silencio de Noelle-Neumann). El resultado es una cámara de eco donde la aparente unanimidad se autorrefuerza, exactamente como los actores de Asch, pero a escala planetaria y a velocidad algorítmica.</p>
+<!-- Concept box -->
+<div class="bg-dark-800 border border-blue-500/30 rounded-xl p-5">
+<p class="text-blue-400 text-xs font-mono mb-2">EXPERIMENTO DIGITAL</p>
+<p class="text-neutral-300 text-sm leading-relaxed">En 2013, Muchnik et al. publicaron en Science un estudio sobre Reddit: los comentarios que recibían un upvote artificial inicial tenían un 32% más de probabilidades de acumular votos positivos que el grupo de control. La primera señal de aprobación social funciona como el primer actor en el experimento de Asch: marca la dirección para todos los que siguen.</p>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">Unanimidad algorítmica</p>
+<p class="text-neutral-400 text-xs">Los algoritmos crean una apariencia de consenso al filtrar la disidencia</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">Espiral del silencio</p>
+<p class="text-neutral-400 text-xs">Las minorías guardan silencio cuando perciben que la opinión dominante es otra</p>
+</div>
+<div class="bg-dark-700 rounded-lg p-4 border border-dark-600">
+<p class="text-blue-400 text-xs font-mono mb-1">CONCEPTO</p>
+<p class="text-sm font-semibold mb-1">Viralidad =/= verdad</p>
+<p class="text-neutral-400 text-xs">Popular = aprobado socialmente, no necesariamente correcto</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- RESUMO -->
+<!-- ============================================================ -->
+<section class="mb-12">
+<div class="bg-gradient-to-r from-blue-900/30 to-transparent rounded-xl p-6 md:p-8 border border-blue-500/30">
+<h2 class="text-xl font-bold mb-4 text-blue-400">Resumen del Módulo 2.1</h2>
+<div class="space-y-3 text-neutral-300 text-sm leading-relaxed">
+<p>Asch demostró que ~75% de las personas están de acuerdo con una respuesta claramente equivocada cuando un grupo unánime ejerce presión. Dos mecanismos lo explican: la influencia informativa (el grupo como fuente de verdad) y la influencia normativa (el miedo a la exclusión). La neurociencia lo confirma: discrepar activa circuitos del miedo; estar de acuerdo activa la recompensa. La conformidad no es una debilidad; es una herencia evolutiva que las plataformas digitales explotan a una escala sin precedentes. La defensa más poderosa contra la conformidad es la presencia de un solo aliado que rompa la unanimidad.</p>
+</div>
+</div>
+</section>
+<!-- NAV MÓDULOS -->
+<section>
+<div class="flex justify-between items-center">
+<a class="flex items-center space-x-2 text-neutral-400 hover:text-blue-400 transition-colors" href="index.html">
+<span>←</span>
+<span>Ruta 2</span>
+</a>
+<a class="flex items-center space-x-2 text-neutral-400 hover:text-blue-400 transition-colors" href="modulo-2-2.html">
+<span>Módulo 2.2: Obediencia a la autoridad</span>
+<span>→</span>
+</a>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="border-t border-dark-700 py-8">
+<div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500">
+<a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mente, Poder e Máquina · 2026
+  </div>
+</footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

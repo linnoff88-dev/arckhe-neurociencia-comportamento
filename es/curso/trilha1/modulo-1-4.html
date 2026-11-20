@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>Módulo 1.4 — Disonancia cognitiva y cambio de comportamiento | MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "neurociencia-comportamento",
+  "tracks": [
+    {"n":"1","title":"O Cérebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heurísticas: os atalhos que enganam","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonância cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},
+    {"n":"2","title":"Influência Social e Poder do Grupo","modules":[{"id":"2-1","title":"Conformidade: por que seguimos o grupo","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência à autoridade","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulação social e dark patterns","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},
+    {"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina e sistema de recompensa","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala, medo e decisão emocional","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},
+    {"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"A crítica ao Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory: arquitetura de escolhas","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental e paradoxo da escolha","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},
+    {"n":"5","title":"Filosofia da Mente e Consciência","modules":[{"id":"5-1","title":"Livre-arbítrio: Libet","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciência: o problema difícil","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiótica da mente: Bruzzo","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},
+    {"n":"6","title":"IA, Vieses e Ética Comportamental","modules":[{"id":"6-1","title":"Vieses algorítmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistêmicas e polarização","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Ética, tecnologia e o espaço humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}
+  ]
+}
+</script>
+<style>
+body { font-family: 'Inter', system-ui, sans-serif; }
+.topic-explanation { display: none; }
+.topic-explanation.active { display: block; }
+html:not(.dark) body { background-color: #f8fafc; }
+html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+html:not(.dark) .text-neutral-100 { color: #111827; }
+html:not(.dark) .text-neutral-300 { color: #4b5563; }
+html:not(.dark) .text-neutral-400 { color: #6b7280; }
+html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+html:not(.dark) .text-emerald-400 { color: #059669; }
+html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+html:not(.dark) .text-primary { color: #a16207; }
+html:not(.dark) .text-sky-400 { color: #0369a1; }
+html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+.dark .border-dark-600 { border-color: #374151; }
+.dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha1/modulo-1-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha1/modulo-1-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha1/modulo-1-4.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-emerald-400 bg-emerald-500/10" href="../trilha1/index.html">T1 Cerebro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Filosofía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 IA+Ética</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()" title="Cambiar el tema">
+<span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="1-4">
+<!-- BREADCRUMB -->
+<div class="flex items-center space-x-2 text-sm text-neutral-500 mb-8">
+<a class="hover:text-emerald-400 transition-colors" href="../../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-emerald-400 transition-colors" href="index.html">Ruta 1</a>
+<span>/</span>
+<span class="text-neutral-300">Módulo 1.4</span>
+</div>
+<!-- HEADER -->
+<section class="mb-10">
+<div class="bg-gradient-to-r from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl p-8 border border-emerald-500/30">
+<div class="inline-flex items-center space-x-2 bg-emerald-500/20 border border-emerald-500/30 rounded-full px-4 py-1.5 mb-4">
+<span class="text-emerald-400 text-sm font-semibold">MÓDULO 1.4</span>
+</div>
+<h1 class="text-2xl font-bold mb-2">Disonancia cognitiva y cambio de comportamiento</h1>
+<p class="text-neutral-400 mb-4">Leon Festinger (1957) · Cuando las creencias y las acciones entran en conflicto</p>
+<div class="flex items-center space-x-6 text-sm text-neutral-500">
+<span>6 temas</span>
+<span>~35 min</span>
+<span>Fundamento</span>
+</div>
+</div>
+</section>
+<!-- SVG: Fluxo de dissonância cognitiva -->
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-10 overflow-hidden">
+<svg aria-label="Flujo: creencia más evidencia contraria genera disonancia, que conduce a 4 vías de resolución" class="w-full h-auto" role="img" viewbox="0 0 800 360">
+<defs>
+<filter id="m14-glow"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="m14-arr" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#34d399" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<marker id="m14-arr-c" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#38bdf8" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<marker id="m14-arr-r" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#f87171" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<marker id="m14-arr-a" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#fbbf24" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<pattern height="40" id="m14-grid" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#374151" stroke-width="0.5"></path></pattern>
+</defs>
+<rect fill="url(#m14-grid)" height="360" rx="12" width="800"></rect>
+<!-- Crença -->
+<rect fill="#0e2018" filter="url(#m14-glow)" height="70" rx="16" stroke="#10b981" stroke-width="2" width="130" x="30" y="120"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="95" y="150">CREENCIA</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="95" y="168">actitud existente</text>
+<!-- Evidência contrária -->
+<rect fill="#0e1b26" height="70" rx="16" stroke="#38bdf8" stroke-width="2" width="130" x="30" y="220"></rect>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="95" y="248">EVIDENCIA</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="95" y="266">contraria</text>
+<!-- Collision / Dissonância -->
+<circle cx="280" cy="200" fill="#0e2018" filter="url(#m14-glow)" r="55" stroke="#f87171" stroke-width="2.5"></circle>
+<text fill="#f87171" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="280" y="192">DISONANCIA</text>
+<text fill="#fca5a5" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="280" y="210">incomodidad</text>
+<text fill="#fca5a5" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="280" y="224">psicológico</text>
+<!-- Arrows to dissonância -->
+<line marker-end="url(#m14-arr)" opacity="0.5" stroke="#34d399" stroke-width="2" x1="160" x2="228" y1="155" y2="185"></line>
+<line marker-end="url(#m14-arr-c)" opacity="0.5" stroke="#38bdf8" stroke-width="2" x1="160" x2="228" y1="255" y2="215"></line>
+<!-- 4 Resolution paths -->
+<!-- Path 1: Mudar comportamento -->
+<rect fill="#0e2018" height="60" rx="12" stroke="#10b981" stroke-width="1.5" width="170" x="440" y="30"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="525" y="53">1. CAMBIAR</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="525" y="68">COMPORTAMIENTO</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="8" opacity="0.7" text-anchor="middle" x="525" y="82">alinear la acción con la creencia</text>
+<!-- Path 2: Mudar crença -->
+<rect fill="#0e1b26" height="60" rx="12" stroke="#38bdf8" stroke-width="1.5" width="170" x="440" y="110"></rect>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="525" y="133">2. CAMBIAR</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="525" y="148">CREENCIA</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="8" opacity="0.7" text-anchor="middle" x="525" y="162">ajustar la convicción</text>
+<!-- Path 3: Adicionar cognição -->
+<rect fill="#1a1a0e" height="60" rx="12" stroke="#fbbf24" stroke-width="1.5" width="170" x="440" y="190"></rect>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="525" y="213">3. AGREGAR</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="525" y="228">COGNICIÓN</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="8" opacity="0.7" text-anchor="middle" x="525" y="242">racionalizar, justificar</text>
+<!-- Path 4: Reduzir importância -->
+<rect fill="#1f2937" height="60" rx="12" stroke="#a78bfa" stroke-width="1.5" width="170" x="440" y="270"></rect>
+<text fill="#a78bfa" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="525" y="293">4. REDUCIR</text>
+<text fill="#c4b5fd" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="525" y="308">IMPORTANCIA</text>
+<text fill="#c4b5fd" font-family="Inter,sans-serif" font-size="8" opacity="0.7" text-anchor="middle" x="525" y="322">"no es tan grave"</text>
+<!-- Arrows from dissonância to paths -->
+<line marker-end="url(#m14-arr)" opacity="0.5" stroke="#34d399" stroke-width="1.5" x1="335" x2="438" y1="170" y2="60"></line>
+<line marker-end="url(#m14-arr-c)" opacity="0.5" stroke="#38bdf8" stroke-width="1.5" x1="335" x2="438" y1="185" y2="140"></line>
+<line marker-end="url(#m14-arr-a)" opacity="0.5" stroke="#fbbf24" stroke-width="1.5" x1="335" x2="438" y1="210" y2="220"></line>
+<line opacity="0.5" stroke="#a78bfa" stroke-width="1.5" x1="335" x2="438" y1="230" y2="300"></line>
+<!-- Labels -->
+<text fill="#34d399" filter="url(#m14-glow)" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="400" y="20">DISONANCIA COGNITIVA: 4 CAMINOS</text>
+<!-- Festinger label -->
+<rect fill="#1f2937" height="45" opacity="0.6" rx="10" stroke="#34d399" stroke-width="1" width="120" x="650" y="150"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="710" y="170">Festinger, 1957</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="8" opacity="0.7" text-anchor="middle" x="710" y="185">Una teoría de la cognición</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="8" opacity="0.7" text-anchor="middle" x="710" y="195">Dissonance</text>
+</svg>
+</div>
+<!-- TÓPICO 1 -->
+<section class="mb-12" data-inema-topic="modulo-1-4#topico-1" id="topico-1">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<h2 class="text-2xl font-bold">Qué es la disonancia cognitiva</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-4-t1-p1">La disonancia cognitiva, propuesta por Leon Festinger en 1957, es el malestar psicológico que surge cuando una persona mantiene simultáneamente dos o más cogniciones contradictorias: creencias, actitudes o comportamientos que entran en conflicto. No es solo un desacuerdo intelectual. Es una sensación de tensión real, casi física, que el cerebro trata como una amenaza al equilibrio interno.</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-4-t1-p2">La forma más común de disonancia surge entre el comportamiento y las creencias. Una persona que fuma y sabe que el cigarrillo causa cáncer experimenta disonancia cada vez que enciende uno. La creencia («fumar mata») y el comportamiento («yo fumo») coexisten en contradicción. Este estado es psicológicamente inestable, y el cerebro trabaja activamente para resolverlo, no siempre de la forma más racional.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-4-t1-p3">Festinger observó el fenómeno por primera vez al estudiar un culto que predecía el fin del mundo para una fecha específica. Cuando el apocalipsis no ocurrió, los miembros del culto no abandonaron su creencia. En cambio, reinterpretaron el fracaso como prueba de éxito: "Nuestras oraciones salvaron al mundo." La disonancia entre la creencia y la realidad se resolvió cambiando la interpretación de la realidad, no la creencia.</p>
+<!-- Tip box -->
+<div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-emerald-400 font-semibold mb-1">Principio central</p>
+<p class="text-neutral-300 text-sm">La disonancia cognitiva es motivacional: genera malestar que impulsa a la acción. Las personas no permanecen pasivas ante una contradicción interna. Cambian algo (el comportamiento, una creencia, una interpretación o la importancia que le dan) para recuperar la coherencia. El problema es que no todas las soluciones son igual de racionales.</p>
+</div>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-emerald-400 font-semibold text-sm mb-3">Cuando surge disonancia</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>El comportamiento contradice la creencia personal</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Nueva información desafía una convicción antigua</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Decisión difícil entre dos opciones atractivas</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Mucho esfuerzo con un resultado decepcionante</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-red-400 font-semibold text-sm mb-3">Lo que la disonancia NO es</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Simplemente discrepar con alguien</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Estar confundido o indeciso</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Cambiar de opinión racionalmente</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Simplemente tener dos ideas diferentes</span></li>
+</ul>
+</div>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Festinger</p>
+<p class="text-neutral-400 text-xs mt-1">1957: teoría fundacional</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Contradicción</p>
+<p class="text-neutral-400 text-xs mt-1">Creencia vs. comportamiento</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Incomodidad</p>
+<p class="text-neutral-400 text-xs mt-1">Tensión motivacional</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Resolución</p>
+<p class="text-neutral-400 text-xs mt-1">Restaurar la coherencia</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="mb-12" data-inema-topic="modulo-1-4#topico-2" id="topico-2">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<h2 class="text-2xl font-bold">Mecanismos de reducción</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-4-t2-p1">Festinger identificó cuatro estrategias principales que el cerebro usa para reducir la disonancia. La primera es cambiar el comportamiento para alinearlo con la creencia. Una persona fumadora que cree que fumar mata puede dejar de fumar. Es la solución más racional, pero también la más difícil, porque los comportamientos se sostienen mediante hábitos, dependencia y contexto social.</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-4-t2-p2">La segunda estrategia es cambiar la creencia. En vez de dejar de fumar, la persona fumadora cuestiona la evidencia: «Mi abuelo fumó hasta los 90». La tercera es añadir una cognición reconciliadora: «Fumo, pero hago ejercicio, así que lo compenso». Estas nuevas cogniciones crean un puente entre la creencia y el comportamiento, y reducen la tensión sin resolver la contradicción real.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-4-t2-p3">La cuarta estrategia es restarle importancia al conflicto: «Todo el mundo muere por algo». Al trivializar la cuestión, el malestar disminuye sin que nada cambie realmente. En la práctica, la mayoría de las personas combina las estrategias 2, 3 y 4, porque requieren menos esfuerzo cognitivo. Cambiar el comportamiento exige energía, disciplina y hacer frente a hábitos arraigados. Cambiar la narrativa interna solo requiere creatividad.</p>
+<!-- Timeline: 4 estratégias -->
+<div class="space-y-4 mb-6">
+<h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide">Las 4 estrategias de reducción</h4>
+<div class="relative pl-6 border-l-2 border-emerald-500/30 space-y-6">
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">Cambiar el comportamiento:</strong> Dejar de fumar. Racional, pero difícil. Exige energía real.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">Cambiar la creencia:</strong> "La ciencia sobre el tabaco está exagerada." Cuestiona la evidencia.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">Agregar cognición:</strong> "Fumo, pero hago ejercicio." Crea un puente reconciliador.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-red-500/30 border-2 border-red-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-red-400">Reducir la importancia:</strong> "Todo el mundo muere de algo." Trivializa el conflicto.</p>
+</div>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-emerald-400 font-semibold mb-1">Patrón humano</p>
+<p class="text-neutral-300 text-sm">En general, el cerebro prefiere las soluciones cognitivamente más baratas. Cambiar una narrativa interna requiere menos energía que cambiar un comportamiento. Por eso, la racionalización es más común que el cambio real. Reconocer qué estrategia estás usando es el primer paso para decidir conscientemente.</p>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Comportamiento</p>
+<p class="text-neutral-400 text-xs mt-1">Cambiar la acción</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Creencia</p>
+<p class="text-neutral-400 text-xs mt-1">Cambiar la convicción</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Reconciliación</p>
+<p class="text-neutral-400 text-xs mt-1">Puente cognitivo</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Trivialización</p>
+<p class="text-neutral-400 text-xs mt-1">"No es tan grave"</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="mb-12" data-inema-topic="modulo-1-4#topico-3" id="topico-3">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<h2 class="text-2xl font-bold">El experimento clásico ($1 frente a $20)</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-4-t3-p1">En 1959, Festinger y Carlsmith realizaron uno de los experimentos más influyentes de la psicología social. Los participantes realizaron una tarea extremadamente tediosa (girar clavijas en un tablero durante una hora). Al final, el investigador les pedía que mintieran al siguiente participante, diciéndole que la tarea había sido divertida. La mitad recibió $1 por mentir. La otra mitad, $20.</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-4-t3-p2">El resultado fue contraintuitivo: quienes recibieron solo $1 por mentir llegaron a creer genuinamente que la tarea había sido agradable. Quienes recibieron $20 no cambiaron de opinión. La lógica es elegante: $20 es una justificación suficiente para mentir («mentí, pero me pagaron bien»). $1 no lo justifica. Entonces el cerebro resuelve la disonancia de otra manera: cambia la creencia («en realidad, no era tan malo»).</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-4-t3-p3">La paradoja de la justificación insuficiente demuestra que las recompensas menores generan un mayor cambio de actitud. Cuando no hay una justificación externa suficiente para el comportamiento, el cerebro crea una justificación interna. Esto tiene implicaciones profundas: si quieres que alguien cambie de opinión sobre algo, no pagues mucho por ello. Haz que la persona se comprometa por poco, y su cerebro hará el resto.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-emerald-400 font-semibold text-sm mb-3">Grupo $1 (justificación insuficiente)</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Mintió por $1 (poca justificación externa)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Alta disonancia: «mentí sin un buen motivo»</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Cambió la creencia: «en realidad, estuvo bien»</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Justificación interna creada por el cerebro</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-red-400 font-semibold text-sm mb-3">Grupo $20 (justificación suficiente)</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Mintió por $20 (justificación clara)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Disonancia baja: "mentí por dinero"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>No cambió de opinión: "sí estuvo aburrido"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Sin necesidad de justificación interna</span></li>
+</ul>
+</div>
+</div>
+<!-- Research box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5 mb-6">
+<p class="text-blue-400 font-semibold text-sm mb-1">Impacto del experimento</p>
+<p class="text-neutral-300 text-sm">Festinger &amp; Carlsmith (1959) demostraron que el conductismo estaba incompleto: no siempre una mayor recompensa genera un mayor cambio. A veces, una menor recompensa genera más. Esta paradoja abrió el camino a toda la psicología cognitiva moderna y a las técnicas de persuasión basadas en el compromiso gradual.</p>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">$1 vs $20</p>
+<p class="text-neutral-400 text-xs mt-1">Menos = más cambio</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Justificación</p>
+<p class="text-neutral-400 text-xs mt-1">Insuficiente vs. suficiente</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Actitud</p>
+<p class="text-neutral-400 text-xs mt-1">Cambio interno</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Paradoja</p>
+<p class="text-neutral-400 text-xs mt-1">Contra el conductismo</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="mb-12" data-inema-topic="modulo-1-4#topico-4" id="topico-4">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<h2 class="text-2xl font-bold">Disonancia y cambio de comportamiento</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-4-t4-p1">Simplemente informar a las personas sobre los riesgos es una de las estrategias de cambio de comportamiento más utilizadas y menos eficaces. Las campañas que dicen "fumar mata", "el alcohol destruye familias" o "el ejercicio previene enfermedades" casi nunca cambian el comportamiento a largo plazo. La razón es que la información genera disonancia, pero el cerebro la resuelve por las vías fáciles (racionalizar, trivializar) en lugar de la vía difícil (cambiar).</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-4-t4-p2">Las estrategias que realmente funcionan explotan la disonancia de maneras más sofisticadas. El compromiso público es una de ellas: cuando alguien declara públicamente una intención, la disonancia entre "dije que lo haría" y "no lo estoy haciendo" es más fuerte que "sé que debería hacerlo". Los pequeños pasos (foot-in-the-door) crean un compromiso gradual. Una pequeña acción coherente genera más cambios que una gran resolución.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-4-t4-p3">El cambio de identidad es la estrategia más poderosa. En lugar de decir «estoy intentando dejar de fumar» (la identidad de una persona fumadora que intenta cambiar), decir «no soy fumador» (una nueva identidad). La disonancia opera a tu favor: cada cigarrillo ahora contradice quién eres, no solo lo que sabes. Las investigaciones muestran que las personas que adoptan la identidad de «no fumador» tienen tasas de éxito significativamente mayores que quienes «intentan dejarlo».</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-emerald-400 font-semibold text-sm mb-3">Estrategias eficaces</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Compromiso público (declarar la intención)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Pequeños pasos (foot-in-the-door)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Cambio de identidad («soy saludable»)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Uso de la disonancia a favor del cambio</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-red-400 font-semibold text-sm mb-3">Estrategias que fracasan</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Simplemente informar sobre los riesgos</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Amenazas y miedo sin alternativa</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Grandes resoluciones únicas ("mañana lo dejo")</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Recompensas externas altas (efecto $20)</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-emerald-400 font-semibold mb-1">La lección del $1</p>
+<p class="text-neutral-300 text-sm">Si quieres que alguien cambie de verdad, no pagues caro ni amenaces. Haz que la persona se comprometa públicamente con un pequeño paso. La disonancia entre «hice X» y «no continuar» hará el trabajo que ninguna campaña informativa logra.</p>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Compromiso</p>
+<p class="text-neutral-400 text-xs mt-1">Público y gradual</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Identidad</p>
+<p class="text-neutral-400 text-xs mt-1">"Soy" vs. "estoy intentando"</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Foot-in-the-door</p>
+<p class="text-neutral-400 text-xs mt-1">Primero, pequeños pasos</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Información</p>
+<p class="text-neutral-400 text-xs mt-1">Insuficiente por sí sola</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="mb-12" data-inema-topic="modulo-1-4#topico-5" id="topico-5">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<h2 class="text-2xl font-bold">Disonancia y política</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-4-t5-p1">La disonancia cognitiva es una de las fuerzas más poderosas de la política contemporánea. Cuando un votante apoya a un líder y ese líder comete un error, un escándalo o una contradicción, hay que resolver la disonancia entre «apoyo a esta persona» y «esta persona hizo algo malo». La solución más común no es retirar el apoyo. Es justificar el comportamiento del líder.</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-4-t5-p2">Las estrategias de racionalización política son predecibles: negar el hecho ("fake news"), recontextualizar ("se sacó de contexto"), atacar al mensajero ("los medios están sesgados"), relativizar ("el otro lado hace algo peor") o trivializar ("no es tan grave"). Cada una de estas respuestas es un mecanismo clásico para reducir la disonancia, aplicado al ámbito político.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-4-t5-p3">La resiliencia de las bases políticas frente a las evidencias contrarias no es señal de ignorancia. Es señal de disonancia cognitiva en acción. Cuanto más ha invertido alguien emocional, financiera o socialmente en un líder o una causa, mayor es el costo psicológico de admitir el error. Cambiar de posición significaría que toda esa inversión se desperdició. El cerebro protege esa inversión con vigor, incluso frente a la realidad.</p>
+<!-- Timeline -->
+<div class="space-y-4 mb-6">
+<h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide">Escala de racionalización política</h4>
+<div class="relative pl-6 border-l-2 border-emerald-500/30 space-y-6">
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">Nivel 1:</strong> Negar el hecho. «Eso no pasó» / «noticias falsas»</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">Nivel 2:</strong> Recontextualizar. «Se sacó de contexto»</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">Nivel 3:</strong> Atacar al mensajero. "Los medios están contra nosotros"</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">Nivel 4:</strong> Relativizar. «El otro lado es peor»</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-red-500/30 border-2 border-red-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-red-400">Nivel 5:</strong> Transformarlo en virtud. «Él hizo lo correcto; ustedes son quienes no entienden»</p>
+</div>
+</div>
+</div>
+<!-- Alert box -->
+<div class="bg-red-500/10 border border-red-500/30 rounded-xl p-5 mb-6">
+<p class="text-red-400 font-semibold text-sm mb-1">Costo hundido emocional</p>
+<p class="text-neutral-300 text-sm">Cuanto más tiempo, energía e identidad social haya invertido alguien en una postura política, mayor será la disonancia de admitir que se equivocó. Abandonar la postura significaría que años de argumentos, relaciones perdidas e inversión emocional fueron en vano. El cerebro protege esa inversión con la misma intensidad con que protege los bienes materiales.</p>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Racionalización</p>
+<p class="text-neutral-400 text-xs mt-1">5 niveles de defensa</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Costo hundido</p>
+<p class="text-neutral-400 text-xs mt-1">Inversión emocional</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Identidad</p>
+<p class="text-neutral-400 text-xs mt-1">La política como extensión del yo</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Resiliencia</p>
+<p class="text-neutral-400 text-xs mt-1">Evidencia contraria a las bases</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="mb-12" data-inema-topic="modulo-1-4#topico-6" id="topico-6">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<h2 class="text-2xl font-bold">Disonancia en la era digital</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-4-t6-p1">Las plataformas digitales redujeron drásticamente la exposición a la disonancia cognitiva. Antes de la internet personalizada, una persona que leía el periódico o veía el noticiero estaba expuesta regularmente a información que contradecía sus creencias. Esta exposición involuntaria generaba disonancia, que, aunque era incómoda, también ofrecía una oportunidad para revisar las ideas y crecer intelectualmente.</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-4-t6-p2">Los algoritmos de recomendación eliminaron la exposición accidental a la disonancia. El feed muestra lo que confirma tus ideas y oculta lo que las contradice. El resultado es un entorno informativo donde la disonancia rara vez ocurre. Cuando ocurre (un amigo comparte algo contrario), las defensas son más fuertes porque se ejercitan menos. Es como un sistema inmunitario que nunca se ha enfrentado a un virus: cuando aparece uno, la reacción es desproporcionadamente violenta.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-4-t6-p3">La polarización aumenta como consecuencia directa. Sin disonancia regular, las posiciones se vuelven más extremas y más rígidas. Cada grupo vive en una realidad informativa separada, donde sus creencias se confirman constantemente y las creencias opuestas se caricaturizan. El espacio para el debate genuino desaparece porque debatir exige tolerar la disonancia, y la tolerancia a la disonancia se atrofia cuando nunca se ejercita.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-emerald-400 font-semibold text-sm mb-3">Antes: exposición involuntaria</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Periódico: misma edición para todos</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>TV: programación fija, no personalizada</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Disonancia regular como ejercicio mental</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Defensas calibradas por exposición constante</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-red-400 font-semibold text-sm mb-3">Ahora: filtrado algorítmico</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Feed personalizado: solo lo que confirma</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Disonancia rara y violenta cuando ocurre</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Defensas atrofiadas, reacciones extremas</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Posturas rígidas, polarización creciente</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-emerald-400 font-semibold mb-1">Contramedida: disonancia deliberada</p>
+<p class="text-neutral-300 text-sm">Buscar activamente fuentes que contradigan tus creencias más firmes. No para cambiar de opinión, sino para ejercitar la tolerancia a la disonancia. Una mente que tolera la contradicción sin colapsar es más resiliente, matizada y capaz de participar en un debate genuino.</p>
+</div>
+<!-- Research box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5 mb-6">
+<p class="text-blue-400 font-semibold text-sm mb-1">Investigación: efecto backfire</p>
+<p class="text-neutral-300 text-sm">Nyhan y Reifler (2010) documentaron el "efecto backfire": cuando algunas personas se enfrentaban a correcciones fácticas de sus creencias erróneas, no solo se resistían a la corrección, sino que reforzaban la creencia original. La disonancia generada por la corrección se resolvía rechazando a quien corregía, no el error. La plataforma digital amplifica este efecto al permitir que el usuario encuentre instantáneamente "fuentes opuestas" que revalidan la creencia original.</p>
+</div>
+<!-- Conceitos-chave -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Filtrado</p>
+<p class="text-neutral-400 text-xs mt-1">El algoritmo elimina la disonancia</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Atrofia</p>
+<p class="text-neutral-400 text-xs mt-1">Tolerancia no ejercitada</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Backfire</p>
+<p class="text-neutral-400 text-xs mt-1">La corrección refuerza el error</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Polarización</p>
+<p class="text-neutral-400 text-xs mt-1">Consecuencia sistémica</p>
+</div>
+</div>
+</section>
+<!-- RESUMO DO MÓDULO -->
+<section class="bg-dark-800 border border-emerald-500/30 rounded-xl p-6 sm:p-8 mb-8">
+<h2 class="text-xl font-bold mb-4 text-emerald-400">Resumen del Módulo 1.4</h2>
+<ul class="space-y-3 text-neutral-300 text-sm mb-6">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>La disonancia cognitiva es la incomodidad que genera la contradicción entre creencias y comportamientos</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>4 estrategias de reducción: cambiar el comportamiento, cambiar la creencia, agregar cognición, reducir la importancia</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>El experimento de $1 frente a $20 mostró que una menor justificación externa genera un mayor cambio interno</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Para cambiar realmente el comportamiento se requieren compromiso público, pequeños pasos y cambio de identidad</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>En la política, la disonancia explica la resiliencia de las bases frente a las evidencias contrarias</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Las plataformas digitales redujeron la exposición a la disonancia, aumentando la polarización y la rigidez</span></li>
+</ul>
+<a class="inline-flex items-center justify-start bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-emerald-500/30 transition-colors" href="../trilha2/index.html">Siguiente: Ruta 2 - Influencia social →</a>
+</section>
+<!-- NAV INFERIOR -->
+<div class="flex items-center justify-between pt-8 border-t border-dark-700">
+<a class="text-neutral-400 hover:text-emerald-400 transition-colors text-sm font-medium" href="modulo-1-3.html">← Módulo 1.3</a>
+<a class="text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium" href="../trilha2/index.html">Ruta 2 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-700 py-8">
+<div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500">
+<a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mente, Poder e Máquina · 2026
+  </div>
+</footer>
+<script>
+function toggleTheme() {
+  var html = document.documentElement;
+  html.classList.toggle('dark');
+  var isDark = html.classList.contains('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  html.style.colorScheme = isDark ? 'dark' : 'light';
+  try { var p = JSON.parse(localStorage.getItem('inema.prefs') || '{}'); p.theme = isDark ? 'inema-dark' : 'claro'; localStorage.setItem('inema.prefs', JSON.stringify(p)); } catch(e){}
+}
+function toggleTopic(btn) {
+  var exp = btn.nextElementSibling;
+  exp.classList.toggle('active');
+  var isOpen = exp.classList.contains('active');
+  btn.setAttribute('aria-expanded', isOpen);
+}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

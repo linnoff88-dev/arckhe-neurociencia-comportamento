@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>Módulo 1.2 — Heurísticas | MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "neurociencia-comportamento",
+  "tracks": [
+    {"n":"1","title":"O Cérebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heurísticas: os atalhos que enganam","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonância cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},
+    {"n":"2","title":"Influência Social e Poder do Grupo","modules":[{"id":"2-1","title":"Conformidade: por que seguimos o grupo","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência à autoridade","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulação social e dark patterns","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},
+    {"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina e sistema de recompensa","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala, medo e decisão emocional","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},
+    {"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"A crítica ao Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory: arquitetura de escolhas","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental e paradoxo da escolha","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},
+    {"n":"5","title":"Filosofia da Mente e Consciência","modules":[{"id":"5-1","title":"Livre-arbítrio: Libet","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciência: o problema difícil","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiótica da mente: Bruzzo","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},
+    {"n":"6","title":"IA, Vieses e Ética Comportamental","modules":[{"id":"6-1","title":"Vieses algorítmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistêmicas e polarização","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Ética, tecnologia e o espaço humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}
+  ]
+}
+</script>
+<style>
+body { font-family: 'Inter', system-ui, sans-serif; }
+.topic-explanation { display: none; }
+.topic-explanation.active { display: block; }
+html:not(.dark) body { background-color: #f8fafc; }
+html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+html:not(.dark) .text-neutral-100 { color: #111827; }
+html:not(.dark) .text-neutral-300 { color: #4b5563; }
+html:not(.dark) .text-neutral-400 { color: #6b7280; }
+html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+html:not(.dark) .text-emerald-400 { color: #059669; }
+html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+html:not(.dark) .text-primary { color: #a16207; }
+html:not(.dark) .text-sky-400 { color: #0369a1; }
+html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+.dark .border-dark-600 { border-color: #374151; }
+.dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha1/modulo-1-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha1/modulo-1-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha1/modulo-1-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/modulo-1-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/modulo-1-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-emerald-400 bg-emerald-500/10" href="../trilha1/index.html">T1 Cérebro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economia</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Filosofia</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 IA+Ética</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()" title="Alternar tema">
+<span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="1-2">
+<!-- BREADCRUMB -->
+<div class="flex items-center space-x-2 text-sm text-neutral-500 mb-8">
+<a class="hover:text-emerald-400 transition-colors" href="../../index.html">Início</a>
+<span>/</span>
+<a class="hover:text-emerald-400 transition-colors" href="index.html">Trilha 1</a>
+<span>/</span>
+<span class="text-neutral-300">Módulo 1.2</span>
+</div>
+<!-- HEADER -->
+<section class="mb-10">
+<div class="bg-gradient-to-r from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl p-8 border border-emerald-500/30">
+<div class="inline-flex items-center space-x-2 bg-emerald-500/20 border border-emerald-500/30 rounded-full px-4 py-1.5 mb-4">
+<span class="text-emerald-400 text-sm font-semibold">MÓDULO 1.2</span>
+</div>
+<h1 class="text-2xl font-bold mb-2">Heurísticas: os atalhos que nos enganam</h1>
+<p class="text-neutral-400 mb-4">Kahneman &amp; Tversky · Disponibilidade, representatividade, ancoragem</p>
+<div class="flex items-center space-x-6 text-sm text-neutral-500">
+<span>6 tópicos</span>
+<span>~30 min</span>
+<span>Fundamento</span>
+</div>
+</div>
+</section>
+<!-- SVG: Three heuristics diagram -->
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-10 overflow-hidden">
+<svg aria-label="Diagrama das três heurísticas principais: disponibilidade (o que lembro), representatividade (o que parece) e ancoragem (primeiro número), todas alimentando julgamentos rápidos" class="w-full h-auto" role="img" viewbox="0 0 800 300">
+<defs>
+<filter id="m12-glow"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="40" id="m12-grid" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#374151" stroke-width="0.5"></path></pattern>
+<marker id="m12-arr" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#34d399" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+</defs>
+<rect fill="url(#m12-grid)" height="300" rx="12" width="800"></rect>
+<!-- Incerteza central -->
+<circle cx="400" cy="55" fill="#0e2018" filter="url(#m12-glow)" r="35" stroke="#34d399" stroke-width="2"></circle>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="400" y="50">INCERTEZA</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="400" y="65">decisão rápida</text>
+<!-- Disponibilidade -->
+<rect fill="#0e2018" height="110" rx="16" stroke="#10b981" stroke-width="2" width="190" x="50" y="140"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="145" y="168">DISPONIBILIDADE</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="145" y="188">"O que eu lembro</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="145" y="203">com facilidade?"</text>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="145" y="230">Medo de tubarão &gt; raio</text>
+<!-- Representatividade -->
+<rect fill="#0e1b26" height="110" rx="16" stroke="#38bdf8" stroke-width="2" width="190" x="305" y="140"></rect>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="400" y="168">REPRESENTATIVIDADE</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="400" y="188">"Com o que isso</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="400" y="203">se parece?"</text>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="400" y="230">Steve = bibliotecário?</text>
+<!-- Ancoragem -->
+<rect fill="#0e2018" height="110" rx="16" stroke="#10b981" stroke-width="2" width="190" x="560" y="140"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="655" y="168">ANCORAGEM</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="655" y="188">"Qual foi o primeiro</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="655" y="203">número que vi?"</text>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="655" y="230">Roleta 10 vs 65</text>
+<!-- Connectors -->
+<line marker-end="url(#m12-arr)" opacity="0.5" stroke="#34d399" stroke-width="2" x1="375" x2="180" y1="88" y2="138"></line>
+<line opacity="0.5" stroke="#38bdf8" stroke-width="2" x1="400" x2="400" y1="90" y2="138"></line>
+<line marker-end="url(#m12-arr)" opacity="0.5" stroke="#34d399" stroke-width="2" x1="425" x2="620" y1="88" y2="138"></line>
+<!-- Resultado -->
+<rect fill="#1f2937" height="22" rx="10" stroke="#4b5563" stroke-width="1" width="200" x="300" y="270"></rect>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="400" y="285">JULGAMENTO RÁPIDO (S1)</text>
+</svg>
+</div>
+<!-- TÓPICO 1 -->
+<section class="mb-12" data-inema-topic="modulo-1-2#topico-1" id="topico-1">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<h2 class="text-2xl font-bold">O que são heurísticas</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-2-t1-p1">Heurísticas são estratégias mentais simplificadas que o cérebro usa para tomar decisões rápidas em condições de incerteza. São ferramentas do Sistema 1: regras de bolso que evoluíram ao longo de milhões de anos para nos ajudar a sobreviver em ambientes perigosos e imprevisíveis.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-2-t1-p2">O ponto fundamental é que heurísticas não são erros. São adaptações evolutivas que funcionam bem na maioria dos contextos. O problema surge quando são aplicadas em contextos para os quais não foram desenhadas: mercados financeiros, decisões médicas complexas, avaliação de estatísticas.</p>
+<!-- Tip box -->
+<div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-emerald-400 font-semibold mb-1">Kahneman vs Gigerenzer</p>
+<p class="text-neutral-300 text-sm">Gerd Gigerenzer argumenta que heurísticas são "racionais" quando o ambiente é adequado: um bombeiro que "sente" perigo está usando heurísticas de forma adaptativa. Kahneman foca nos contextos onde falham. Ambos estão certos, em domínios diferentes.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Adaptação</p>
+<p class="text-neutral-400 text-xs mt-1">Evolutiva, não bug</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Atalho</p>
+<p class="text-neutral-400 text-xs mt-1">Regra simplificada</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Contexto</p>
+<p class="text-neutral-400 text-xs mt-1">Certo vs errado</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Ecológica</p>
+<p class="text-neutral-400 text-xs mt-1">Racionalidade local</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="mb-12" data-inema-topic="modulo-1-2#topico-2" id="topico-2">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<h2 class="text-2xl font-bold">Heurística da disponibilidade</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-2-t2-p1">Estimamos a probabilidade de algo pela facilidade com que exemplos vêm à mente. Se consigo lembrar facilmente de casos de ataques de tubarão (porque a mídia os mostra em detalhes horríveis), concluo que são comuns. Na realidade, raios matam muito mais pessoas que tubarões.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-2-t2-p2">Redes sociais transformaram a heurística da disponibilidade em arma de manipulação em massa. Conteúdo emocional e extremo é amplificado pelo algoritmo, tornando-se "mais disponível" na memória dos usuários. O resultado: percepção distorcida de risco, medo desproporcional e decisões baseadas em viralidade, não em realidade.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-emerald-400 font-semibold text-sm mb-3">Quando funciona</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Avaliar perigos em ambientes conhecidos</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Estimar frequência de eventos cotidianos</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Decisões rápidas em emergência</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-red-400 font-semibold text-sm mb-3">Quando falha</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Avaliar riscos após exposição a mídia enviesada</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Julgar probabilidade de eventos raros</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Estimar risco em contextos estatísticos</span></li>
+</ul>
+</div>
+</div>
+<!-- Alert box -->
+<div class="bg-red-500/10 border border-red-500/30 rounded-xl p-5 mb-6">
+<p class="text-red-400 font-semibold text-sm mb-1">Redes sociais como amplificador</p>
+<p class="text-neutral-300 text-sm">Algoritmos de engajamento priorizam conteúdo que gera medo, raiva e indignação. Esses conteúdos ficam mais "disponíveis" na memória, distorcendo a percepção de risco de milhões de pessoas simultaneamente. O efeito é uma disponibilidade artificial em escala industrial.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Fluência</p>
+<p class="text-neutral-400 text-xs mt-1">Facilidade de lembrar</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Saliência</p>
+<p class="text-neutral-400 text-xs mt-1">Destaque emocional</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Mídia</p>
+<p class="text-neutral-400 text-xs mt-1">Amplificador de medo</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Desproporcional</p>
+<p class="text-neutral-400 text-xs mt-1">Risco percebido vs real</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="mb-12" data-inema-topic="modulo-1-2#topico-3" id="topico-3">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<h2 class="text-2xl font-bold">Heurística da representatividade</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-2-t3-p1">Classificamos coisas pela semelhança com um protótipo mental, ignorando estatísticas reais. O exemplo clássico de Kahneman: "Steve é tímido, organizado, meticuloso e gosta de ordem." Steve é mais provavelmente bibliotecário ou fazendeiro? A maioria responde bibliotecário, mas existem muito mais fazendeiros no mundo.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-2-t3-p2">O erro é chamado de "base-rate neglect": ignorar a taxa-base (proporção real na população) em favor da semelhança com o estereótipo. A representatividade é a base cognitiva do preconceito: julgamos pessoas pela aparência de pertencerem a um grupo, não por evidências individuais.</p>
+<!-- Concept box -->
+<div class="bg-gradient-to-r from-emerald-900/20 to-dark-800 border border-emerald-500/30 rounded-xl p-5 mb-6">
+<p class="text-emerald-400 font-semibold text-sm mb-2">O Problema Linda</p>
+<p class="text-neutral-300 text-sm">"Linda tem 31 anos, é solteira, extrovertida, formada em filosofia. Na faculdade, se preocupava com discriminação e justiça social." O que é mais provável: (A) Linda é bancária ou (B) Linda é bancária e ativista feminista? A maioria escolhe B, mas matematicamente A sempre é mais provável que A+B. Isso é a falácia da conjunção.</p>
+</div>
+<!-- Blue research box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5 mb-6">
+<p class="text-blue-400 font-semibold text-sm mb-1">Pesquisa: estereótipos e diagnóstico médico</p>
+<p class="text-neutral-300 text-sm">Médicos que avaliam pacientes pela representatividade (o paciente "parece" ter a doença X) erram mais que os que analisam dados epidemiológicos. A heurística da representatividade é uma das causas documentadas de erro diagnóstico.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Base-rate</p>
+<p class="text-neutral-400 text-xs mt-1">Taxa ignorada</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Falácia</p>
+<p class="text-neutral-400 text-xs mt-1">Da conjunção</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Estereótipo</p>
+<p class="text-neutral-400 text-xs mt-1">Semelhança &gt; dados</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Preconceito</p>
+<p class="text-neutral-400 text-xs mt-1">Base cognitiva</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="mb-12" data-inema-topic="modulo-1-2#topico-4" id="topico-4">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<h2 class="text-2xl font-bold">Heurística da ancoragem</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-2-t4-p1">A primeira informação que recebemos sobre um assunto funciona como uma âncora que distorce todas as avaliações seguintes. No experimento clássico de Kahneman e Tversky, participantes giravam uma roleta (manipulada para cair em 10 ou 65) e depois estimavam a porcentagem de países africanos na ONU.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-2-t4-p2">Quem tirou 10 na roleta estimou ~25 países. Quem tirou 65 estimou ~45. Um número completamente aleatório e irrelevante alterou significativamente o julgamento. A âncora funciona mesmo quando sabemos que é arbitrária, mesmo quando tentamos corrigi-la conscientemente.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-emerald-400 font-semibold text-sm mb-3">Exemplos de ancoragem no cotidiano</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Produto de R$200 parece barato ao lado de R$500</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Primeiro lance em negociação define a faixa</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Sugestão de gorjeta (15/18/20%) ancora escolha</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Salário anterior ancora proposta de novo emprego</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-red-400 font-semibold text-sm mb-3">Manipulação por ancoragem</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>"Preço original R$999" riscado (âncora artificial)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Pedidos absurdos em negociação (âncora extrema)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Multas altíssimas iniciais para "negociar" redução</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Métricas infladas em apresentações (vaidade)</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-emerald-400 font-semibold mb-1">Defesa prática</p>
+<p class="text-neutral-300 text-sm">Em negociações, quem faz a primeira oferta ancora o resultado. Se alguém ancora primeiro com um valor absurdo, a melhor defesa é rejeitar explicitamente a âncora ("esse número não faz sentido, vamos recomeçar") e propor sua própria âncora.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Âncora</p>
+<p class="text-neutral-400 text-xs mt-1">Primeiro número fixa</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Ajuste</p>
+<p class="text-neutral-400 text-xs mt-1">Insuficiente sempre</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Preço-isca</p>
+<p class="text-neutral-400 text-xs mt-1">Referência artificial</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Negociação</p>
+<p class="text-neutral-400 text-xs mt-1">Primeiro lance vence</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="mb-12" data-inema-topic="modulo-1-2#topico-5" id="topico-5">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<h2 class="text-2xl font-bold">Heurística do afeto</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-2-t5-p1">Paul Slovic descobriu que julgamos riscos e benefícios com base em sentimentos, não em dados. Se algo nos parece bom (sentimento positivo), automaticamente minimizamos os riscos e maximizamos os benefícios. Se nos parece ruim (sentimento negativo), fazemos o oposto.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-2-t5-p2">Energia nuclear é o caso clássico: apesar de estatisticamente ser uma das fontes de energia mais seguras (mortes por kWh), gera medo visceral. Já dirigir mata centenas de milhares por ano, mas parece "normal". O afeto, não a estatística, governa a percepção de risco.</p>
+<!-- Timeline -->
+<div class="space-y-4 mb-6">
+<h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide">Como o afeto distorce avaliação de risco</h4>
+<div class="relative pl-6 border-l-2 border-emerald-500/30 space-y-6">
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">Estímulo:</strong> Informação sobre uma tecnologia/atividade</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">Afeto:</strong> S1 gera sentimento positivo ou negativo</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-red-500/30 border-2 border-red-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-red-400">Inversão:</strong> Sentimento distorce percepção de risco/benefício</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-red-500/30 border-2 border-red-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-red-400">Decisão:</strong> Baseada em emoção, racionalizada como lógica</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Affect</p>
+<p class="text-neutral-400 text-xs mt-1">Sentimento como dado</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Slovic</p>
+<p class="text-neutral-400 text-xs mt-1">Risco e emoção</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Inversão</p>
+<p class="text-neutral-400 text-xs mt-1">Risco/benefício</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Gut feeling</p>
+<p class="text-neutral-400 text-xs mt-1">Intuição visceral</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="mb-12" data-inema-topic="modulo-1-2#topico-6" id="topico-6">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<h2 class="text-2xl font-bold">Quando heurísticas funcionam (e quando falham)</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-2-t6-p1">Heurísticas são eficientes em ambientes estáveis, familiares e com feedback rápido. Um bombeiro experiente que "sente" que o piso vai desabar está usando padrões aprendidos em centenas de situações similares. Nesse contexto, a heurística é mais rápida e confiável que qualquer análise deliberada.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-2-t6-p2">Heurísticas falham em ambientes complexos, novos ou com feedback atrasado. O mercado financeiro, decisões políticas e diagnósticos médicos raros são exemplos onde confiar em heurísticas gera erros sistemáticos. A metacognição (saber quando se está usando uma heurística) é a competência que separa decisões boas de péssimas.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-emerald-400 font-semibold text-sm mb-3">Ambientes de alta validade</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Feedback rápido e claro</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Padrões regulares e repetitivos</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Experiência acumulada relevante</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Ex: xadrez, bombeiros, pilotos</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-red-400 font-semibold text-sm mb-3">Ambientes de baixa validade</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Feedback atrasado ou ambíguo</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Alta complexidade, muitas variáveis</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Situações raras ou inéditas</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Ex: mercado financeiro, política, epidemias</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-emerald-400 font-semibold mb-1">A metacognição como defesa</p>
+<p class="text-neutral-300 text-sm">A melhor proteção contra heurísticas mal aplicadas não é eliminá-las (impossível), mas desenvolver metacognição: a capacidade de perceber "estou usando um atalho mental neste momento" e avaliar se o contexto é adequado para esse atalho.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Validade</p>
+<p class="text-neutral-400 text-xs mt-1">Do ambiente</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Feedback</p>
+<p class="text-neutral-400 text-xs mt-1">Rápido vs atrasado</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Metacognição</p>
+<p class="text-neutral-400 text-xs mt-1">Pensar sobre o pensar</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Deliberação</p>
+<p class="text-neutral-400 text-xs mt-1">Quando acionar S2</p>
+</div>
+</div>
+</section>
+<!-- RESUMO -->
+<section class="bg-dark-800 border border-emerald-500/30 rounded-xl p-6 sm:p-8 mb-8">
+<h2 class="text-xl font-bold mb-4 text-emerald-400">Resumo do Módulo 1.2</h2>
+<ul class="space-y-3 text-neutral-300 text-sm mb-6">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Heurísticas são atalhos mentais evolutivos, não bugs: funcionam bem em muitos contextos</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Disponibilidade: julgamos probabilidade pela facilidade de lembrar exemplos</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Representatividade: classificamos por semelhança, ignorando estatísticas reais</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Ancoragem: o primeiro número que vemos ancora tudo que segue</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Afeto: sentimentos distorcem percepção de risco e benefício</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Metacognição (saber que se está usando heurística) é a defesa principal</span></li>
+</ul>
+<a class="inline-flex items-center justify-start bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-emerald-500/30 transition-colors" href="modulo-1-3.html">Próximo: Vieses Cognitivos →</a>
+</section>
+<!-- NAV INFERIOR -->
+<div class="flex items-center justify-between pt-8 border-t border-dark-700">
+<a class="text-neutral-400 hover:text-emerald-400 transition-colors text-sm font-medium" href="modulo-1-1.html">← Módulo 1.1</a>
+<a class="text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium" href="modulo-1-3.html">Módulo 1.3 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-700 py-8">
+<div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500">
+<a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mente, Poder e Máquina · 2026
+  </div>
+</footer>
+<script>
+function toggleTheme() {
+  var html = document.documentElement;
+  html.classList.toggle('dark');
+  var isDark = html.classList.contains('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  html.style.colorScheme = isDark ? 'dark' : 'light';
+  try { var p = JSON.parse(localStorage.getItem('inema.prefs') || '{}'); p.theme = isDark ? 'inema-dark' : 'claro'; localStorage.setItem('inema.prefs', JSON.stringify(p)); } catch(e){}
+}
+function toggleTopic(btn) {
+  var exp = btn.nextElementSibling;
+  exp.classList.toggle('active');
+  var isOpen = exp.classList.contains('active');
+  btn.setAttribute('aria-expanded', isOpen);
+}
+</script>
+<script src="../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>Módulo 6.1 — Sesgos algorítmicos | MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{"course":"neurociencia-comportamento","tracks":[{"n":"1","title":"O Cérebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heurísticas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonância cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},{"n":"2","title":"Influência Social","modules":[{"id":"2-1","title":"Conformidade","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulação social","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},{"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},{"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},{"n":"5","title":"Filosofia da Mente","modules":[{"id":"5-1","title":"Livre-arbítrio","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciência","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiótica","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},{"n":"6","title":"IA, Vieses e Ética","modules":[{"id":"6-1","title":"Vieses algorítmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistêmicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Ética e espaço humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}]}
+</script>
+<style>
+body{font-family:'Inter',system-ui,sans-serif}.topic-explanation{display:none}.topic-explanation.active{display:block}
+html:not(.dark) body{background-color:#f8fafc}html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-rose-400{color:#9f1239}html:not(.dark) .bg-rose-500\/20{background-color:rgba(225,29,72,0.12)}html:not(.dark) .border-rose-500\/30{border-color:rgba(225,29,72,0.25)}html:not(.dark) .hover\:bg-rose-500\/10:hover{background-color:rgba(225,29,72,0.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,0.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+html:not(.dark) svg[role="img"]{filter:saturate(.82) brightness(.96)}
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha6/modulo-6-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha6/modulo-6-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha6/modulo-6-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha6/modulo-6-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-6-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Cerebro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Filosofía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-rose-400 bg-rose-500/10" href="../trilha6/index.html">T6 IA+Ética</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()"><span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span></button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="6-1">
+<!-- BREADCRUMB -->
+<div class="flex items-center space-x-2 text-sm text-neutral-500 mb-8">
+<a class="hover:text-rose-400 transition-colors" href="../../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-rose-400 transition-colors" href="index.html">Ruta 6</a>
+<span>/</span>
+<span class="text-neutral-300">Módulo 6.1</span>
+</div>
+<!-- HEADER -->
+<section class="mb-10">
+<div class="bg-gradient-to-r from-rose-900/30 via-dark-800 to-dark-800 rounded-2xl p-8 border border-rose-500/30">
+<div class="inline-flex items-center space-x-2 bg-rose-500/20 border border-rose-500/30 rounded-full px-4 py-1.5 mb-4">
+<span class="text-rose-400 text-sm font-semibold">MÓDULO 6.1</span>
+</div>
+<h1 class="text-2xl font-bold mb-2">Sesgos algorítmicos: cuando la IA hereda nuestros prejuicios</h1>
+<p class="text-neutral-400 mb-4">ProPublica, MIT Media Lab, Amazon · Discriminación codificada en los datos</p>
+<div class="flex items-center space-x-6 text-sm text-neutral-500">
+<span>6 temas</span>
+<span>~30 min</span>
+<span>Avanzado</span>
+</div>
+</div>
+</section>
+<!-- SVG: Fluxo de viés algorítmico -->
+<div class="rounded-2xl border border-rose-500/30 bg-dark-900/40 p-3 sm:p-4 mb-10 overflow-hidden">
+<svg aria-label="Flujo: los datos históricos sesgados entran en el algoritmo de ML, que genera decisiones con un sesgo amplificado, lo que produce un impacto social que retroalimenta los datos" class="w-full h-auto" role="img" viewbox="0 0 800 340">
+<defs>
+<filter id="m61-glow"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="m61-arr" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#fb7185" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<marker id="m61-arr-c" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#38bdf8" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<pattern height="40" id="m61-grid" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#3b1829" stroke-width="0.5"></path></pattern>
+</defs>
+<rect fill="#2a0f16" height="340" rx="12" width="800"></rect>
+<rect fill="url(#m61-grid)" height="340" rx="12" width="800"></rect>
+<!-- Node 1: Dados Históricos -->
+<rect fill="#2a0f16" filter="url(#m61-glow)" height="100" rx="18" stroke="#fb7185" stroke-width="2" width="150" x="30" y="100"></rect>
+<text fill="#fb7185" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="105" y="130">DATOS</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="105" y="147">HISTÓRICOS</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="105" y="165">discriminación racial</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="105" y="178">género, clase</text>
+<!-- mini warning -->
+<polygon fill="none" opacity="0.6" points="55,120 60,110 65,120" stroke="#f43f5e" stroke-width="1.2"></polygon>
+<!-- Arrow 1 -->
+<line marker-end="url(#m61-arr)" opacity="0.5" stroke="#fb7185" stroke-width="2" x1="180" x2="238" y1="150" y2="150"></line>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" opacity="0.8" text-anchor="middle" x="209" y="140">entrena</text>
+<!-- Node 2: Algoritmo ML -->
+<rect fill="#2a0f16" filter="url(#m61-glow)" height="120" rx="18" stroke="#f43f5e" stroke-width="2" width="160" x="245" y="90"></rect>
+<text fill="#f43f5e" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="325" y="122">ALGORITMO ML</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="325" y="142">optimiza la métrica</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="325" y="158">codifica patrones</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="325" y="174">amplifica el sesgo</text>
+<!-- gear icon -->
+<circle cx="280" cy="115" fill="none" opacity="0.5" r="6" stroke="#f43f5e" stroke-width="1"></circle>
+<circle cx="280" cy="115" fill="#f43f5e" opacity="0.5" r="2"></circle>
+<!-- Arrow 2 -->
+<line marker-end="url(#m61-arr)" opacity="0.5" stroke="#fb7185" stroke-width="2" x1="405" x2="463" y1="150" y2="150"></line>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" opacity="0.8" text-anchor="middle" x="434" y="140">decide</text>
+<!-- Node 3: Decisão -->
+<rect fill="#2a0f16" filter="url(#m61-glow)" height="120" rx="18" stroke="#fb7185" stroke-width="2" width="140" x="470" y="90"></rect>
+<text fill="#fb7185" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="540" y="118">DECISIÓN</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="540" y="136">sesgo amplificado</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="540" y="154">crédito denegado</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="540" y="167">preso sin motivo</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="540" y="180">plaza rechazada</text>
+<!-- Arrow 3 -->
+<line marker-end="url(#m61-arr-c)" opacity="0.5" stroke="#38bdf8" stroke-width="2" x1="610" x2="648" y1="150" y2="150"></line>
+<!-- Node 4: Impacto Social -->
+<rect fill="#0e1b26" filter="url(#m61-glow)" height="120" rx="18" stroke="#38bdf8" stroke-width="2" width="120" x="655" y="90"></rect>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="715" y="120">IMPACTO</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="715" y="138">SOCIAL</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="715" y="158">desigualdad</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="715" y="171">exclusión</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="715" y="184">injusticia</text>
+<!-- Feedback loop -->
+<path d="M 715 210 Q 715 280 400 290 Q 105 300 105 200" fill="none" marker-end="url(#m61-arr)" opacity="0.4" stroke="#fb7185" stroke-dasharray="6 3" stroke-width="1.5"></path>
+<text fill="#fb7185" font-family="Inter,sans-serif" font-size="9" font-weight="600" opacity="0.7" text-anchor="middle" x="400" y="278">bucle de retroalimentación: el impacto genera nuevos datos sesgados</text>
+<!-- Labels -->
+<rect fill="#3b1829" height="26" opacity="0.6" rx="10" width="400" x="200" y="30"></rect>
+<text fill="#fb7185" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="400" y="48">CICLO DEL SESGO ALGORÍTMICO</text>
+</svg>
+</div>
+<!-- TÓPICO 1 -->
+<section class="mb-12" data-inema-topic="modulo-6-1#topico-1" id="topico-1">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<h2 class="text-2xl font-bold">Qué son los sesgos algorítmicos</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-1-t1-p1">Los sesgos algorítmicos ocurren cuando los sistemas de inteligencia artificial, entrenados con datos históricos, reproducen y amplifican patrones de discriminación presentes en esos datos. El algoritmo no «inventa» prejuicios: los detecta como patrones estadísticos en los datos de entrenamiento y los codifica matemáticamente como reglas de decisión.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-1-t1-p2">Si una base de datos de contrataciones muestra que, históricamente, el 85% de los ingenieros contratados eran hombres blancos, el algoritmo aprende que «hombre blanco» es un predictor positivo de «buen ingeniero». No porque sea verdad, sino porque los datos reflejan una estructura social desigual. La IA hereda la discriminación como si fuera información objetiva.</p>
+<!-- Tip box -->
+<div class="bg-rose-500/10 border border-rose-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-rose-400 font-semibold mb-1">Concepto fundamental</p>
+<p class="text-neutral-300 text-sm">El sesgo algorítmico no es un bug: es una consecuencia directa de entrenar modelos con datos que reflejan una sociedad desigual. La IA no es neutral. Está tan sesgada como los datos que la alimentan.</p>
+</div>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Fuentes de sesgo en los datos</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Datos de contratación que reflejan décadas de discriminación de género</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Registros policiales con vigilancia excesiva en barrios negros</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Conjuntos de imágenes dominados por rostros de hombres blancos</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Historiales de crédito que penalizan a poblaciones marginadas</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Qué hace el algoritmo con esto</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Codifica correlaciones como reglas de decisión</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Trata la discriminación histórica como un «patrón objetivo»</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Opera a una escala y velocidad que los humanos no pueden alcanzar</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Genera una apariencia de objetividad científica para decisiones sesgadas</span></li>
+</ul>
+</div>
+</div>
+<!-- Conceitos-chave mini-cards -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Sesgo de datos</p>
+<p class="text-neutral-400 text-xs mt-1">El dato refleja la desigualdad</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Sesgo de selección</p>
+<p class="text-neutral-400 text-xs mt-1">Muestra no representativa</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Amplificación</p>
+<p class="text-neutral-400 text-xs mt-1">Escala industrial</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Feedback loop</p>
+<p class="text-neutral-400 text-xs mt-1">La decisión genera más sesgo</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="mb-12" data-inema-topic="modulo-6-1#topico-2" id="topico-2">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<h2 class="text-2xl font-bold">COMPAS: predicción de reincidencia criminal</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-1-t2-p1">En 2016, la organización periodística ProPublica publicó una investigación que sacudió el debate sobre la IA y la justicia. Analizaron COMPAS (Correctional Offender Management Profiling for Alternative Sanctions), un algoritmo utilizado en tribunales de EE. UU. para predecir la probabilidad de reincidencia criminal de los acusados. Los jueces usaban el resultado para decidir sobre la fianza, la sentencia y la libertad condicional.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-1-t2-p2">La investigación reveló que COMPAS clasificaba a los acusados negros como de «alto riesgo» casi dos veces más que a los acusados blancos, incluso al controlar factores delictivos objetivos (tipo de delito, antecedentes, edad). Los falsos positivos (clasificar como de alto riesgo a alguien que no reincidió) eran desproporcionadamente más altos entre las personas negras: 44.9% frente a 23.5% entre las blancas.</p>
+<!-- Timeline: Caso COMPAS -->
+<div class="space-y-4 mb-6">
+<h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide">Cronología del caso COMPAS</h4>
+<div class="relative pl-6 border-l-2 border-rose-500/30 space-y-6">
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">1998:</strong> Northpointe crea COMPAS, presentado como herramienta "objetiva" de evaluación de riesgos</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">2013-2015:</strong> El uso se expande a decenas de jurisdicciones en EE. UU.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">Mayo de 2016:</strong> ProPublica publica «Machine Bias», analizando a 7.000 acusados en Broward County, Florida</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-red-500/30 border-2 border-red-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-red-400">Resultado:</strong> Las personas negras son clasificadas como de alto riesgo 2 veces más. Falsos positivos: 44.9% (personas negras) vs. 23.5% (personas blancas)</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">2016+:</strong> El debate académico expone que distintas definiciones de "fairness" son matemáticamente incompatibles</p>
+</div>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-rose-500/10 border border-rose-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-rose-400 font-semibold mb-1">El detalle crucial</p>
+<p class="text-neutral-300 text-sm">COMPAS no usaba directamente la variable "raza". Pero usaba decenas de variables correlacionadas con la raza (barrio, empleo, escolaridad, historial familiar), que funcionan como proxies. Eliminar la variable explícita no resuelve el problema.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">ProPublica</p>
+<p class="text-neutral-400 text-xs mt-1">Machine Bias, 2016</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Falso positivo</p>
+<p class="text-neutral-400 text-xs mt-1">44.9% personas negras frente a 23.5%</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Puntaje de riesgo</p>
+<p class="text-neutral-400 text-xs mt-1">1-10, decide la libertad</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">7.000 acusados</p>
+<p class="text-neutral-400 text-xs mt-1">Broward County, FL</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="mb-12" data-inema-topic="modulo-6-1#topico-3" id="topico-3">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<h2 class="text-2xl font-bold">Reconocimiento facial y error diferencial</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-1-t3-p1">En 2018, Joy Buolamwini y Timnit Gebru publicaron el estudio «Gender Shades» a través del MIT Media Lab. Probaron tres sistemas comerciales de reconocimiento facial (Microsoft, IBM, Face++) y descubrieron disparidades dramáticas: la tasa de error para las mujeres de piel oscura llegaba al 34.7%, mientras que para los hombres de piel clara era inferior al 1%.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-1-t3-p2">La causa era directa: las bases de datos usadas para entrenar estos sistemas estaban compuestas mayoritariamente por rostros de hombres blancos. El algoritmo simplemente había visto pocos rostros de mujeres negras durante el entrenamiento y, por eso, no sabía reconocerlos. No era malicia: era negligencia estructural en la selección de los datos.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Tasas de error por grupo (Gender Shades)</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Hombres blancos: &lt;1% de error</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Mujeres blancas: ~7% de error</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Hombres negros: ~12% de error</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Mujeres negras: hasta 34.7% de error</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Dónde este sesgo causa daños reales</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Vigilancia policial: una identificación errónea lleva a detenciones injustas</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Control de fronteras: rechazo de entrada por falla del sistema</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Acceso a servicios: el reconocimiento facial falla con la piel oscura</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Automatización del prejuicio: a escala, sin intervención humana</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5 mb-6">
+<p class="text-blue-400 font-semibold text-sm mb-1">Interseccionalidad algorítmica</p>
+<p class="text-neutral-300 text-sm">El error no se relacionaba únicamente con la raza o el género por separado: tenía que ver con su intersección. Las mujeres negras sufrían más porque se encontraban en la intersección de dos grupos subrepresentados en los datos. El concepto de interseccionalidad (Kimberlé Crenshaw) se aplica directamente a la IA.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Gender Shades</p>
+<p class="text-neutral-400 text-xs mt-1">Buolamwini y Gebru</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">34.7%</p>
+<p class="text-neutral-400 text-xs mt-1">Error con mujeres negras</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Sesgo del conjunto de datos</p>
+<p class="text-neutral-400 text-xs mt-1">Predominan los rostros blancos</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">MIT 2018</p>
+<p class="text-neutral-400 text-xs mt-1">Media Lab</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="mb-12" data-inema-topic="modulo-6-1#topico-4" id="topico-4">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<h2 class="text-2xl font-bold">Algoritmos de contratación: el caso de Amazon</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-1-t4-p1">En 2018, Reuters reveló que Amazon había desarrollado y luego descartado una herramienta de IA para seleccionar currículos. El sistema, entrenado con datos de contratación de los últimos 10 años, aprendió a penalizar sistemáticamente los currículos que contenían indicadores de género femenino: el nombre de una universidad para mujeres, la participación en clubes de mujeres o incluso la palabra «women's» en el currículo.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-1-t4-p2">La lógica era simple y devastadora: como históricamente la gran mayoría de los ingenieros contratados por Amazon eran hombres, el algoritmo aprendió que «ser hombre» era un predictor positivo de contratación. No porque los hombres fueran mejores ingenieros, sino porque el proceso de contratación históricamente favorecía a los hombres. La IA optimizó el sesgo existente.</p>
+<!-- Alert box -->
+<div class="bg-red-500/10 border border-red-500/30 rounded-xl p-5 mb-6">
+<p class="text-red-400 font-semibold text-sm mb-1">El problema del ciclo de retroalimentación</p>
+<p class="text-neutral-300 text-sm">Si los datos de contrataciones anteriores muestran que el 85% eran hombres, la IA favorece a los hombres. Con la IA seleccionando, la tasa de hombres contratados sube al 90%. El siguiente modelo, entrenado con esos nuevos datos, favorece aún más a los hombres. El sesgo se amplifica en cada ciclo.</p>
+</div>
+<!-- Tip box -->
+<div class="bg-rose-500/10 border border-rose-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-rose-400 font-semibold mb-1">Lección del caso Amazon</p>
+<p class="text-neutral-300 text-sm">Amazon intentó corregirlo eliminando las variables de género. No funcionó. El algoritmo encontró variables indirectas: tipo de universidad, actividades extracurriculares, patrones lingüísticos. La discriminación encuentra caminos indirectos.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Amazon 2018</p>
+<p class="text-neutral-400 text-xs mt-1">IA para contratación</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">10 años</p>
+<p class="text-neutral-400 text-xs mt-1">De datos sesgados</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Proxy</p>
+<p class="text-neutral-400 text-xs mt-1">Variable sustituta</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Descartado</p>
+<p class="text-neutral-400 text-xs mt-1">Imposible de corregir</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="mb-12" data-inema-topic="modulo-6-1#topico-5" id="topico-5">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<h2 class="text-2xl font-bold">Por qué es difícil corregir</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-1-t5-p1">La solución ingenua parece obvia: basta con eliminar de los datos de entrenamiento las variables protegidas (raza, género, religión). Este enfoque, llamado «fairness through unawareness», falla sistemáticamente. El motivo es que toda la estructura social está correlacionada: el código postal se correlaciona con la raza (por la segregación residencial), el tipo de escuela se correlaciona con la clase social y los patrones lingüísticos se correlacionan con la etnia.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-1-t5-p2">Estas variables correlacionadas funcionan como proxies: sustituyen la variable protegida sin que el desarrollador se dé cuenta. Un algoritmo de crédito que usa el código postal como variable, en la práctica, está usando la raza como predictor, porque décadas de redlining (denegación de crédito hipotecario a barrios negros) crearon una correspondencia casi perfecta entre el código postal y la composición racial.</p>
+<!-- Timeline: Tentativas de correção -->
+<div class="space-y-4 mb-6">
+<h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide">Intentos de corrección y sus límites</h4>
+<div class="relative pl-6 border-l-2 border-rose-500/30 space-y-6">
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">Eliminar variable:</strong> Quitar la raza y el género de los datos. Falla: los proxies los sustituyen.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">Equilibrar los datos:</strong> Equilibrar la muestra por grupo. Problema: puede distorsionar la distribución real.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">Posprocesamiento:</strong> Ajustar los resultados para igualar. Dilema: ¿qué métrica igualar?</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-red-500/30 border-2 border-red-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-red-400">Problema de fondo:</strong> La desigualdad está en los datos porque está en la sociedad. Una solución técnica aislada no resuelve un problema social.</p>
+</div>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-rose-500/10 border border-rose-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-rose-400 font-semibold mb-1">Redlining digital</p>
+<p class="text-neutral-300 text-sm">El término «redlining» proviene de la práctica de los años 1930-60 en EE. UU. de marcar en rojo los barrios negros en los mapas bancarios para negarles el crédito. Hoy, los algoritmos hacen lo mismo usando el código postal, la escuela y los patrones de consumo como indicadores indirectos de la raza.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Proxies</p>
+<p class="text-neutral-400 text-xs mt-1">Variables sustitutas</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Redlining</p>
+<p class="text-neutral-400 text-xs mt-1">Digital e histórico</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Correlación</p>
+<p class="text-neutral-400 text-xs mt-1">Código postal = raza (en EE. UU.)</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Unawareness</p>
+<p class="text-neutral-400 text-xs mt-1">Ignorar no resuelve</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="mb-12" data-inema-topic="modulo-6-1#topico-6" id="topico-6">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<h2 class="text-2xl font-bold">Equidad en IA: definiciones incompatibles</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-1-t6-p1">El campo de la equidad en machine learning propone múltiples definiciones matemáticas de "justicia algorítmica". Las tres principales son: paridad demográfica (la misma tasa de decisiones positivas para todos los grupos), igualdad de oportunidades (la misma tasa de verdaderos positivos) y calibración (el mismo significado del score para todos los grupos).</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-1-t6-p2">En 2017, Alexandra Chouldechova demostró matemáticamente que, cuando la tasa base de un evento difiere entre grupos (por ejemplo: una tasa de reincidencia distinta entre grupos raciales por razones socioeconómicas), es imposible satisfacer simultáneamente la calibración y la igualdad de las tasas de error. No es una limitación técnica: es un teorema de imposibilidad. Toda elección de una métrica de fairness es una decisión ética, no solo técnica.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Definiciones de fairness</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✓</span><span>Paridad demográfica: la misma tasa de aprobación por grupo</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✓</span><span>Igualdad de oportunidades: misma tasa de aciertos para los positivos</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✓</span><span>Calibración: el score X significa el mismo riesgo para todos</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Imposible satisfacer todas al mismo tiempo</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Implicaciones del teorema de imposibilidad</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>No existe una solución técnica "neutral"</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Elegir una métrica implica sacrificar otra</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Las decisiones éticas no pueden delegarse al ingeniero</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>La sociedad tiene que decidir qué es «justo»</span></li>
+</ul>
+</div>
+</div>
+<!-- Research box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5 mb-6">
+<p class="text-blue-400 font-semibold text-sm mb-1">Investigación activa</p>
+<p class="text-neutral-300 text-sm">La equidad en IA es uno de los campos más activos de la informática contemporánea. Conferencias como FAccT (Fairness, Accountability, and Transparency) reúnen cada año a investigadores que buscan enfoques que integren perspectivas técnicas, éticas, jurídicas y sociales.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Chouldechova</p>
+<p class="text-neutral-400 text-xs mt-1">Impossibility, 2017</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Trade-off</p>
+<p class="text-neutral-400 text-xs mt-1">Toda métrica sacrifica</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">FAccT</p>
+<p class="text-neutral-400 text-xs mt-1">Conferencia de referencia</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Ética + Técnica</p>
+<p class="text-neutral-400 text-xs mt-1">Inseparables</p>
+</div>
+</div>
+</section>
+<!-- RESUMO DO MÓDULO -->
+<section class="bg-dark-800 border border-rose-500/30 rounded-xl p-6 sm:p-8 mb-8">
+<h2 class="text-xl font-bold mb-4 text-rose-400">Resumen del Módulo 6.1</h2>
+<ul class="space-y-3 text-neutral-300 text-sm mb-6">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✓</span><span>Los sesgos algorítmicos surgen cuando la IA se entrena con datos que reflejan la discriminación histórica</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✓</span><span>COMPAS clasificaba a las personas negras como de alto riesgo 2 veces más que a las blancas, con falsos positivos desproporcionados</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✓</span><span>El reconocimiento facial falla hasta un 34.7% en mujeres negras frente a &lt;1% en hombres blancos</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✓</span><span>La IA de Amazon discriminaba a las mujeres porque los datos de contratación de 10 años favorecían a los hombres</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✓</span><span>Eliminar las variables protegidas no basta: los proxies correlacionados reproducen la discriminación</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✓</span><span>Las distintas definiciones de fairness son matemáticamente incompatibles: toda elección es ética</span></li>
+</ul>
+<a class="inline-flex items-center justify-start bg-rose-500/20 border border-rose-500/30 text-rose-400 px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-rose-500/30 transition-colors" href="modulo-6-2.html">Siguiente: Burbujas epistémicas →</a>
+</section>
+<!-- NAV INFERIOR -->
+<div class="flex items-center justify-between pt-8 border-t border-dark-700">
+<a class="text-neutral-400 hover:text-rose-400 transition-colors text-sm font-medium" href="index.html">← Ruta 6</a>
+<a class="text-rose-400 hover:text-rose-300 transition-colors text-sm font-medium" href="modulo-6-2.html">Módulo 6.2 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-700 py-8">
+<div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500">
+<a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mente, Poder e Máquina · 2026
+  </div>
+</footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

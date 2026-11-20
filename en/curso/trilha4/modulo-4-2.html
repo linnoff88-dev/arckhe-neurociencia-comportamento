@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>4.2 — Nudge Theory: Choice Architecture | MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{"course":"neurociencia-comportamento","tracks":[{"n":"1","title":"O Cerebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heuristicas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonancia cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},{"n":"2","title":"Influencia Social","modules":[{"id":"2-1","title":"Conformidade","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediencia","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulacao social","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},{"n":"3","title":"Neurociencia do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amigdala","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},{"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},{"n":"5","title":"Filosofia da Mente","modules":[{"id":"5-1","title":"Livre-arbitrio","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciencia","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiotica","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},{"n":"6","title":"IA, Vieses e Etica","modules":[{"id":"6-1","title":"Vieses algoritmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistemicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Etica e espaco humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}]}
+</script>
+<style>
+body{font-family:'Inter',system-ui,sans-serif}.topic-explanation{display:none}.topic-explanation.active{display:block}
+html:not(.dark) body{background-color:#f8fafc}html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-amber-400{color:#92400e}html:not(.dark) .bg-amber-500\/20{background-color:rgba(217,119,6,0.12)}html:not(.dark) .border-amber-500\/30{border-color:rgba(217,119,6,0.25)}html:not(.dark) .hover\:bg-amber-500\/10:hover{background-color:rgba(217,119,6,0.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,0.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+html:not(.dark) svg[role="img"]{filter:saturate(.82) brightness(.96)}
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha4/modulo-4-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha4/modulo-4-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha4/modulo-4-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen" data-inema-module="4-2"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-4-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha4/modulo-4-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Brain</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-amber-400 bg-amber-500/10" href="../trilha4/index.html">T4 Economics</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Philosophy</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 AI+Ethics</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()"><span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span></button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- BREADCRUMB -->
+<div class="flex items-center space-x-2 text-sm text-neutral-500 mb-8">
+<a class="hover:text-amber-400 transition-colors" href="../../index.html">Course</a>
+<span>/</span>
+<a class="hover:text-amber-400 transition-colors" href="index.html">Track 4</a>
+<span>/</span>
+<span class="text-amber-400">Module 4.2</span>
+</div>
+<!-- HEADER -->
+<section class="mb-10">
+<div class="bg-gradient-to-r from-amber-900/30 via-dark-800 to-dark-800 rounded-2xl p-8 border border-amber-500/30">
+<div class="inline-flex items-center space-x-2 bg-amber-500/20 border border-amber-500/30 rounded-full px-4 py-1.5 mb-4">
+<span class="text-amber-400 text-sm font-semibold">MODULE 4.2</span>
+</div>
+<h1 class="text-3xl md:text-4xl font-extrabold mb-3 leading-tight">Nudge Theory: Choice Architecture</h1>
+<p class="text-neutral-300 text-lg max-w-3xl">How small changes in the decision-making environment change behavior on a large scale without banning anything, changing incentives, or needing to convince anyone.</p>
+</div>
+</section>
+<!-- SVG: Escada de nudges -->
+<div class="rounded-2xl border border-amber-500/30 bg-dark-900/40 p-3 sm:p-4 mb-10 overflow-hidden">
+<svg aria-label="A staircase: from unguided choice to desired behavior, through defaults, simplification, feedback, and social proof" class="w-full h-auto" id="m42-hero" role="img" viewbox="0 0 800 320">
+<defs>
+<filter id="m42-glow"><fegaussianblur result="blur" stddeviation="1.5"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="40" id="m42-grid" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#374151" stroke-width="0.5"></path></pattern>
+<marker id="m42-arr" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#fbbf24" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+</defs>
+<rect fill="url(#m42-grid)" height="320" rx="12" width="800"></rect>
+<!-- Base: escolha nao guiada -->
+<rect fill="#1f1604" height="40" opacity="0.6" rx="8" stroke="#6b7280" stroke-width="1.5" width="160" x="40" y="260"></rect>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="120" y="284">UNGUIDED CHOICE</text>
+<!-- Degrau 1: Default -->
+<rect fill="#1f1604" height="40" rx="8" stroke="#fbbf24" stroke-width="2" width="120" x="180" y="215"></rect>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="240" y="239">DEFAULT</text>
+<line opacity="0.4" stroke="#fbbf24" stroke-width="1.5" x1="200" x2="200" y1="260" y2="255"></line>
+<!-- Degrau 2: Simplificacao -->
+<rect fill="#1f1604" height="40" rx="8" stroke="#fbbf24" stroke-width="2" width="120" x="290" y="175"></rect>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="350" y="193">SIMPLIFICATION</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="350" y="206">fewer steps</text>
+<!-- Degrau 3: Feedback -->
+<rect fill="#1f1604" height="40" rx="8" stroke="#f59e0b" stroke-width="2" width="120" x="400" y="135"></rect>
+<text fill="#f59e0b" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="460" y="153">FEEDBACK</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="460" y="166">visible consequences</text>
+<!-- Degrau 4: Prova social -->
+<rect fill="#1f1604" height="40" rx="8" stroke="#f59e0b" stroke-width="2" width="120" x="510" y="95"></rect>
+<text fill="#f59e0b" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="570" y="113">SOCIAL PROOF</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="570" y="126">"everyone does it"</text>
+<!-- Topo: comportamento desejado -->
+<rect fill="#1f1604" filter="url(#m42-glow)" height="44" rx="10" stroke="#fbbf24" stroke-width="2.5" width="140" x="620" y="45"></rect>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="690" y="64">BEHAVIOR</text>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="690" y="78">DESIRED</text>
+<!-- Seta diagonal conectando base ao topo -->
+<path d="M 200 262 L 240 255 L 350 215 L 460 175 L 570 135 L 660 89" fill="none" marker-end="url(#m42-arr)" opacity="0.5" stroke="#fbbf24" stroke-dasharray="6,3" stroke-width="2"></path>
+<!-- Labels laterais -->
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="11" font-weight="700" x="60" y="30">CHOICE ARCHITECTURE</text>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="9" opacity="0.8" x="60" y="46">Thaler &amp; Sunstein (2008)</text>
+<!-- Icone de pessoa subindo -->
+<circle cx="640" cy="56" fill="#38bdf8" r="4"></circle>
+<line stroke="#38bdf8" stroke-width="1.5" x1="640" x2="640" y1="60" y2="72"></line>
+<line stroke="#38bdf8" stroke-width="1.5" x1="635" x2="645" y1="65" y2="65"></line>
+</svg>
+</div>
+<!-- TOPICO 1 -->
+<section class="mb-10" data-inema-topic="modulo-4-2#topico-1">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<h2 class="text-xl font-bold">What a nudge is</h2>
+</div>
+<p class="text-neutral-300 mb-4">In 2008, Richard Thaler and Cass Sunstein published “Nudge: Improving Decisions About Health, Wealth, and Happiness.” The central thesis: it is possible to change people’s behavior predictably without banning any options or significantly changing economic incentives.</p>
+<p class="text-neutral-300 mb-4">A nudge is any aspect of the <strong class="text-amber-400">choice architecture</strong> that changes behavior in a predictable way. It is not an order. It is not a fine. It is not a subsidy. It is an adjustment to the environment in which the decision takes place. Changing the position of foods in the cafeteria so that fruit is at eye level is a nudge. Banning French fries is not.</p>
+<!-- Grid comparativo -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-amber-400 mb-3">✓ What a nudge is</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Change the default (opt-out instead of opt-in)</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Reduce friction (fewer clicks, fewer forms)</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Make information visible (salience)</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Use social norms (“9 out of 10 people do X”)</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-red-400 mb-3">✕ What a nudge isn't</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Prohibit options (banning)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Fines and financial penalties</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Subsidies that change economic incentives</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Compulsory legal mandates</span></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Nudge</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Choice architecture</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Thaler &amp; Sunstein</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Libertarian paternalism</span>
+</div>
+<div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4">
+<p class="text-sm text-neutral-300"><span class="text-amber-400 font-semibold">Connection to 4.1:</span> The nudge works only because Homo Economicus doesn't exist. If we were perfectly rational, the fruit's position on the shelf would be irrelevant. But we're human: we buy what's at eye level.</p>
+</div>
+</section>
+<!-- TOPICO 2 -->
+<section class="mb-10" data-inema-topic="modulo-4-2#topico-2">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<h2 class="text-xl font-bold">The power of the default</h2>
+</div>
+<p class="text-neutral-300 mb-4">Of all nudges, the most powerful is also the simplest: the preselected option. When a form already has a box checked, most people simply don't uncheck it. Not because they agree. Because unchecking it takes effort, and the brain prefers the path of least resistance.</p>
+<p class="text-neutral-300 mb-4">The most studied case is organ donation. Countries with a system <strong class="text-amber-400">opt-out</strong> (you are a donor by default and must actively opt out) have donation rates above 90%. Countries with a system <strong class="text-amber-400">opt-in</strong> (you must actively register) stay below 20%. The only difference is the default.</p>
+<!-- Data box comparativo -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5 mb-6">
+<h4 class="text-sm font-semibold text-amber-400 mb-4">Organ donation: opt-in vs opt-out (Johnson &amp; Goldstein, 2003)</h4>
+<div class="grid grid-cols-2 gap-4 mb-4">
+<div class="text-center">
+<span class="text-2xl font-bold text-red-400">4-27%</span>
+<p class="text-neutral-400 text-sm mt-1">Opt-in countries</p>
+<p class="text-neutral-500 text-xs">Denmark, Netherlands, UK, Germany</p>
+</div>
+<div class="text-center">
+<span class="text-2xl font-bold text-amber-400">85-99%</span>
+<p class="text-neutral-400 text-sm mt-1">Opt-out countries</p>
+<p class="text-neutral-500 text-xs">Austria, Belgium, France, Hungary</p>
+</div>
+</div>
+<p class="text-neutral-400 text-xs text-center">Same population, same European culture, same question. The only variable: the default.</p>
+</div>
+<!-- Grid: onde defaults operam -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-amber-400 mb-3">✓ Helpful defaults</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Retirement plan with automatic enrollment</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Printer configured for double-sided printing</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Renewable energy as the default option</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Opt-out organ donation</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-red-400 mb-3">✕ Defaults that exploit</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Subscriptions with hidden automatic renewal</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Preselected travel insurance when buying a ticket</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Data sharing enabled by default</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Premium plan as the default option</span></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Default effect</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Opt-in vs. opt-out</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Status quo bias</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Decision inertia</span>
+</div>
+<div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4">
+<p class="text-sm text-neutral-300"><span class="text-amber-400 font-semibold">Why it works:</span> The default exploits three biases at once: status quo bias (we prefer not to change), loss aversion (changing could make things worse), and cognitive effort (making decisions is tiring). It’s a behavioral 3-in-1.</p>
+</div>
+</section>
+<!-- TOPICO 3 -->
+<section class="mb-10" data-inema-topic="modulo-4-2#topico-3">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<h2 class="text-xl font-bold">Simplification and salience</h2>
+</div>
+<p class="text-neutral-300 mb-4">Each extra step between intention and action is a point where people may give up. Each extra field on a form means one fewer person completes the process. Simplification is a nudge because it removes friction: it makes the desired path easier to follow.</p>
+<p class="text-neutral-300 mb-4">Salience works in the opposite way: instead of removing barriers, it <strong class="text-amber-400">highlights the desired option</strong>. The fruit at eye level in the cafeteria. The calorie notice on the menu. The nutrition traffic light on the package. When relevant information is visible at the moment of decision, the decision changes.</p>
+<!-- Timeline: exemplos de simplificacao -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5 mb-6">
+<h4 class="text-sm font-semibold text-amber-400 mb-4">Examples of simplification that changed outcomes</h4>
+<div class="space-y-4">
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">US</div>
+<div><p class="text-neutral-300 text-sm font-semibold">Simplified FAFSA (U.S.)</p><p class="text-neutral-400 text-sm">University financial aid form reduced from 100+ to ~30 questions. Applications increased by 8 percentage points.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">UK</div>
+<div><p class="text-neutral-300 text-sm font-semibold">Tax letter (UK BIT)</p><p class="text-neutral-400 text-sm">Simplified text + deadline highlighted in red. On-time payments rose 5%.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">BR</div>
+<div><p class="text-neutral-300 text-sm font-semibold">Pix (Brazil, 2020)</p><p class="text-neutral-400 text-sm">Instant transfer in 2 taps versus TED/DOC with a bank, account, and check digit. Mass adoption in months.</p></div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Simplification</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Salience</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Friction</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Hassle factor</span>
+</div>
+<div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4">
+<p class="text-sm text-neutral-300"><span class="text-amber-400 font-semibold">Golden rule:</span> If you want people to do something, make it easy. If you want them to stop, make it hard. Every extra click is a filter. Every form is a barrier. Simplicity is power.</p>
+</div>
+</section>
+<!-- TOPICO 4 -->
+<section class="mb-10" data-inema-topic="modulo-4-2#topico-4">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<h2 class="text-xl font-bold">Feedback and social proof</h2>
+</div>
+<p class="text-neutral-300 mb-4">Humans need immediate feedback to adjust their behavior. The problem: many consequences of our actions are invisible. You don't see the CO2 your car emits. You don't feel your cholesterol rising. You don't notice your bank account draining until the statement arrives. Feedback nudges make these consequences visible at the moment of action.</p>
+<p class="text-neutral-300 mb-4">Social proof is equally powerful: when we know others are doing something, we feel pressure to do it too. The UK’s Behavioural Insights Team (BIT) tested this with taxes. A simple sentence added to a collection letter changed the behavior of millions of people.</p>
+<!-- Experiment box -->
+<div class="bg-dark-800 border border-amber-500/30 rounded-xl p-5 mb-6">
+<h4 class="text-sm font-semibold text-amber-400 mb-3">UK BIT experiment: taxes and social proof</h4>
+<p class="text-neutral-300 text-sm mb-4">Letters about overdue taxes were sent with different messages. The version with local social proof had the best results:</p>
+<div class="space-y-3 mb-4">
+<div class="flex items-center justify-between bg-dark-700/50 rounded-lg p-3">
+<div class="flex items-center space-x-3">
+<span class="w-7 h-7 rounded-full bg-sky-500/20 text-sky-400 text-xs font-bold flex items-center justify-center flex-shrink-0">A</span>
+<span class="text-neutral-300 text-sm">Standard letter (control)</span>
+</div>
+<span class="text-neutral-400 font-semibold text-sm">baseline</span>
+</div>
+<div class="flex items-center justify-between bg-dark-700/50 rounded-lg p-3">
+<div class="flex items-center space-x-3">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">B</span>
+<span class="text-neutral-300 text-sm">"Most people pay on time"</span>
+</div>
+<span class="text-amber-400 font-semibold text-sm">+5%</span>
+</div>
+<div class="flex items-center justify-between bg-dark-700/50 rounded-lg p-3 border border-amber-500/20">
+<div class="flex items-center space-x-3">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">C</span>
+<span class="text-neutral-300 text-sm">"9 out of 10 people in your neighborhood pay on time"</span>
+</div>
+<span class="text-amber-400 font-semibold text-sm">+15%</span>
+</div>
+</div>
+<p class="text-neutral-400 text-xs">The closer and more specific the social reference, the greater the effect. “Your neighborhood” is more powerful than “most people.”</p>
+</div>
+<!-- Grid: tipos de feedback -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-amber-400 mb-3">✓ Effective feedback</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Speed display with an emoji (smile/frown)</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Energy bill with comparison to neighbors</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Spending app with real-time alerts</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Nutrition traffic light on packaging</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-red-400 mb-3">✕ Feedback that fails</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Incomprehensible technical information</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Feedback delayed too long (monthly statement)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Data without a reference point</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Excessive metrics (information paralysis)</span></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Immediate feedback</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Social proof</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Descriptive norms</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">UK BIT</span>
+</div>
+</section>
+<!-- TOPICO 5 -->
+<section class="mb-10" data-inema-topic="modulo-4-2#topico-5">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<h2 class="text-xl font-bold">Save More Tomorrow (SMarT)</h2>
+</div>
+<p class="text-neutral-300 mb-4">Thaler and Shlomo Benartzi designed what may be the most elegant nudge in history: the Save More Tomorrow program. Instead of asking employees to save <em>now</em> (when the brain resists), the program only asked them to agree to allocate <em>future salary increases</em> for savings.</p>
+<p class="text-neutral-300 mb-4">The psychological trick: no one loses money today. The raise you have not received yet does not “belong” to your present self, so loss aversion does not kick in. And because future raises are automatically redirected, inertia works in your favor instead of against you.</p>
+<!-- Timeline SMarT -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5 mb-6">
+<h4 class="text-sm font-semibold text-amber-400 mb-4">SMarT Results (Thaler &amp; Benartzi, 2004)</h4>
+<div class="space-y-4">
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">YEAR 0</div>
+<div><p class="text-neutral-300 text-sm"><strong class="text-amber-400">3.5%</strong> of the salary saved. Employees agree to allocate future raises.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">YEAR 1</div>
+<div><p class="text-neutral-300 text-sm"><strong class="text-amber-400">6.5%</strong> of the salary saved. First raise automatically redirected.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">YEAR 2</div>
+<div><p class="text-neutral-300 text-sm"><strong class="text-amber-400">9.4%</strong> of the salary saved. Second raise. No one felt a "loss".</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">YEAR 3</div>
+<div><p class="text-neutral-300 text-sm"><strong class="text-amber-400">13.6%</strong> of the salary saved. Almost 4x the initial amount, with no pain.</p></div>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 mb-4">SMarT explores three principles at once: <strong class="text-amber-400">precommitment</strong> (deciding today about the future is easier), <strong class="text-amber-400">inertia</strong> (once enrolled, nobody leaves) and <strong class="text-amber-400">loss aversion circumvented</strong> (you can't lose what you don't have yet). The program was so successful that it became public policy in the U.S. through the Pension Protection Act of 2006.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Save More Tomorrow</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Precommitment</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Inertia in favor</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Loss aversion</span>
+</div>
+<div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4">
+<p class="text-sm text-neutral-300"><span class="text-amber-400 font-semibold">Why it's brilliant:</span> SMarT does not require willpower, prohibit anything, change incentives, or cost the employer almost anything. It simply redesigns the moment and structure of the decision. This is choice architecture at its best.</p>
+</div>
+</section>
+<!-- TOPICO 6 -->
+<section class="mb-10" data-inema-topic="modulo-4-2#topico-6">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<h2 class="text-xl font-bold">Nudges in Brazil and Ethical Limits</h2>
+</div>
+<p class="text-neutral-300 mb-4">Brazil was not left out of the nudge wave. In 2014, the city government of Rio de Janeiro created the <strong class="text-amber-400">NudgeRio</strong>, the first behavioral economics unit applied to municipal public policy in Latin America. In São Paulo, the <strong class="text-amber-400">Nudge//SP</strong> worked on health, education, and fundraising projects.</p>
+<p class="text-neutral-300 mb-4">At NudgeRio, one of the best-known projects involved property tax collection: redesigning payment forms with simplified language, visually highlighting the deadline, and using social norms ("most residents in your neighborhood have already paid"). Result: a measurable increase in on-time payments.</p>
+<!-- Timeline nudge units -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5 mb-6">
+<h4 class="text-sm font-semibold text-amber-400 mb-4">Nudge Units Around the World</h4>
+<div class="space-y-4">
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2010</div>
+<div><p class="text-neutral-300 text-sm"><strong>UK BIT</strong> (Behavioural Insights Team). First government nudge unit. A model for the world.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2014</div>
+<div><p class="text-neutral-300 text-sm"><strong>NudgeRio</strong> (Brazil). SBST (US, Obama). Nudge units spread around the globe.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2015</div>
+<div><p class="text-neutral-300 text-sm"><strong>Nudge//SP</strong>. The World Bank and OECD adopt behavioral units.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2020+</div>
+<div><p class="text-neutral-300 text-sm">More than <strong>200 units</strong> of nudge in governments in 60+ countries. Nudge goes mainstream.</p></div>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 mb-4">But when does a nudge stop being helpful and become manipulation? Thaler and Sunstein call their approach <strong class="text-amber-400">libertarian paternalism</strong>: paternalistic because it steers, libertarian because it doesn't prohibit. Critics ask: who decides what counts as "good" behavior? What if the government uses nudges to serve its own interests?</p>
+<!-- Grid: nudge etico vs manipulacao -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-amber-400 mb-3">✓ Ethical nudge (transparent)</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Benefits those who are nudged (health, savings)</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>The option to leave is easy and visible</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Based on scientific evidence</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Transparent and auditable design process</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-red-400 mb-3">✕ Sludge (manipulation)</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Benefits those who nudge (companies, government)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Making it hard or hidden to exit (dark patterns)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Explores biases instead of working around them</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>"Cancel subscription" in 12 steps</span></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">NudgeRio</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Libertarian paternalism</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Sludge</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Dark patterns</span>
+</div>
+<div class="bg-red-500/10 border border-red-500/20 rounded-xl p-4">
+<p class="text-sm text-neutral-300"><span class="text-red-400 font-semibold">Thaler’s test:</span> "A nudge is ethical if you'd feel comfortable explaining it openly to the person being nudged." If it has to be hidden to work, it's not a nudge. It's manipulation.</p>
+</div>
+</section>
+<!-- RESUMO -->
+<section class="mb-10">
+<div class="bg-dark-800 border border-amber-500/30 rounded-xl p-6">
+<h3 class="text-lg font-bold text-amber-400 mb-4">Module 4.2 Summary</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>A nudge is any factor that predictably alters behavior without forbidding options or significantly changing incentives.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>The default is the most powerful nudge: opt-out countries have 85-99% organ donors vs. 4-27% in opt-in countries.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>Simplification removes friction (fewer steps = greater uptake). Salience highlights the desired option at the right moment.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>Immediate feedback and local social proof ("9 out of 10 people in your neighborhood") are high-impact behavioral levers.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>SMarT raised savings from 3.5% to 13.6% of salary in 3 years, without pain or prohibition.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>NudgeRio and Nudge//SP brought behavioral economics to Brazil. But a nudge becomes manipulation when it benefits the person doing the nudging, not the person being nudged.</span></li>
+</ul>
+</div>
+</section>
+<!-- NAVEGACAO -->
+<div class="flex items-center justify-start space-x-4 pt-8 border-t border-dark-700">
+<a class="text-neutral-400 hover:text-amber-400 transition-colors text-sm font-medium" href="modulo-4-1.html">← 4.1 Homo Economicus</a>
+<a class="text-amber-400 hover:text-amber-300 transition-colors text-sm font-medium" href="modulo-4-3.html">4.3 Mental Accounting →</a>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="border-t border-dark-700 py-8"><div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500"><a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mind, Power and Machine · 2026</div></footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

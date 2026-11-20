@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>Módulo 6.3 — Ética, Tecnologia e o Espaço Humano | MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{"course":"neurociencia-comportamento","tracks":[{"n":"1","title":"O Cérebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heurísticas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonância cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},{"n":"2","title":"Influência Social","modules":[{"id":"2-1","title":"Conformidade","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulação social","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},{"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},{"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},{"n":"5","title":"Filosofia da Mente","modules":[{"id":"5-1","title":"Livre-arbítrio","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciência","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiótica","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},{"n":"6","title":"IA, Vieses e Ética","modules":[{"id":"6-1","title":"Vieses algorítmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistêmicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Ética e espaço humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}]}
+</script>
+<style>
+body{font-family:'Inter',system-ui,sans-serif}.topic-explanation{display:none}.topic-explanation.active{display:block}
+html:not(.dark) body{background-color:#f8fafc}html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-rose-400{color:#9f1239}html:not(.dark) .bg-rose-500\/20{background-color:rgba(225,29,72,0.12)}html:not(.dark) .border-rose-500\/30{border-color:rgba(225,29,72,0.25)}html:not(.dark) .hover\:bg-rose-500\/10:hover{background-color:rgba(225,29,72,0.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,0.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+html:not(.dark) svg[role="img"]{filter:saturate(.82) brightness(.96)}
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha6/modulo-6-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha6/modulo-6-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha6/modulo-6-3.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-6-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha6/modulo-6-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha6/modulo-6-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Cérebro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economia</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Filosofia</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-rose-400 bg-rose-500/10" href="../trilha6/index.html">T6 IA+Ética</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()"><span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span></button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="6-3">
+<!-- BREADCRUMB -->
+<div class="flex items-center space-x-2 text-sm text-neutral-500 mb-8">
+<a class="hover:text-rose-400 transition-colors" href="../../index.html">Início</a>
+<span>/</span>
+<a class="hover:text-rose-400 transition-colors" href="index.html">Trilha 6</a>
+<span>/</span>
+<span class="text-neutral-300">Módulo 6.3</span>
+</div>
+<!-- HEADER -->
+<section class="mb-10">
+<div class="bg-gradient-to-r from-rose-900/30 via-dark-800 to-dark-800 rounded-2xl p-8 border border-rose-500/30">
+<div class="inline-flex items-center space-x-2 bg-rose-500/20 border border-rose-500/30 rounded-full px-4 py-1.5 mb-4">
+<span class="text-rose-400 text-sm font-semibold">MÓDULO 6.3 · MÓDULO FINAL</span>
+</div>
+<h1 class="text-2xl font-bold mb-2">Ética, Tecnologia e o Espaço Humano</h1>
+<p class="text-neutral-400 mb-4">Marcus Bruzzo, "Seremos Dados" · O que resta quando delegamos tudo</p>
+<div class="flex items-center space-x-6 text-sm text-neutral-500">
+<span>6 tópicos</span>
+<span>~35 min</span>
+<span>Avançado</span>
+</div>
+</div>
+</section>
+<!-- SVG: Três dimensões da erosão + o que resta -->
+<div class="rounded-2xl border border-rose-500/30 bg-dark-900/40 p-3 sm:p-4 mb-10 overflow-hidden">
+<svg aria-label="Diagrama: três dimensões de risco da delegação tecnológica (agência cognitiva, diversidade cultural, poder) convergem para a erosão do espaço humano, com o inútil como resistência" class="w-full h-auto" role="img" viewbox="0 0 800 400">
+<defs>
+<filter id="m63-glow"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="m63-arr" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#fb7185" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<marker id="m63-arr-g" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#4ade80" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<pattern height="40" id="m63-grid" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#3b1829" stroke-width="0.5"></path></pattern>
+</defs>
+<rect fill="#2a0f16" height="400" rx="12" width="800"></rect>
+<rect fill="url(#m63-grid)" height="400" rx="12" width="800"></rect>
+<!-- Title -->
+<rect fill="#3b1829" height="26" opacity="0.6" rx="10" width="400" x="200" y="16"></rect>
+<text fill="#fb7185" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="400" y="34">SEREMOS DADOS? — TRÊS EROSÕES E A RESISTÊNCIA DO INÚTIL</text>
+<!-- Node 1: Agência Cognitiva -->
+<rect fill="#2a0f16" filter="url(#m63-glow)" height="90" rx="16" stroke="#fb7185" stroke-width="2" width="170" x="30" y="80"></rect>
+<text fill="#fb7185" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="115" y="108">AGÊNCIA</text>
+<text fill="#fb7185" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="115" y="123">COGNITIVA</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="115" y="142">memória, navegação,</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="115" y="154">escrita delegadas</text>
+<!-- Node 2: Diversidade Cultural -->
+<rect fill="#2a0f16" filter="url(#m63-glow)" height="90" rx="16" stroke="#fb7185" stroke-width="2" width="170" x="30" y="200"></rect>
+<text fill="#fb7185" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="115" y="228">DIVERSIDADE</text>
+<text fill="#fb7185" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="115" y="243">CULTURAL</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="115" y="262">mesmos sistemas =</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="115" y="274">homogeneização</text>
+<!-- Node 3: Poder -->
+<rect fill="#2a0f16" filter="url(#m63-glow)" height="60" rx="16" stroke="#fb7185" stroke-width="2" width="170" x="30" y="320"></rect>
+<text fill="#fb7185" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="115" y="347">PODER OPACO</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="115" y="363">crédito, saúde, justiça</text>
+<!-- Arrows to center -->
+<line marker-end="url(#m63-arr)" opacity="0.5" stroke="#fb7185" stroke-width="1.5" x1="200" x2="298" y1="125" y2="200"></line>
+<line marker-end="url(#m63-arr)" opacity="0.5" stroke="#fb7185" stroke-width="1.5" x1="200" x2="298" y1="245" y2="215"></line>
+<line marker-end="url(#m63-arr)" opacity="0.5" stroke="#fb7185" stroke-width="1.5" x1="200" x2="298" y1="345" y2="225"></line>
+<!-- Center: Erosão do Espaço Humano -->
+<rect fill="#2a0f16" filter="url(#m63-glow)" height="75" rx="18" stroke="#f43f5e" stroke-width="2.5" width="190" x="305" y="170"></rect>
+<text fill="#f43f5e" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="400" y="198">EROSÃO DO</text>
+<text fill="#f43f5e" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="400" y="215">ESPAÇO HUMANO</text>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="400" y="234">"Seremos Dados" — Bruzzo</text>
+<!-- Arrow to right -->
+<line marker-end="url(#m63-arr)" opacity="0.5" stroke="#fb7185" stroke-width="2" x1="495" x2="558" y1="207" y2="207"></line>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="8" opacity="0.8" text-anchor="middle" x="527" y="198">mas...</text>
+<!-- Right: O Inútil como resistência (green accent) -->
+<rect fill="#0f2a16" filter="url(#m63-glow)" height="155" rx="18" stroke="#4ade80" stroke-width="2" width="200" x="565" y="130"></rect>
+<text fill="#4ade80" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="665" y="158">O INÚTIL COMO</text>
+<text fill="#4ade80" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="665" y="175">RESISTÊNCIA</text>
+<text fill="#86efac" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="665" y="200">arte sem propósito</text>
+<text fill="#86efac" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="665" y="215">amor sem utilidade</text>
+<text fill="#86efac" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="665" y="230">jogo sem meta</text>
+<text fill="#86efac" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="665" y="245">conversa sem fim</text>
+<text fill="#4ade80" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="665" y="270">o que não vira dado</text>
+<!-- Bottom label -->
+<text fill="#fb7185" font-family="Inter,sans-serif" font-size="9" font-weight="600" opacity="0.6" text-anchor="middle" x="400" y="388">a questão não é se a IA é superior — é o que acontece com o espaço humano</text>
+</svg>
+</div>
+<!-- TÓPICO 1 -->
+<section class="mb-12" data-inema-topic="modulo-6-3#topico-1" id="topico-1">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<h2 class="text-2xl font-bold">"Seremos Dados": a tese de Bruzzo</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-3-t1-p1">Marcus Bruzzo, em "Seremos Dados", propõe uma inversão fundamental do debate sobre inteligência artificial. A pergunta que domina a cultura popular e boa parte da academia ("a IA vai ser mais inteligente que nós?", "a IA é consciente?", "a IA vai nos substituir?") é, para Bruzzo, a pergunta errada. Ela assume que o problema é de comparação: humano versus máquina. Mas a questão real não é de competição. É de espaço.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-3-t1-p2">O que acontece com o espaço humano quando delegamos progressivamente nossas funções cognitivas, criativas e decisórias para sistemas automatizados? Não se trata de saber se a IA escreve melhor que um humano, mas do que acontece com a capacidade humana de escrever quando bilhões de pessoas param de exercê-la. Não é sobre se a IA decide melhor, mas sobre o que acontece com a capacidade humana de decidir quando as decisões são terceirizadas. A tese de Bruzzo é que o risco não é a superioridade da máquina, mas a atrofia do humano.</p>
+<!-- Tip box -->
+<div class="bg-rose-500/10 border border-rose-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-rose-400 font-semibold mb-1">A inversão do debate</p>
+<p class="text-neutral-300 text-sm">A questão central não é "a IA é superior ou inferior ao humano?" Essa é uma armadilha comparativa. A questão é: o que acontece com o espaço humano quando delegamos funções que nos constituem como humanos? A resposta de Bruzzo: ele encolhe.</p>
+</div>
+<!-- Concept grid -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">A pergunta errada</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>A IA é mais inteligente que nós?</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>A IA vai nos substituir?</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>A IA é consciente?</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Humano vs. máquina (frame competitivo)</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">A pergunta de Bruzzo</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">●</span><span>O que acontece com o espaço humano?</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">●</span><span>Que capacidades atrofiam por desuso?</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">●</span><span>Quem controla os sistemas de delegação?</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">●</span><span>O que não pode ser reduzido a dado?</span></li>
+</ul>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Seremos Dados</p>
+<p class="text-neutral-400 text-xs mt-1">Marcus Bruzzo</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Espaço humano</p>
+<p class="text-neutral-400 text-xs mt-1">Conceito central</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Delegação</p>
+<p class="text-neutral-400 text-xs mt-1">Cognitiva e decisória</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Atrofia</p>
+<p class="text-neutral-400 text-xs mt-1">Capacidade não usada</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="mb-12" data-inema-topic="modulo-6-3#topico-2" id="topico-2">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<h2 class="text-2xl font-bold">Erosão da agência cognitiva</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-3-t2-p1">A primeira dimensão do risco identificada por Bruzzo é a erosão da agência cognitiva. Terceirizamos a memória para smartphones, a navegação espacial para GPS, a escrita para IA generativa, o cálculo para calculadoras. Cada delegação, individualmente, parece razoável: por que memorizar um número de telefone se o aparelho o guarda? Por que aprender a se orientar na cidade se o GPS mostra o caminho? Mas o efeito cumulativo é uma atrofia progressiva de capacidades que nos constituem como agentes cognitivos.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-3-t2-p2">O fundamento neurocientífico dessa preocupação é a neuroplasticidade, estudada na Trilha 3 deste curso. O cérebro fortalece circuitos que são usados e enfraquece os que não são. Se paramos de exercitar a memória espacial (porque o GPS resolve), o hipocampo perde volume mensurável. Se paramos de praticar escrita argumentativa (porque a IA gera textos), os circuitos de organização do pensamento se enfraquecem. Não é metáfora: é reorganização sináptica.</p>
+<!-- Timeline: Etapas de delegação -->
+<div class="space-y-4 mb-6">
+<h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide">Cascata de delegação cognitiva</h4>
+<div class="relative pl-6 border-l-2 border-rose-500/30 space-y-6">
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">Memória:</strong> Agenda telefônica, aniversários, compromissos delegados ao smartphone. Hipocampo menos requisitado.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">Navegação:</strong> GPS substitui orientação espacial. Estudos mostram redução de volume do hipocampo em motoristas que usam GPS por anos.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-rose-500/30 border-2 border-rose-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-rose-400">Escrita:</strong> IA generativa redige textos. A organização do pensamento pela escrita fica em desuso.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-red-500/30 border-2 border-red-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-red-400">Decisão:</strong> Algoritmos recomendam o que comer, assistir, comprar, em quem votar. Capacidade deliberativa atrofia.</p>
+</div>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-rose-500/10 border border-rose-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-rose-400 font-semibold mb-1">Neuroplasticidade como fundamento</p>
+<p class="text-neutral-300 text-sm">Capacidades não exercitadas atrofiam. Isso não é pessimismo cultural, é neurociência. A mesma plasticidade que permite aprender permite desaprender. Quando delegamos sistematicamente, o cérebro se reorganiza para um mundo onde essas funções não são necessárias.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Hipocampo</p>
+<p class="text-neutral-400 text-xs mt-1">Memória e navegação</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Plasticidade</p>
+<p class="text-neutral-400 text-xs mt-1">Use-it-or-lose-it</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">GPS</p>
+<p class="text-neutral-400 text-xs mt-1">Volume hipocampal cai</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Delegação</p>
+<p class="text-neutral-400 text-xs mt-1">Cumulativa e silenciosa</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="mb-12" data-inema-topic="modulo-6-3#topico-3" id="topico-3">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<h2 class="text-2xl font-bold">Erosão da diversidade cultural</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-3-t3-p1">A segunda dimensão do risco é a erosão da diversidade cultural. Quando bilhões de pessoas utilizam os mesmos sistemas de geração de texto, imagem, música e código, a produção cultural tende à homogeneização. Cada modelo de linguagem grande (LLM) foi treinado em um corpus particular, com vieses particulares, otimizado para padrões estatísticos particulares. Quando esse mesmo modelo gera conteúdo para bilhões, ele produz variações dentro de um espaço estético limitado.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-3-t3-p2">Bruzzo chama isso de oposto do "excedente imaginário". A cultura humana historicamente produziu mais formas, estilos, narrativas e modos de expressão do que qualquer indivíduo poderia consumir. Essa abundância era o substrato da inovação: o inesperado, o estranho, o que não fazia sentido imediato. Quando a geração passa por um funil algorítmico que otimiza para engajamento e padrões reconhecíveis, a tendência é comprimir essa diversidade. Não a eliminar de uma vez, mas reduzi-la gradualmente, como uma erosão.</p>
+<!-- Grid -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Mecanismos de homogeneização</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Mesmo modelo gera para bilhões: variações dentro de um espaço estético restrito</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Otimização para engajamento favorece o familiar sobre o estranho</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Feedback loop: conteúdo gerado treina próximos modelos</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Tradições locais perdem espaço para "estilo global" algorítmico</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Excedente imaginário (o que se perde)</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">●</span><span>Formas estéticas que não otimizam nenhuma métrica</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">●</span><span>Narrativas locais sem apelo de escala global</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">●</span><span>O estranho, o inesperado, o que não faz sentido imediato</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">●</span><span>Diversidade como substrato da inovação cultural</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5 mb-6">
+<p class="text-blue-400 font-semibold text-sm mb-1">Conexão com Trilha 6.2 (Bolhas Epistêmicas)</p>
+<p class="text-neutral-300 text-sm">As bolhas epistêmicas estudadas no módulo anterior fragmentam a percepção da realidade. Aqui, o mecanismo é complementar: não é que cada grupo veja uma realidade diferente, mas que todos passam a produzir cultura de um mesmo molde. Fragmentação na percepção, homogeneização na produção.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Homogeneização</p>
+<p class="text-neutral-400 text-xs mt-1">Funil algorítmico</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Excedente</p>
+<p class="text-neutral-400 text-xs mt-1">Imaginário em risco</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Corpus único</p>
+<p class="text-neutral-400 text-xs mt-1">Bilhões de outputs</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Erosão lenta</p>
+<p class="text-neutral-400 text-xs mt-1">Gradual, não abrupta</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="mb-12" data-inema-topic="modulo-6-3#topico-4" id="topico-4">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<h2 class="text-2xl font-bold">Transferência de poder e opacidade</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-3-t4-p1">A terceira dimensão é a mais diretamente política: a transferência de poder decisório para sistemas opacos. Decisões que afetam vidas concretas (concessão de crédito, diagnóstico de saúde, sentenciamento judicial, seleção para emprego, acesso a benefícios sociais) são delegadas a algoritmos cujo funcionamento interno não é compreensível nem para seus criadores, muito menos para as pessoas afetadas.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-3-t4-p2">Essa opacidade reduz drasticamente a possibilidade de contestação. Quando um humano nega um crédito, o requerente pode perguntar por quê e, em princípio, argumentar contra a decisão. Quando um algoritmo nega, a resposta é "o modelo disse que não". A explicação técnica (uma combinação de pesos em milhões de parâmetros) não é traduzível em razões contestáveis. A consequência é a erosão da responsabilização: ninguém decide, logo ninguém responde. O sistema decide, mas o sistema não é um agente moral.</p>
+<!-- Alert box -->
+<div class="bg-red-500/10 border border-red-500/30 rounded-xl p-5 mb-6">
+<p class="text-red-400 font-semibold text-sm mb-1">O problema da responsabilização</p>
+<p class="text-neutral-300 text-sm">Quando um algoritmo nega crédito, emprego ou liberdade condicional, quem é responsável? O desenvolvedor que treinou o modelo? A empresa que o licenciou? O juiz que seguiu a recomendação? A difusão de responsabilidade torna a contestação quase impossível. Decisão sem responsável é poder sem freio.</p>
+</div>
+<!-- Grid -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Domínios de decisão delegada</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Crédito: score algorítmico determina acesso a financiamento</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Saúde: triagem automatizada prioriza pacientes</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Justiça: risk scores influenciam sentenças e fiança</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Emprego: IA filtra currículos antes de qualquer olhar humano</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Por que opacidade é perigosa</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Milhões de parâmetros: inexplicável em linguagem humana</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Sem razões contestáveis: "o modelo disse não"</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Difusão de responsabilidade: ninguém "decidiu"</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✗</span><span>Poder sem accountability: a forma mais perigosa de poder</span></li>
+</ul>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Opacidade</p>
+<p class="text-neutral-400 text-xs mt-1">Caixa-preta decisória</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Contestação</p>
+<p class="text-neutral-400 text-xs mt-1">Reduzida ou impossível</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Accountability</p>
+<p class="text-neutral-400 text-xs mt-1">Diluída entre atores</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Escala</p>
+<p class="text-neutral-400 text-xs mt-1">Milhões de decisões/dia</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="mb-12" data-inema-topic="modulo-6-3#topico-5" id="topico-5">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<h2 class="text-2xl font-bold">O inútil como resistência</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-3-t5-p1">Se o diagnóstico de Bruzzo é sombrio, sua proposta de resistência é surpreendente: o que resta de humano é o inútil. Não o inútil como fracasso, mas o inútil como categoria filosófica. Arte que não otimiza nenhuma métrica. Amor que não maximiza utilidade. Jogo sem propósito produtivo. Conversas que existem apenas por existir. O passeio sem destino. A contemplação sem output. O silêncio que não precisa ser preenchido.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-3-t5-p2">Essa proposta dialoga com uma longa tradição filosófica. Aristóteles considerava a contemplação (theoria) a atividade mais elevada justamente porque era a mais inútil no sentido prático. Kant via a experiência estética como "finalidade sem fim". Hannah Arendt distinguia labor (necessidade biológica), trabalho (fabricação de objetos) e ação (atividade livre entre iguais), sendo a ação a dimensão propriamente humana, justamente por não ter utilidade instrumental. Bruzzo atualiza essa tradição para a era algorítmica: a resistência à colonização tecnológica da imaginação passa pela valorização radical do que não pode ser reduzido a dado.</p>
+<!-- Concept grid -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">O "inútil" que constitui o humano</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">●</span><span>Arte que não otimiza engajamento nem vendas</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">●</span><span>Amor que não maximiza utilidade nem conveniência</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">●</span><span>Jogo sem meta de produtividade</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">●</span><span>Conversa que existe só pela conversa em si</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">Tradição filosófica do inútil</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">●</span><span>Aristóteles: theoria (contemplação) como atividade mais elevada</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">●</span><span>Kant: experiência estética como "finalidade sem fim"</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">●</span><span>Arendt: ação livre entre iguais, sem utilidade instrumental</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">●</span><span>Bruzzo: o que não pode ser reduzido a dado</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-rose-500/10 border border-rose-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-rose-400 font-semibold mb-1">Resistência, não ludismo</p>
+<p class="text-neutral-300 text-sm">Bruzzo não propõe rejeitar a tecnologia (ludismo). Propõe proteger e cultivar ativamente os espaços da experiência humana que não podem e não devem ser otimizados. Não é contra a IA: é a favor do que a IA não pode ser. É uma posição ética, não tecnofóbica.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Theoria</p>
+<p class="text-neutral-400 text-xs mt-1">Aristóteles</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Finalidade sem fim</p>
+<p class="text-neutral-400 text-xs mt-1">Kant</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Ação</p>
+<p class="text-neutral-400 text-xs mt-1">Hannah Arendt</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Irredutível</p>
+<p class="text-neutral-400 text-xs mt-1">O que não vira dado</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="mb-12" data-inema-topic="modulo-6-3#topico-6" id="topico-6">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<h2 class="text-2xl font-bold">Síntese: o que significa ser humano na era da IA</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m6-3-t6-p1">Este módulo encerra o curso "Mente, Poder e Comportamento". Percorremos um arco que começou na mecânica da decisão individual (Sistema 1 e 2, heurísticas, vieses), passou pela influência social (conformidade, obediência, manipulação), desceu à infraestrutura neural (neuroplasticidade, dopamina, amígdala), subiu para os sistemas econômicos que exploram essas vulnerabilidades (economia comportamental, nudge, contabilidade mental), questionou os fundamentos filosóficos (livre-arbítrio, consciência, semiótica) e chegou à fronteira atual: o que acontece quando máquinas herdam, amplificam e automatizam tudo isso.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m6-3-t6-p2">A resposta de Bruzzo, e o argumento final deste curso, não é uma resposta técnica. É uma resposta ética e existencial. Ser humano na era da IA não é competir com a máquina em eficiência, velocidade ou escala. Nunca foi sobre isso. É insistir nas dimensões da experiência que não podem ser reduzidas a dados, otimizadas por algoritmos ou delegadas a sistemas. A vulnerabilidade. A ambiguidade. O erro produtivo. A beleza inútil. A presença sem propósito. O encontro com o outro que não pode ser previsto, modelado ou replicado.</p>
+<!-- Grid: o arco do curso -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">O arco completo do curso</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">T1</span><span>Como decidimos (vieses, heurísticas, Sistema 1/2)</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400 mt-0.5">T2</span><span>Como somos influenciados (conformidade, obediência)</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">T3</span><span>A infraestrutura neural por trás de tudo</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">T4</span><span>Como sistemas exploram nossas vulnerabilidades</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">T5</span><span>Fundamentos filosóficos: mente, consciência, sentido</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">T6</span><span>A fronteira: quando máquinas herdam e amplificam tudo isso</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-rose-400 font-semibold text-sm mb-3">O que resta de irredutível</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">●</span><span>Vulnerabilidade: errar, falhar, e crescer com isso</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">●</span><span>Ambiguidade: habitar perguntas sem resposta</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">●</span><span>Presença: estar com o outro, sem mediação algorítmica</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">●</span><span>Beleza inútil: o que existe sem precisar justificar</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">●</span><span>Encontro: o imprevisível que nenhum modelo replica</span></li>
+</ul>
+</div>
+</div>
+<!-- Final reflection box -->
+<div class="bg-rose-500/10 border border-rose-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-rose-400 font-semibold mb-1">Reflexão final</p>
+<p class="text-neutral-300 text-sm">A pergunta que este curso deixa não é "a IA vai nos substituir?" Essa é a pergunta do medo. A pergunta que importa é: o que, de tudo que aprendemos sobre mente, poder e comportamento, vamos proteger? O que vamos exercitar, cultivar, defender, mesmo quando for mais lento, menos eficiente, mais difícil? O que vamos insistir em fazer com as próprias mãos, a própria voz, o próprio pensamento, não porque a máquina não pode, mas porque fazê-lo é o que nos constitui?</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">6 trilhas</p>
+<p class="text-neutral-400 text-xs mt-1">Arco completo</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">19 módulos</p>
+<p class="text-neutral-400 text-xs mt-1">Do cérebro à IA</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Ética</p>
+<p class="text-neutral-400 text-xs mt-1">Não é questão técnica</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-rose-400 text-sm font-semibold">Ser humano</p>
+<p class="text-neutral-400 text-xs mt-1">Uma escolha ativa</p>
+</div>
+</div>
+</section>
+<!-- RESUMO DO MÓDULO / ENCERRAMENTO DO CURSO -->
+<section class="bg-dark-800 border border-rose-500/30 rounded-xl p-6 sm:p-8 mb-8">
+<h2 class="text-xl font-bold mb-4 text-rose-400">Resumo do Módulo 6.3 — Encerramento do Curso</h2>
+<ul class="space-y-3 text-neutral-300 text-sm mb-6">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✓</span><span>Bruzzo inverte o debate: a questão não é se a IA é superior, mas o que acontece com o espaço humano quando delegamos funções que nos constituem</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✓</span><span>Erosão da agência cognitiva: neuroplasticidade faz capacidades não exercitadas atrofiarem (memória, navegação, escrita, decisão)</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✓</span><span>Erosão da diversidade cultural: bilhões usando os mesmos sistemas de geração comprimem o excedente imaginário</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✓</span><span>Transferência de poder: decisões sobre vidas delegadas a sistemas opacos, sem contestação nem responsabilização</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✓</span><span>O inútil como resistência: arte, amor, jogo, contemplação, o irredutível a dado como marca do humano</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-0.5">✓</span><span>Ser humano na era da IA é uma escolha ativa, não uma condição passiva. É preciso exercitar o que queremos manter</span></li>
+</ul>
+<p class="text-neutral-400 text-sm italic mb-6">Este foi o último módulo do curso Mente, Poder e Comportamento. Das heurísticas de Kahneman à resistência filosófica de Bruzzo, o arco se completa: entender a mente é o primeiro passo para protegê-la.</p>
+<a class="inline-flex items-center justify-start bg-rose-500/20 border border-rose-500/30 text-rose-400 px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-rose-500/30 transition-colors" href="../../index.html">Voltar ao Início do Curso →</a>
+</section>
+<!-- NAV INFERIOR -->
+<div class="flex items-center justify-between pt-8 border-t border-dark-700">
+<a class="text-neutral-400 hover:text-rose-400 transition-colors text-sm font-medium" href="modulo-6-2.html">← Módulo 6.2: Bolhas Epistêmicas</a>
+<a class="text-rose-400 hover:text-rose-300 transition-colors text-sm font-medium" href="../../index.html">Início →</a>
+</div>
+</main>
+<footer class="border-t border-dark-700 py-8">
+<div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500">
+<a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mente, Poder e Máquina · 2026
+  </div>
+</footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

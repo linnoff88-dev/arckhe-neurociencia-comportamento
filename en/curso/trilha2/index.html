@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>Track 2 — Social Influence and Group Power — MPC</title>
+<!-- Anti-FOUC (PRIMEIRO) -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "neurociencia-comportamento",
+  "tracks": [
+    {"n":"1","title":"O Cérebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heurísticas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonância cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},
+    {"n":"2","title":"Influência Social e Poder do Grupo","modules":[{"id":"2-1","title":"Conformidade: por que seguimos o grupo","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência à autoridade","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulação social e dark patterns","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},
+    {"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina e sistema de recompensa","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala, medo e decisão emocional","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},
+    {"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"A crítica ao Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},
+    {"n":"5","title":"Filosofia da Mente e Consciência","modules":[{"id":"5-1","title":"Livre-arbítrio: Libet","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciência: o problema difícil","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiótica da mente: Bruzzo","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},
+    {"n":"6","title":"IA, Vieses e Ética Comportamental","modules":[{"id":"6-1","title":"Vieses algorítmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistêmicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Ética, tecnologia e o espaço humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}
+  ]
+}
+</script>
+<style>
+body { font-family: 'Inter', system-ui, sans-serif; }
+.topic-explanation { display: none; }
+.topic-explanation.active { display: block; }
+html:not(.dark) body { background-color: #f8fafc; }
+html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+html:not(.dark) .text-neutral-100 { color: #111827; }
+html:not(.dark) .text-neutral-300 { color: #4b5563; }
+html:not(.dark) .text-neutral-400 { color: #6b7280; }
+html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+html:not(.dark) .text-blue-400 { color: #2563eb; }
+html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,0.12); }
+html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+html:not(.dark) .text-primary { color: #a16207; }
+html:not(.dark) .text-sky-400 { color: #0369a1; }
+html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+html:not(.dark) .text-emerald-400 { color: #059669; }
+html:not(.dark) .text-purple-400 { color: #7c3aed; }
+html:not(.dark) .text-amber-400 { color: #92400e; }
+html:not(.dark) .text-teal-400 { color: #0d9488; }
+html:not(.dark) .text-rose-400 { color: #9f1239; }
+html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+html:not(.dark) .hover\:bg-amber-500\/10:hover { background-color: rgba(217,119,6,0.08); }
+html:not(.dark) .hover\:bg-teal-500\/10:hover { background-color: rgba(13,148,136,0.08); }
+html:not(.dark) .hover\:bg-rose-500\/10:hover { background-color: rgba(225,29,72,0.08); }
+html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+.dark .border-dark-600 { border-color: #374151; }
+.dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha2/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha2/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha2/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Brain</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-blue-400 bg-blue-500/10" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economics</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Philosophy</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 AI+Ethics</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()" title="Switch theme">
+<span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- HEADER -->
+<section class="mb-16">
+<div class="bg-gradient-to-r from-blue-900/30 to-transparent rounded-2xl p-8 md:p-12 border border-blue-500/30">
+<div class="flex items-center space-x-3 mb-4">
+<span class="inline-flex items-center space-x-2 bg-blue-500/20 border border-blue-500/30 rounded-full px-4 py-1.5">
+<span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+<span class="text-blue-400 text-sm font-mono font-medium">TRACK 2</span>
+</span>
+<span class="text-neutral-500 text-sm">3 Modules · 18 Topics · ~1.5h · Foundation</span>
+</div>
+<h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
+        👥 Social Influence and the Power of the Group
+      </h1>
+<p class="text-lg text-neutral-300 max-w-3xl mb-8">
+        Why do we follow the group even against the evidence? Why do we obey authorities even when they ask us to do the unthinkable? How does persuasion operate beneath the surface of consciousness? From Asch and Milgram's labs to dark patterns in digital interfaces.
+      </p>
+<!-- Hero SVG: Individual -> Group Pressure -> Conformity -->
+<div class="max-w-3xl mx-auto">
+<svg aria-label="Diagram: an individual under group pressure conforms" class="w-full h-auto" role="img" viewbox="0 0 800 300">
+<defs>
+<filter id="t2-glow"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<lineargradient id="t2-grad" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#60a5fa"></stop><stop offset="100%" stop-color="#38bdf8"></stop></lineargradient>
+<lineargradient id="t2-grad2" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#3b82f6"></stop><stop offset="100%" stop-color="#38bdf8"></stop></lineargradient>
+</defs>
+<!-- Background grid -->
+<pattern height="40" id="t2-grid" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#374151" stroke-width="0.5"></path></pattern>
+<rect fill="url(#t2-grid)" height="300" rx="12" width="800"></rect>
+<!-- Stage 1: Individual -->
+<circle cx="120" cy="150" fill="#0e1622" filter="url(#t2-glow)" r="44" stroke="#60a5fa" stroke-width="2.5"></circle>
+<circle cx="120" cy="130" fill="none" r="14" stroke="#60a5fa" stroke-width="2"></circle>
+<path d="M 105 155 Q 120 170 135 155" fill="none" stroke="#60a5fa" stroke-width="2"></path>
+<text fill="#60a5fa" font-size="11" font-weight="700" text-anchor="middle" x="120" y="185">INDIVIDUAL</text>
+<text fill="#93c5fd" font-size="9" text-anchor="middle" x="120" y="200">personal opinion</text>
+<!-- Arrow 1 -->
+<line opacity="0.7" stroke="url(#t2-grad)" stroke-width="2" x1="170" x2="240" y1="150" y2="150"></line>
+<polygon fill="#60a5fa" opacity="0.7" points="240,145 252,150 240,155"></polygon>
+<!-- Stage 2: Group Pressure -->
+<rect fill="#0e1622" filter="url(#t2-glow)" height="130" rx="16" stroke="#3b82f6" stroke-width="2" width="180" x="260" y="85"></rect>
+<!-- Crowd silhouettes -->
+<circle cx="305" cy="120" fill="none" opacity="0.6" r="10" stroke="#38bdf8" stroke-width="1.5"></circle>
+<circle cx="330" cy="115" fill="none" opacity="0.7" r="10" stroke="#38bdf8" stroke-width="1.5"></circle>
+<circle cx="355" cy="118" fill="none" opacity="0.6" r="10" stroke="#38bdf8" stroke-width="1.5"></circle>
+<circle cx="380" cy="122" fill="none" opacity="0.5" r="10" stroke="#38bdf8" stroke-width="1.5"></circle>
+<circle cx="405" cy="117" fill="none" opacity="0.7" r="10" stroke="#38bdf8" stroke-width="1.5"></circle>
+<!-- Pressure arrows pointing inward -->
+<line opacity="0.5" stroke="#f87171" stroke-width="1.5" x1="290" x2="320" y1="100" y2="140"></line>
+<line opacity="0.5" stroke="#f87171" stroke-width="1.5" x1="410" x2="380" y1="100" y2="140"></line>
+<line opacity="0.5" stroke="#f87171" stroke-width="1.5" x1="290" x2="320" y1="200" y2="160"></line>
+<line opacity="0.5" stroke="#f87171" stroke-width="1.5" x1="410" x2="380" y1="200" y2="160"></line>
+<text fill="#3b82f6" font-size="12" font-weight="700" text-anchor="middle" x="350" y="165">PRESSURE OF THE</text>
+<text fill="#3b82f6" font-size="12" font-weight="700" text-anchor="middle" x="350" y="180">GROUP</text>
+<text fill="#38bdf8" font-size="9" text-anchor="middle" x="350" y="200">unanimity + exclusion</text>
+<!-- Arrow 2 -->
+<line opacity="0.7" stroke="url(#t2-grad)" stroke-width="2" x1="448" x2="518" y1="150" y2="150"></line>
+<polygon fill="#60a5fa" opacity="0.7" points="518,145 530,150 518,155"></polygon>
+<!-- Stage 3: Conformity -->
+<circle cx="610" cy="150" fill="#0e1622" filter="url(#t2-glow)" r="52" stroke="#38bdf8" stroke-width="2.5"></circle>
+<!-- All arrows pointing same direction -->
+<line stroke="#38bdf8" stroke-width="2.5" x1="585" x2="605" y1="130" y2="130"></line><polygon fill="#38bdf8" points="605,126 615,130 605,134"></polygon>
+<line stroke="#38bdf8" stroke-width="2.5" x1="585" x2="605" y1="150" y2="150"></line><polygon fill="#38bdf8" points="605,146 615,150 605,154"></polygon>
+<line stroke="#38bdf8" stroke-width="2.5" x1="585" x2="605" y1="170" y2="170"></line><polygon fill="#38bdf8" points="605,166 615,170 605,174"></polygon>
+<text fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle" x="610" y="195">CONFORMITY</text>
+<text fill="#7dd3fc" font-size="9" text-anchor="middle" x="610" y="210">75% yield (Asch)</text>
+<!-- Bottom labels -->
+<rect fill="#0e1622" height="28" rx="14" stroke="#60a5fa" stroke-width="1" width="120" x="60" y="250"></rect>
+<text fill="#60a5fa" font-size="10" font-weight="600" text-anchor="middle" x="120" y="268">Asch (1951)</text>
+<rect fill="#0e1622" height="28" rx="14" stroke="#3b82f6" stroke-width="1" width="120" x="290" y="250"></rect>
+<text fill="#3b82f6" font-size="10" font-weight="600" text-anchor="middle" x="350" y="268">Milgram (1963)</text>
+<rect fill="#0e1622" height="28" rx="14" stroke="#38bdf8" stroke-width="1" width="130" x="545" y="250"></rect>
+<text fill="#38bdf8" font-size="10" font-weight="600" text-anchor="middle" x="610" y="268">Cialdini (1984)</text>
+</svg>
+</div>
+</div>
+</section>
+<!-- MAPA DA TRILHA -->
+<section class="mb-16">
+<h2 class="text-2xl font-bold mb-8">Learning Path Map</h2>
+<div class="grid md:grid-cols-3 gap-6">
+<!-- Card M2.1 -->
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-blue-500/10 hover:border-blue-500/30 transition-all" href="modulo-2-1.html">
+<div class="flex items-center space-x-3 mb-3">
+<span class="w-10 h-10 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold text-sm">2.1</span>
+<span class="text-xs text-blue-400 font-mono">6 TOPICS</span>
+</div>
+<h3 class="text-lg font-bold mb-2 group-hover:text-blue-400 transition-colors">Conformity: Why We Follow the Group</h3>
+<p class="text-neutral-400 text-sm">Asch experiment. Informational and normative influence. Neuroscience of conformity. Digital conformity.</p>
+</a>
+<!-- Card M2.2 -->
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-blue-500/10 hover:border-blue-500/30 transition-all" href="modulo-2-2.html">
+<div class="flex items-center space-x-3 mb-3">
+<span class="w-10 h-10 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold text-sm">2.2</span>
+<span class="text-xs text-blue-400 font-mono">6 TOPICS</span>
+</div>
+<h3 class="text-lg font-bold mb-2 group-hover:text-blue-400 transition-colors">Obedience to Authority: Milgram</h3>
+<p class="text-neutral-400 text-sm">The shock experiment. Factors behind obedience. Resistance and dissent. Obedience in today's world.</p>
+</a>
+<!-- Card M2.3 -->
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-blue-500/10 hover:border-blue-500/30 transition-all" href="modulo-2-3.html">
+<div class="flex items-center space-x-3 mb-3">
+<span class="w-10 h-10 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold text-sm">2.3</span>
+<span class="text-xs text-blue-400 font-mono">6 TOPICS</span>
+</div>
+<h3 class="text-lg font-bold mb-2 group-hover:text-blue-400 transition-colors">Social Manipulation and Dark Patterns</h3>
+<p class="text-neutral-400 text-sm">Cialdini’s 6 weapons of persuasion. Digital dark patterns. Exploited biases. Defenses and regulation.</p>
+</a>
+</div>
+</section>
+<!-- CONTEÚDO DETALHADO -->
+<section class="mb-16">
+<h2 class="text-2xl font-bold mb-8">Detailed content</h2>
+<div class="space-y-8">
+<!-- MÓDULO 2.1 -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6 md:p-8" data-inema-module="2-1">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-10 h-10 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold">2.1</span>
+<div>
+<h3 class="text-xl font-bold">Conformity: Why We Follow the Group</h3>
+<p class="text-neutral-400 text-sm">Solomon Asch and the Psychology of Conformity</p>
+</div>
+</div>
+<div class="space-y-3">
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-1#topico-1" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">1</span>
+<span class="font-medium">Asch’s experiment: design and results</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>In 1951, Solomon Asch devised one of psychology's most elegant experiments. Participants judged which of 3 lines was the same length as a standard line. The answer was visually obvious. But there was a trick: all the other "participants" were actors instructed to give the wrong answer unanimously. Result: ~75% of participants agreed with the clearly wrong answer in at least one round. Only 25% never gave in.</p>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-1#topico-2" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">2</span>
+<span class="font-medium">Informational influence: the group as a source of truth</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>In uncertain situations, we use the group’s behavior as an indicator of reality. “If everyone says it’s line C, maybe I’m wrong.” That’s the informational mechanism. The more ambiguous the situation, the stronger the influence: we accept the group as a source of information because, evolutionarily, the group was usually right.</p>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-1#topico-3" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">3</span>
+<span class="font-medium">Normative influence: belonging or being excluded</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>Even knowing the group is wrong, we disagree out of fear. Normative influence is driven by the desire to belong. Publicly disagreeing leads to social exclusion, and the brain treats that exclusion as physical pain (the same neural network in the anterior cingulate cortex). We would rather be wrong together than right alone.</p>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-1#topico-4" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">4</span>
+<span class="font-medium">Neuroscience of compliance: amygdala and reward</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>fMRI studies show that disagreeing with the group activates the amygdala (the fear and threat circuit). Agreeing with the group activates the nucleus accumbens (the reward circuit). Conformity isn’t just a social strategy: it’s neurologically pleasurable. Dissent is physiologically painful.</p>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-1#topico-5" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">5</span>
+<span class="font-medium">Factors that modulate conformity</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>Asch demonstrated several key variations: (1) An ally dramatically reduces conformity. (2) Group size matters, but the effect levels off at ~4 members. (3) Unanimity is more powerful than size. (4) Responding privately (in writing) reduces conformity. (5) The group’s perceived status amplifies the effect. (6) Collectivist cultures show higher rates.</p>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-1#topico-6" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">6</span>
+<span class="font-medium">Digital conformity: likes, virality, and online herds</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>Digital technology amplified Asch: likes and shares are the new signals of conformity. The number of likes works like unanimous group approval. Viral content isn’t necessarily true; it’s socially approved. Algorithms create artificial unanimity by showing only popular content. The same Asch mechanism operates on a scale of billions.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- MÓDULO 2.2 -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6 md:p-8" data-inema-module="2-2">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-10 h-10 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold">2.2</span>
+<div>
+<h3 class="text-xl font-bold">Obedience to Authority: Milgram</h3>
+<p class="text-neutral-400 text-sm">The power of authority over moral conscience</p>
+</div>
+</div>
+<div class="space-y-3">
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-2#topico-1" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">1</span>
+<span class="font-medium">The Milgram Experiment: Design and Shocks</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>In 1963, Stanley Milgram created psychology's most disturbing experiment. Participants were instructed by a researcher (an authority figure) to administer increasingly powerful electric shocks to an actor who simulated increasing pain. 65% administered the maximum 450-volt shock, potentially lethal, because the authority figure instructed them to. Most expressed discomfort, but obeyed.</p>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-2#topico-2" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">2</span>
+<span class="font-medium">The role of distance and legitimacy</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>Milgram discovered key factors: distance from the victim increases obedience (not seeing or hearing makes it easier). Perceived legitimacy (white lab coat, university laboratory, professional tone) suppresses moral resistance. When the experiment was conducted in a commercial office (without the Yale brand), obedience fell from 65% to 48%. The trappings of authority matter as much as authority itself.</p>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-2#topico-3" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">3</span>
+<span class="font-medium">The power of dissent: how resistance spreads</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>When two actors refused to continue, only 10% of participants went all the way (compared with 65%). The presence of resisters dramatically reduces obedience. A single dissenter is enough to break the spell. This connects to Asch: unanimity, not numbers, is the deciding factor. Moral courage is contagious, just like submission.</p>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-2#topico-4" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">4</span>
+<span class="font-medium">Agentic state: when we hand over responsibility</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>Milgram coined the concept of the "agentic state": a person sees themselves as an instrument of authority, not as an autonomous moral agent. "I was just following orders." This mechanism shifts perceived responsibility to the authority. It is the same principle used in military chains of command and corporate hierarchies to diffuse blame.</p>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-2#topico-5" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">5</span>
+<span class="font-medium">Obedience in the Contemporary World</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>Digital scams exploit perceived authority (emails from banks, the government, “technical support”). Organizational hierarchies elicit unethical behavior from employees who “are just following policy.” Crises increase submission: in moments of uncertainty, we delegate decisions to authority figures with even less questioning. Milgram predicted that modernity would increase, not reduce, obedience.</p>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-2#topico-6" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">6</span>
+<span class="font-medium">Milgram and the banality of evil: ethical lessons</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>Milgram was inspired by Eichmann's trial and Hannah Arendt's concept of the "banality of evil": atrocities committed by ordinary people obeying orders. The experiment showed that you don't have to be a monster to do monstrous things. All it takes is a legitimate authority figure, emotional distance from the victim, and small, gradual increases in obedience.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- MÓDULO 2.3 -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6 md:p-8" data-inema-module="2-3">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-10 h-10 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold">2.3</span>
+<div>
+<h3 class="text-xl font-bold">Social Manipulation and Dark Patterns</h3>
+<p class="text-neutral-400 text-sm">Cialdini, persuasion, and manipulative design</p>
+</div>
+</div>
+<div class="space-y-3">
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-3#topico-1" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">1</span>
+<span class="font-medium">Cialdini’s 6 weapons of persuasion</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>Robert Cialdini (1984) identified 6 principles: (1) Reciprocity: the urge to return favors. (2) Commitment/Consistency: after taking a public position, we stick to it. (3) Social Proof: correct = what others do. (4) Authority: we follow experts. (5) Scarcity: rare = valuable. (6) Liking: we are persuaded by people we like. Each principle exploits a different cognitive shortcut.</p>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-3#topico-2" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">2</span>
+<span class="font-medium">Social proof and reciprocity in everyday life</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>Social proof: online reviews, follower counts, “best seller,” “trending.” We see others buying and we buy. Reciprocity: free samples create an obligation to give back. Supermarkets, restaurants, and sellers use this systematically. Together, these two principles explain much of modern commerce and marketing.</p>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-3#topico-3" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">3</span>
+<span class="font-medium">Scarcity, urgency, and FOMO as triggers</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>"Last units," "offer expires in 3h," "only 2 rooms left." Real or fabricated scarcity activates the loss aversion mechanism: losses weigh ~2x more than equivalent gains (Kahneman and Tversky). FOMO (fear of missing out) is social scarcity: not participating = missing out on something others have. Countdown + scarcity = impulse buying.</p>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-3#topico-4" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">4</span>
+<span class="font-medium">Dark patterns: manipulative interface design</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>Dark patterns are interface designs that exploit cognitive biases: Roach Motel (easy to get in, hard to get out), Confirmshaming ("No, I prefer to pay more"), Privacy Zuckering (hidden settings), Fake countdown timers (artificial urgency), Scarcity illusion ("Only 2 left!"). Underlying mechanisms: loss aversion, anchoring, choice overload, and status quo inertia.</p>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-3#topico-5" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">5</span>
+<span class="font-medium">Exploited biases and the psychology of design</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>Each dark pattern exploits a specific bias. Anchoring: a price like "from R$199 to R$49" creates a false reference point. Default bias: preselected options capture data. Framing effect: "95% approval" vs. "5% disapprove." Decision fatigue: too many steps make people accept the default. Interface design is, essentially, choice architecture applied to the pixel.</p>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors text-left" data-inema-topic="modulo-2-3#topico-6" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs font-bold flex-shrink-0">6</span>
+<span class="font-medium">Defenses and regulation: GDPR, LGPD, and the future</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 p-4 bg-dark-700/50 rounded-lg text-neutral-300 text-sm leading-relaxed">
+<p>GDPR (Europe) and LGPD (Brazil) are beginning to combat dark patterns in data consent, but enforcement is still limited. Individual defenses: recognize Cialdini's 6 principles when they are applied, slow down decisions (activate System 2), question artificial urgency, and verify sources of authority. Literacy in manipulation is the main defense against invisible persuasion.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- NAV TRILHAS -->
+<section>
+<div class="flex justify-between items-center">
+<a class="flex items-center space-x-2 text-neutral-400 hover:text-emerald-400 transition-colors" href="../trilha1/index.html">
+<span>←</span>
+<span>Track 1: The Deciding Brain</span>
+</a>
+<a class="flex items-center space-x-2 text-neutral-400 hover:text-purple-400 transition-colors" href="../trilha3/index.html">
+<span>Track 3: Behavioral Neuroscience</span>
+<span>→</span>
+</a>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="border-t border-dark-700 py-8">
+<div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500">
+<a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mind, Power and Machine · 2026
+  </div>
+</footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

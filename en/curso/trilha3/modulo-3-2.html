@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>3.2 Dopamine and the Reward System — MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<script data-inema-manifest="" type="application/json">
+{"course":"neurociencia-comportamento","tracks":[{"n":"1","title":"O Cerebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heuristicas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonancia cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},{"n":"2","title":"Influencia Social e Poder do Grupo","modules":[{"id":"2-1","title":"Conformidade","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediencia a autoridade","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulacao social","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},{"n":"3","title":"Neurociencia do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina e sistema de recompensa","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amigdala, medo e decisao emocional","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},{"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},{"n":"5","title":"Filosofia da Mente e Consciencia","modules":[{"id":"5-1","title":"Livre-arbitrio: Libet","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciencia: problema dificil","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiotica: Bruzzo","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},{"n":"6","title":"IA, Vieses e Etica","modules":[{"id":"6-1","title":"Vieses algoritmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistemicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Etica e espaco humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}]}
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+body{font-family:'Inter',system-ui,sans-serif}.topic-explanation{display:none}.topic-explanation.active{display:block}
+html:not(.dark) body{background-color:#f8fafc}html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-purple-400{color:#7c3aed}html:not(.dark) .bg-purple-500\/20{background-color:rgba(124,58,237,0.12)}html:not(.dark) .border-purple-500\/30{border-color:rgba(124,58,237,0.25)}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,0.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,0.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+html:not(.dark) svg[role="img"]{filter:saturate(.82) brightness(.96)}
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha3/modulo-3-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha3/modulo-3-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha3/modulo-3-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen" data-inema-module="3-2"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-3-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha3/modulo-3-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Brain</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-purple-400 bg-purple-500/10" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economics</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Philosophy</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 AI+Ethics</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()"><span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span></button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- BREADCRUMB -->
+<div class="flex items-center space-x-2 text-sm text-neutral-400 mb-8">
+<a class="hover:text-neutral-300" href="../../index.html">MPC</a>
+<span>/</span>
+<a class="hover:text-purple-400" href="index.html">Track 3</a>
+<span>/</span>
+<span class="text-purple-400">Module 3.2</span>
+</div>
+<!-- HEADER -->
+<section class="mb-12">
+<div class="bg-gradient-to-r from-purple-900/30 to-transparent rounded-2xl p-8 border border-purple-500/30">
+<div class="inline-flex items-center space-x-2 bg-purple-500/20 border border-purple-500/30 rounded-full px-3 py-1 mb-4">
+<span class="text-purple-400 text-xs font-mono font-bold">MODULE 3.2</span>
+</div>
+<h1 class="text-3xl md:text-4xl font-extrabold mb-3">Dopamine and the Reward System</h1>
+<p class="text-neutral-300 text-lg mb-4">Dopamine is not "the pleasure chemical." It is the neurotransmitter of anticipation, motivation, and wanting. Understanding this changes how you view social media, games, addictions, and even education.</p>
+<div class="flex flex-wrap gap-3 text-sm">
+<span class="bg-dark-800 border border-dark-700 rounded-lg px-3 py-1 text-neutral-300">📝 6 Topics</span>
+<span class="bg-dark-800 border border-dark-700 rounded-lg px-3 py-1 text-neutral-300">⏱ ~35 min</span>
+<span class="bg-dark-800 border border-dark-700 rounded-lg px-3 py-1 text-purple-400">Foundation</span>
+</div>
+</div>
+</section>
+<!-- SVG: Circuito de Recompensa -->
+<section class="mb-12">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+<h3 class="text-sm font-semibold text-purple-400 mb-4">REWARD CIRCUIT: FROM STIMULUS TO LOOP</h3>
+<svg aria-label="Reward circuit diagram: stimulus, VTA anticipation, dopamine, nucleus accumbens, behavior, feedback loop" class="w-full h-auto" id="m32-reward" role="img" viewbox="0 0 700 320">
+<defs>
+<filter id="m32glow"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<lineargradient id="m32g1" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#c084fc"></stop><stop offset="100%" stop-color="#38bdf8"></stop></lineargradient>
+<marker id="m32arr" markerheight="5" markerwidth="5" orient="auto" refx="5" refy="3" viewbox="0 0 6 6"><path d="M 0 0 L 6 3 L 0 6 z" fill="#c084fc"></path></marker>
+<marker id="m32arr2" markerheight="5" markerwidth="5" orient="auto" refx="5" refy="3" viewbox="0 0 6 6"><path d="M 0 0 L 6 3 L 0 6 z" fill="#38bdf8"></path></marker>
+<marker id="m32arr3" markerheight="5" markerwidth="5" orient="auto" refx="5" refy="3" viewbox="0 0 6 6"><path d="M 0 0 L 6 3 L 0 6 z" fill="#a855f7"></path></marker>
+</defs>
+<rect fill="#1a1230" height="320" rx="12" width="700"></rect>
+<!-- 1. ESTIMULO -->
+<rect fill="#2d2150" height="60" rx="10" stroke="#c084fc" stroke-width="1.5" width="100" x="30" y="100"></rect>
+<text fill="#c084fc" font-size="9" font-weight="700" text-anchor="middle" x="80" y="123">STIMULUS</text>
+<text fill="#9ca3af" font-size="7" text-anchor="middle" x="80" y="138">clue of</text>
+<text fill="#9ca3af" font-size="7" text-anchor="middle" x="80" y="149">reward</text>
+<!-- Seta 1→2 -->
+<line marker-end="url(#m32arr)" stroke="#c084fc" stroke-width="2" x1="130" x2="165" y1="130" y2="130"></line>
+<!-- 2. VTA (Antecipacao) -->
+<rect fill="#2d2150" filter="url(#m32glow)" height="80" rx="10" stroke="#a855f7" stroke-width="2" width="110" x="170" y="90"></rect>
+<text fill="#a855f7" font-size="9" font-weight="700" text-anchor="middle" x="225" y="115">VTA</text>
+<text fill="#c084fc" font-size="8" text-anchor="middle" x="225" y="130">Anticipation</text>
+<text fill="#9ca3af" font-size="7" text-anchor="middle" x="225" y="145">"wanting"</text>
+<circle cx="225" cy="155" fill="#a855f7" opacity="0.6" r="4"><animate attributename="r" dur="1.2s" repeatcount="indefinite" values="3;5;3"></animate></circle>
+<!-- Seta 2→3 (dopamina) -->
+<line filter="url(#m32glow)" marker-end="url(#m32arr2)" stroke="url(#m32g1)" stroke-width="3" x1="280" x2="335" y1="130" y2="130"></line>
+<text fill="#38bdf8" font-size="7" font-weight="600" text-anchor="middle" x="308" y="118">DOPAMINE</text>
+<!-- Pulsos na seta -->
+<circle cx="295" cy="130" fill="#38bdf8" r="2.5"><animate attributename="opacity" dur="0.8s" repeatcount="indefinite" values="0.3;1;0.3"></animate></circle>
+<circle cx="315" cy="130" fill="#c084fc" r="2.5"><animate attributename="opacity" dur="0.8s" repeatcount="indefinite" values="1;0.3;1"></animate></circle>
+<!-- 3. NUCLEUS ACCUMBENS -->
+<rect fill="#2d2150" filter="url(#m32glow)" height="80" rx="10" stroke="#38bdf8" stroke-width="2" width="120" x="340" y="90"></rect>
+<text fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle" x="400" y="113">NUCLEUS</text>
+<text fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle" x="400" y="126">ACCUMBENS</text>
+<text fill="#c084fc" font-size="8" text-anchor="middle" x="400" y="142">Salience</text>
+<text fill="#9ca3af" font-size="7" text-anchor="middle" x="400" y="155">motivation → action</text>
+<!-- Seta 3→4 -->
+<line marker-end="url(#m32arr3)" stroke="#a855f7" stroke-width="2" x1="460" x2="505" y1="130" y2="130"></line>
+<!-- 4. COMPORTAMENTO -->
+<rect fill="#2d2150" height="60" rx="10" stroke="#a855f7" stroke-width="1.5" width="110" x="510" y="100"></rect>
+<text fill="#a855f7" font-size="9" font-weight="700" text-anchor="middle" x="565" y="125">BEHAVIOR</text>
+<text fill="#9ca3af" font-size="7" text-anchor="middle" x="565" y="140">active search</text>
+<!-- Seta 4→5 (descendo) -->
+<path d="M 565 160 L 565 220" marker-end="url(#m32arr)" stroke="#c084fc" stroke-width="2"></path>
+<!-- 5. RESULTADO -->
+<rect fill="#2d2150" height="55" rx="10" stroke="#c084fc" stroke-width="1.5" width="110" x="510" y="225"></rect>
+<text fill="#c084fc" font-size="9" font-weight="700" text-anchor="middle" x="565" y="248">RESULT</text>
+<text fill="#9ca3af" font-size="7" text-anchor="middle" x="565" y="263">reward (or not)</text>
+<!-- Feedback loop (curva de volta ao VTA) -->
+<path d="M 510 252 L 225 252 L 225 170" fill="none" marker-end="url(#m32arr2)" stroke="#38bdf8" stroke-dasharray="5 3" stroke-width="1.5"></path>
+<text fill="#38bdf8" font-size="8" font-weight="600" text-anchor="middle" x="370" y="270">FEEDBACK LOOP</text>
+<text fill="#9ca3af" font-size="7" text-anchor="middle" x="370" y="283">prediction error signal</text>
+<!-- Legenda inferior -->
+<rect fill="#2d2150" height="20" opacity="0.5" rx="6" width="500" x="100" y="295"></rect>
+<text fill="#c084fc" font-size="8" font-weight="600" text-anchor="middle" x="350" y="309">Unpredictable reward = peak dopamine spike (positive prediction error)</text>
+<!-- Titulo -->
+<text fill="#a855f7" font-size="12" font-weight="700" text-anchor="middle" x="350" y="30">MESOLIMBIC REWARD CIRCUIT</text>
+<text fill="#9ca3af" font-size="9" text-anchor="middle" x="350" y="50">Dopamine signals anticipation, not pleasure</text>
+</svg>
+</div>
+</section>
+<!-- TOPICO 1 -->
+<section class="mb-10" data-inema-topic="modulo-3-2#topico-1">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">01</span>
+<h2 class="text-2xl font-bold">What dopamine is (it is not “pleasure”)</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>The popular narrative about dopamine is wrong. Magazines, podcasts, and influencers repeat that "dopamine is the pleasure chemical." This simplification distorts the neurotransmitter's real function and leads to mistaken conclusions about motivation, addiction, and behavior.</p>
+<p>What the research shows is different. Neuroscientist Kent Berridge (University of Michigan) demonstrated, beginning in the 1990s, that the dopaminergic system does not encode <em>pleasure</em>, but <strong class="text-neutral-100">anticipation and motivation</strong>. Berridge separated two distinct systems:</p>
+<!-- V/X Grid: Wanting vs. Liking -->
+<div class="grid md:grid-cols-2 gap-4 my-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-purple-400 mb-3">"WANTING" (desire) — DOPAMINE</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Reward anticipation</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Motivation to seek</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Salience encourages (what attracts attention)</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Mediated by mesolimbic dopamine</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-purple-400 mb-3">"LIKING" (enjoying) — OPIOIDS</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Pleasure at the moment of consumption</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Hedonic satisfaction</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Hedonic "hotspots" in the cortex</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Mediated by the endogenous opioid system</span></li>
+</ul>
+</div>
+</div>
+<p>The distinction is crucial. <strong class="text-neutral-100">Wanting</strong> is the urge that makes you open the fridge, check your phone, and scroll through the feed. <strong class="text-neutral-100">Liking</strong> is the pleasure you feel (or don't feel) when you do it. The two systems can be dissociated. You can intensely want something that gives you no pleasure at all. That's exactly what defines addiction.</p>
+<!-- Tip box -->
+<div class="bg-purple-500/10 border border-purple-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-purple-400 text-lg mt-0.5">💡</span>
+<div>
+<h4 class="text-purple-400 font-semibold text-sm mb-1">WHY THIS MATTERS</h4>
+<p class="text-sm">If dopamine were “pleasure,” a drug addict would feel more and more pleasure. The opposite happens: they feel less and less pleasure (liking declines) but want more and more (wanting rises). Wanting and liking become dissociated. This is the neurobiological key to addiction.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Conceitos-chave -->
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Wanting vs. Liking</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Kent Berridge</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Salience encourages</span>
+</div>
+</section>
+<!-- TOPICO 2 -->
+<section class="mb-10" data-inema-topic="modulo-3-2#topico-2">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">02</span>
+<h2 class="text-2xl font-bold">Mesolimbic system: VTA and Nucleus Accumbens</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>The brain’s reward circuit has two anatomical protagonists. The <strong class="text-neutral-100">Ventral Tegmental Area (VTA)</strong>, located in the midbrain, contains the dopaminergic neurons that fire when the brain detects a cue for a potential reward. The <strong class="text-neutral-100">Nucleus Accumbens (NAcc)</strong>, in the ventral striatum, receives this dopamine and converts the signal into motivation and goal-directed behavior.</p>
+<p>But dopamine is not released at the moment of reward. This is the most counterintuitive point. In the 1990s, Wolfram Schultz (Cambridge) showed that dopaminergic neurons fire <em>before</em> of the reward, during the anticipation phase. When the reward is predictable, the firing shifts from the reward to the <strong class="text-neutral-100">preceding clue</strong>.</p>
+<!-- Tip box -->
+<div class="bg-purple-500/10 border border-purple-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-purple-400 text-lg mt-0.5">💡</span>
+<div>
+<h4 class="text-purple-400 font-semibold text-sm mb-1">PREDICTION ERROR (PREDICTION ERROR)</h4>
+<p class="text-sm">The dopamine peak is highest when the reward is <strong>unexpected</strong>. When it is predictable, firing decreases. When an expected reward <em>no</em> comes, dopamine drops below baseline (a signal of disappointment). This mechanism, called <strong>reward prediction error</strong>, and is the basis of reinforcement learning in the brain.</p>
+</div>
+</div>
+</div>
+<p>This insight changes everything. The brain doesn't "like" dopamine rewards. It uses dopamine to <em>predict</em> rewards and adjust future behavior. It is a learning machine, not a pleasure machine.</p>
+</div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">VTA</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Nucleus Accumbens</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Wolfram Schultz</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Prediction error</span>
+</div>
+</section>
+<!-- TOPICO 3 -->
+<section class="mb-10" data-inema-topic="modulo-3-2#topico-3">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">03</span>
+<h2 class="text-2xl font-bold">Variable reinforcement: Skinner and unpredictability</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>In the 1950s, B.F. Skinner discovered something that defines the modern world. Using experimental boxes with rats and pigeons, he tested different reward schedules. The discovery: <strong class="text-neutral-100">unpredictable rewards generate a more intense and persistent response than fixed rewards.</strong></p>
+<p>With a fixed reinforcement schedule (press the lever 10 times, get food), the animal learns the pattern and stops pressing between rewards. With a variable reinforcement schedule (sometimes it gets a reward on the 3rd press, sometimes the 15th, sometimes the 7th), the animal presses incessantly. Unpredictability creates a compulsive urgency.</p>
+<!-- Timeline: Da Caixa de Skinner ao smartphone -->
+<div class="my-8 space-y-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-20 text-right">
+<span class="text-purple-400 font-mono text-sm font-bold">1950s</span>
+</div>
+<div class="w-px bg-purple-500/30 self-stretch"></div>
+<div class="flex-1 bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="font-bold text-neutral-100 mb-1">Skinner box</h4>
+<p class="text-sm text-neutral-400">Rats on variable reinforcement schedules press the lever compulsively, long after their hunger is gone. The behavior persists even when the reward stops. Skinner calls this “resistance to extinction.”</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-20 text-right">
+<span class="text-purple-400 font-mono text-sm font-bold">1970s</span>
+</div>
+<div class="w-px bg-purple-500/30 self-stretch"></div>
+<div class="flex-1 bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="font-bold text-neutral-100 mb-1">Slot machines (Las Vegas)</h4>
+<p class="text-sm text-neutral-400">The gaming industry deliberately adopts Skinner's principle. Slot machines are pure variable-reinforcement machines: with each pull, <em>maybe</em> win. The unpredictability keeps the player hooked.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-20 text-right">
+<span class="text-purple-400 font-mono text-sm font-bold">2009</span>
+</div>
+<div class="w-px bg-purple-500/30 self-stretch"></div>
+<div class="flex-1 bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="font-bold text-neutral-100 mb-1">Push notifications + infinite feed</h4>
+<p class="text-sm text-neutral-400">Smartphones combine variable reinforcement with constant access. Every time you check your phone, <em>maybe</em> have something interesting. The infinite feed and the Skinner lever in your pocket.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-20 text-right">
+<span class="text-purple-400 font-mono text-sm font-bold">2020s</span>
+</div>
+<div class="w-px bg-purple-500/30 self-stretch"></div>
+<div class="flex-1 bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="font-bold text-neutral-100 mb-1">Personalized algorithms (TikTok, Reels)</h4>
+<p class="text-sm text-neutral-400">Recommendation algorithms have learned to optimize variable reinforcement. The next video could be amazing or mediocre. You don’t know. So you keep scrolling. It’s Schultz’s prediction error, industrialized.</p>
+</div>
+</div>
+</div>
+<!-- V/X Grid: Reforco fixo vs. variavel -->
+<div class="grid md:grid-cols-2 gap-4 my-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-red-400 mb-3">FIXED REINFORCEMENT</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Predictable: dopamine decreases with repetition</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Pauses between rewards</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Rapid extinction when it stops</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-green-400 mb-3">VARIABLE REINFORCEMENT</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Unpredictable: dopamine spike sustained</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Constant response (with no pauses)</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Very high resistance to extinction</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">B.F. Skinner</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Variable reinforcement</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Resistance to extinction</span>
+</div>
+</section>
+<!-- TOPICO 4 -->
+<section class="mb-10" data-inema-topic="modulo-3-2#topico-4">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">04</span>
+<h2 class="text-2xl font-bold">Social media and dopamine: deliberate design</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>In 2017, Sean Parker, Facebook’s first president, admitted something neuroscientists had already suspected. In an interview with Axios, he said: <em>"The thought process behind building these applications, Facebook being the first... was: how do we consume as much of your time and conscious attention as possible? We needed to give you a little dopamine now and then because someone liked or commented on your photo or post. It's a social validation feedback loop... exploiting a vulnerability in human psychology."</em></p>
+<p>Parker wasn't speaking metaphorically. Social media architecture is built on the exact principles of Skinner and Schultz:</p>
+<ul class="list-disc list-inside space-y-2 ml-4 text-neutral-300">
+<li><strong class="text-neutral-100">Likes</strong> are variable rewards (you don’t know how many you’ll get)</li>
+<li><strong class="text-neutral-100">Notifications</strong> are cues that trigger anticipation (release dopamine before you open them)</li>
+<li><strong class="text-neutral-100">Infinite feed</strong> eliminates natural stopping points</li>
+<li><strong class="text-neutral-100">Pull-to-refresh</strong> is the lever on the Skinner box when you pull it downward</li>
+</ul>
+<!-- Data box -->
+<div class="bg-dark-800 border border-purple-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-purple-400 text-lg mt-0.5">📊</span>
+<div>
+<h4 class="text-purple-400 font-semibold text-sm mb-1">DATA</h4>
+<p class="text-sm text-neutral-400">Montag et al. (2019) study: Social media users check their phones an average of 96 times a day. The average time between checks is 10 minutes while awake. Each check is a cycle of anticipation (dopamine) → outcome (variable) → loop. Nir Eyal, author of <em>Hooked</em>, describes the design model as "trigger → action → variable reward → investment".</p>
+</div>
+</div>
+</div>
+<p>Tristan Harris, former Google design ethicist, compares smartphones to pocket slot machines. The comparison is no exaggeration. The neural mechanisms are identical. The difference is that the slot machine is in the pockets of 5 billion people.</p>
+</div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Sean Parker</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Persuasive design</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Tristan Harris</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Nir Eyal</span>
+</div>
+</section>
+<!-- TOPICO 5 -->
+<section class="mb-10" data-inema-topic="modulo-3-2#topico-5">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">05</span>
+<h2 class="text-2xl font-bold">Dopamine, learning, and motivation</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>The positive side of dopamine is just as powerful. The same circuits that fuel addictions are also central to learning and healthy motivation. The prediction error mechanism is literally the brain's reinforcement learning algorithm.</p>
+<p>When something good happens unexpectedly, a dopamine spike “marks” the event as important, strengthening the synapses involved. This is how we learn to associate actions with outcomes. Game designers understood this intuitively: the best games are those that calibrate difficulty to maintain a steady flow of small, unpredictable rewards.</p>
+<!-- V/X Grid: Educacao que funciona vs. que falha -->
+<div class="grid md:grid-cols-2 gap-4 my-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-green-400 mb-3">ACTIVATES DOPAMINERGIC CIRCUIT</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Immediate, varied feedback</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Progressive difficulty (flow zone)</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Micro-rewards for progress</span></li>
+<li class="flex items-start space-x-2"><span class="text-green-400 mt-0.5">✓</span><span>Element of surprise/discovery</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-bold text-red-400 mb-3">NOT ACTIVE (disengages)</h4>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Delayed feedback (test only at the end)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Monotony and mechanical repetition</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Reward only at the end of the course</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Predictable and nothing new</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-purple-500/10 border border-purple-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-purple-400 text-lg mt-0.5">💡</span>
+<div>
+<h4 class="text-purple-400 font-semibold text-sm mb-1">APPLICATION: GAME DESIGN AND EDUCATION</h4>
+<p class="text-sm">Platforms like Duolingo, Khan Academy, and Anki work because they apply dopaminergic principles, consciously or unconsciously: immediate feedback, visible progress, variable micro-rewards. The concept of “gamification” is essentially the application of the reward circuit to non-game contexts. When it works, it’s because it respects neurobiology. When it fails, it’s because it’s superficial (meaningless badges).</p>
+</div>
+</div>
+</div>
+<p>Curiosity is also dopaminergic. Studies by Gruber et al. (2014) showed that states of curiosity increase activity in the mesolimbic circuit and improve information retention, even for content unrelated to the original curiosity. Curiosity-driven dopamine creates an expanded "learning window."</p>
+</div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Reinforcement learning</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Flow zone</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Gamification</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Curiosity</span>
+</div>
+</section>
+<!-- TOPICO 6 -->
+<section class="mb-10" data-inema-topic="modulo-3-2#topico-6">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-mono text-sm font-bold">06</span>
+<h2 class="text-2xl font-bold">Tolerance and addiction: when the system breaks</h2>
+</div>
+<div class="space-y-4 text-neutral-300 leading-relaxed">
+<p>The reward system evolved to motivate survival behaviors: seeking food, water, mates, and shelter. It worked well in an environment of scarcity. The problem is that we live in an environment of artificial abundance, where supernormal stimuli are just a tap away.</p>
+<p>When the reward circuit is chronically overactivated (drugs, gambling, pornography, excessive social media use), the brain responds with <strong class="text-neutral-100">downregulation</strong>: reduces the number of dopamine (D2) receptors in the nucleus accumbens. It's a self-protection mechanism with a devastating consequence.</p>
+<!-- Alert box -->
+<div class="bg-red-500/10 border border-red-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-red-400 text-lg mt-0.5">⚠️</span>
+<div>
+<h4 class="text-red-400 font-semibold text-sm mb-1">THE TOLERANCE CYCLE</h4>
+<p class="text-sm text-neutral-400">Chronic overstimulation → D2 receptors decrease → the same stimulus has less effect → you need more stimulation to feel the same → more overstimulation → more downregulation. It’s an escalating loop. The “hedonic set point” rises. Normal activities (conversation, a walk, reading) stop generating enough motivation because the dopamine baseline has been recalibrated upward.</p>
+</div>
+</div>
+</div>
+<p>This mechanism is identical for chemical substances (cocaine, amphetamines, nicotine) and behavioral addictions (gambling, pornography, social media). Neuroimaging shows the same pattern: a reduction in D2 receptors in the ventral striatum. The difference between a cocaine addict and a smartphone addict is one of degree, not kind.</p>
+<!-- Concept box -->
+<div class="bg-dark-800 border border-purple-500/30 rounded-xl p-5 my-6">
+<div class="flex items-start space-x-3">
+<span class="text-purple-400 text-lg mt-0.5">🧩</span>
+<div>
+<h4 class="text-purple-400 font-semibold text-sm mb-1">CENTRAL CONCEPT: ANHEDONIA</h4>
+<p class="text-sm text-neutral-400">The extreme consequence of chronic downregulation is <strong>anhedonia</strong>: the inability to feel pleasure in normal activities. The liking system has eroded, but wanting persists. The person no longer enjoys the substance/activity, but continues to want it. It’s the central paradox of addiction, and it only makes sense when we separate wanting from liking.</p>
+</div>
+</div>
+</div>
+<p>The good news: the system recovers. Studies show that after periods of abstinence (generally 30-90 days for behavioral addictions), D2 receptors return to near-normal levels. Dopamine baseline is restored. Ordinary activities become satisfying again. The same neuroplasticity that created the addiction also makes recovery possible.</p>
+</div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Downregulation</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">D2 receptors</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Tolerance</span>
+<span class="bg-purple-500/20 border border-purple-500/30 text-purple-400 text-xs font-medium px-3 py-1 rounded-full">Anhedonia</span>
+</div>
+</section>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-dark-800 border border-purple-500/30 rounded-xl p-6 md:p-8">
+<h2 class="text-xl font-bold mb-4 text-purple-400">Module 3.2 Summary</h2>
+<div class="space-y-3 text-neutral-300 text-sm leading-relaxed">
+<p>Dopamine is not "the pleasure chemical." It is the neurotransmitter of anticipation, motivation, and reinforcement learning. The distinction between wanting (dopamine) and liking (opioids) is central to understanding addiction and behavior.</p>
+<p>The mesolimbic circuit (VTA → Nucleus Accumbens) releases dopamine in anticipation of rewards, especially unpredictable ones. Skinner’s variable reinforcement explains why slot machines, social media, and infinite feeds are so engaging: they exploit dopaminergic prediction error.</p>
+<p>Social media were deliberately designed to activate these circuits (Sean Parker, 2017). The same principles, used ethically, explain why well-designed gamification and curiosity improve learning. Chronic overstimulation leads to tolerance (downregulation of D2 receptors) and, at the extreme, anhedonia. The system recovers with abstinence, thanks to the same neuroplasticity.</p>
+</div>
+</div>
+</section>
+<!-- NAV -->
+<section class="flex justify-start items-center space-x-6">
+<a class="flex items-center space-x-2 text-purple-400 hover:text-purple-300 font-medium" href="modulo-3-1.html">
+<span>←</span><span>Module 3.1: Neuroplasticity</span>
+</a>
+<a class="flex items-center space-x-2 text-purple-400 hover:text-purple-300 font-medium" href="modulo-3-3.html">
+<span>Module 3.3: Amygdala</span><span>→</span>
+</a>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="border-t border-dark-700 py-8"><div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500"><a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mind, Power and Machine · 2026</div></footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

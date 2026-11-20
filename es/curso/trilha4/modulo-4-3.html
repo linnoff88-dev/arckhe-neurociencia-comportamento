@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>4.3 — Contabilidad mental y paradoja de la elección | MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{"course":"neurociencia-comportamento","tracks":[{"n":"1","title":"O Cerebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heuristicas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonancia cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},{"n":"2","title":"Influencia Social","modules":[{"id":"2-1","title":"Conformidade","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediencia","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulacao social","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},{"n":"3","title":"Neurociencia do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amigdala","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},{"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},{"n":"5","title":"Filosofia da Mente","modules":[{"id":"5-1","title":"Livre-arbitrio","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciencia","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiotica","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},{"n":"6","title":"IA, Vieses e Etica","modules":[{"id":"6-1","title":"Vieses algoritmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistemicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Etica e espaco humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}]}
+</script>
+<style>
+body{font-family:'Inter',system-ui,sans-serif}.topic-explanation{display:none}.topic-explanation.active{display:block}
+html:not(.dark) body{background-color:#f8fafc}html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-amber-400{color:#92400e}html:not(.dark) .bg-amber-500\/20{background-color:rgba(217,119,6,0.12)}html:not(.dark) .border-amber-500\/30{border-color:rgba(217,119,6,0.25)}html:not(.dark) .hover\:bg-amber-500\/10:hover{background-color:rgba(217,119,6,0.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,0.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+html:not(.dark) svg[role="img"]{filter:saturate(.82) brightness(.96)}
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha4/modulo-4-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha4/modulo-4-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha4/modulo-4-3.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen" data-inema-module="4-3"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha4/modulo-4-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-4-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Cerebro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-amber-400 bg-amber-500/10" href="../trilha4/index.html">T4 Economía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Filosofía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 IA+Ética</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()"><span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span></button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- BREADCRUMB -->
+<div class="flex items-center space-x-2 text-sm text-neutral-500 mb-8">
+<a class="hover:text-amber-400 transition-colors" href="../../index.html">Curso</a>
+<span>/</span>
+<a class="hover:text-amber-400 transition-colors" href="index.html">Ruta 4</a>
+<span>/</span>
+<span class="text-amber-400">Módulo 4.3</span>
+</div>
+<!-- HEADER -->
+<section class="mb-10">
+<div class="bg-gradient-to-r from-amber-900/30 via-dark-800 to-dark-800 rounded-2xl p-8 border border-amber-500/30">
+<div class="inline-flex items-center space-x-2 bg-amber-500/20 border border-amber-500/30 rounded-full px-4 py-1.5 mb-4">
+<span class="text-amber-400 text-sm font-semibold">MÓDULO 4.3</span>
+</div>
+<h1 class="text-3xl md:text-4xl font-extrabold mb-3 leading-tight">Contabilidad mental y paradoja de la elección</h1>
+<p class="text-neutral-300 text-lg max-w-3xl">Por qué tratamos el dinero de forma diferente según su origen, por qué valoramos más lo que ya poseemos y por qué más opciones pueden llevar a peores decisiones.</p>
+</div>
+</section>
+<!-- SVG: Dois paineis comparativos -->
+<div class="rounded-2xl border border-amber-500/30 bg-dark-900/40 p-3 sm:p-4 mb-10 overflow-hidden">
+<svg aria-label="Dos paneles comparativos: pocas opciones llevan a una decisión rápida y satisfacción; muchas opciones llevan a la parálisis y al arrepentimiento" class="w-full h-auto" id="m43-hero" role="img" viewbox="0 0 800 280">
+<defs>
+<filter id="m43-glow"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="40" id="m43-grid" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#374151" stroke-width="0.5"></path></pattern>
+<marker id="m43-arr" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#fbbf24" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<marker id="m43-arr-red" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#f87171" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+</defs>
+<rect fill="url(#m43-grid)" height="280" rx="12" width="800"></rect>
+<!-- Titulo central -->
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="400" y="28">PARADOJA DE LA ELECCIÓN</text>
+<!-- Painel esquerdo: poucas opcoes -->
+<rect fill="#1f1604" filter="url(#m43-glow)" height="210" rx="16" stroke="#fbbf24" stroke-width="2" width="340" x="30" y="45"></rect>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="200" y="72">POCAS OPCIONES</text>
+<!-- 3 quadrados representando opcoes -->
+<rect fill="#1f1604" height="30" rx="6" stroke="#fbbf24" stroke-width="1.5" width="30" x="100" y="90"></rect>
+<rect fill="#1f1604" height="30" rx="6" stroke="#fbbf24" stroke-width="1.5" width="30" x="150" y="90"></rect>
+<rect fill="#fbbf24" height="30" opacity="0.8" rx="6" stroke="#fbbf24" stroke-width="1.5" width="30" x="200" y="90"></rect>
+<text fill="#1f1604" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="215" y="110">!</text>
+<path d="M 200 130 L 200 150" marker-end="url(#m43-arr)" stroke="#fbbf24" stroke-width="2"></path>
+<rect fill="#1f1604" height="28" rx="8" stroke="#38bdf8" stroke-width="1.5" width="160" x="120" y="158"></rect>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="200" y="176">DECISIÓN RÁPIDA</text>
+<path d="M 200 186 L 200 206" opacity="0.5" stroke="#38bdf8" stroke-width="2"></path>
+<rect fill="#1f1604" height="28" rx="8" stroke="#34d399" stroke-width="1.5" width="160" x="120" y="210"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="200" y="228">SATISFACCIÓN</text>
+<!-- Separador central -->
+<text fill="#6b7280" font-family="Inter,sans-serif" font-size="20" font-weight="300" text-anchor="middle" x="400" y="155">vs</text>
+<!-- Painel direito: muitas opcoes -->
+<rect fill="#1f1604" height="210" opacity="0.8" rx="16" stroke="#f87171" stroke-width="2" width="340" x="430" y="45"></rect>
+<text fill="#f87171" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="600" y="72">MUCHAS OPCIONES</text>
+<!-- Muitos quadrados representando opcoes -->
+<rect fill="#1f1604" height="22" opacity="0.5" rx="4" stroke="#f87171" stroke-width="1" width="22" x="480" y="88"></rect>
+<rect fill="#1f1604" height="22" opacity="0.5" rx="4" stroke="#f87171" stroke-width="1" width="22" x="508" y="88"></rect>
+<rect fill="#1f1604" height="22" opacity="0.5" rx="4" stroke="#f87171" stroke-width="1" width="22" x="536" y="88"></rect>
+<rect fill="#1f1604" height="22" opacity="0.5" rx="4" stroke="#f87171" stroke-width="1" width="22" x="564" y="88"></rect>
+<rect fill="#1f1604" height="22" opacity="0.5" rx="4" stroke="#f87171" stroke-width="1" width="22" x="592" y="88"></rect>
+<rect fill="#1f1604" height="22" opacity="0.5" rx="4" stroke="#f87171" stroke-width="1" width="22" x="620" y="88"></rect>
+<rect fill="#1f1604" height="22" opacity="0.5" rx="4" stroke="#f87171" stroke-width="1" width="22" x="648" y="88"></rect>
+<rect fill="#1f1604" height="22" opacity="0.3" rx="4" stroke="#f87171" stroke-width="1" width="22" x="508" y="114"></rect>
+<rect fill="#1f1604" height="22" opacity="0.3" rx="4" stroke="#f87171" stroke-width="1" width="22" x="536" y="114"></rect>
+<rect fill="#1f1604" height="22" opacity="0.3" rx="4" stroke="#f87171" stroke-width="1" width="22" x="564" y="114"></rect>
+<rect fill="#1f1604" height="22" opacity="0.3" rx="4" stroke="#f87171" stroke-width="1" width="22" x="592" y="114"></rect>
+<rect fill="#1f1604" height="22" opacity="0.3" rx="4" stroke="#f87171" stroke-width="1" width="22" x="620" y="114"></rect>
+<text fill="#f87171" font-family="Inter,sans-serif" font-size="10" opacity="0.5" x="680" y="132">...</text>
+<path d="M 600 145 L 600 158" marker-end="url(#m43-arr-red)" stroke="#f87171" stroke-width="2"></path>
+<rect fill="#1f1604" height="28" rx="8" stroke="#f59e0b" stroke-width="1.5" width="160" x="520" y="164"></rect>
+<text fill="#f59e0b" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="600" y="182">PARÁLISIS</text>
+<path d="M 600 192 L 600 210" opacity="0.5" stroke="#f59e0b" stroke-width="2"></path>
+<rect fill="#1f1604" height="28" rx="8" stroke="#f87171" stroke-width="1.5" width="160" x="520" y="214"></rect>
+<text fill="#f87171" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="600" y="232">ARREPENTIMIENTO</text>
+<!-- Label inferior -->
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="400" y="272">Schwartz (2004) · Iyengar &amp; Lepper (2000)</text>
+</svg>
+</div>
+<!-- TOPICO 1 -->
+<section class="mb-10" data-inema-topic="modulo-4-3#topico-1">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<h2 class="text-xl font-bold">Contabilidad mental (Thaler)</h2>
+</div>
+<p class="text-neutral-300 mb-4">Richard Thaler acuñó el término <strong class="text-amber-400">contabilidad mental</strong> (mental accounting) para describir cómo el cerebro organiza el dinero en "cuentas" separadas, incluso cuando, objetivamente, el dinero es fungible: R$1 es R$1, sin importar de dónde venga.</p>
+<p class="text-neutral-300 mb-4">Pero no es así como pensamos. Los R$500 ganados en una apuesta se consideran "dinero de la casa" y se gastan con más facilidad. Los R$500 del salario son "dinero ganado con esfuerzo" y se protegen con más cuidado. El mismo valor, comportamientos opuestos. El origen mental del dinero cambia la forma en que lo usamos.</p>
+<!-- Grid comparativo -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-amber-400 mb-3">✓ Cuentas mentales comunes</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>"Dinero de vacaciones" (intocable para las cuentas)</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>"Dinero de regalo" (gastado en frivolidades)</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>"Ahorro de emergencia" (sagrado)</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>"Salario número 13" (como bono, no como ingreso)</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-red-400 mb-3">✕ Qué diría la racionalidad</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Dinero fungible: R$1 = R$1</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>El origen no afecta el valor objetivo</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Todos los gastos deben competir en igualdad de condiciones</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Separar cuentas es arbitrario desde el punto de vista contable</span></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Contabilidad mental</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Fungibilidad</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">House money effect</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Cuentas mentales</span>
+</div>
+<div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4">
+<p class="text-sm text-neutral-300"><span class="text-amber-400 font-semibold">Ejemplo clásico de Thaler:</span> Compraste una entrada para el teatro por R$200. Al llegar, descubres que la perdiste. ¿Compras otra? La mayoría dice «no». Ahora: ibas a comprarla en la taquilla. Al llegar, descubres que perdiste R$200 en efectivo. ¿Aún compras la entrada? La mayoría dice «sí». La pérdida es idéntica. La cuenta mental es diferente.</p>
+</div>
+</section>
+<!-- TOPICO 2 -->
+<section class="mb-10" data-inema-topic="modulo-4-3#topico-2">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<h2 class="text-xl font-bold">Efecto de dotación (endowment effect)</h2>
+</div>
+<p class="text-neutral-300 mb-4">El efecto de dotación, identificado por Thaler y estudiado extensamente por Kahneman, Knetsch y Thaler, muestra que las personas atribuyen más valor a los objetos simplemente porque los poseen. No es un apego emocional acumulado. Es instantáneo: recibiste el objeto hace 5 minutos y ya exiges más para venderlo de lo que pagarías para comprarlo.</p>
+<!-- Experiment box -->
+<div class="bg-dark-800 border border-amber-500/30 rounded-xl p-5 mb-6">
+<h4 class="text-sm font-semibold text-amber-400 mb-3">El experimento de los vasos (Kahneman, Knetsch &amp; Thaler, 1990)</h4>
+<p class="text-neutral-300 text-sm mb-4">Los participantes de un experimento se dividieron en dos grupos: uno recibió tazas de café de una universidad y el otro no recibió nada. Después, los invitaron a negociar.</p>
+<div class="grid grid-cols-2 gap-4 mb-4">
+<div class="text-center">
+<span class="text-2xl font-bold text-amber-400">$7.12</span>
+<p class="text-neutral-400 text-sm mt-1">Precio mínimo para vender</p>
+<p class="text-neutral-500 text-xs">quien recibió el vaso</p>
+</div>
+<div class="text-center">
+<span class="text-2xl font-bold text-sky-400">$2.87</span>
+<p class="text-neutral-400 text-sm mt-1">Precio máximo para comprar</p>
+<p class="text-neutral-500 text-xs">quien no tenía el vaso</p>
+</div>
+</div>
+<p class="text-neutral-400 text-xs text-center">El mismo objeto. Quien lo «posee» le atribuye 2.5x más valor. La posesión distorsiona la percepción del valor.</p>
+</div>
+<p class="text-neutral-300 mb-4">El efecto de dotación se conecta directamente con <strong class="text-amber-400">aversión a la pérdida</strong> de Kahneman y Tversky: perder algo que ya es "mío" duele ~2x más que el placer de ganar algo equivalente. Vender es perder. El cerebro se resiste.</p>
+<!-- Timeline: efeito dotacao no cotidiano -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5 mb-6">
+<h4 class="text-sm font-semibold text-amber-400 mb-4">Efecto de dotación en la vida cotidiana</h4>
+<div class="space-y-4">
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">$</div>
+<div><p class="text-neutral-300 text-sm font-semibold">Inversiones</p><p class="text-neutral-400 text-sm">El inversionista mantiene una acción perdedora: "no puedo venderla por menos de lo que pagué". La acción no sabe cuánto pagaste.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">🏠</div>
+<div><p class="text-neutral-300 text-sm font-semibold">Inmuebles</p><p class="text-neutral-400 text-sm">El vendedor sobrevalora la casa porque es «su casa». El comprador ve defectos que el vendedor ignora.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">📱</div>
+<div><p class="text-neutral-300 text-sm font-semibold">Firmas</p><p class="text-neutral-400 text-sm">La prueba gratuita se convierte en posesión. Cancelar = perder algo que «ya es mío». Diseño intencional de las empresas.</p></div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Efecto de dotación</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Aversión a la pérdida</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">WTA vs WTP</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Posesión instantánea</span>
+</div>
+<div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4">
+<p class="text-sm text-neutral-300"><span class="text-amber-400 font-semibold">Conexión con T1:</span> El efecto de dotación es el Sistema 1 en acción: rápido, emocional, automático. El Sistema 2 sabe que la taza vale lo mismo para todos. Pero el Sistema 1 ya "siente" que es mía.</p>
+</div>
+</section>
+<!-- TOPICO 3 -->
+<section class="mb-10" data-inema-topic="modulo-4-3#topico-3">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<h2 class="text-xl font-bold">Encuadre (framing)</h2>
+</div>
+<p class="text-neutral-300 mb-4">La contabilidad mental tiene una prima directa: el encuadre (framing). Mientras la contabilidad mental separa el dinero en cuentas ficticias, el framing muestra que <strong class="text-amber-400">forma de presentar</strong> una información cambia radicalmente la decisión, incluso cuando el contenido es idéntico.</p>
+<p class="text-neutral-300 mb-4">Tversky y Kahneman lo demostraron en el famoso «problema de la enfermedad asiática»: cuando la opción se presenta como «salvar a 200 de 600 personas», la mayoría elige la certeza. Cuando se presenta como «400 personas van a morir», la mayoría prefiere arriesgarse. Matemáticamente, son lo mismo.</p>
+<!-- SVG inline: framing -->
+<div class="rounded-xl border border-dark-700 bg-dark-900/40 p-3 mb-6 overflow-hidden">
+<svg aria-label="La misma información planteada como ganancia lleva a una elección segura; planteada como pérdida, lleva a una elección arriesgada" class="w-full h-auto" id="m43-framing" role="img" viewbox="0 0 700 160">
+<defs>
+<pattern height="40" id="m43-g2" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#374151" stroke-width="0.5"></path></pattern>
+</defs>
+<rect fill="url(#m43-g2)" height="160" rx="10" width="700"></rect>
+<!-- Informacao central -->
+<rect fill="#1f2937" height="36" rx="8" stroke="#6b7280" stroke-width="1.5" width="220" x="240" y="10"></rect>
+<text fill="#d1d5db" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="350" y="28">LA MISMA INFORMACIÓN</text>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="350" y="40">"90% sobrevive" = "10% muere"</text>
+<!-- Setas -->
+<line opacity="0.5" stroke="#fbbf24" stroke-width="1.5" x1="300" x2="180" y1="46" y2="70"></line>
+<line opacity="0.5" stroke="#38bdf8" stroke-width="1.5" x1="400" x2="520" y1="46" y2="70"></line>
+<!-- Frame ganho -->
+<rect fill="#1f1604" height="70" rx="12" stroke="#fbbf24" stroke-width="2" width="240" x="40" y="72"></rect>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="160" y="94">MARCO DE GANANCIA</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="160" y="112">"90% de tasa de supervivencia"</text>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="160" y="130">Los pacientes aceptan el tratamiento</text>
+<!-- Frame perda -->
+<rect fill="#0e1b26" height="70" rx="12" stroke="#38bdf8" stroke-width="2" width="240" x="420" y="72"></rect>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="540" y="94">MARCO DE PÉRDIDA</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="540" y="112">"10% de tasa de mortalidad"</text>
+<text fill="#f87171" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="540" y="130">Los pacientes rechazan el tratamiento</text>
+</svg>
+</div>
+<!-- Grid: onde framing opera -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-amber-400 mb-3">✓ El encuadre positivo funciona para</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Convencer a pacientes (supervivencia, cura)</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Marketing (ahorro, bono, gratis)</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Política pública (empleos creados)</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Negociación (beneficio mutuo)</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-red-400 mb-3">✕ El marco negativo funciona para</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Disuadir (riesgo de muerte, multa)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Campaña antitabaco (lo que se pierde)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Alertas de seguridad (consecuencias)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Urgencia (última oportunidad, vas a perder)</span></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Framing effect</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Prospect Theory</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Ganancias vs. pérdidas</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Invariancia descriptiva</span>
+</div>
+</section>
+<!-- TOPICO 4 -->
+<section class="mb-10" data-inema-topic="modulo-4-3#topico-4">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<h2 class="text-xl font-bold">Paradoja de la elección (Schwartz)</h2>
+</div>
+<p class="text-neutral-300 mb-4">Barry Schwartz, en "The Paradox of Choice" (2004), documentó algo contraintuitivo: más opciones no siempre conducen a mejores decisiones. En muchos casos, el exceso de opciones lleva a <strong class="text-amber-400">parálisis decisoria</strong> (sobrecarga de opciones), peores elecciones y menor satisfacción con el resultado.</p>
+<p class="text-neutral-300 mb-4">El estudio que abrió el campo fue el experimento de las mermeladas de Iyengar y Lepper (2000). En un puesto de supermercado, los investigadores alternaron entre 6 y 24 sabores de mermelada. El resultado invirtió por completo la intuición económica clásica.</p>
+<!-- Experiment box -->
+<div class="bg-dark-800 border border-amber-500/30 rounded-xl p-5 mb-6">
+<h4 class="text-sm font-semibold text-amber-400 mb-3">El experimento de las mermeladas (Iyengar &amp; Lepper, 2000)</h4>
+<div class="space-y-3 mb-4">
+<div class="flex items-center justify-between bg-dark-700/50 rounded-lg p-3 border border-amber-500/20">
+<div class="flex items-center space-x-3">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-neutral-300 text-sm">6 sabores expuestos</span>
+</div>
+<div class="text-right">
+<span class="text-amber-400 font-semibold text-sm">30% compraron</span>
+</div>
+</div>
+<div class="flex items-center justify-between bg-dark-700/50 rounded-lg p-3 border border-red-500/20">
+<div class="flex items-center space-x-3">
+<span class="w-7 h-7 rounded-full bg-red-500/20 text-red-400 text-xs font-bold flex items-center justify-center flex-shrink-0">24</span>
+<span class="text-neutral-300 text-sm">24 sabores expuestos</span>
+</div>
+<div class="text-right">
+<span class="text-red-400 font-semibold text-sm">3% compraron</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="text-center">
+<span class="text-lg font-bold text-amber-400">40%</span>
+<p class="text-neutral-400 text-sm mt-1">se detuvieron en el stand (6)</p>
+</div>
+<div class="text-center">
+<span class="text-lg font-bold text-sky-400">60%</span>
+<p class="text-neutral-400 text-sm mt-1">se detuvieron en el stand (24)</p>
+</div>
+</div>
+<p class="text-neutral-400 text-xs text-center mt-3">Una mayor variedad atrajo a más personas, pero vendió 10 veces menos. El exceso de opciones paralizó la decisión de compra.</p>
+</div>
+<p class="text-neutral-300 mb-4">Schwartz distinguió dos perfiles de decisores: <strong class="text-amber-400">maximizadores</strong> (buscan la mejor opción posible) y <strong class="text-amber-400">satisficers</strong> (aceptan la primera opción "lo suficientemente buena"). Los maximizadores sufren más por la paradoja: cuantas más opciones hay, más comparan, más tardan y menos satisfechos quedan.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Sobrecarga de opciones</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Paradoja de la elección</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Maximizador vs. Satisficer</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Parálisis decisoria</span>
+</div>
+<div class="bg-red-500/10 border border-red-500/20 rounded-xl p-4">
+<p class="text-sm text-neutral-300"><span class="text-red-400 font-semibold">Implicación práctica:</span> Si eres gerente de producto, restaurante o tienda: reducir el menú puede aumentar las ventas. Netflix descubrió esto: el catálogo infinito sin recomendaciones mataba la interacción. La selección editorial es tan importante como el contenido.</p>
+</div>
+</section>
+<!-- TOPICO 5 -->
+<section class="mb-10" data-inema-topic="modulo-4-3#topico-5">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<h2 class="text-xl font-bold">Parálisis por elección en el mundo digital</h2>
+</div>
+<p class="text-neutral-300 mb-4">El mundo digital amplificó la paradoja de la elección a niveles sin precedentes. Netflix tiene más de 15.000 títulos. Spotify ofrece más de 100 millones de canciones. Amazon muestra cientos de opciones para cualquier producto. Sin algún mecanismo de filtrado, la decisión se vuelve imposible. El usuario no elige: se rinde o sigue desplazándose sin parar, sin ver nada.</p>
+<p class="text-neutral-300 mb-4">La respuesta de la industria fue invertir miles de millones en <strong class="text-amber-400">algoritmos de recomendación</strong>. Netflix estima que el 80 % del contenido que se ve proviene de recomendaciones algorítmicas, no de búsquedas activas. En la práctica, el algoritmo es un nudge computacional: reduce las opciones visibles a un subconjunto manejable y elimina la parálisis. Spotify, YouTube y TikTok hacen lo mismo: la selección automática como antídoto para la paradoja.</p>
+<!-- Timeline: curadoria digital -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5 mb-6">
+<h4 class="text-sm font-semibold text-amber-400 mb-4">La curaduría algorítmica como respuesta a la paradoja</h4>
+<div class="space-y-4">
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">NETFL</div>
+<div><p class="text-neutral-300 text-sm"><strong class="text-amber-400">80%</strong> del contenido visto proviene de recomendaciones. Cada usuario ve una "Netflix" diferente.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">SPOT</div>
+<div><p class="text-neutral-300 text-sm"><strong class="text-amber-400">Discover Weekly</strong> y las playlists personalizadas reducen más de 100M de canciones a 30 por semana.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">TIKTK</div>
+<div><p class="text-neutral-300 text-sm"><strong class="text-amber-400">For You Page</strong> elimina por completo la elección. El algoritmo decide lo que ves.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">AMZN</div>
+<div><p class="text-neutral-300 text-sm"><strong class="text-amber-400">"Quienes compraron esto también compraron"</strong> reduce un catálogo de millones a 5-10 sugerencias.</p></div>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 mb-4">El exceso de opciones también genera <strong class="text-amber-400">arrepentimiento posterior a la decisión</strong>. Con 3 opciones, tienes 2 alternativas que no elegiste. Con 30, tienes 29 fantasmas: "¿y si hubiera elegido aquella otra?" Schwartz mostró que quienes buscan la mejor opción posible sufren más: más libertad para elegir puede significar menos felicidad.</p>
+<!-- Grid: curadoria vs excesso -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-amber-400 mb-3">✓ Beneficios de la curaduría</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Reduce la parálisis decisoria</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Aumenta la satisfacción con la elección</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Permite descubrir contenido relevante</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Ahorra tiempo y energía cognitiva</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-red-400 mb-3">✕ Riesgos de la curaduría</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Burbuja de filtro (cámara de eco)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Manipulación de la atención (engagement farming)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Reducción de la autonomía real para elegir</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>El algoritmo optimiza para la plataforma, no para ti</span></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Algoritmo de recomendación</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Burbuja de filtro</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Curaduría automática</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Nudge computacional</span>
+</div>
+<div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4">
+<p class="text-sm text-neutral-300"><span class="text-amber-400 font-semibold">Ironía:</span> Resolvemos la paradoja de la elección delegando la elección en máquinas. La libertad de elección del consumidor moderno es, en gran medida, la libertad de aceptar o rechazar sugerencias de un algoritmo que conoce tus patrones mejor que tú mismo.</p>
+</div>
+</section>
+<!-- TOPICO 6 -->
+<section class="mb-10" data-inema-topic="modulo-4-3#topico-6">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<h2 class="text-xl font-bold">Cómo usar esto a tu favor</h2>
+</div>
+<p class="text-neutral-300 mb-4">Conocer la contabilidad mental, el efecto dotación, el encuadre y la paradoja de la elección no es solo teoría. Estos conceptos son herramientas prácticas para tomar mejores decisiones financieras, profesionales y personales. La conciencia de los sesgos no los elimina, pero crea una capa de protección: un «metarrazonamiento» que permite cuestionar la primera impresión.</p>
+<p class="text-neutral-300 mb-4">Thaler sostiene que la fungibilidad es la regla de oro: trata todo el dinero como dinero, independientemente de su origen. Schwartz recomienda adoptar la mentalidad de "satisficer" para la mayoría de las decisiones: define criterios mínimos y acepta la primera opción que los cumpla. Reserva la maximización para las decisiones verdaderamente importantes.</p>
+<!-- Grid: estrategias praticas -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5 mb-6">
+<h4 class="text-sm font-semibold text-amber-400 mb-4">Estrategias prácticas basadas en la investigación</h4>
+<div class="space-y-4">
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">CM</div>
+<div><p class="text-neutral-300 text-sm font-semibold">Contra la contabilidad mental</p><p class="text-neutral-400 text-sm">Pregunta: "¿haría lo mismo si este dinero viniera de mi salario?" Si la respuesta es no, estás en una trampa de contabilidad mental.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">ED</div>
+<div><p class="text-neutral-300 text-sm font-semibold">Contra el efecto de dotación</p><p class="text-neutral-400 text-sm">Técnica de Thaler: "Si no tuviera esto, ¿cuánto pagaría por conseguirlo?" Si es menos de lo que te ofrecen por venderlo, el efecto dotación está inflando su valor.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">FR</div>
+<div><p class="text-neutral-300 text-sm font-semibold">Contra el framing</p><p class="text-neutral-400 text-sm">Reformula la misma situación de dos formas opuestas. Si cambia tu preferencia, estás reaccionando al encuadre, no al contenido.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">PIE</div>
+<div><p class="text-neutral-300 text-sm font-semibold">Contra la paradoja de la elección</p><p class="text-neutral-400 text-sm">Limita deliberadamente las opciones. Define criterios antes de investigar. Adopta la regla "3 opciones como máximo" para las decisiones cotidianas.</p></div>
+</div>
+</div>
+</div>
+<!-- Grid: quando maximizar vs satisficer -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-amber-400 mb-3">✓ Cuándo maximizar</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Decisiones de carrera y profesión</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Compra de inmueble o auto</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Inversiones a largo plazo</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Pocas decisiones de alto impacto en la vida</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-amber-400 mb-3">✓ Cuándo conformarse con lo suficiente</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Restaurante para el almuerzo</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Película para ver por la noche</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Producto de supermercado en la estantería</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>La mayoría de las decisiones del día a día</span></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Fungibilidad</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Satisficing</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Metarrazonamiento</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Reducción de sesgos</span>
+</div>
+<div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4">
+<p class="text-sm text-neutral-300"><span class="text-amber-400 font-semibold">Mensaje final de Thaler:</span> "Si quieres que las personas tomen buenas decisiones, haz que la decisión sea más fácil." Esto aplica tanto a quienes diseñan sistemas como a quienes están decidiendo: simplifica, limita las opciones, cuestiona los encuadres y trata el dinero como dinero.</p>
+</div>
+</section>
+<!-- RESUMO -->
+<section class="mb-10">
+<div class="bg-dark-800 border border-amber-500/30 rounded-xl p-6">
+<h3 class="text-lg font-bold text-amber-400 mb-4">Resumen del Módulo 4.3</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>Contabilidad mental: tratamos el dinero de manera diferente según su origen. R$500 de una apuesta no son lo mismo que R$500 de salario, aunque valgan lo mismo.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>Efecto de dotación: poseer algo aumenta instantáneamente su valor percibido. Los vendedores piden ~2.5x más de lo que ofrecen los compradores por el mismo objeto.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>Framing: «90% de supervivencia» y «10% de mortalidad» son idénticos, pero generan decisiones opuestas. Quien controla el frame controla la decisión.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>Paradoja de la elección: 6 mermeladas venden 10 veces más que 24. Más opciones atraen, pero paralizan.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>Las plataformas digitales resuelven la paradoja con algoritmos de recomendación, pero crean burbujas y reducen la autonomía real.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>Defensas prácticas: cuestionar la cuenta mental, reformular los marcos, limitar las opciones, ser satisficer en la vida cotidiana.</span></li>
+</ul>
+</div>
+</section>
+<!-- NAVEGACAO -->
+<div class="flex items-center justify-start space-x-4 pt-8 border-t border-dark-700">
+<a class="text-neutral-400 hover:text-amber-400 transition-colors text-sm font-medium" href="modulo-4-2.html">← 4.2 Nudge Theory</a>
+<a class="text-amber-400 hover:text-amber-300 transition-colors text-sm font-medium" href="../trilha5/index.html">Ruta 5 →</a>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="border-t border-dark-700 py-8"><div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500"><a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mente, Poder e Maquina · 2026</div></footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

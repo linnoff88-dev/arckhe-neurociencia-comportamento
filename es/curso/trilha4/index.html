@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>Ruta 4 — Economía del comportamiento | MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{"course":"neurociencia-comportamento","tracks":[{"n":"1","title":"O Cérebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heurísticas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonância cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},{"n":"2","title":"Influência Social","modules":[{"id":"2-1","title":"Conformidade","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulação social","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},{"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},{"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},{"n":"5","title":"Filosofia da Mente","modules":[{"id":"5-1","title":"Livre-arbítrio","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciência","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiótica","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},{"n":"6","title":"IA, Vieses e Ética","modules":[{"id":"6-1","title":"Vieses algorítmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistêmicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Ética e espaço humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}]}
+</script>
+<style>
+body{font-family:'Inter',system-ui,sans-serif}.topic-explanation{display:none}.topic-explanation.active{display:block}
+html:not(.dark) body{background-color:#f8fafc}html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-amber-400{color:#92400e}html:not(.dark) .bg-amber-500\/20{background-color:rgba(217,119,6,0.12)}html:not(.dark) .border-amber-500\/30{border-color:rgba(217,119,6,0.25)}html:not(.dark) .hover\:bg-amber-500\/10:hover{background-color:rgba(217,119,6,0.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,0.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+html:not(.dark) svg[role="img"]{filter:saturate(.82) brightness(.96)}
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha4/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha4/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha4/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha4/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Cerebro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-amber-400 bg-amber-500/10" href="../trilha4/index.html">T4 Economía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Filosofía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 IA+Ética</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()"><span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span></button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- HEADER -->
+<section class="mb-12">
+<div class="bg-gradient-to-r from-amber-900/30 via-dark-800 to-dark-800 rounded-2xl p-8 sm:p-12 border border-amber-500/30">
+<div class="inline-flex items-center space-x-2 bg-amber-500/20 border border-amber-500/30 rounded-full px-4 py-1.5 mb-4">
+<span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+<span class="text-amber-400 text-sm font-semibold tracking-wide">RUTA 4</span>
+</div>
+<h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">💰 Economía del comportamiento</h1>
+<p class="text-neutral-300 text-lg max-w-3xl mb-8">De Thaler y Ariely a la paradoja de la elección: por qué los humanos nunca fueron racionales, cómo las arquitecturas de decisión nos guían sin que nos demos cuenta y qué revela la contabilidad mental sobre la irracionalidad predecible.</p>
+<!-- Stats grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-dark-900/60 rounded-xl p-4 text-center border border-dark-700">
+<span class="text-2xl font-bold text-amber-400">3</span>
+<p class="text-neutral-400 text-sm mt-1">Módulos</p>
+</div>
+<div class="bg-dark-900/60 rounded-xl p-4 text-center border border-dark-700">
+<span class="text-2xl font-bold text-amber-400">18</span>
+<p class="text-neutral-400 text-sm mt-1">Temas</p>
+</div>
+<div class="bg-dark-900/60 rounded-xl p-4 text-center border border-dark-700">
+<span class="text-2xl font-bold text-amber-400">~1.5h</span>
+<p class="text-neutral-400 text-sm mt-1">Duración</p>
+</div>
+<div class="bg-dark-900/60 rounded-xl p-4 text-center border border-dark-700">
+<span class="text-2xl font-bold text-amber-400">Intermedio</span>
+<p class="text-neutral-400 text-sm mt-1">Nivel</p>
+</div>
+</div>
+</div>
+</section>
+<!-- HERO SVG: Rational → Irrational decision-making, nudges, choice architecture -->
+<div class="rounded-2xl border border-amber-500/30 bg-dark-900/40 p-3 sm:p-4 mb-12 overflow-hidden">
+<svg aria-label="Diagrama: del Homo Economicus racional al agente real irracional, pasando por los sesgos, los nudges y la arquitectura de las decisiones" class="w-full h-auto" role="img" viewbox="0 0 900 300">
+<defs>
+<filter id="t4-glow"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<lineargradient id="t4-grad" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#fbbf24"></stop><stop offset="100%" stop-color="#38bdf8"></stop></lineargradient>
+<marker id="t4-arrow" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#fbbf24" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<marker id="t4-arrow-cyan" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#38bdf8" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<marker id="t4-arrow-red" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#f87171" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<pattern height="40" id="t4-grid" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#374151" stroke-width="0.5"></path></pattern>
+</defs>
+<rect fill="url(#t4-grid)" height="300" rx="12" width="900"></rect>
+<!-- Homo Economicus (modelo classico, riscado) -->
+<rect fill="#1f1604" height="90" opacity="0.5" rx="16" stroke="#fbbf24" stroke-dasharray="6,3" stroke-width="2" width="160" x="30" y="40"></rect>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="12" font-weight="700" opacity="0.6" text-anchor="middle" x="110" y="68">HOMO ECONOMICUS</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="9" opacity="0.5" text-anchor="middle" x="110" y="86">racional perfecto</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="9" opacity="0.5" text-anchor="middle" x="110" y="100">preferencias estables</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="9" opacity="0.5" text-anchor="middle" x="110" y="114">maximiza la utilidad</text>
+<!-- X sobre o modelo -->
+<line opacity="0.6" stroke="#f87171" stroke-width="2.5" x1="45" x2="175" y1="50" y2="120"></line>
+<line opacity="0.6" stroke="#f87171" stroke-width="2.5" x1="175" x2="45" y1="50" y2="120"></line>
+<!-- Seta: modelo classico → agente real -->
+<path d="M 190 85 Q 230 85 260 120" fill="none" marker-end="url(#t4-arrow)" opacity="0.5" stroke="#fbbf24" stroke-width="2"></path>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="8" opacity="0.8" text-anchor="middle" x="230" y="78">Thaler, Ariely</text>
+<!-- Agente Real -->
+<rect fill="#1f1604" filter="url(#t4-glow)" height="100" rx="16" stroke="#f59e0b" stroke-width="2" width="170" x="260" y="90"></rect>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="345" y="118">AGENTE REAL</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="345" y="136">irracional previsible</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="345" y="152">afectado por el contexto</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="345" y="168">autocontrol limitado</text>
+<text fill="#f59e0b" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="345" y="182">contabilidad mental</text>
+<!-- Vieses que afetam (de cima) -->
+<rect fill="#1f2937" height="50" opacity="0.7" rx="12" stroke="#f87171" stroke-width="1.5" width="130" x="280" y="15"></rect>
+<text fill="#f87171" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="345" y="36">SESGOS</text>
+<text fill="#fca5a5" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="345" y="52">dotación, framing, anclaje</text>
+<line marker-end="url(#t4-arrow-red)" opacity="0.5" stroke="#f87171" stroke-dasharray="4,3" stroke-width="1.5" x1="345" x2="345" y1="65" y2="90"></line>
+<!-- Seta: agente real → arquitetura de escolhas -->
+<line marker-end="url(#t4-arrow)" opacity="0.5" stroke="#fbbf24" stroke-width="2" x1="430" x2="510" y1="140" y2="140"></line>
+<!-- Arquitetura de Escolhas (Nudge) -->
+<rect fill="#0e1b26" height="140" rx="16" stroke="#38bdf8" stroke-width="2" width="170" x="520" y="70"></rect>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="605" y="98">NUDGE</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="605" y="114">arquitectura de elecciones</text>
+<!-- Principios como bullets -->
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" x="540" y="136">• Predeterminado</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" x="540" y="150">• Simplificación</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" x="540" y="164">• Saliencia</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" x="635" y="136">• Retroalimentación</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" x="635" y="150">• Prueba social</text>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="605" y="180">Thaler &amp; Sunstein (2008)</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="605" y="198">sin prohibir, sin cambiar los incentivos</text>
+<!-- Seta: nudge → decisao melhor -->
+<line marker-end="url(#t4-arrow-cyan)" opacity="0.5" stroke="#38bdf8" stroke-width="2" x1="690" x2="740" y1="140" y2="140"></line>
+<!-- Decisao -->
+<rect fill="#1f1604" filter="url(#t4-glow)" height="80" rx="16" stroke="#fbbf24" stroke-width="2" width="120" x="750" y="100"></rect>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="810" y="132">DECISIÓN</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="810" y="150">mejor, no perfecta</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="810" y="166">paternalismo libertario</text>
+<!-- Paradoxo da Escolha (embaixo) -->
+<rect fill="#1f2937" height="55" opacity="0.7" rx="12" stroke="#fbbf24" stroke-width="1.5" width="170" x="520" y="230"></rect>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="605" y="252">PARADOJA DE LA ELECCIÓN</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="605" y="270">+ opciones = - satisfacción</text>
+<line opacity="0.4" stroke="#fbbf24" stroke-dasharray="4,3" stroke-width="1.5" x1="605" x2="605" y1="210" y2="230"></line>
+<!-- Contabilidade mental (embaixo esquerda) -->
+<rect fill="#1f2937" height="55" opacity="0.7" rx="12" stroke="#f59e0b" stroke-width="1.5" width="170" x="260" y="230"></rect>
+<text fill="#f59e0b" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="345" y="252">CONTABILIDAD MENTAL</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="345" y="270">R$500 de salario ≠ R$500 de bono</text>
+<line opacity="0.4" stroke="#f59e0b" stroke-dasharray="4,3" stroke-width="1.5" x1="345" x2="345" y1="190" y2="230"></line>
+</svg>
+</div>
+<!-- MAPA DA TRILHA -->
+<h2 class="text-2xl font-bold mb-6">Mapa de la ruta</h2>
+<div class="grid md:grid-cols-3 gap-4 mb-16">
+<!-- Card 4.1 -->
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:border-amber-500/30 hover:bg-amber-500/5 transition-all" href="#modulo-4-1">
+<div class="flex items-center justify-between mb-3">
+<span class="text-amber-400 font-mono text-sm font-semibold">4.1</span>
+<span class="text-neutral-500 text-xs">~30 min</span>
+</div>
+<h3 class="text-lg font-bold mb-1 group-hover:text-amber-400 transition-colors">💡 La crítica al Homo Economicus</h3>
+<p class="text-neutral-400 text-sm">Thaler, Ariely y el fin del mito del agente racional perfecto</p>
+</a>
+<!-- Card 4.2 -->
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:border-amber-500/30 hover:bg-amber-500/5 transition-all" href="#modulo-4-2">
+<div class="flex items-center justify-between mb-3">
+<span class="text-amber-400 font-mono text-sm font-semibold">4.2</span>
+<span class="text-neutral-500 text-xs">~30 min</span>
+</div>
+<h3 class="text-lg font-bold mb-1 group-hover:text-amber-400 transition-colors">🏗️ Teoría del nudge: arquitectura de las decisiones</h3>
+<p class="text-neutral-400 text-sm">Defaults, prominencia y prueba social: cómo el contexto decide por ti</p>
+</a>
+<!-- Card 4.3 -->
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:border-amber-500/30 hover:bg-amber-500/5 transition-all" href="#modulo-4-3">
+<div class="flex items-center justify-between mb-3">
+<span class="text-amber-400 font-mono text-sm font-semibold">4.3</span>
+<span class="text-neutral-500 text-xs">~30 min</span>
+</div>
+<h3 class="text-lg font-bold mb-1 group-hover:text-amber-400 transition-colors">🧮 Contabilidad mental y paradoja de la elección</h3>
+<p class="text-neutral-400 text-sm">Por qué el dinero no es fungible en la mente y más opciones paralizan</p>
+</a>
+</div>
+<!-- CONTEUDO DETALHADO -->
+<h2 class="text-2xl font-bold mb-8">Contenido detallado</h2>
+<!-- MODULO 4.1 -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6 sm:p-8 mb-8" id="modulo-4-1">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 font-bold text-sm">4.1</span>
+<div>
+<h3 class="text-xl font-bold">La crítica al Homo Economicus</h3>
+<p class="text-neutral-400 text-sm">Thaler (2017), Ariely (2008) · 6 temas</p>
+</div>
+</div>
+<div class="space-y-3">
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="font-medium">El modelo del Homo Economicus</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Modelo de la economía clásica: agente perfectamente racional, con preferencias estables, que maximiza la utilidad con información completa. Base de la microeconomía neoclásica durante más de un siglo.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Para entender por qué fallan las políticas económicas tradicionales: suponen un ser humano que no existe.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Racionalidad perfecta, utilidad esperada, preferencias transitivas, información completa.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="font-medium">El efecto de dotación (endowment effect)</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Thaler demostró que los humanos valoran más lo que ya poseen que lo que podrían adquirir. Una taza que te regalaron "vale" más que la misma taza en el estante.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Explica por qué las personas conservan acciones perdedoras, se resisten a cambiar de plan y sobrevaloran sus propios bienes.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Efecto de dotación, aversión a la pérdida, sesgo del statu quo, WTA vs WTP.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="font-medium">Encuadre y framing</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">La forma en que se presenta una opción altera drásticamente la elección. «90% de supervivencia» frente a «10% de mortalidad» son expresiones idénticas, pero generan decisiones opuestas.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">El framing es la base de la manipulación en el marketing, la política y la negociación. Quien enmarca, controla.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Framing effect, ganancias frente a pérdidas, encuadre positivo/negativo, Prospect Theory.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="font-medium">Autocontrol limitado y descuento temporal</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Los humanos prometen para el futuro lo que no cumplen en el presente. La distancia temporal hace que los compromisos parezcan fáciles. Cuando llega el momento, el yo presente vence al yo futuro.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Explica la procrastinación, el endeudamiento, el fracaso de las dietas y por qué los planes de pensiones privados necesitan nudges.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Descuento hiperbólico, sesgo del presente, planificador frente a ejecutor, precompromiso.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="font-medium">Previsiblemente irracional: Ariely</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Ariely (2008) mostró que los errores humanos no son aleatorios: son sistemáticamente predecibles. Se pueden mapear, estudiar y explotar o mitigar. El experimento de las opciones de The Economist lo demuestra.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Si la irracionalidad es predecible, puede usarse tanto para manipular como para proteger.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Irracionalidad predecible, efecto señuelo (decoy), anclaje de precios, la gratuidad como detonante.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="font-medium">Thaler: Nobel de 2017 y legado</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Richard Thaler recibió el Nobel de Economía en 2017 por incorporar supuestos psicológicamente realistas en la teoría económica. Su obra conecta a Kahneman, los nudges y las políticas públicas.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Contextualizar cómo la economía del comportamiento pasó de ser una herejía académica a una herramienta de gobierno en menos de 20 años.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Economía del comportamiento, paternalismo libertario, Misbehaving, Econs vs Humans.</p></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-start space-x-3 mt-6">
+<a class="bg-amber-500/20 border border-amber-500/30 text-amber-400 px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-amber-500/30 transition-colors" href="modulo-4-1.html">Ver completo</a>
+</div>
+</div>
+<!-- MODULO 4.2 -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6 sm:p-8 mb-8" id="modulo-4-2">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 font-bold text-sm">4.2</span>
+<div>
+<h3 class="text-xl font-bold">Nudge Theory: arquitectura de decisiones</h3>
+<p class="text-neutral-400 text-sm">Thaler &amp; Sunstein (2008) · 6 temas</p>
+</div>
+</div>
+<div class="space-y-3">
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="font-medium">Qué es un nudge</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Factor que altera el comportamiento de forma previsible sin prohibir opciones ni cambiar significativamente los incentivos económicos. El contexto de la decisión afecta profundamente la decisión.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Los nudges son usados por gobiernos, empresas y plataformas digitales. Reconocerlos es el primer paso para no dejarte guiar sin saberlo.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Nudge, arquitectura de decisiones, arquitecto de decisiones, paternalismo libertario.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="font-medium">El default como el nudge más poderoso</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">La opción preseleccionada cambia el comportamiento a gran escala. Donación de órganos con opción de exclusión frente a opción de inclusión: los países que preseleccionan la donación tienen entre 85-99% de donantes frente a 4-27%.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Quien define la opción predeterminada controla el resultado. Esto aplica a las políticas públicas, el software y los servicios digitales.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Efecto default, opt-in vs. opt-out, sesgo del statu quo, inercia en la toma de decisiones.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="font-medium">Simplificación, saliencia y feedback</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Tres principios complementarios: menos pasos = más adhesión (simplificación); opción deseada más visible (saliencia); consecuencias inmediatas y tangibles (feedback).</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Juntos, estos tres principios explican por qué fracasan los formularios largos, por qué los menús simples venden más y por qué funcionan los medidores de consumo.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Fricción, sludge (anti-nudge), economía de la atención, ciclos de retroalimentación.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="font-medium">La prueba social como nudge</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Informar sobre lo que hace la mayoría influye en el comportamiento. UK BIT: "9 de cada 10 en tu barrio pagan sus impuestos a tiempo" aumentó el pago en un 15%.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">La prueba social es el nudge más replicado del mundo y conecta la economía conductual con la psicología social (Ruta 2).</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Prueba social, norma descriptiva vs. injuntiva, Behavioural Insights Team, marco EAST.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="font-medium">Casos: Save More Tomorrow y nudges públicos</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">SMarT (Thaler &amp; Benartzi): comprometer futuros aumentos salariales para ahorrar. La participación pasó del 3.5% al 13.6% en 3 años. Brasil: NudgeRio (IPTU), Nudge//SP.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Demuestra que los nudges funcionan a gran escala, con un costo cercano a cero y un impacto medible.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">SMarT, precompromiso temporal, Nudge Units, evidencia experimental en políticas públicas.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="font-medium">Críticas y límites de los nudges</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Críticas: manipulación encubierta (sludge), eficacia limitada en comportamientos complejos, cuestiones éticas sobre quién decide qué es lo "mejor" para quién. Dark nudges en el diseño digital.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Un nudge no es una panacea. Entender sus límites evita sobrevalorarlo y abre espacio para soluciones complementarias.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Sludge, dark nudge, boosts (alternativa), autonomía vs. eficiencia, ética del diseño.</p></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-start space-x-3 mt-6">
+<a class="bg-amber-500/20 border border-amber-500/30 text-amber-400 px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-amber-500/30 transition-colors" href="modulo-4-2.html">Ver completo</a>
+</div>
+</div>
+<!-- MODULO 4.3 -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-6 sm:p-8 mb-8" id="modulo-4-3">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 font-bold text-sm">4.3</span>
+<div>
+<h3 class="text-xl font-bold">Contabilidad mental y paradoja de la elección</h3>
+<p class="text-neutral-400 text-sm">Thaler, Schwartz · 6 temas</p>
+</div>
+</div>
+<div class="space-y-3">
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="font-medium">Qué es la contabilidad mental</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Tratamos el dinero de manera distinta según su origen y destino. R$500 de apuestas no se consideran igual que R$500 de salario, aunque sean económicamente idénticos.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Explica por qué las personas gastan los bonos de maneras en que nunca gastarían el salario, y por qué las "cuentas mentales" llevan a malas decisiones financieras.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Contabilidad mental, fungibilidad, cuentas mentales separadas, efecto del dinero de la casa.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="font-medium">Cuentas mentales y decisiones financieras</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Creamos "cajones" mentales para diferentes categorías de gasto. El dinero del "ocio" no se mezcla con las "cuentas". Esto viola el principio económico de fungibilidad y genera una suboptimización.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Entender tus compartimentos mentales y el primer paso para tomar decisiones financieras más racionales.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Edición hedónica, falacia del costo hundido, segregación de ganancias, integración de pérdidas.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="font-medium">La paradoja de la elección</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Schwartz (2004): más opciones no conducen a mejores decisiones. El estudio de las mermeladas (Iyengar &amp; Lepper): el puesto con 24 sabores atrajo a más visitantes, pero vendió 10 veces menos que el puesto con 6.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">En una era de opciones infinitas, la parálisis decisoria es una epidemia. Entender la paradoja es esencial para el diseño, los negocios y la vida.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Sobrecarga de opciones, paradoja de la elección, parálisis por elección, satisficing vs. maximizing.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="font-medium">Arrepentimiento y costo de oportunidad</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Una mayor cantidad de opciones aumenta el arrepentimiento posterior a la decisión y el costo de oportunidad percibido. Al elegir 1 entre 30, "perdiste" 29 alternativas. Al elegir 1 entre 3, perdiste solo 2.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">El arrepentimiento anticipado paraliza las decisiones y el arrepentimiento retrospectivo corroe la satisfacción.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Aversión al arrepentimiento, FOMO, pensamiento contrafactual, costo psicológico de oportunidad.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="font-medium">Maximizadores vs. satisfacedores</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Schwartz distingue dos perfiles: maximizadores (buscan la mejor opción posible y quedan insatisfechos) y satisficers (buscan «lo suficientemente bueno» y quedan satisfechos). Los maximizadores ganan más, pero son más infelices.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Identificar tu perfil y adoptar estrategias de satisficing en áreas no críticas mejora el bienestar.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Satisficing (Simon), maximización, suficientemente bueno, comparación social.</p></div>
+</div>
+</div>
+<div>
+<button aria-expanded="false" class="w-full flex items-center justify-start space-x-3 p-3 rounded-lg bg-dark-700/50 hover:bg-dark-700 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="font-medium">Diseño contra la parálisis: Netflix, Spotify y la curaduría</span>
+</button>
+<div class="topic-explanation mt-2 ml-10 space-y-3">
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Qué es</h4><p class="text-neutral-300 text-sm">Las plataformas con catálogos enormes invierten miles de millones en algoritmos de recomendación para reducir la parálisis de la elección. Netflix, Spotify y Amazon son ejemplos de arquitectura contra la paradoja.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Por qué aprender</h4><p class="text-neutral-300 text-sm">Conecta la economía conductual con el diseño digital y con los sesgos algorítmicos de la Ruta 6.</p></div>
+<div><h4 class="text-sm font-semibold text-amber-400 mb-1">Conceptos clave</h4><p class="text-neutral-300 text-sm">Curaduría algorítmica, motores de recomendación, burbujas de filtro, reducción del conjunto de opciones.</p></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-start space-x-3 mt-6">
+<a class="bg-amber-500/20 border border-amber-500/30 text-amber-400 px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-amber-500/30 transition-colors" href="modulo-4-3.html">Ver completo</a>
+</div>
+</div>
+<!-- NAVEGACAO INFERIOR -->
+<div class="flex items-center justify-between mt-12 pt-8 border-t border-dark-700">
+<a class="text-neutral-400 hover:text-amber-400 transition-colors text-sm font-medium" href="../trilha3/index.html">← Ruta 3: Neurociencia</a>
+<a class="text-amber-400 hover:text-amber-300 transition-colors text-sm font-medium" href="../trilha5/index.html">Ruta 5: Filosofía →</a>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="border-t border-dark-700 py-8"><div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500"><a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mente, Poder e Maquina · 2026</div></footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

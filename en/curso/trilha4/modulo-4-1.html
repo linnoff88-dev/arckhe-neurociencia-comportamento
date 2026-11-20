@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>4.1 — The Critique of Homo Economicus | MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{"course":"neurociencia-comportamento","tracks":[{"n":"1","title":"O Cerebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heuristicas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonancia cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},{"n":"2","title":"Influencia Social","modules":[{"id":"2-1","title":"Conformidade","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediencia","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulacao social","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},{"n":"3","title":"Neurociencia do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amigdala","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},{"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},{"n":"5","title":"Filosofia da Mente","modules":[{"id":"5-1","title":"Livre-arbitrio","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciencia","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiotica","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},{"n":"6","title":"IA, Vieses e Etica","modules":[{"id":"6-1","title":"Vieses algoritmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistemicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Etica e espaco humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}]}
+</script>
+<style>
+body{font-family:'Inter',system-ui,sans-serif}.topic-explanation{display:none}.topic-explanation.active{display:block}
+html:not(.dark) body{background-color:#f8fafc}html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-amber-400{color:#92400e}html:not(.dark) .bg-amber-500\/20{background-color:rgba(217,119,6,0.12)}html:not(.dark) .border-amber-500\/30{border-color:rgba(217,119,6,0.25)}html:not(.dark) .hover\:bg-amber-500\/10:hover{background-color:rgba(217,119,6,0.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,0.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+html:not(.dark) svg[role="img"]{filter:saturate(.82) brightness(.96)}
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha4/modulo-4-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha4/modulo-4-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha4/modulo-4-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen" data-inema-module="4-1"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-4-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha4/modulo-4-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Brain</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-amber-400 bg-amber-500/10" href="../trilha4/index.html">T4 Economics</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Philosophy</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 AI+Ethics</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()"><span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span></button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- BREADCRUMB -->
+<div class="flex items-center space-x-2 text-sm text-neutral-500 mb-8">
+<a class="hover:text-amber-400 transition-colors" href="../../index.html">Course</a>
+<span>/</span>
+<a class="hover:text-amber-400 transition-colors" href="index.html">Track 4</a>
+<span>/</span>
+<span class="text-amber-400">Module 4.1</span>
+</div>
+<!-- HEADER -->
+<section class="mb-10">
+<div class="bg-gradient-to-r from-amber-900/30 via-dark-800 to-dark-800 rounded-2xl p-8 border border-amber-500/30">
+<div class="inline-flex items-center space-x-2 bg-amber-500/20 border border-amber-500/30 rounded-full px-4 py-1.5 mb-4">
+<span class="text-amber-400 text-sm font-semibold">MODULE 4.1</span>
+</div>
+<h1 class="text-3xl md:text-4xl font-extrabold mb-3 leading-tight">The Critique of Homo Economicus</h1>
+<p class="text-neutral-300 text-lg max-w-3xl">How Thaler and Ariely destroyed the myth of the perfectly rational agent and revealed the predictable irrationality that governs our economic decisions.</p>
+</div>
+</section>
+<!-- SVG: Homo Economicus vs Agente Real -->
+<div class="rounded-2xl border border-amber-500/30 bg-dark-900/40 p-3 sm:p-4 mb-10 overflow-hidden">
+<svg aria-label="Comparison between Homo Economicus (theoretical model) and the Real Agent (how humans actually make decisions)" class="w-full h-auto" id="m41-hero" role="img" viewbox="0 0 800 260">
+<defs>
+<filter id="m41-glow"><fegaussianblur result="blur" stddeviation="1.5"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="40" id="m41-grid" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#374151" stroke-width="0.5"></path></pattern>
+<marker id="m41-arr" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#fbbf24" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+</defs>
+<rect fill="url(#m41-grid)" height="260" rx="12" width="800"></rect>
+<!-- Homo Economicus (esquerda, riscado) -->
+<rect fill="#1f1604" height="180" opacity="0.5" rx="16" stroke="#fbbf24" stroke-dasharray="6,3" stroke-width="2" width="200" x="40" y="40"></rect>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="14" font-weight="700" opacity="0.6" text-anchor="middle" x="140" y="70">HOMO ECONOMICUS</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="10" opacity="0.5" x="60" y="100">✕ Perfect rationality</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="10" opacity="0.5" x="60" y="120">✕ Stable preferences</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="10" opacity="0.5" x="60" y="140">✕ Maximizes utility</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="10" opacity="0.5" x="60" y="160">✕ Complete information</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="10" opacity="0.5" x="60" y="180">✕ Total self-control</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="10" opacity="0.5" x="60" y="200">✕ No emotions</text>
+<!-- X grande -->
+<line opacity="0.5" stroke="#f87171" stroke-width="3" x1="50" x2="230" y1="50" y2="210"></line>
+<line opacity="0.5" stroke="#f87171" stroke-width="3" x1="230" x2="50" y1="50" y2="210"></line>
+<!-- Seta central -->
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="360" y="100">Thaler (2017)</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="360" y="118">Ariely (2008)</text>
+<path d="M 280 130 L 440 130" marker-end="url(#m41-arr)" opacity="0.6" stroke="#fbbf24" stroke-width="2.5"></path>
+<text fill="#f87171" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="360" y="152">decades of evidence</text>
+<!-- Agente Real (direita) -->
+<rect fill="#1f1604" filter="url(#m41-glow)" height="180" rx="16" stroke="#f59e0b" stroke-width="2" width="300" x="460" y="40"></rect>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="610" y="70">REAL AGENT (HUMANS)</text>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="10" x="480" y="100">✓ Predictable irrationality</text>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="10" x="480" y="120">✓ Endowment effect</text>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="10" x="480" y="140">✓ Affected by framing</text>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="10" x="480" y="160">✓ Social norms &gt; utility</text>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="10" x="480" y="180">✓ Limited self-control</text>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="10" x="480" y="200">✓ Emotions dominate</text>
+</svg>
+</div>
+<!-- TOPICO 1 -->
+<section class="mb-10" data-inema-topic="modulo-4-1#topico-1">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<h2 class="text-xl font-bold">The Homo Economicus model</h2>
+</div>
+<p class="text-neutral-300 mb-4">For more than a century, the dominant economic theory treated human beings as perfect calculating machines. Homo Economicus was the model: an agent with stable and transitive preferences who processes all available information, calculates the expected utility of each option, and chooses the one that maximizes their benefit.</p>
+<p class="text-neutral-300 mb-4">This model was mathematically elegant. It allowed for equations, graphs, and predictions. It had one problem: it did not describe any real human being.</p>
+<!-- Grid comparativo -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-amber-400 mb-3">✓ What the model assumed</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Perfect rationality in every decision</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Preferences that don't change with context</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Full access to all relevant information</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Ability to process infinite options</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-red-400 mb-3">✕ What reality shows</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Decisions influenced by emotions and context</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Preferences that change depending on how they're presented</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Limited and biased information</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>Paralysis in the face of too many options</span></li>
+</ul>
+</div>
+</div>
+<!-- Conceitos-chave mini-cards -->
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Perfect rationality</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Expected utility</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Transitive preferences</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Maximization</span>
+</div>
+<!-- Tip box -->
+<div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4">
+<p class="text-sm text-neutral-300"><span class="text-amber-400 font-semibold">Connection to T1:</span> Homo Economicus is essentially a "pure System 2 being" (Kahneman). It never uses shortcuts, never makes mistakes, and never gets tired. This being does not exist.</p>
+</div>
+</section>
+<!-- TOPICO 2 -->
+<section class="mb-10" data-inema-topic="modulo-4-1#topico-2">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<h2 class="text-xl font-bold">The endowment effect</h2>
+</div>
+<p class="text-neutral-300 mb-4">Richard Thaler discovered something classical economics said was impossible: simply owning something changes the value we assign to it. A mug you received just 5 minutes ago already "feels" more valuable to you than to someone who doesn't have one.</p>
+<p class="text-neutral-300 mb-4">In the classic experiment, participants given mugs asked for an average of $7.12 to sell them (WTA, willingness to accept). Those without a mug offered an average of $2.87 to buy one (WTP, willingness to pay). The same object, twice the value, depending only on who "owns" it.</p>
+<!-- Data box -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5 mb-6">
+<h4 class="text-sm font-semibold text-amber-400 mb-3">Mug experiment (Kahneman, Knetsch &amp; Thaler, 1990)</h4>
+<div class="grid grid-cols-2 gap-4">
+<div class="text-center">
+<span class="text-2xl font-bold text-amber-400">$7.12</span>
+<p class="text-neutral-400 text-sm mt-1">WTA (price to sell)</p>
+<p class="text-neutral-500 text-xs">who already has the mug</p>
+</div>
+<div class="text-center">
+<span class="text-2xl font-bold text-sky-400">$2.87</span>
+<p class="text-neutral-400 text-sm mt-1">WTP (price to buy)</p>
+<p class="text-neutral-500 text-xs">who does not have the mug</p>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 mb-4">Why does this matter? Because according to classical economics, WTA and WTP should be equal. Whether you own something or not shouldn't change its objective value. But the brain doesn't work with objective values: it works with losses and gains relative to a reference point.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Endowment Effect</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Loss aversion</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Status quo bias</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">WTA vs WTP</span>
+</div>
+<!-- Alert box -->
+<div class="bg-red-500/10 border border-red-500/20 rounded-xl p-4">
+<p class="text-sm text-neutral-300"><span class="text-red-400 font-semibold">Practical implication:</span> Investors hold on to losing stocks because of the endowment effect. "It's mine now; I can't sell it for less than I paid." The loss is cognitive, not financial.</p>
+</div>
+</section>
+<!-- TOPICO 3 -->
+<section class="mb-10" data-inema-topic="modulo-4-1#topico-3">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<h2 class="text-xl font-bold">Framing and framing</h2>
+</div>
+<p class="text-neutral-300 mb-4">If humans were rational, the way an option is presented should not affect the decision. But it does. Deeply. Thaler and Kahneman demonstrated that framing changes choices even when the options are logically identical.</p>
+<!-- SVG: Framing positivo vs negativo -->
+<div class="rounded-xl border border-dark-700 bg-dark-900/40 p-3 mb-6 overflow-hidden">
+<svg aria-label="The same data, framed in different ways, leads to opposite decisions" class="w-full h-auto" id="m41-framing" role="img" viewbox="0 0 700 180">
+<defs>
+<pattern height="40" id="m41-g2" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#374151" stroke-width="0.5"></path></pattern>
+</defs>
+<rect fill="url(#m41-g2)" height="180" rx="10" width="700"></rect>
+<!-- Dado central -->
+<rect fill="#1f2937" height="50" rx="10" stroke="#6b7280" stroke-width="1.5" width="200" x="250" y="20"></rect>
+<text fill="#d1d5db" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="350" y="42">SAME OBJECTIVE DATA</text>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="350" y="58">600 patients, treatment X</text>
+<!-- Frame positivo -->
+<rect fill="#1f1604" height="65" rx="12" stroke="#fbbf24" stroke-width="2" width="250" x="40" y="95"></rect>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="165" y="116">POSITIVE FRAME</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="165" y="134">"200 people will be saved"</text>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="165" y="150">72% choose this one</text>
+<!-- Frame negativo -->
+<rect fill="#0e1b26" height="65" rx="12" stroke="#38bdf8" stroke-width="2" width="250" x="410" y="95"></rect>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="535" y="116">NEGATIVE FRAME</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="535" y="134">"400 people will die"</text>
+<text fill="#f87171" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="535" y="150">78% reject this one</text>
+<!-- Setas -->
+<line opacity="0.5" stroke="#fbbf24" stroke-width="1.5" x1="300" x2="200" y1="70" y2="95"></line>
+<line opacity="0.5" stroke="#38bdf8" stroke-width="1.5" x1="400" x2="500" y1="70" y2="95"></line>
+</svg>
+</div>
+<p class="text-neutral-300 mb-4">"90% survival rate" and "10% mortality rate" are mathematically identical. But patients, doctors, and jurors react radically differently to each framing. Whoever controls the frame controls the decision.</p>
+<!-- Grid comparativo -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-amber-400 mb-3">✓ Framing works in</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Medical decisions (surgery vs. medication)</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Prices (discount vs. surcharge)</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Public policy (employment vs. unemployment)</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">•</span><span>Negotiations (mutual gain vs. concession)</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-sm font-semibold text-red-400 mb-3">✕ What Homo Economicus would say</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>"Irrelevant, they're the same data"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>"The form shouldn't affect the content"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>"Preferences don't change with words"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">•</span><span>"This violates descriptive invariance"</span></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Framing effect</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Prospect Theory</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Gains vs. losses</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Descriptive invariance</span>
+</div>
+</section>
+<!-- TOPICO 4 -->
+<section class="mb-10" data-inema-topic="modulo-4-1#topico-4">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<h2 class="text-xl font-bold">Limited self-control and temporal discounting</h2>
+</div>
+<p class="text-neutral-300 mb-4">Thaler observed that people consistently promise themselves they’ll do in the future what they can’t manage in the present. You commit to starting the diet on Monday, saving next month, studying during vacation. Your future self is heroic. Your present self wants ice cream.</p>
+<!-- Timeline -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5 mb-6">
+<h4 class="text-sm font-semibold text-amber-400 mb-4">The temporal battle of self-control</h4>
+<div class="space-y-4">
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">JAN</div>
+<div><p class="text-neutral-300 text-sm font-semibold">Promise (future self)</p><p class="text-neutral-400 text-sm">"Starting in February, I'll save 20% of my salary."</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">FEB</div>
+<div><p class="text-neutral-300 text-sm font-semibold">Reality (present self)</p><p class="text-neutral-400 text-sm">"There's Carnival this month; I'll start in March."</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-red-500/20 text-red-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">TEN</div>
+<div><p class="text-neutral-300 text-sm font-semibold">Result</p><p class="text-neutral-400 text-sm">Savings: R$0. Promise renewed for next year.</p></div>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 mb-4">This happens because of the <strong class="text-amber-400">hyperbolic discounting</strong>: the brain discounts the value of future rewards disproportionately. R$100 now is worth more than R$110 tomorrow, but R$100 in 30 days and R$110 in 31 days seem equivalent. The time gap distorts our perception of value.</p>
+<div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 mb-4">
+<p class="text-sm text-neutral-300"><span class="text-amber-400 font-semibold">Thaler called this "planner vs. doer":</span> the planner (prefrontal) sets goals; the doer (limbic) operates in the present. The doer almost always wins.</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Hyperbolic discounting</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Present bias</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Planner vs. doer</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Precommitment</span>
+</div>
+</section>
+<!-- TOPICO 5 -->
+<section class="mb-10" data-inema-topic="modulo-4-1#topico-5">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<h2 class="text-xl font-bold">Predictably Irrational: Dan Ariely</h2>
+</div>
+<p class="text-neutral-300 mb-4">In "Predictably Irrational" (2008), Dan Ariely took the critique a step further: human errors are not only real, they are <strong class="text-amber-400">systematically predictable</strong>. They are not random noise. They are patterns that can be mapped, studied, and exploited (or mitigated).</p>
+<!-- Experiment box -->
+<div class="bg-dark-800 border border-amber-500/30 rounded-xl p-5 mb-6">
+<h4 class="text-sm font-semibold text-amber-400 mb-3">The Economist experiment (Ariely, 2008)</h4>
+<p class="text-neutral-300 text-sm mb-4">Ariely asked MIT students to choose among subscription options for The Economist magazine:</p>
+<div class="space-y-3 mb-4">
+<div class="flex items-center justify-between bg-dark-700/50 rounded-lg p-3">
+<div class="flex items-center space-x-3">
+<span class="w-7 h-7 rounded-full bg-sky-500/20 text-sky-400 text-xs font-bold flex items-center justify-center flex-shrink-0">A</span>
+<span class="text-neutral-300 text-sm">Digital</span>
+</div>
+<span class="text-sky-400 font-semibold text-sm">R$59</span>
+</div>
+<div class="flex items-center justify-between bg-dark-700/50 rounded-lg p-3 border border-red-500/20">
+<div class="flex items-center space-x-3">
+<span class="w-7 h-7 rounded-full bg-red-500/20 text-red-400 text-xs font-bold flex items-center justify-center flex-shrink-0">B</span>
+<span class="text-neutral-300 text-sm">Printed</span>
+</div>
+<span class="text-red-400 font-semibold text-sm">R$125</span>
+</div>
+<div class="flex items-center justify-between bg-dark-700/50 rounded-lg p-3 border border-amber-500/20">
+<div class="flex items-center space-x-3">
+<span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">C</span>
+<span class="text-neutral-300 text-sm">Digital + Print</span>
+</div>
+<span class="text-amber-400 font-semibold text-sm">R$125</span>
+</div>
+</div>
+<p class="text-neutral-300 text-sm">Option B (the print edition at R$125) seems absurd: why would anyone pay the same price for only the print edition? But that's exactly the point. Option B serves as <strong class="text-amber-400">decoy (decoy)</strong>: makes option C seem irresistible. Without option B, most people chose A. With B present, most people switched to C.</p>
+</div>
+<div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 mb-4">
+<p class="text-sm text-neutral-300"><span class="text-amber-400 font-semibold">Ariely's lesson:</span> We don't decide in absolute terms. We decide by comparison. Whoever adds an inferior comparator manipulates the choice.</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Predictable irrationality</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Decoy Effect</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Price anchoring</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Decision by comparison</span>
+</div>
+</section>
+<!-- TOPICO 6 -->
+<section class="mb-10" data-inema-topic="modulo-4-1#topico-6">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<h2 class="text-xl font-bold">Richard Thaler: 2017 Nobel Prize and Legacy</h2>
+</div>
+<p class="text-neutral-300 mb-4">In 2017, Richard Thaler received the Nobel Prize in Economics “for his contributions to behavioral economics.” It was formal recognition that economics needed real humans, not rational robots, in its models.</p>
+<!-- Timeline historica -->
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5 mb-6">
+<h4 class="text-sm font-semibold text-amber-400 mb-4">The story of the fall of Homo Economicus</h4>
+<div class="space-y-4">
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">1979</div>
+<div><p class="text-neutral-300 text-sm"><strong>Kahneman &amp; Tversky:</strong> Prospect Theory. Humans weigh losses ~2x more than gains.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">1980</div>
+<div><p class="text-neutral-300 text-sm"><strong>Thaler:</strong> publishes "Toward a Positive Theory of Consumer Choice." Academic heresy at the time.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2002</div>
+<div><p class="text-neutral-300 text-sm"><strong>Kahneman</strong> receives the Nobel Prize in Economics (as a psychologist). First sign of change.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2008</div>
+<div><p class="text-neutral-300 text-sm"><strong>Thaler &amp; Sunstein:</strong> "Nudge". <strong>Ariely:</strong> "Predictably Irrational." Behavioral economics reaches the general public.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2010</div>
+<div><p class="text-neutral-300 text-sm"><strong>UK BIT:</strong> first government Nudge Unit. Public policy based on behavioral evidence.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-16 h-8 rounded bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2017</div>
+<div><p class="text-neutral-300 text-sm"><strong>Thaler:</strong> Nobel Prize in Economics. "Econs vs Humans" becomes a paradigm.</p></div>
+</div>
+</div>
+</div>
+<p class="text-neutral-300 mb-4">Thaler distinguished two types of agents in his models: <strong class="text-amber-400">Econs</strong> (the rational agents of classical theory) and <strong class="text-amber-400">Humans</strong> (how people actually behave). His book "Misbehaving" (2015) documents how the economics profession resisted for decades admitting that Humans don't behave like Econs.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Behavioral economics</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Econs vs Humans</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Libertarian paternalism</span>
+<span class="bg-amber-500/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full">Misbehaving</span>
+</div>
+</section>
+<!-- RESUMO -->
+<section class="mb-10">
+<div class="bg-dark-800 border border-amber-500/30 rounded-xl p-6">
+<h3 class="text-lg font-bold text-amber-400 mb-4">Module 4.1 Summary</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>Homo Economicus never existed. Humans are not rational, do not have stable preferences, and do not maximize utility.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>Endowment effect: owning something changes its perceived value. Loss aversion outweighs the attraction of gains.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>Framing: the same information, presented in different ways, leads to opposite decisions.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>Self-control: the present self beats the future self. Hyperbolic discounting distorts temporal value.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>Ariely: irrationality is predictable. Decoys and comparisons systematically manipulate choices.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-0.5">✓</span><span>Thaler (2017 Nobel Prize): established behavioral economics as a central field in the discipline.</span></li>
+</ul>
+</div>
+</section>
+<!-- NAVEGACAO -->
+<div class="flex items-center justify-between pt-8 border-t border-dark-700">
+<a class="text-neutral-400 hover:text-amber-400 transition-colors text-sm font-medium" href="index.html">← Track 4</a>
+<a class="text-amber-400 hover:text-amber-300 transition-colors text-sm font-medium" href="modulo-4-2.html">4.2 Nudge Theory →</a>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="border-t border-dark-700 py-8"><div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500"><a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mind, Power and Machine · 2026</div></footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

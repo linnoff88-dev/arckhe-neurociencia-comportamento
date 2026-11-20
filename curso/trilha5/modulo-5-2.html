@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>Módulo 5.2 — Consciência: o Problema Difícil | MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{"course":"neurociencia-comportamento","tracks":[{"n":"1","title":"O Cérebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heurísticas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonância cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},{"n":"2","title":"Influência Social","modules":[{"id":"2-1","title":"Conformidade","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulação social","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},{"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},{"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},{"n":"5","title":"Filosofia da Mente e Consciência","modules":[{"id":"5-1","title":"Livre-arbítrio: Libet","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciência: problema difícil","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiótica: Bruzzo","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},{"n":"6","title":"IA, Vieses e Ética","modules":[{"id":"6-1","title":"Vieses algorítmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistêmicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Ética e espaço humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}]}
+</script>
+<style>
+body{font-family:'Inter',system-ui,sans-serif}.topic-explanation{display:none}.topic-explanation.active{display:block}
+html:not(.dark) body{background-color:#f8fafc}html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-teal-400{color:#0d9488}html:not(.dark) .bg-teal-500\/20{background-color:rgba(13,148,136,0.12)}html:not(.dark) .border-teal-500\/30{border-color:rgba(13,148,136,0.25)}html:not(.dark) .hover\:bg-teal-500\/10:hover{background-color:rgba(13,148,136,0.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,0.95)}
+html:not(.dark) .text-emerald-400{color:#059669}html:not(.dark) .text-blue-400{color:#2563eb}html:not(.dark) .text-purple-400{color:#7c3aed}html:not(.dark) .text-amber-400{color:#92400e}html:not(.dark) .text-rose-400{color:#9f1239}
+html:not(.dark) .hover\:bg-emerald-500\/10:hover{background-color:rgba(5,150,105,0.08)}html:not(.dark) .hover\:bg-blue-500\/10:hover{background-color:rgba(37,99,235,0.08)}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,0.08)}html:not(.dark) .hover\:bg-amber-500\/10:hover{background-color:rgba(217,119,6,0.08)}html:not(.dark) .hover\:bg-rose-500\/10:hover{background-color:rgba(225,29,72,0.08)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+html:not(.dark) svg[role="img"]{filter:saturate(.82) brightness(.96)}
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha5/modulo-5-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha5/modulo-5-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha5/modulo-5-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-5-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha5/modulo-5-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha5/modulo-5-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Cérebro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economia</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-teal-400 bg-teal-500/10" href="../trilha5/index.html">T5 Filosofia</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 IA+Ética</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()" title="Alternar tema">
+<span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="5-2">
+<!-- BREADCRUMB -->
+<div class="flex items-center space-x-2 text-sm text-neutral-500 mb-8">
+<a class="hover:text-teal-400 transition-colors" href="../../index.html">Início</a>
+<span>/</span>
+<a class="hover:text-teal-400 transition-colors" href="index.html">Trilha 5</a>
+<span>/</span>
+<span class="text-neutral-300">Módulo 5.2</span>
+</div>
+<!-- HEADER -->
+<section class="mb-10">
+<div class="bg-gradient-to-r from-teal-900/30 via-dark-800 to-dark-800 rounded-2xl p-8 border border-teal-500/30">
+<div class="inline-flex items-center space-x-2 bg-teal-500/20 border border-teal-500/30 rounded-full px-4 py-1.5 mb-4">
+<span class="text-teal-400 text-sm font-semibold">MÓDULO 5.2</span>
+</div>
+<h1 class="text-2xl font-bold mb-2">Consciência: o Problema Difícil</h1>
+<p class="text-neutral-400 mb-4">David Chalmers (1995) · Qualia · Teorias da consciência</p>
+<div class="flex items-center space-x-6 text-sm text-neutral-500">
+<span>6 tópicos</span>
+<span>~30 min</span>
+<span>Avançado</span>
+</div>
+</div>
+</section>
+<!-- SVG: Problemas fáceis vs Problema difícil -->
+<div class="rounded-2xl border border-teal-500/30 bg-dark-900/40 p-3 sm:p-4 mb-10 overflow-hidden">
+<svg aria-label="Diagrama comparativo: problemas fáceis da consciência (percepção, atenção, memória, linguagem) versus o problema difícil (experiência subjetiva e qualia)" class="w-full h-auto" role="img" viewbox="0 0 800 320">
+<defs>
+<filter id="m52-glow"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<filter id="m52-glow-soft"><fegaussianblur result="blur" stddeviation="3"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="40" id="m52-grid" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#374151" stroke-width="0.5"></path></pattern>
+<lineargradient id="m52-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.3"></stop><stop offset="100%" stop-color="#38bdf8" stop-opacity="0.3"></stop></lineargradient>
+</defs>
+<rect fill="url(#m52-grid)" height="320" rx="12" width="800"></rect>
+<!-- Título: Problemas Fáceis -->
+<text fill="#14b8a6" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="200" y="35">PROBLEMAS FÁCEIS</text>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="200" y="50">(mecanismos explicáveis)</text>
+<!-- Caixa: Percepção -->
+<rect fill="#0c1f1c" height="50" rx="10" stroke="#14b8a6" stroke-width="1.5" width="140" x="40" y="65"></rect>
+<text fill="#2dd4bf" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="110" y="87">PERCEPÇÃO</text>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="110" y="102">discriminar estímulos</text>
+<!-- Caixa: Atenção -->
+<rect fill="#0c1f1c" height="50" rx="10" stroke="#14b8a6" stroke-width="1.5" width="140" x="200" y="65"></rect>
+<text fill="#2dd4bf" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="270" y="87">ATENÇÃO</text>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="270" y="102">foco e seleção</text>
+<!-- Caixa: Memória -->
+<rect fill="#0c1f1c" height="50" rx="10" stroke="#14b8a6" stroke-width="1.5" width="140" x="40" y="130"></rect>
+<text fill="#2dd4bf" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="110" y="152">MEMÓRIA</text>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="110" y="167">armazenar e recuperar</text>
+<!-- Caixa: Linguagem -->
+<rect fill="#0c1f1c" height="50" rx="10" stroke="#14b8a6" stroke-width="1.5" width="140" x="200" y="130"></rect>
+<text fill="#2dd4bf" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="270" y="152">LINGUAGEM</text>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="270" y="167">produção e compreensão</text>
+<!-- Caixa: Controle motor -->
+<rect fill="#0c1f1c" height="50" rx="10" stroke="#14b8a6" stroke-width="1.5" width="140" x="40" y="195"></rect>
+<text fill="#2dd4bf" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="110" y="217">CONTROLE MOTOR</text>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="110" y="232">planejar e executar ações</text>
+<!-- Caixa: Integração -->
+<rect fill="#0c1f1c" height="50" rx="10" stroke="#14b8a6" stroke-width="1.5" width="140" x="200" y="195"></rect>
+<text fill="#2dd4bf" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="270" y="217">INTEGRAÇÃO</text>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="270" y="232">unificar informação</text>
+<!-- Separador -->
+<line opacity="0.5" stroke="#374151" stroke-dasharray="6,4" stroke-width="1.5" x1="400" x2="400" y1="30" y2="290"></line>
+<text fill="#6b7280" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="400" y="305">gap explicativo</text>
+<!-- Título: Problema Difícil -->
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="600" y="35">PROBLEMA DIFÍCIL</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="600" y="50">(nenhuma explicação mecanicista)</text>
+<!-- Caixa central com glow: Experiência subjetiva -->
+<ellipse cx="600" cy="160" fill="url(#m52-grad)" filter="url(#m52-glow-soft)" opacity="0.4" rx="150" ry="90" stroke="none"></ellipse>
+<rect fill="#0c1f1c" filter="url(#m52-glow)" height="150" rx="20" stroke="#38bdf8" stroke-width="2.5" width="240" x="480" y="85"></rect>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="14" font-weight="800" text-anchor="middle" x="600" y="120">EXPERIÊNCIA</text>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="14" font-weight="800" text-anchor="middle" x="600" y="140">SUBJETIVA</text>
+<line opacity="0.3" stroke="#38bdf8" stroke-width="0.5" x1="520" x2="680" y1="155" y2="155"></line>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="600" y="175">qualia</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="600" y="192">"como é" ver vermelho</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="600" y="209">"como é" sentir dor</text>
+<text fill="#bae6fd" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="600" y="226">por que existe experiência?</text>
+<!-- Label inferior -->
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="9" opacity="0.7" text-anchor="middle" x="200" y="275">respondíveis por mecanismos neurais</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" opacity="0.7" text-anchor="middle" x="600" y="265">irredutível a mecanismos</text>
+</svg>
+</div>
+<!-- TÓPICO 1 -->
+<section class="mb-12" data-inema-topic="modulo-5-2#topico-1" id="topico-1">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<h2 class="text-2xl font-bold">Problema fácil vs problema difícil</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-2-t1-p1">Em 1995, o filósofo australiano David Chalmers apresentou na conferência "Toward a Science of Consciousness" em Tucson, Arizona, uma distinção que reorganizou todo o campo da filosofia da mente. Ele separou os problemas da consciência em duas categorias: os "fáceis" e o "difícil". Os fáceis, apesar do nome, são enormemente complexos: explicar como o cérebro discrimina estímulos, integra informação de diferentes modalidades, controla comportamento, dirige atenção. São "fáceis" porque, em princípio, aceitam explicação em termos de mecanismos computacionais e neuronais.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-2-t1-p2">O problema difícil é de outra natureza: por que processos físicos no cérebro geram experiência subjetiva? Por que existe algo que "é como" ver vermelho, sentir dor, saborear chocolate? Um zumbi filosófico, idêntico a nós em cada processo neural e comportamental, mas sem experiência interior, parece logicamente concebível. Se é concebível, então a experiência subjetiva não se segue necessariamente dos processos físicos, e nenhuma explicação mecanicista será suficiente.</p>
+<!-- Tip box -->
+<div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-teal-400 font-semibold mb-1">Thomas Nagel (1974)</p>
+<p class="text-neutral-300 text-sm">Antes de Chalmers, Nagel formulou a questão em "What Is It Like to Be a Bat?": mesmo conhecendo toda a neurociência do morcego, nunca saberíamos "como é" experienciar ecolocalização. O acesso à experiência subjetiva de outro ser é, em princípio, impossível a partir de dados objetivos.</p>
+</div>
+<!-- Conceitos-chave grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Hard Problem</p>
+<p class="text-neutral-400 text-xs mt-1">Chalmers (1995)</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Qualia</p>
+<p class="text-neutral-400 text-xs mt-1">Qualidade subjetiva</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Zumbi filosófico</p>
+<p class="text-neutral-400 text-xs mt-1">Sem experiência</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Gap explicativo</p>
+<p class="text-neutral-400 text-xs mt-1">Mecanismo vs sentir</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="mb-12" data-inema-topic="modulo-5-2#topico-2" id="topico-2">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<h2 class="text-2xl font-bold">Qualia: o que é experiência subjetiva</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-2-t2-p1">Os problemas fáceis da consciência envolvem explicar as funções e capacidades associadas à experiência consciente. Como o sistema visual processa comprimentos de onda e os classifica como "vermelho"? Como a atenção seleciona um estímulo entre muitos? Como a memória de trabalho mantém informação ativa? Essas questões são difíceis na prática, mas metodologicamente "fáceis": podemos investigá-las com neuroimagem, modelos computacionais, lesões cerebrais, eletrofisiologia.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-2-t2-p2">O problema difícil é de outra categoria. Mesmo explicando completamente como o cérebro processa a cor vermelha (fotorreceptores, V1, V4, integração), sobra a questão: por que esse processamento é acompanhado de uma EXPERIÊNCIA de vermelho? Por que não ocorre "no escuro", sem ninguém dentro? A ciência pode, em princípio, mapear cada neurônio envolvido na percepção do vermelho, mas o mapa não contém a experiência. É como descrever cada molécula de água sem que a descrição esteja molhada.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-teal-400 font-semibold text-sm mb-3">Problemas fáceis (exemplos)</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Como o cérebro discrimina comprimentos de onda</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Como a atenção filtra estímulos concorrentes</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Como memórias são consolidadas durante o sono</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Como o sistema motor planeja e executa movimentos</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-red-400 font-semibold text-sm mb-3">O problema difícil</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>POR QUE ver vermelho gera experiência subjetiva</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>POR QUE dor tem qualidade de sofrimento</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>POR QUE café tem gosto (não apenas reação química)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>POR QUE existe "alguém dentro" sentindo tudo isso</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-teal-400 font-semibold mb-1">Analogia fundamental</p>
+<p class="text-neutral-300 text-sm">Imagine um neurocientista do futuro que mapeou cada sinapse, cada potencial de ação, cada neurotransmissor envolvido quando alguém vê vermelho. Ela sabe TUDO sobre o mecanismo. Mas saberia "como é" ver vermelho se nunca tivesse visto? A descrição completa do mecanismo não entrega a experiência.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Funcional</p>
+<p class="text-neutral-400 text-xs mt-1">Explicável por mecanismo</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Fenomenal</p>
+<p class="text-neutral-400 text-xs mt-1">Experiência subjetiva</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">700nm</p>
+<p class="text-neutral-400 text-xs mt-1">Comprimento de onda</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Vermelhidão</p>
+<p class="text-neutral-400 text-xs mt-1">Qualidade sentida</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="mb-12" data-inema-topic="modulo-5-2#topico-3" id="topico-3">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<h2 class="text-2xl font-bold">Fisicalismo e eliminativismo</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-2-t3-p1">Daniel Dennett, Patricia e Paul Churchland representam uma resposta radical ao problema difícil: ele não existe. O fisicalismo eliminativo argumenta que consciência, qualia e experiência subjetiva, como os entendemos intuitivamente, são conceitos equivocados de uma "psicologia popular" (folk psychology) que será eliminada pelo avanço da neurociência, assim como o "flogisto" foi eliminado pela química e o "élan vital" pela biologia molecular.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-2-t3-p2">Para Dennett, o que chamamos de qualia são, na verdade, disposições funcionais complexas. Quando digo que "vejo vermelho", estou fazendo um relato verbal sobre um estado cerebral, mas não há uma "tela interna" onde o vermelho aparece para um "espectador interior". Isso é o teatro cartesiano: uma ilusão. O que existe são processos distribuídos que geram comportamento verbal e discriminação de estímulos. Quando a neurociência completar seu trabalho, o "problema difícil" se dissolverá como pseudoproblema.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-teal-400 font-semibold text-sm mb-3">Argumentos a favor</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Precedente histórico: élan vital, flogisto dissolvidos</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Não postula entidades extras além do cérebro</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Compatível com método científico padrão</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Introspecção é sabidamente pouco confiável</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-red-400 font-semibold text-sm mb-3">Críticas</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Nega o que é mais imediato: a experiência</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>"Explicar" eliminando o explanandum</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Dor "não existe" parece absurdo</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Posição minoritária entre filósofos</span></li>
+</ul>
+</div>
+</div>
+<!-- Blue research box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5 mb-6">
+<p class="text-blue-400 font-semibold text-sm mb-1">Dennett: "Consciousness Explained" (1991)</p>
+<p class="text-neutral-300 text-sm">Dennett propõe o modelo de "Múltiplas Versões": não há um ponto único no cérebro onde "tudo se junta" para produzir consciência. Há múltiplos processos paralelos gerando versões narrativas, sem teatro central. Os críticos chamam o livro, ironicamente, de "Consciousness Explained Away".</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Eliminativismo</p>
+<p class="text-neutral-400 text-xs mt-1">Conceitos folk são falsos</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Dennett</p>
+<p class="text-neutral-400 text-xs mt-1">Múltiplas Versões</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Churchlands</p>
+<p class="text-neutral-400 text-xs mt-1">Neurophilosophy</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Teatro cartesiano</p>
+<p class="text-neutral-400 text-xs mt-1">Ilusão criticada</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="mb-12" data-inema-topic="modulo-5-2#topico-4" id="topico-4">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<h2 class="text-2xl font-bold">Teoria da Informação Integrada (Tononi)</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-2-t4-p1">Giulio Tononi, neurocientista italiano da Universidade de Wisconsin, propôs a Teoria da Informação Integrada (IIT, Integrated Information Theory) como uma tentativa de formalizar matematicamente a consciência. A ideia central: consciência é informação integrada de forma irredutivelmente unificada. Um sistema é consciente na medida em que integra informação que não pode ser reduzida a suas partes. Tononi define uma quantidade, Phi, que mede o grau de integração informacional de um sistema.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-2-t4-p2">A IIT faz previsões ousadas. Segundo a teoria, consciência existe em graus: um termopar teria Phi minúsculo (quase zero), um cérebro humano teria Phi enorme. Um computador digital clássico, por mais poderoso, teria Phi baixo porque seus transistores operam de forma modular e decomposta. Isso significa que, para a IIT, uma simulação perfeita do cérebro em silício NÃO seria consciente, porque a arquitetura não integra informação da mesma forma. Posição controversa, mas testável.</p>
+<!-- Tip box -->
+<div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-teal-400 font-semibold mb-1">Phi: a medida da consciência</p>
+<p class="text-neutral-300 text-sm">Phi quantifica a informação que um sistema gera "acima e além" de suas partes. Se você pode dividir um sistema em duas metades sem perda de informação, Phi é zero: o sistema não está integrado. Quanto mais irredutível a integração, maior Phi, maior a consciência. O cérebro humano, com seus 86 bilhões de neurônios massivamente interconectados, é o sistema com maior Phi conhecido.</p>
+</div>
+<!-- Timeline -->
+<div class="space-y-4 mb-6">
+<h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide">Evolução das teorias da consciência</h4>
+<div class="relative pl-6 border-l-2 border-teal-500/30 space-y-6">
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-teal-500/30 border-2 border-teal-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-teal-400">1974:</strong> Nagel: "What Is It Like to Be a Bat?"</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-teal-500/30 border-2 border-teal-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-teal-400">1988:</strong> Baars propõe o Espaço de Trabalho Global</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-teal-500/30 border-2 border-teal-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-teal-400">1995:</strong> Chalmers formula o "problema difícil"</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-teal-500/30 border-2 border-teal-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-teal-400">2004:</strong> Tononi publica a IIT (Phi como medida)</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-teal-500/30 border-2 border-teal-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-teal-400">2023:</strong> COGITATE: teste adversarial entre IIT e GWT, resultados inconclusivos</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">IIT</p>
+<p class="text-neutral-400 text-xs mt-1">Informação integrada</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Phi</p>
+<p class="text-neutral-400 text-xs mt-1">Medida quantitativa</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Tononi</p>
+<p class="text-neutral-400 text-xs mt-1">U. Wisconsin</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Graus</p>
+<p class="text-neutral-400 text-xs mt-1">Consciência escalar</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="mb-12" data-inema-topic="modulo-5-2#topico-5" id="topico-5">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<h2 class="text-2xl font-bold">Espaço de Trabalho Global (Baars)</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-2-t5-p1">Bernard Baars propôs em 1988 a Global Workspace Theory (GWT): consciência emerge quando informação processada por módulos especializados (visão, audição, memória, emoção) é "transmitida" para um espaço de trabalho global acessível a todos os módulos simultaneamente. Esse espaço funciona como um "holofote" que ilumina informação selecionada, tornando-a disponível para todo o cérebro, permitindo flexibilidade comportamental e integração.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-2-t5-p2">Stanislas Dehaene e Jean-Pierre Changeux desenvolveram a versão neurocientífica da GWT, identificando o global workspace com redes fronto-parietais que "transmitem" informação via conexões de longa distância. Quando um estímulo cruza o limiar de acesso ao workspace, há uma "ignição" neural: ativação massiva e sustentada visível em EEG. Estímulos subliminares ativam módulos locais, mas não "acendem" o workspace: são processados mas não se tornam conscientes. A teoria explica bem a diferença entre processamento inconsciente e consciente, mas seus críticos argumentam que ela descreve o que a consciência faz, não o que ela é.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-teal-400 font-semibold text-sm mb-3">Pontos fortes da GWT</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Explica diferença entre processos conscientes e inconscientes</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Prediz assinaturas neurais da consciência (ignição)</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Compatível com dados de neuroimagem</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Testável empiricamente</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-red-400 font-semibold text-sm mb-3">Limitações da GWT</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Explica a função, não a experiência subjetiva</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Não resolve o "porquê" da experiência</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Ignição poderia ocorrer "no escuro" (sem experiência)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Descreve correlatos, não identidade</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-teal-400 font-semibold mb-1">IIT vs GWT: o teste COGITATE</p>
+<p class="text-neutral-300 text-sm">Em 2023, o projeto COGITATE realizou o primeiro teste "adversarial" entre IIT e GWT, com protocolos desenhados por defensores de ambas as teorias. Os resultados foram parcialmente favoráveis a ambas e a nenhuma: cada teoria previu corretamente alguns achados, mas falhou em outros. O debate continua aberto.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">GWT</p>
+<p class="text-neutral-400 text-xs mt-1">Espaço de Trabalho Global</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Ignição</p>
+<p class="text-neutral-400 text-xs mt-1">Ativação massiva</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Dehaene</p>
+<p class="text-neutral-400 text-xs mt-1">Versão neurocientífica</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Broadcast</p>
+<p class="text-neutral-400 text-xs mt-1">Transmissão ampla</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="mb-12" data-inema-topic="modulo-5-2#topico-6" id="topico-6">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<h2 class="text-2xl font-bold">IA, consciência e o limite da máquina</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-2-t6-p1">A inteligência artificial contemporânea resolve brilhantemente os "problemas fáceis": reconhecimento de padrões, processamento de linguagem, classificação de estímulos, geração de texto coerente, raciocínio sobre problemas complexos. Modelos de linguagem como GPT e Claude produzem respostas que, em muitos contextos, são indistinguíveis de respostas humanas. Mas são conscientes? Há algo que "é como" ser um LLM processando tokens?</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-2-t6-p2">Bruzzo aponta que a IA evidencia a distinção de Chalmers com clareza brutal: podemos criar sistemas que processam e geram texto coerente, reconhecem emoções, compõem música, mas a questão de se eles SENTEM algo permanece completamente aberta. Sem resolver o problema difícil para humanos, não temos como sequer formular a pergunta para máquinas. O difícil permanece humano. Ou talvez nem humano: permanece sem solução para qualquer ente, biológico ou artificial.</p>
+<!-- Alert box -->
+<div class="bg-red-500/10 border border-red-500/30 rounded-xl p-5 mb-6">
+<p class="text-red-400 font-semibold text-sm mb-1">Atenção: o problema da atribuição</p>
+<p class="text-neutral-300 text-sm">Tendemos a atribuir consciência a qualquer sistema que se comporte "como se" fosse consciente (animismo tecnológico, ver Módulo 5.3). Mas comportamento inteligente NÃO implica experiência subjetiva. Um termostato "detecta" temperatura e "decide" ligar o aquecedor, mas ninguém supõe que ele sente frio. A sofisticação do comportamento não fecha o gap.</p>
+</div>
+<!-- Tip box -->
+<div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-teal-400 font-semibold mb-1">Teste de Turing vs consciência</p>
+<p class="text-neutral-300 text-sm">O teste de Turing mede se uma máquina pode se comportar de forma indistinguível de um humano em conversa. Mas ele testa comportamento, não experiência. Um sistema pode passar no teste de Turing sem ter um miligrama de experiência subjetiva. Turing sabia disso: ele contornou a questão da consciência deliberadamente.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">LLMs</p>
+<p class="text-neutral-400 text-xs mt-1">Processam, mas sentem?</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Turing</p>
+<p class="text-neutral-400 text-xs mt-1">Comportamento, não mente</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Atribuição</p>
+<p class="text-neutral-400 text-xs mt-1">Projetamos consciência</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Gap</p>
+<p class="text-neutral-400 text-xs mt-1">Permanece aberto</p>
+</div>
+</div>
+</section>
+<!-- RESUMO DO MÓDULO -->
+<section class="bg-dark-800 border border-teal-500/30 rounded-xl p-6 sm:p-8 mb-8">
+<h2 class="text-xl font-bold mb-4 text-teal-400">Resumo do Módulo 5.2</h2>
+<ul class="space-y-3 text-neutral-300 text-sm mb-6">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Chalmers (1995) distinguiu problemas "fáceis" (mecanismos) do "difícil" (experiência subjetiva)</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Qualia: as qualidades subjetivas da experiência ("como é" ver vermelho, sentir dor)</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Fisicalismo eliminativo (Dennett): consciência como a entendemos é ilusão a ser dissolvida</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>IIT (Tononi): consciência = informação integrada, mensurável por Phi, existe em graus</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>GWT (Baars/Dehaene): consciência como transmissão global de informação entre redes neurais</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>IA resolve problemas fáceis mas não toca no difícil: processar não implica sentir</span></li>
+</ul>
+<a class="inline-flex items-center justify-start bg-teal-500/20 border border-teal-500/30 text-teal-400 px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-teal-500/30 transition-colors" href="modulo-5-3.html">Próximo: Semiótica da Mente: Bruzzo →</a>
+</section>
+<!-- NAV INFERIOR -->
+<div class="flex items-center justify-between pt-8 border-t border-dark-700">
+<a class="text-neutral-400 hover:text-teal-400 transition-colors text-sm font-medium" href="modulo-5-1.html">← 5.1 Livre-arbítrio</a>
+<a class="text-teal-400 hover:text-teal-300 transition-colors text-sm font-medium" href="modulo-5-3.html">5.3 Semiótica →</a>
+</div>
+</main>
+<footer class="border-t border-dark-700 py-8">
+<div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500">
+<a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mente, Poder e Máquina · 2026
+  </div>
+</footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

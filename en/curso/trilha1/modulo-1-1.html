@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>Module 1.1 — System 1 and System 2 | MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "neurociencia-comportamento",
+  "tracks": [
+    {"n":"1","title":"O Cérebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heurísticas: os atalhos que enganam","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonância cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},
+    {"n":"2","title":"Influência Social e Poder do Grupo","modules":[{"id":"2-1","title":"Conformidade: por que seguimos o grupo","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência à autoridade","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulação social e dark patterns","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},
+    {"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina e sistema de recompensa","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala, medo e decisão emocional","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},
+    {"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"A crítica ao Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory: arquitetura de escolhas","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental e paradoxo da escolha","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},
+    {"n":"5","title":"Filosofia da Mente e Consciência","modules":[{"id":"5-1","title":"Livre-arbítrio: Libet","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciência: o problema difícil","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiótica da mente: Bruzzo","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},
+    {"n":"6","title":"IA, Vieses e Ética Comportamental","modules":[{"id":"6-1","title":"Vieses algorítmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistêmicas e polarização","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Ética, tecnologia e o espaço humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}
+  ]
+}
+</script>
+<style>
+body { font-family: 'Inter', system-ui, sans-serif; }
+.topic-explanation { display: none; }
+.topic-explanation.active { display: block; }
+html:not(.dark) body { background-color: #f8fafc; }
+html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+html:not(.dark) .text-neutral-100 { color: #111827; }
+html:not(.dark) .text-neutral-300 { color: #4b5563; }
+html:not(.dark) .text-neutral-400 { color: #6b7280; }
+html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+html:not(.dark) .text-emerald-400 { color: #059669; }
+html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+html:not(.dark) .text-primary { color: #a16207; }
+html:not(.dark) .text-sky-400 { color: #0369a1; }
+html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+.dark .border-dark-600 { border-color: #374151; }
+.dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha1/modulo-1-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha1/modulo-1-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha1/modulo-1-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-1-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/modulo-1-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-emerald-400 bg-emerald-500/10" href="../trilha1/index.html">T1 Brain</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economics</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html">T5 Philosophy</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 AI+Ethics</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()" title="Switch theme">
+<span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="1-1">
+<!-- BREADCRUMB -->
+<div class="flex items-center space-x-2 text-sm text-neutral-500 mb-8">
+<a class="hover:text-emerald-400 transition-colors" href="../../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-emerald-400 transition-colors" href="index.html">Track 1</a>
+<span>/</span>
+<span class="text-neutral-300">Module 1.1</span>
+</div>
+<!-- HEADER -->
+<section class="mb-10">
+<div class="bg-gradient-to-r from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl p-8 border border-emerald-500/30">
+<div class="inline-flex items-center space-x-2 bg-emerald-500/20 border border-emerald-500/30 rounded-full px-4 py-1.5 mb-4">
+<span class="text-emerald-400 text-sm font-semibold">MODULE 1.1</span>
+</div>
+<h1 class="text-2xl font-bold mb-2">System 1 and System 2: Two Ways of Thinking</h1>
+<p class="text-neutral-400 mb-4">Daniel Kahneman (2011) · Fast Thinking vs. Slow Thinking</p>
+<div class="flex items-center space-x-6 text-sm text-neutral-500">
+<span>6 topics</span>
+<span>~30 min</span>
+<span>Foundation</span>
+</div>
+</div>
+</section>
+<!-- SVG: Dual processing model -->
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-10 overflow-hidden">
+<svg aria-label="Dual model: a stimulus enters the brain, System 1 processes it automatically, and System 2 can be engaged for deliberate verification" class="w-full h-auto" role="img" viewbox="0 0 800 320">
+<defs>
+<filter id="m11-glow"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="m11-arr" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#34d399" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<marker id="m11-arr-c" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#38bdf8" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<pattern height="40" id="m11-grid" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#374151" stroke-width="0.5"></path></pattern>
+</defs>
+<rect fill="url(#m11-grid)" height="320" rx="12" width="800"></rect>
+<!-- Estímulo -->
+<circle cx="80" cy="160" fill="#0e2018" filter="url(#m11-glow)" r="45" stroke="#34d399" stroke-width="2"></circle>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="80" y="153">STIMULUS</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="80" y="170">sensory</text>
+<!-- S1 -->
+<rect fill="#0e2018" filter="url(#m11-glow)" height="120" rx="18" stroke="#10b981" stroke-width="2" width="180" x="200" y="40"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="290" y="70">SYSTEM 1</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="290" y="90">Automatic</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="290" y="105">Emotional</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="290" y="120">Parallel</text>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="290" y="145">~95% of decisions</text>
+<!-- S2 -->
+<rect fill="#0e1b26" height="100" rx="18" stroke="#38bdf8" stroke-width="2" width="180" x="200" y="200"></rect>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="290" y="230">SYSTEM 2</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="290" y="250">Deliberate</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="290" y="265">Conscious</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="290" y="280">Serial</text>
+<!-- Arrows -->
+<line marker-end="url(#m11-arr)" opacity="0.5" stroke="#34d399" stroke-width="2" x1="125" x2="198" y1="140" y2="100"></line>
+<line marker-end="url(#m11-arr-c)" opacity="0.5" stroke="#38bdf8" stroke-width="2" x1="125" x2="198" y1="180" y2="240"></line>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="8" opacity="0.8" x="155" y="95">fast</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="8" opacity="0.8" x="148" y="215">slow</text>
+<!-- S1 → S2 fallback -->
+<line marker-end="url(#m11-arr-c)" opacity="0.6" stroke="#f59e0b" stroke-dasharray="4,3" stroke-width="1.5" x1="290" x2="290" y1="160" y2="198"></line>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="8" opacity="0.8" x="305" y="185">failure?</text>
+<!-- Resultado -->
+<rect fill="#0e2018" height="80" rx="16" stroke="#34d399" stroke-width="2" width="150" x="460" y="70"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="535" y="100">RESPONSE</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="535" y="118">quick</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="535" y="135">intuition, reflex</text>
+<rect fill="#0e1b26" height="80" rx="16" stroke="#38bdf8" stroke-width="2" width="150" x="460" y="195"></rect>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="535" y="225">RESPONSE</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="535" y="243">verified</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="535" y="260">analysis, calculation</text>
+<line marker-end="url(#m11-arr)" opacity="0.5" stroke="#34d399" stroke-width="2" x1="380" x2="458" y1="100" y2="105"></line>
+<line marker-end="url(#m11-arr-c)" opacity="0.5" stroke="#38bdf8" stroke-width="2" x1="380" x2="458" y1="250" y2="240"></line>
+<!-- Vieses label -->
+<rect fill="#1f2937" height="50" opacity="0.7" rx="10" stroke="#f87171" stroke-width="1.5" width="130" x="640" y="100"></rect>
+<text fill="#f87171" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="705" y="122">BIASES</text>
+<text fill="#fca5a5" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="705" y="138">S1 errors</text>
+<line opacity="0.4" stroke="#f87171" stroke-dasharray="4,3" stroke-width="1.5" x1="610" x2="638" y1="115" y2="120"></line>
+</svg>
+</div>
+<!-- TÓPICO 1 -->
+<section class="mb-12" data-inema-topic="modulo-1-1#topico-1" id="topico-1">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<h2 class="text-2xl font-bold">The dual-process model</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-1-t1-p1">Daniel Kahneman, an Israeli-American psychologist born in Tel Aviv in 1934, received the Nobel Prize in Economics in 2002, despite never having studied economics. Together with Amos Tversky, he developed over decades the theory that revolutionized our understanding of how the human brain makes decisions.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-1-t1-p2">The dual-process model proposes that the human mind operates in two fundamentally different modes of processing. These are not separate brain regions, but two operating patterns that compete and collaborate to produce every decision, judgment, and behavior we make.</p>
+<!-- Tip box -->
+<div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-emerald-400 font-semibold mb-1">Main reference</p>
+<p class="text-neutral-300 text-sm">"Thinking, Fast and Slow" (Thinking, Fast and Slow, 2011) synthesizes more than 40 years of Kahneman and Tversky's research on judgment and decision-making under uncertainty.</p>
+</div>
+<!-- Conceitos-chave grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Dual Process</p>
+<p class="text-neutral-400 text-xs mt-1">Two cognitive systems</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Automaticity</p>
+<p class="text-neutral-400 text-xs mt-1">Effortless response</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Attention</p>
+<p class="text-neutral-400 text-xs mt-1">Limited resource</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">2002 Nobel Prize</p>
+<p class="text-neutral-400 text-xs mt-1">Psychology in economics</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="mb-12" data-inema-topic="modulo-1-1#topico-2" id="topico-2">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<h2 class="text-2xl font-bold">System 1: Fast Thinking</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-1-t2-p1">System 1 operates automatically, quickly, in parallel, and unconsciously. It processes visual patterns in milliseconds, reads facial expressions, detects threats, and generates the intuitions that guide most of our daily behavior. It works through emotional associations and pattern memory.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-1-t2-p2">Approximately 95% of everyday decisions are made by System 1 without our awareness. From choosing what to eat for lunch to judging whether someone seems trustworthy, S1 provides ready-made answers before deliberate thought has a chance to take part.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-emerald-400 font-semibold text-sm mb-3">What System 1 does well</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Recognizes faces in milliseconds</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Detects threats and reacts before conscious awareness</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Processes language and emotions automatically</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Drives a car on a familiar route</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-red-400 font-semibold text-sm mb-3">Where System 1 fails</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Complex mathematical calculations</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Assessing actual probabilities</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Decisions with many variables</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Resist biases and stereotypes</span></li>
+</ul>
+</div>
+</div>
+<!-- Concept box -->
+<div class="bg-gradient-to-r from-emerald-900/20 to-dark-800 border border-emerald-500/30 rounded-xl p-5 mb-6">
+<p class="text-emerald-400 font-semibold text-sm mb-2">WYSIATI: "What You See Is All There Is"</p>
+<p class="text-neutral-300 text-sm">System 1 builds the best possible story with the information available, without checking whether anything is missing. If the pieces it has fit together, it ignores what it cannot see. This principle, which Kahneman named WYSIATI, explains why we are so confident with so little information.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Intuition</p>
+<p class="text-neutral-400 text-xs mt-1">Instant response</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Memory</p>
+<p class="text-neutral-400 text-xs mt-1">Associative patterns</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">WYSIATI</p>
+<p class="text-neutral-400 text-xs mt-1">Narrative with what is available</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Unconscious</p>
+<p class="text-neutral-400 text-xs mt-1">Operates without perception</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="mb-12" data-inema-topic="modulo-1-1#topico-3" id="topico-3">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<h2 class="text-2xl font-bold">System 2: Slow Thinking</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-1-t3-p1">System 2 is slow, sequential, deliberate, and conscious. It requires attention and mental effort. It is triggered when we face complex problems: solving an equation, planning a trip, evaluating a logical argument. Unlike S1, which processes in parallel, S2 operates serially.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-1-t3-p2">The most important aspect of System 2 is its laziness. It tends to accept System 1’s suggestions without careful verification. Deliberate thinking consumes glucose and energy. The brain, optimized by evolution to conserve energy, avoids engaging S2 whenever possible.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-emerald-400 font-semibold text-sm mb-3">Characteristics of System 2</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Slow and deliberate</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Conscious and controllable</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Sequential (one thing at a time)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Capable of abstract reasoning</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-red-400 font-semibold text-sm mb-3">Limitations of System 2</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Requires a lot of cognitive energy</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Fatigue-prone: worsens throughout the day</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Lazy: avoids being triggered</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Often endorses S1 without checking</span></li>
+</ul>
+</div>
+</div>
+<!-- Data/research box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5 mb-6">
+<p class="text-blue-400 font-semibold text-sm mb-1">Research: ego depletion</p>
+<p class="text-neutral-300 text-sm">Roy Baumeister demonstrated that self-control (an S2 function) works like a muscle that gets fatigued. Participants who resisted temptations in one task performed worse on the next. This "ego depletion" explains why decisions get worse at night.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Attention</p>
+<p class="text-neutral-400 text-xs mt-1">Finite resource</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Memory</p>
+<p class="text-neutral-400 text-xs mt-1">Working memory (7+/-2)</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Depletion</p>
+<p class="text-neutral-400 text-xs mt-1">Cognitive fatigue</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Laziness</p>
+<p class="text-neutral-400 text-xs mt-1">Avoids effort</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="mb-12" data-inema-topic="modulo-1-1#topico-4" id="topico-4">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<h2 class="text-2xl font-bold">Interaction between S1 and S2</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-1-t4-p1">System 1 continuously generates impressions, intuitions, intentions, and feelings. System 2 monitors this flow, but weakly and sporadically. When S1 encounters something it cannot resolve, it triggers S2 for deeper analysis. The problem is that S2 isn’t always triggered in time.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-1-t4-p2">The most common failure in this interaction is "attribute substitution": when a difficult question comes up ("How much should I invest for retirement?"), S1 replaces it with an easier one ("How do I feel about retirement right now?") and S2 accepts the emotional answer as if it were rational.</p>
+<!-- Tip box -->
+<div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-emerald-400 font-semibold mb-1">Fundamental principle</p>
+<p class="text-neutral-300 text-sm">S1 proposes, S2 disposes. But S2 is lazy. Most of the time, S2 simply endorses what S1 suggested without any real verification. It's like a supervisor who signs documents without reading them.</p>
+</div>
+<!-- Timeline -->
+<div class="space-y-4 mb-6">
+<h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide">Typical Processing Sequence</h4>
+<div class="relative pl-6 border-l-2 border-emerald-500/30 space-y-6">
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">0-200ms:</strong> S1 processes the stimulus automatically</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">200-500ms:</strong> S1 generates impressions/intuition</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">500ms+:</strong> S2 can intervene (if activated)</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-red-500/30 border-2 border-red-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-red-400">Often:</strong> S2 endorses S1 without checking</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Substitution</p>
+<p class="text-neutral-400 text-xs mt-1">An easy question in its place</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Consistency</p>
+<p class="text-neutral-400 text-xs mt-1">Associative narrative</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Laziness</p>
+<p class="text-neutral-400 text-xs mt-1">Faulty monitoring</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Propose/Arrange</p>
+<p class="text-neutral-400 text-xs mt-1">S1 suggests, S2 validates</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="mb-12" data-inema-topic="modulo-1-1#topico-5" id="topico-5">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<h2 class="text-2xl font-bold">Applications: marketing, finance, justice</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-1-t5-p1">Marketing is an engineering of System 1. Prices ending in .99, images of smiling faces, music that evokes nostalgia: everything is designed so S1 decides before S2 has a chance to evaluate. The advertising industry spends billions to exploit a cognitive system that operates in milliseconds.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-1-t5-p2">In the legal system, Shai Danziger et al. (2011) showed that Israeli judges approved 65% of parole requests right after a meal, but almost 0% before a break. It wasn't cruelty: it was S2 depletion. When fatigued, judges fell back on S1's safe default: deny.</p>
+<!-- Alert box -->
+<div class="bg-red-500/10 border border-red-500/30 rounded-xl p-5 mb-6">
+<p class="text-red-400 font-semibold text-sm mb-1">Attention: financial decisions</p>
+<p class="text-neutral-300 text-sm">Most bad investment decisions happen when S1 operates where S2 should. Day trading, panic selling, euphoric buying: all are automatic emotional responses, not rational analyses. Recognizing which system is active is the first step toward avoiding losses.</p>
+</div>
+<!-- Tip box -->
+<div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-emerald-400 font-semibold mb-1">Practical application</p>
+<p class="text-neutral-300 text-sm">Important decisions (financial, medical, legal) should be made when System 2 is well-rested: in the morning, after a meal, without rushing. Never at the end of the day or under emotional stress.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Priming</p>
+<p class="text-neutral-400 text-xs mt-1">Prior activation in S1</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Framing</p>
+<p class="text-neutral-400 text-xs mt-1">Framing changes everything</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Fatigue</p>
+<p class="text-neutral-400 text-xs mt-1">Decision-making at the end of the day</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Nudge</p>
+<p class="text-neutral-400 text-xs mt-1">Guide via S1</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="mb-12" data-inema-topic="modulo-1-1#topico-6" id="topico-6">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<h2 class="text-2xl font-bold">Daniel Kahneman: Life, Work, and the Nobel Prize</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-1-t6-p1">Kahneman was born in 1934 in Tel Aviv, grew up in Nazi-occupied Paris, and emigrated to Israel in 1948. His childhood amid antisemitism shaped his interest in psychology: understanding how intelligent people make terrible decisions. At the Hebrew University, he met Amos Tversky, and together they published work that changed economics, medicine, and law.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-1-t6-p2">Prospect Theory (1979), developed with Tversky, showed that humans evaluate losses and gains asymmetrically: the pain of losing R$100 is psychologically about 2x as intense as the pleasure of gaining R$100. This discovery overturned the "rational agent" model that dominated classical economics.</p>
+<!-- Timeline -->
+<div class="space-y-4 mb-6">
+<h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide">Timeline</h4>
+<div class="relative pl-6 border-l-2 border-emerald-500/30 space-y-6">
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">1934:</strong> Birth in Tel Aviv</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">1969:</strong> Beginning of the partnership with Amos Tversky</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">1979:</strong> Prospect Theory published in Econometrica</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">2002:</strong> Nobel Prize in Economics (without Tversky, who died in 1996)</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-emerald-500/30 border-2 border-emerald-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-emerald-400">2011:</strong> Publication of “Thinking, Fast and Slow”</p>
+</div>
+</div>
+</div>
+<!-- Blue research box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5 mb-6">
+<p class="text-blue-400 font-semibold text-sm mb-1">Academic impact</p>
+<p class="text-neutral-300 text-sm">Prospect Theory is the most cited paper in the history of Econometrica. It directly influenced the creation of the field of Behavioral Economics, later led by Richard Thaler (Nobel 2017) and Nudge Theory.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Prospect Theory</p>
+<p class="text-neutral-400 text-xs mt-1">Losses &gt; Gains</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Rationality</p>
+<p class="text-neutral-400 text-xs mt-1">Limited, not full</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Tversky</p>
+<p class="text-neutral-400 text-xs mt-1">Intellectual partner</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-emerald-400 text-sm font-semibold">Behav. Econ.</p>
+<p class="text-neutral-400 text-xs mt-1">Founded field</p>
+</div>
+</div>
+</section>
+<!-- RESUMO DO MÓDULO -->
+<section class="bg-dark-800 border border-emerald-500/30 rounded-xl p-6 sm:p-8 mb-8">
+<h2 class="text-xl font-bold mb-4 text-emerald-400">Module 1.1 Summary</h2>
+<ul class="space-y-3 text-neutral-300 text-sm mb-6">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>The brain operates in two modes: System 1 (fast, automatic) and System 2 (slow, deliberate)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>~95% of everyday decisions are made by S1, without conscious involvement</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>S2 is lazy: it tends to endorse S1 without checking</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Cognitive fatigue weakens S2, worsening decisions throughout the day</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Marketing, finance, and justice are fields where exploiting S1 has real consequences</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Kahneman and Tversky revolutionized economics by proving that humans are not rational</span></li>
+</ul>
+<a class="inline-flex items-center justify-start bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-emerald-500/30 transition-colors" href="modulo-1-2.html">Next: Heuristics →</a>
+</section>
+<!-- NAV INFERIOR -->
+<div class="flex items-center justify-between pt-8 border-t border-dark-700">
+<a class="text-neutral-400 hover:text-emerald-400 transition-colors text-sm font-medium" href="index.html">← Track 1</a>
+<a class="text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium" href="modulo-1-2.html">Module 1.2 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-700 py-8">
+<div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500">
+<a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mind, Power and Machine · 2026
+  </div>
+</footer>
+<script>
+function toggleTheme() {
+  var html = document.documentElement;
+  html.classList.toggle('dark');
+  var isDark = html.classList.contains('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  html.style.colorScheme = isDark ? 'dark' : 'light';
+  try { var p = JSON.parse(localStorage.getItem('inema.prefs') || '{}'); p.theme = isDark ? 'inema-dark' : 'claro'; localStorage.setItem('inema.prefs', JSON.stringify(p)); } catch(e){}
+}
+function toggleTopic(btn) {
+  var exp = btn.nextElementSibling;
+  exp.classList.toggle('active');
+  var isOpen = exp.classList.contains('active');
+  btn.setAttribute('aria-expanded', isOpen);
+}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

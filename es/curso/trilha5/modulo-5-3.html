@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>Módulo 5.3 — Semiótica de la mente: Marcus Bruzzo y la imaginación humana | MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{"course":"neurociencia-comportamento","tracks":[{"n":"1","title":"O Cérebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heurísticas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonância cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},{"n":"2","title":"Influência Social","modules":[{"id":"2-1","title":"Conformidade","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulação social","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},{"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},{"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},{"n":"5","title":"Filosofia da Mente e Consciência","modules":[{"id":"5-1","title":"Livre-arbítrio: Libet","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciência: problema difícil","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiótica: Bruzzo","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},{"n":"6","title":"IA, Vieses e Ética","modules":[{"id":"6-1","title":"Vieses algorítmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistêmicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Ética e espaço humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}]}
+</script>
+<style>
+body{font-family:'Inter',system-ui,sans-serif}.topic-explanation{display:none}.topic-explanation.active{display:block}
+html:not(.dark) body{background-color:#f8fafc}html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-teal-400{color:#0d9488}html:not(.dark) .bg-teal-500\/20{background-color:rgba(13,148,136,0.12)}html:not(.dark) .border-teal-500\/30{border-color:rgba(13,148,136,0.25)}html:not(.dark) .hover\:bg-teal-500\/10:hover{background-color:rgba(13,148,136,0.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,0.95)}
+html:not(.dark) .text-emerald-400{color:#059669}html:not(.dark) .text-blue-400{color:#2563eb}html:not(.dark) .text-purple-400{color:#7c3aed}html:not(.dark) .text-amber-400{color:#92400e}html:not(.dark) .text-rose-400{color:#9f1239}
+html:not(.dark) .hover\:bg-emerald-500\/10:hover{background-color:rgba(5,150,105,0.08)}html:not(.dark) .hover\:bg-blue-500\/10:hover{background-color:rgba(37,99,235,0.08)}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,0.08)}html:not(.dark) .hover\:bg-amber-500\/10:hover{background-color:rgba(217,119,6,0.08)}html:not(.dark) .hover\:bg-rose-500\/10:hover{background-color:rgba(225,29,72,0.08)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+html:not(.dark) svg[role="img"]{filter:saturate(.82) brightness(.96)}
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha5/modulo-5-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha5/modulo-5-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha5/modulo-5-3.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Cerebro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-teal-400 bg-teal-500/10" href="../trilha5/index.html">T5 Filosofía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 IA+Ética</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()" title="Cambiar el tema">
+<span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="5-3">
+<!-- BREADCRUMB -->
+<div class="flex items-center space-x-2 text-sm text-neutral-500 mb-8">
+<a class="hover:text-teal-400 transition-colors" href="../../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-teal-400 transition-colors" href="index.html">Ruta 5</a>
+<span>/</span>
+<span class="text-neutral-300">Módulo 5.3</span>
+</div>
+<!-- HEADER -->
+<section class="mb-10">
+<div class="bg-gradient-to-r from-teal-900/30 via-dark-800 to-dark-800 rounded-2xl p-8 border border-teal-500/30">
+<div class="inline-flex items-center space-x-2 bg-teal-500/20 border border-teal-500/30 rounded-full px-4 py-1.5 mb-4">
+<span class="text-teal-400 text-sm font-semibold">MÓDULO 5.3</span>
+</div>
+<h1 class="text-2xl font-bold mb-2">Semiótica de la mente: Marcus Bruzzo y la imaginación humana</h1>
+<p class="text-neutral-400 mb-4">Peirce, Lotman, McLuhan · Excedente imaginario · Animismo tecnológico · Arte como resistencia</p>
+<div class="flex items-center space-x-6 text-sm text-neutral-500">
+<span>6 temas</span>
+<span>~30 min</span>
+<span>Avanzado</span>
+</div>
+</div>
+</section>
+<!-- SVG: Mapa conceitual Semiótica da Mente -->
+<div class="rounded-2xl border border-teal-500/30 bg-dark-900/40 p-3 sm:p-4 mb-10 overflow-hidden">
+<svg aria-label="Mapa conceptual: la semiótica de Peirce y Lotman alimenta el concepto de la mente como sistema sígnico, que se conecta con el excedente imaginario humano, el animismo tecnológico y el medio como mensaje de McLuhan, y converge en la tensión entre la automatización de la imaginación y la inutilidad productiva como resistencia" class="w-full h-auto" role="img" viewbox="0 0 800 340">
+<defs>
+<filter id="m53-glow"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="m53-arr" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#2dd4bf" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<marker id="m53-arr-w" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#f59e0b" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<pattern height="40" id="m53-grid" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#374151" stroke-width="0.5"></path></pattern>
+</defs>
+<rect fill="#0c1f1c" height="340" rx="12" width="800"></rect>
+<rect fill="url(#m53-grid)" height="340" rx="12" width="800"></rect>
+<!-- Título -->
+<rect fill="#0c1f1c" height="26" opacity="0.6" rx="10" stroke="#2dd4bf" stroke-width="1" width="300" x="250" y="12"></rect>
+<text fill="#2dd4bf" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="400" y="30">SEMÍOTICA DE LA MENTE (BRUZZO)</text>
+<!-- Node 1: Peirce + Lotman -->
+<rect fill="#0c1f1c" filter="url(#m53-glow)" height="80" rx="16" stroke="#2dd4bf" stroke-width="2" width="140" x="30" y="60"></rect>
+<text fill="#2dd4bf" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="100" y="88">PEIRCE</text>
+<text fill="#2dd4bf" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="100" y="103">+ LOTMAN</text>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="100" y="122">signo, semiosfera</text>
+<!-- Node 2: Mente como Sistema Sígnico (centro) -->
+<rect fill="#0c1f1c" filter="url(#m53-glow)" height="70" rx="16" stroke="#2dd4bf" stroke-width="2.5" width="180" x="270" y="70"></rect>
+<text fill="#2dd4bf" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="360" y="96">MENTE COMO</text>
+<text fill="#2dd4bf" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="360" y="112">SISTEMA SÍGNICO</text>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="360" y="130">cultura = modeladora</text>
+<!-- Arrow Peirce → Mente -->
+<line marker-end="url(#m53-arr)" opacity="0.5" stroke="#2dd4bf" stroke-width="1.5" x1="170" x2="268" y1="100" y2="100"></line>
+<!-- Node 3: Excedente Imaginário -->
+<rect fill="#0c1f1c" filter="url(#m53-glow)" height="80" rx="16" stroke="#14b8a6" stroke-width="2" width="150" x="550" y="50"></rect>
+<text fill="#14b8a6" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="625" y="78">EXCEDENTE</text>
+<text fill="#14b8a6" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="625" y="93">IMAGINARIO</text>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="625" y="112">soñar lo imposible</text>
+<!-- Arrow Mente → Excedente -->
+<line marker-end="url(#m53-arr)" opacity="0.5" stroke="#2dd4bf" stroke-width="1.5" x1="450" x2="548" y1="95" y2="85"></line>
+<!-- Node 4: Animismo Tecnológico -->
+<rect fill="#0c1f1c" filter="url(#m53-glow)" height="80" rx="16" stroke="#14b8a6" stroke-width="2" width="150" x="550" y="155"></rect>
+<text fill="#14b8a6" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="625" y="183">ANIMISMO</text>
+<text fill="#14b8a6" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="625" y="198">TECNOLÓGICO</text>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="625" y="217">proyectar agencia en objetos</text>
+<!-- Arrow Mente → Animismo -->
+<line marker-end="url(#m53-arr)" opacity="0.5" stroke="#2dd4bf" stroke-width="1.5" x1="450" x2="548" y1="115" y2="180"></line>
+<!-- Node 5: McLuhan / O Meio -->
+<rect fill="#0c1f1c" filter="url(#m53-glow)" height="65" rx="16" stroke="#2dd4bf" stroke-width="2" width="180" x="270" y="180"></rect>
+<text fill="#2dd4bf" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="360" y="205">EL MEDIO ES</text>
+<text fill="#2dd4bf" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="360" y="220">EL MENSAJE</text>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="360" y="237">McLuhan: técnica = simbólico</text>
+<!-- Arrow Mente → McLuhan -->
+<line marker-end="url(#m53-arr)" opacity="0.5" stroke="#2dd4bf" stroke-width="1.5" x1="360" x2="360" y1="140" y2="178"></line>
+<!-- Node 6: Automação da Imaginação (warning) -->
+<rect fill="#0c1f1c" filter="url(#m53-glow)" height="60" rx="14" stroke="#f59e0b" stroke-dasharray="5,3" stroke-width="2" width="200" x="80" y="260"></rect>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="180" y="284">AUTOMATIZACIÓN DE LA</text>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="180" y="298">IMAGINACIÓN</text>
+<polygon fill="none" opacity="0.6" points="105,268 110,258 115,268" stroke="#f59e0b" stroke-width="1.2"></polygon>
+<!-- Arrow McLuhan → Automação -->
+<line marker-end="url(#m53-arr-w)" opacity="0.4" stroke="#f59e0b" stroke-dasharray="4,3" stroke-width="1.5" x1="300" x2="230" y1="245" y2="258"></line>
+<!-- Node 7: Inutilidade Produtiva (resistência) -->
+<rect fill="#0c1f1c" filter="url(#m53-glow)" height="60" rx="14" stroke="#2dd4bf" stroke-width="2" width="220" x="480" y="260"></rect>
+<text fill="#2dd4bf" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="590" y="284">INUTILIDAD PRODUCTIVA</text>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="590" y="298">arte, ocio, juego = resistencia</text>
+<!-- Arrow McLuhan → Inutilidade -->
+<line marker-end="url(#m53-arr)" opacity="0.4" stroke="#2dd4bf" stroke-dasharray="4,3" stroke-width="1.5" x1="420" x2="510" y1="245" y2="258"></line>
+<!-- Tensão entre automação e resistência -->
+<line opacity="0.3" stroke="#f59e0b" stroke-dasharray="3,4" stroke-width="1" x1="280" x2="478" y1="290" y2="290"></line>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="8" opacity="0.7" text-anchor="middle" x="380" y="325">tensión: reducción funcional vs. excedente creativo</text>
+</svg>
+</div>
+<!-- TÓPICO 1 -->
+<section class="mb-12" data-inema-topic="modulo-5-3#topico-1" id="topico-1">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<h2 class="text-2xl font-bold">Semiótica de Peirce y Lotman</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-3-t1-p1">Marcus Bruzzo construye su pensamiento sobre la mente humana a partir de dos tradiciones semióticas complementarias. De Charles Sanders Peirce (1839-1914), toma la idea de que todo pensamiento es pensamiento en signos: no existe cognición sin mediación sígnica. Pensar no es manipular ideas puras, sino operar con representaciones que siempre están en relación con algo (el objeto) y con alguien (el interpretante). Para Peirce, la mente es un proceso semiótico continuo, no un contenedor de información.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-3-t1-p2">De la Escuela de Tartu, específicamente de Juri Lotman (1922-1993), Bruzzo incorpora el concepto de semiosfera: el espacio semiótico total fuera del cual la significación no puede existir. Lotman propuso que la cultura funciona como un "sistema modelizante secundario", es decir, el lenguaje natural es el sistema modelizante primario, y la cultura (arte, religión, mito, ciencia) son sistemas que modelan la realidad sobre esa base lingüística. La mente humana no accede a la realidad directamente: accede a modelos culturales de ella.</p>
+<!-- Tip box -->
+<div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-teal-400 font-semibold mb-1">Semiosfera de Lotman</p>
+<p class="text-neutral-300 text-sm">Así como la biosfera de Vernadsky define el espacio donde es posible la vida biológica, la semiosfera de Lotman define el espacio donde es posible la significación. Fuera de la semiosfera, no hay cultura, no hay lenguaje, no hay pensamiento humano. La IA opera dentro de la semiosfera humana, pero no genera una semiosfera propia.</p>
+</div>
+<!-- Conceitos-chave grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Signo (Peirce)</p>
+<p class="text-neutral-400 text-xs mt-1">Representamen-objeto-interpretante</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Semiosfera</p>
+<p class="text-neutral-400 text-xs mt-1">Espacio total de significación</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Modelizante</p>
+<p class="text-neutral-400 text-xs mt-1">La cultura modela la realidad</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Escuela de Tartu</p>
+<p class="text-neutral-400 text-xs mt-1">Lotman, Uspenski, Ivanov</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="mb-12" data-inema-topic="modulo-5-3#topico-2" id="topico-2">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<h2 class="text-2xl font-bold">Excedente imaginario</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-3-t2-p1">El concepto central de Bruzzo para distinguir la mente humana de la inteligencia artificial es lo que él llama "excedente imaginario". Lo que distingue al ser humano no es su capacidad de procesamiento, que la IA ya supera en velocidad y volumen, sino su capacidad de soñar lo que no existe. De proyectar mundos que nunca existieron, de imaginar lo imposible, de desear lo que no tiene forma.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-3-t2-p2">Por sofisticada que sea, la IA recombina lo que existe. Opera mediante interpolación estadística dentro del espacio de datos que recibió. Puede generar combinaciones nuevas, pero siempre dentro del espacio delimitado por el entrenamiento. El ser humano, en cambio, extrapola: crea mitologías, inventa utopías, concibe paradojas lógicas, sueña con lo que viola las leyes conocidas. El arte, la ciencia ficción y la filosofía especulativa operan en ese excedente que escapa a cualquier conjunto de datos.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-teal-400 font-semibold text-sm mb-3">Imaginación humana</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>Proyecta lo que nunca existió (extrapolación)</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>Crea mitologías, utopías, paradojas</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>Opera con el deseo, la angustia y el sentido</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>Excede cualquier conjunto de datos</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-teal-400 font-semibold text-sm mb-3">Generación por IA</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">-</span><span>Recombina lo existente (interpolación)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">-</span><span>Limitada al espacio de entrenamiento</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">-</span><span>Opera sin deseo ni angustia</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">-</span><span>Genera novedad, no imposibilidad</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-teal-400 font-semibold mb-1">Interpolación vs. extrapolación</p>
+<p class="text-neutral-300 text-sm">Interpolación: generar dentro del espacio delimitado por los puntos conocidos. Extrapolación: proyectar más allá de los límites del espacio conocido. La IA generativa interpola magistralmente. El ser humano extrapola. Kafka, al imaginar a un hombre que despierta convertido en insecto, no interpoló nada existente.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Excedente</p>
+<p class="text-neutral-400 text-xs mt-1">Más allá del dato</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Interpolación</p>
+<p class="text-neutral-400 text-xs mt-1">Dentro del espacio</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Extrapolación</p>
+<p class="text-neutral-400 text-xs mt-1">Más allá del espacio</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Imposible</p>
+<p class="text-neutral-400 text-xs mt-1">Lo que viola lo real</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="mb-12" data-inema-topic="modulo-5-3#topico-3" id="topico-3">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<h2 class="text-2xl font-bold">Animismo tecnológico</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-3-t3-p1">Bruzzo identifica en los seres humanos una tendencia universal y persistente: proyectar intenciones, emociones y agencia en objetos que no las poseen. El animismo primitivo, que atribuía espíritu a ríos, montañas y animales, no desapareció con la modernidad. Se reconfiguró. Cuando decimos que el GPS "sabe" el camino, que Alexa "entiende" lo que decimos o que ChatGPT "piensa" una respuesta, practicamos animismo tecnológico.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-3-t3-p2">Esta proyección no es un defecto cognitivo que deba corregirse. Es una estructura fundamental de la cognición humana: leemos el mundo a través de categorías de agencia e intención porque somos seres sociales que evolucionaron detectando agentes en el entorno (depredadores, aliados, rivales). El problema surge cuando esta proyección nos impide ver lo que realmente es la máquina: un proceso sin experiencia, computación sin vivencia, resultados sin significado intrínseco. Atribuimos agencia donde solo hay procesos.</p>
+<!-- Timeline: Do animismo primitivo ao digital -->
+<div class="space-y-4 mb-6">
+<h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide">Del animismo primitivo a lo digital</h4>
+<div class="relative pl-6 border-l-2 border-teal-500/30 space-y-6">
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-teal-500/30 border-2 border-teal-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-teal-400">Animismo primitivo:</strong> Espíritus en ríos, árboles y animales. Un mundo vivo e intencional.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-teal-500/30 border-2 border-teal-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-teal-400">Autómatas (s. XVIII):</strong> Relojes, muñecas mecánicas. La «vida» como mecanismo.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-teal-500/30 border-2 border-teal-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-teal-400">ELIZA (1966):</strong> Chatbot simple; los usuarios atribuían una comprensión genuina al programa.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-teal-500/30 border-2 border-teal-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-teal-400">Alexa, Siri (2011+):</strong> "Ella me entiende." Género, nombre, voz humanizada.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-yellow-500/30 border-2 border-yellow-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-yellow-400">ChatGPT (2022+):</strong> "Él piensa." Antropomorfización radical: emociones, opiniones y personalidad proyectadas.</p>
+</div>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-teal-400 font-semibold mb-1">Efecto ELIZA</p>
+<p class="text-neutral-300 text-sm">Joseph Weizenbaum, creador de ELIZA (1966), quedó horrorizado al ver que, incluso sabiendo que el programa seguía reglas simples de sustitución de texto, las personas atribuían una comprensión real al chatbot. Dedicó el resto de su vida a advertir sobre los peligros de esa proyección.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Animismo</p>
+<p class="text-neutral-400 text-xs mt-1">Proyectar agencia</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Antropomorfización</p>
+<p class="text-neutral-400 text-xs mt-1">Humanizar la máquina</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Efecto ELIZA</p>
+<p class="text-neutral-400 text-xs mt-1">Ilusión de comprensión</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Detección de agentes</p>
+<p class="text-neutral-400 text-xs mt-1">Sesgo evolutivo</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="mb-12" data-inema-topic="modulo-5-3#topico-4" id="topico-4">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<h2 class="text-2xl font-bold">El medio es el mensaje (McLuhan)</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-3-t4-p1">Bruzzo incorpora la tesis central de Marshall McLuhan (1911-1980): la tecnología no es solo una herramienta neutral que transmite contenido. Cada tecnología es un sistema simbólico que reestructura la percepción, el pensamiento y las relaciones sociales. "El medio es el mensaje" significa que el formato del medio transforma nuestra manera de pensar, independientemente del contenido que transmite. La imprenta no solo distribuyó libros: creó al individuo moderno, el pensamiento lineal y el nacionalismo.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-3-t4-p2">Al aplicar a McLuhan a la era de la IA, Bruzzo sostiene que el medio algorítmico no es neutro. Cuando la cultura pasa a estar mediada por algoritmos de recomendación, cambia la propia estructura de lo que se puede pensar. El algoritmo no decide solo lo que vemos: decide los límites de lo que podemos imaginar. Si la IA generativa se convierte en el medio dominante de producción cultural, el "mensaje" implícito es: la cultura es recombinación estadística, la creación es optimización de patrones, la imaginación es interpolación sofisticada.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-teal-400 font-semibold text-sm mb-3">Cada medio crea un mundo</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>Prensa: pensamiento lineal, individuo, nación</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>TV: aldea global, la imagen domina el texto</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>Internet: red, fragmentación, hipertexto</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>IA generativa: recombinación, optimización, prompt</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-teal-400 font-semibold text-sm mb-3">Qué hace el entorno algorítmico</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">!</span><span>Filtra lo que es visible (y lo que no lo es)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">!</span><span>Redefine «cultura» como aquello que genera interacción</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">!</span><span>Hace que la creación dependa de métricas</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">!</span><span>Naturaliza la interpolación como «creatividad»</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-teal-400 font-semibold mb-1">McLuhan y la galaxia de Gutenberg</p>
+<p class="text-neutral-300 text-sm">En "La galaxia Gutenberg" (1962), McLuhan mostró cómo la imprenta de tipos móviles no solo distribuyó textos, sino que creó el propio concepto de autoría individual, propiedad intelectual, pensamiento secuencial y nacionalismo lingüístico. La tecnología reformateó la civilización. La pregunta de Bruzzo: ¿qué está reformateando ahora la IA generativa?</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">McLuhan</p>
+<p class="text-neutral-400 text-xs mt-1">El medio es el mensaje</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Extensión</p>
+<p class="text-neutral-400 text-xs mt-1">Los medios extienden los sentidos</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Medio algorítmico</p>
+<p class="text-neutral-400 text-xs mt-1">La IA como nuevo medio</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Reformatear</p>
+<p class="text-neutral-400 text-xs mt-1">Percepción alterada</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="mb-12" data-inema-topic="modulo-5-3#topico-5" id="topico-5">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<h2 class="text-2xl font-bold">La automatización de la imaginación</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-3-t5-p1">El argumento más provocador de Bruzzo se refiere al riesgo de automatizar no solo tareas cognitivas, sino la propia imaginación. En "Seremos Dados", escribe: "A medida que las máquinas se vuelven más autónomas, nosotros nos volvemos menos necesarios. El riesgo no es que nos superen, sino que nos reduzcamos al funcionamiento previsible que las máquinas imitan." La amenaza no es la máquina que piensa como un humano, sino el humano que empieza a pensar como una máquina.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-3-t5-p2">Cuando delegamos a la IA la producción de textos, imágenes, música y código, no solo ahorramos tiempo. Gradualmente atrofiamos las facultades que producían esos artefactos: la paciencia de escribir, la frustración del borrador, el aburrimiento fértil del ocio creativo, el error productivo. Cada vez que un prompt sustituyó un párrafo pensado, se pierde algo que no es eficiencia: es el ejercicio de una facultad que solo existe cuando se practica.</p>
+<!-- Alert box -->
+<div class="bg-red-500/10 border border-red-500/30 rounded-xl p-5 mb-6">
+<p class="text-red-400 font-semibold text-sm mb-1">Advertencia de Bruzzo</p>
+<p class="text-neutral-300 text-sm">"El riesgo no es que nos superen, sino reducirnos al funcionamiento predecible que las máquinas imitan." Si nos modelamos a imagen de las máquinas que construimos, perdemos precisamente lo que nos distingue de ellas: el excedente, lo imposible, lo inútil.</p>
+</div>
+<!-- Grid -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-teal-400 font-semibold text-sm mb-3">Lo que se pierde con la delegación</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">!</span><span>Paciencia en el proceso creativo</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">!</span><span>Frustración productiva del borrador</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">!</span><span>Aburrimiento fértil que genera ideas</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">!</span><span>El error como motor del descubrimiento</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-teal-400 font-semibold text-sm mb-3">Ciclo de atrofia cognitiva</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">1.</span><span>Delegar tareas creativas a la IA</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">2.</span><span>La facultad creativa pierde ejercicio</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">3.</span><span>El humano se vuelve menos capaz de crear sin IA</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">4.</span><span>La dependencia se profundiza: ciclo de atrofia</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-teal-400 font-semibold mb-1">Analogía: GPS y orientación espacial</p>
+<p class="text-neutral-300 text-sm">Las investigaciones muestran que el uso constante del GPS reduce la actividad del hipocampo (área relacionada con la navegación espacial). El cerebro deja de construir mapas mentales porque la máquina lo hace. Bruzzo sugiere que lo mismo podría estar pasando con la IA y la imaginación: delegamos la creación y el músculo creativo se atrofia.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Atrofia</p>
+<p class="text-neutral-400 text-xs mt-1">Use it or lose it</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Delegación</p>
+<p class="text-neutral-400 text-xs mt-1">Creación tercerizada</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Previsible</p>
+<p class="text-neutral-400 text-xs mt-1">El humano como máquina</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Seremos Datos</p>
+<p class="text-neutral-400 text-xs mt-1">Bruzzo, obra principal</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="mb-12" data-inema-topic="modulo-5-3#topico-6" id="topico-6">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<h2 class="text-2xl font-bold">Inutilidad productiva: el arte como resistencia</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-3-t6-p1">Si el riesgo central es reducir lo humano a lo predecible y optimizable, la resistencia propuesta por Bruzzo es deliberadamente contraintuitiva: la inutilidad. Arte sin finalidad comercial. Ocio sin productividad. Escritura sin audiencia. Juego sin gamificación. Contemplación sin app de meditación. No como lujo, sino como acto de resistencia contra la colonización total de la experiencia por la lógica de la eficiencia.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-3-t6-p2">Bruzzo lo llama "inutilidad productiva", una paradoja deliberada. Lo que es "inútil" desde el punto de vista de la optimización es precisamente lo que preserva al ser humano como un ser irreducible a datos. Cuando alguien escribe un poema que nadie leerá, pinta un cuadro que no venderá o piensa algo sin aplicación práctica, ejerce la facultad que ninguna IA posee: crear sin función, imaginar sin prompt, existir sin optimización.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-teal-400 font-semibold text-sm mb-3">La inutilidad como resistencia</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>Arte sin mercado: crear por crear</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>Ocio creativo: pensar sin producto</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>Juego: jugar sin gamificación</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>Contemplación: existir sin optimizar</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-teal-400 font-semibold text-sm mb-3">La lógica de la eficiencia total</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">!</span><span>Todo debe generar valor medible</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">!</span><span>Tiempo sin resultados = tiempo perdido</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">!</span><span>Creatividad = KPI, engagement, conversión</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">!</span><span>El humano como recurso optimizable</span></li>
+</ul>
+</div>
+</div>
+<!-- Blue research box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5 mb-6">
+<p class="text-blue-400 font-semibold text-sm mb-1">Tradición filosófica de la inutilidad</p>
+<p class="text-neutral-300 text-sm">La defensa de la «inutilidad» tiene raíces profundas: Aristóteles (theoria como actividad más elevada), Kant (el arte como «finalidad sin fin»), Hannah Arendt (vita contemplativa), Domenico De Masi (ocio creativo), Nuccio Ordine («La utilidad de lo inútil»). Bruzzo actualiza esta tradición para la era de la IA generativa.</p>
+</div>
+<!-- Tip box -->
+<div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-teal-400 font-semibold mb-1">Paradoja productiva</p>
+<p class="text-neutral-300 text-sm">La paradoja: precisamente lo que es «inútil» para la máquina (la contemplación, la ensoñación, el error creativo) puede ser lo que mantiene al ser humano irreductible a ella. La «inutilidad productiva» produce aquello que ningún algoritmo puede optimizar: sentido existencial, sorpresa genuina, belleza sin métricas.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Inutilidad</p>
+<p class="text-neutral-400 text-xs mt-1">Sin finalidad = humano</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Ocio creativo</p>
+<p class="text-neutral-400 text-xs mt-1">Pensar sin producto</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Resistencia</p>
+<p class="text-neutral-400 text-xs mt-1">Contra la optimización total</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Orden</p>
+<p class="text-neutral-400 text-xs mt-1">La utilidad de lo inútil</p>
+</div>
+</div>
+</section>
+<!-- RESUMO DO MÓDULO -->
+<section class="bg-dark-800 border border-teal-500/30 rounded-xl p-6 sm:p-8 mb-8">
+<h2 class="text-xl font-bold mb-4 text-teal-400">Resumen del Módulo 5.3</h2>
+<ul class="space-y-3 text-neutral-300 text-sm mb-6">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>Bruzzo parte de Peirce y Lotman para pensar la mente como un sistema sígnico mediado por la cultura</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>El excedente imaginario distingue al ser humano: la capacidad de proyectar lo imposible, no solo de recombinar lo existente</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>Animismo tecnológico: proyectamos agencia y emoción en las máquinas, desde el animismo primitivo hasta ChatGPT</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>McLuhan: cada tecnología es un sistema simbólico que reformatea la percepción. El medio algorítmico redefine lo imaginable</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>Riesgo de la automatización de la imaginación: quien delega la creación atrofia su facultad creativa</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">+</span><span>Inutilidad productiva: el arte, el ocio y la contemplación como resistencia a la reducción a lo previsible</span></li>
+</ul>
+<a class="inline-flex items-center justify-start bg-teal-500/20 border border-teal-500/30 text-teal-400 px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-teal-500/30 transition-colors" href="../trilha6/index.html">Siguiente: Ruta 6 →</a>
+</section>
+<!-- NAV INFERIOR -->
+<div class="flex items-center justify-between pt-8 border-t border-dark-700">
+<a class="text-neutral-400 hover:text-teal-400 transition-colors text-sm font-medium" href="modulo-5-2.html">← Módulo 5.2: Conciencia</a>
+<a class="text-teal-400 hover:text-teal-300 transition-colors text-sm font-medium" href="../trilha6/index.html">Ruta 6 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-700 py-8">
+<div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500">
+<a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mente, Poder e Máquina · 2026
+  </div>
+</footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>

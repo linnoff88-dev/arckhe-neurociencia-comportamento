@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="neurociencia-comportamento" name="inema-course"/>
+<title>Módulo 5.1 — ¿Tú decides o tu cerebro decide primero? | MPC</title>
+<!-- Anti-FOUC -->
+<script>
+(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+</script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: { 600:'#4b5563', 700:'#374151', 800:'#1f2937', 900:'#111827' },
+        primary: '#FACC15'
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Manifesto do curso -->
+<script data-inema-manifest="" type="application/json">
+{"course":"neurociencia-comportamento","tracks":[{"n":"1","title":"O Cérebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heurísticas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonância cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},{"n":"2","title":"Influência Social","modules":[{"id":"2-1","title":"Conformidade","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulação social","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},{"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},{"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},{"n":"5","title":"Filosofia da Mente e Consciência","modules":[{"id":"5-1","title":"Livre-arbítrio: Libet","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciência: problema difícil","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiótica: Bruzzo","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},{"n":"6","title":"IA, Vieses e Ética","modules":[{"id":"6-1","title":"Vieses algorítmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistêmicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Ética e espaço humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}]}
+</script>
+<style>
+body{font-family:'Inter',system-ui,sans-serif}.topic-explanation{display:none}.topic-explanation.active{display:block}
+html:not(.dark) body{background-color:#f8fafc}html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-teal-400{color:#0d9488}html:not(.dark) .bg-teal-500\/20{background-color:rgba(13,148,136,0.12)}html:not(.dark) .border-teal-500\/30{border-color:rgba(13,148,136,0.25)}html:not(.dark) .hover\:bg-teal-500\/10:hover{background-color:rgba(13,148,136,0.08)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,0.95)}
+html:not(.dark) .text-emerald-400{color:#059669}html:not(.dark) .text-blue-400{color:#2563eb}html:not(.dark) .text-purple-400{color:#7c3aed}html:not(.dark) .text-amber-400{color:#92400e}html:not(.dark) .text-rose-400{color:#9f1239}
+html:not(.dark) .hover\:bg-emerald-500\/10:hover{background-color:rgba(5,150,105,0.08)}html:not(.dark) .hover\:bg-blue-500\/10:hover{background-color:rgba(37,99,235,0.08)}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,0.08)}html:not(.dark) .hover\:bg-amber-500\/10:hover{background-color:rgba(217,119,6,0.08)}html:not(.dark) .hover\:bg-rose-500\/10:hover{background-color:rgba(225,29,72,0.08)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+html:not(.dark) svg[role="img"]{filter:saturate(.82) brightness(.96)}
+</style>
+<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha5/modulo-5-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha5/modulo-5-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha5/modulo-5-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-4">
+<a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
+<span class="text-neutral-500">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html">T1 Cerebro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">T2 Social</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">T3 Neuro</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">T4 Economía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-teal-400 bg-teal-500/10" href="../trilha5/index.html">T5 Filosofía</a>
+<a class="px-3 py-2 rounded-lg text-sm font-medium text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html">T6 IA+Ética</a>
+<button class="ml-4 p-2 rounded-lg hover:bg-dark-700 transition-colors" onclick="toggleTheme()" title="Cambiar el tema">
+<span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="5-1">
+<!-- BREADCRUMB -->
+<div class="flex items-center space-x-2 text-sm text-neutral-500 mb-8">
+<a class="hover:text-teal-400 transition-colors" href="../../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-teal-400 transition-colors" href="index.html">Ruta 5</a>
+<span>/</span>
+<span class="text-neutral-300">Módulo 5.1</span>
+</div>
+<!-- HEADER -->
+<section class="mb-10">
+<div class="bg-gradient-to-r from-teal-900/30 via-dark-800 to-dark-800 rounded-2xl p-8 border border-teal-500/30">
+<div class="inline-flex items-center space-x-2 bg-teal-500/20 border border-teal-500/30 rounded-full px-4 py-1.5 mb-4">
+<span class="text-teal-400 text-sm font-semibold">MÓDULO 5.1</span>
+</div>
+<h1 class="text-2xl font-bold mb-2">¿Tú decides o tu cerebro decide primero?</h1>
+<p class="text-neutral-400 mb-4">Benjamin Libet (1983) · Potencial de preparación · Libre albedrío como veto</p>
+<div class="flex items-center space-x-6 text-sm text-neutral-500">
+<span>6 temas</span>
+<span>~30 min</span>
+<span>Avanzado</span>
+</div>
+</div>
+</section>
+<!-- SVG: Timeline do experimento de Libet -->
+<div class="rounded-2xl border border-teal-500/30 bg-dark-900/40 p-3 sm:p-4 mb-10 overflow-hidden">
+<svg aria-label="Cronología del experimento de Libet: intención neural en t-550ms, readiness potential, conciencia de la voluntad en t-200ms, acción en t=0 y ventana de veto entre -200ms y 0" class="w-full h-auto" role="img" viewbox="0 0 800 280">
+<defs>
+<filter id="m51-glow"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="m51-arr" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#2dd4bf" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<marker id="m51-arr-c" markerheight="6" markerwidth="8" orient="auto" refx="10" refy="3.5" viewbox="0 0 10 7"><polygon fill="#38bdf8" opacity="0.7" points="0 0, 10 3.5, 0 7"></polygon></marker>
+<pattern height="40" id="m51-grid" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.3" stroke="#374151" stroke-width="0.5"></path></pattern>
+</defs>
+<rect fill="url(#m51-grid)" height="280" rx="12" width="800"></rect>
+<!-- Eixo temporal -->
+<line opacity="0.4" stroke="#2dd4bf" stroke-width="2" x1="60" x2="740" y1="160" y2="160"></line>
+<polygon fill="#2dd4bf" opacity="0.5" points="740,155 755,160 740,165"></polygon>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="9" font-weight="600" x="760" y="164">tiempo</text>
+<!-- Marco 1: Intenção neural / Readiness Potential (t = -550ms) -->
+<line opacity="0.6" stroke="#2dd4bf" stroke-width="2" x1="120" x2="120" y1="130" y2="190"></line>
+<circle cx="120" cy="160" fill="#0c1f1c" filter="url(#m51-glow)" r="8" stroke="#2dd4bf" stroke-width="2"></circle>
+<rect fill="#0c1f1c" filter="url(#m51-glow)" height="65" rx="12" stroke="#2dd4bf" stroke-width="1.5" width="130" x="55" y="50"></rect>
+<text fill="#2dd4bf" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="120" y="70">READINESS</text>
+<text fill="#2dd4bf" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="120" y="84">POTENTIAL</text>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="120" y="102">intención neural</text>
+<text fill="#99f6e4" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="120" y="205">t = -550ms</text>
+<!-- Marco 2: Consciência da vontade (t = -200ms) -->
+<line opacity="0.6" stroke="#14b8a6" stroke-width="2" x1="380" x2="380" y1="130" y2="190"></line>
+<circle cx="380" cy="160" fill="#0c1f1c" filter="url(#m51-glow)" r="8" stroke="#14b8a6" stroke-width="2"></circle>
+<rect fill="#0c1f1c" filter="url(#m51-glow)" height="65" rx="12" stroke="#14b8a6" stroke-width="1.5" width="150" x="305" y="50"></rect>
+<text fill="#14b8a6" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="380" y="70">CONSCIENCIA</text>
+<text fill="#14b8a6" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="380" y="84">DE LA VOLUNTAD</text>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="380" y="102">"quiero moverme"</text>
+<text fill="#99f6e4" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="380" y="205">t = -200ms</text>
+<!-- Marco 3: Ação (t = 0) -->
+<line opacity="0.6" stroke="#38bdf8" stroke-width="2" x1="620" x2="620" y1="130" y2="190"></line>
+<circle cx="620" cy="160" fill="#0c1f1c" filter="url(#m51-glow)" r="8" stroke="#38bdf8" stroke-width="2"></circle>
+<rect fill="#0c1f1c" filter="url(#m51-glow)" height="65" rx="12" stroke="#38bdf8" stroke-width="1.5" width="120" x="560" y="50"></rect>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="620" y="70">ACCIÓN</text>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="620" y="84">MOTORA</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="620" y="102">flexión de la muñeca</text>
+<text fill="#bae6fd" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="620" y="205">t = 0</text>
+<!-- Seta de readiness potential → consciência -->
+<line marker-end="url(#m51-arr)" opacity="0.5" stroke="#2dd4bf" stroke-dasharray="4,3" stroke-width="1.5" x1="185" x2="303" y1="82" y2="82"></line>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="244" y="75">350ms antes</text>
+<!-- Janela de veto -->
+<rect fill="#0c1f1c" height="40" opacity="0.7" rx="10" stroke="#f59e0b" stroke-dasharray="5,3" stroke-width="1.5" width="240" x="380" y="225"></rect>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="500" y="243">VENTANA DE VETO</text>
+<text fill="#fde68a" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="500" y="258">"free won't" (~200ms)</text>
+<!-- Setas de veto -->
+<line opacity="0.4" stroke="#f59e0b" stroke-dasharray="3,2" stroke-width="1" x1="400" x2="420" y1="190" y2="225"></line>
+<line opacity="0.4" stroke="#f59e0b" stroke-dasharray="3,2" stroke-width="1" x1="600" x2="580" y1="190" y2="225"></line>
+</svg>
+</div>
+<!-- TÓPICO 1 -->
+<section class="mb-12" data-inema-topic="modulo-5-1#topico-1" id="topico-1">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<h2 class="text-2xl font-bold">El experimento de Libet (1983)</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-1-t1-p1">Benjamin Libet, neurofisiólogo de la Universidad de California en San Francisco, realizó en 1983 uno de los experimentos más perturbadores de la historia de la neurociencia. El protocolo era sencillo: los participantes se sentaban frente a un osciloscopio con una aguja giratoria (parecida a la de un reloj) y debían flexionar la muñeca cuando quisieran, de forma espontánea. La única tarea adicional era anotar mentalmente la posición de la aguja en el instante exacto en que sintieran las "ganas" o la "intención" de moverse.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-1-t1-p2">Mientras los participantes hacían esto, los electrodos de EEG monitoreaban la actividad eléctrica de la corteza motora. El resultado fue devastador para la intuición del sentido común: una onda eléctrica llamada Readiness Potential (Bereitschaftspotential) comenzaba entre 350 y 500 milisegundos ANTES de que el participante informara ser consciente de su intención de moverse. El cerebro ya había «decidido» antes de que la persona supiera que estaba decidiendo.</p>
+<!-- Tip box -->
+<div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-teal-400 font-semibold mb-1">Contexto histórico</p>
+<p class="text-neutral-300 text-sm">Libet ya era conocido por sus trabajos sobre la cronología de la conciencia desde los años 1960. Sus estudios sobre estimulación cortical directa mostraron que se necesitan ~500ms de actividad neural continua para que un estímulo se vuelva consciente. El experimento de 1983 aplicó esa misma lógica a la decisión voluntaria.</p>
+</div>
+<!-- Conceitos-chave grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">EEG</p>
+<p class="text-neutral-400 text-xs mt-1">Electroencefalografía</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Potencial de preparación</p>
+<p class="text-neutral-400 text-xs mt-1">Potencial de preparación</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">350-500ms</p>
+<p class="text-neutral-400 text-xs mt-1">Anticipación neural</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Acción voluntaria</p>
+<p class="text-neutral-400 text-xs mt-1">Flexión espontánea</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="mb-12" data-inema-topic="modulo-5-1#topico-2" id="topico-2">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<h2 class="text-2xl font-bold">Qué significa el resultado</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-1-t2-p1">La interpretación más directa del resultado de Libet es inquietante: el proceso neural que inicia una acción motora «voluntaria» precede a la experiencia consciente de la intención. Es decir, cuando sientes que estás «decidiendo» mover el dedo, tu cerebro ya empezó a preparar ese movimiento cientos de milisegundos antes. La conciencia de la decisión llega después del hecho neural, no antes.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-1-t2-p2">Esto plantea la hipótesis del epifenomenalismo: la conciencia sería un subproducto de los procesos cerebrales, no su causa. Como el humo que sale de una locomotora: acompaña el movimiento, pero no lo produce. Si el cerebro decide antes de que lo sepamos, ¿qué papel cumple la conciencia? ¿Somos espectadores de las decisiones de nuestro propio sistema nervioso?</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-teal-400 font-semibold text-sm mb-3">Lo que muestra el resultado</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>La actividad neural precede a la conciencia de la intención</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>El cerebro "prepara" acciones antes de la voluntad consciente</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>La cronología invierte el orden intuitivo (quiero → hago)</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Los procesos inconscientes participan en decisiones «voluntarias»</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-red-400 font-semibold text-sm mb-3">Lo que el resultado NO demuestra</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>¿Qué el libre albedrío no existe</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>¿Qué la conciencia es totalmente irrelevante</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>¿Qué todas las decisiones humanas son automáticas</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>¿Qué las decisiones complejas siguen el mismo patrón</span></li>
+</ul>
+</div>
+</div>
+<!-- Tip box -->
+<div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-teal-400 font-semibold mb-1">Epifenomenalismo</p>
+<p class="text-neutral-300 text-sm">Posición filosófica según la cual los estados mentales conscientes son efectos de los procesos cerebrales, pero no causan nada. Son como sombras: acompañan los eventos físicos, pero no influyen en ellos. Si es verdad, todo el sentido de agencia consciente sería una ilusión a posteriori.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Epifenómeno</p>
+<p class="text-neutral-400 text-xs mt-1">Efecto sin poder causal</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Cronología</p>
+<p class="text-neutral-400 text-xs mt-1">Neural → consciente</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Agencia</p>
+<p class="text-neutral-400 text-xs mt-1">¿Ilusión o realidad?</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Ilusión</p>
+<p class="text-neutral-400 text-xs mt-1">Narrativa posterior al hecho</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="mb-12" data-inema-topic="modulo-5-1#topico-3" id="topico-3">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<h2 class="text-2xl font-bold">El veto como libre albedrío</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-1-t3-p1">El propio Libet, al contrario de lo que muchos suponen, no concluyó que el libre albedrío no existe. Observó que, aunque el potencial de preparación precede a la conciencia de la intención, los participantes podían «vetar» el movimiento en los últimos ~200ms antes de la acción. Es decir, la conciencia no inicia la decisión, pero puede cancelarla. Libet propuso que el libre albedrío genuino reside en ese poder de veto: «free won’t» en lugar de «free will».</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-1-t3-p2">Esta reformulación tiene implicaciones profundas. Si el papel de la conciencia no es iniciar acciones, sino filtrar y censurar impulsos inconscientes, entonces hay que replantear nuestro sentido de control sobre la conducta. No somos los autores originales de nuestros impulsos, pero podemos ser sus editores. La voluntad consciente funcionaría como un portero que deja pasar o bloquea propuestas generadas inconscientemente.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-teal-400 font-semibold text-sm mb-3">Free Will (modelo clásico)</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>La conciencia decide</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>La intención causa la acción</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>No confirmado por Libet</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Cronología invertida</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-teal-400 font-semibold text-sm mb-3">Free Won't (modelo Libet)</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>El inconsciente propone</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>La conciencia veta</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Compatible con los datos</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Preserva una agencia parcial</span></li>
+</ul>
+</div>
+</div>
+<!-- Timeline -->
+<div class="space-y-4 mb-6">
+<h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide">Secuencia de Libet: propuesta y veto</h4>
+<div class="relative pl-6 border-l-2 border-teal-500/30 space-y-6">
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-teal-500/30 border-2 border-teal-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-teal-400">t = -550ms:</strong> El potencial de preparación se inicia en la corteza motora (inconsciente)</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-teal-500/30 border-2 border-teal-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-teal-400">t = -200ms:</strong> Aparece la conciencia de la intención («quiero mover»)</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-yellow-500/30 border-2 border-yellow-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-yellow-400">t = -200 a 0:</strong> Ventana de veto: la conciencia puede cancelar el movimiento</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-cyan-500/30 border-2 border-cyan-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-cyan-400">t = 0:</strong> Acción ejecutada (si no está vetada)</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Free Won't</p>
+<p class="text-neutral-400 text-xs mt-1">Libertad de veto</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Inhibición</p>
+<p class="text-neutral-400 text-xs mt-1">Control inhibitorio</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">200ms</p>
+<p class="text-neutral-400 text-xs mt-1">Ventana de cancelación</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Editor</p>
+<p class="text-neutral-400 text-xs mt-1">No autor, sino censor</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="mb-12" data-inema-topic="modulo-5-1#topico-4" id="topico-4">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<h2 class="text-2xl font-bold">Críticas y debates actuales</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-1-t4-p1">En las décadas posteriores al experimento de Libet, se plantearon varias críticas metodológicas y conceptuales. La principal cuestión técnica tiene que ver con la imprecisión del método de medición del tiempo: pedirle a alguien que indique el momento exacto de una experiencia subjetiva mientras mira un reloj introduce errores significativos. El participante estima retrospectivamente cuándo surgió la voluntad, en lugar de marcarlo en tiempo real.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-1-t4-p2">Aaron Schurger y colegas (2012) propusieron una reinterpretación radical: el potencial de preparación puede no ser una preparación para una decisión, sino ruido neuronal estocástico. Cuando el nivel de ruido cruza un umbral por casualidad, el participante lo interpreta como «intención». John-Dylan Haynes (2008) usó fMRI y decodificó intenciones hasta 10 segundos antes de la conciencia, pero con una precisión limitada (~60%), apenas por encima del azar. Después de más de 40 años, no hay consenso científico.</p>
+<!-- Tip box -->
+<div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-teal-400 font-semibold mb-1">Schurger et al. (2012)</p>
+<p class="text-neutral-300 text-sm">Propusieron que el readiness potential refleja fluctuaciones aleatorias en la actividad cortical, no una decisión preconsciente. Cuando el participante decide «ahora», solo espera que esas fluctuaciones crucen un umbral. Si es correcto, el experimento de Libet no dice nada sobre el libre albedrío.</p>
+</div>
+<!-- Timeline de pesquisas -->
+<div class="space-y-4 mb-6">
+<h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide">Línea de tiempo del debate</h4>
+<div class="relative pl-6 border-l-2 border-teal-500/30 space-y-6">
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-teal-500/30 border-2 border-teal-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-teal-400">1983:</strong> Libet publica el experimento original en Brain</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-teal-500/30 border-2 border-teal-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-teal-400">1985:</strong> Libet propone la hipótesis del veto consciente</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-teal-500/30 border-2 border-teal-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-teal-400">2008:</strong> Haynes decodifica intenciones 10s antes con fMRI (~60% de precisión)</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-teal-500/30 border-2 border-teal-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-teal-400">2012:</strong> Schurger reinterpreta el potencial de preparación como ruido neural</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[25px] w-4 h-4 rounded-full bg-red-500/30 border-2 border-red-400"></span>
+<p class="text-neutral-300 text-sm"><strong class="text-red-400">2024:</strong> El debate continúa sin consenso. Décadas de investigación, ninguna respuesta definitiva</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Timing</p>
+<p class="text-neutral-400 text-xs mt-1">Imprecisión del relato</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Ruido neural</p>
+<p class="text-neutral-400 text-xs mt-1">Hipótesis Schurger</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">fMRI</p>
+<p class="text-neutral-400 text-xs mt-1">Haynes (10s, ~60%)</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Sin consenso</p>
+<p class="text-neutral-400 text-xs mt-1">Más de 40 años de debate</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="mb-12" data-inema-topic="modulo-5-1#topico-5" id="topico-5">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<h2 class="text-2xl font-bold">Implicaciones para el derecho</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-1-t5-p1">El sistema jurídico moderno se construye sobre el supuesto de que los seres humanos son agentes conscientes capaces de elegir sus acciones. La responsabilidad penal exige dos elementos: actus reus (el acto prohibido) y mens rea (la intención consciente de cometerlo). Si el experimento de Libet sugiere que la conciencia no inicia las acciones, se pone en tela de juicio la base filosófica del derecho penal.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-1-t5-p2">En la práctica, la cuestión ya afecta debates reales. Los abogados defensores argumentan que las lesiones en la corteza prefrontal (responsable de inhibir los impulsos, es decir, del «veto» de Libet) reducen la capacidad de autocontrol. Se ha convocado a neurocientíficos como peritos en tribunales para presentar evidencias de que la capacidad de «vetar» impulsos puede verse comprometida desde el punto de vista neurobiológico. Si el libre albedrío es la capacidad de veto, perder esa capacidad altera la culpabilidad.</p>
+<!-- Alert box -->
+<div class="bg-red-500/10 border border-red-500/30 rounded-xl p-5 mb-6">
+<p class="text-red-400 font-semibold text-sm mb-1">Atención: dilema jurídico</p>
+<p class="text-neutral-300 text-sm">Si aceptamos que el libre albedrío es solo poder de veto, y que las lesiones o condiciones neurológicas pueden eliminar ese poder, el sistema jurídico necesita repensar la propia noción de culpa. Pasamos de «tú elegiste hacer esto» a «¿tu cerebro podía vetar ese impulso?».</p>
+</div>
+<!-- Tip box -->
+<div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-5 mb-6">
+<p class="text-sm text-teal-400 font-semibold mb-1">Neurolaw: el campo emergente</p>
+<p class="text-neutral-300 text-sm">Neurolaw es el campo interdisciplinario entre la neurociencia y el derecho. Investiga cuestiones como: ¿se puede presentar evidencia de fMRI en los juicios? ¿Los tumores cerebrales pueden atenuar la responsabilidad? ¿La neurociencia del adolescente justifica penas diferenciadas? Todas estas cuestiones pasan por el modelo de Libet.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Mens rea</p>
+<p class="text-neutral-400 text-xs mt-1">Intención consciente</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Neurolaw</p>
+<p class="text-neutral-400 text-xs mt-1">Neurociencia + derecho</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Culpabilidad</p>
+<p class="text-neutral-400 text-xs mt-1">Capacidad de veto</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Prefrontal</p>
+<p class="text-neutral-400 text-xs mt-1">Sede de la inhibición</p>
+</div>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="mb-12" data-inema-topic="modulo-5-1#topico-6" id="topico-6">
+<div class="flex items-center space-x-3 mb-6">
+<span class="w-9 h-9 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<h2 class="text-2xl font-bold">Implicaciones para la salud mental y la educación</h2>
+</div>
+<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m5-1-t6-p1">La psiquiatría y la psicoterapia se fundamentan en la premisa de que el paciente tiene cierto grado de agencia sobre su comportamiento. La Terapia Cognitivo-Conductual (TCC), por ejemplo, entrena al paciente para reconocer pensamientos automáticos y elegir no actuar en función de ellos. Esto es, esencialmente, entrenamiento del veto de Libet: aprender a identificar impulsos inconscientes y bloquear respuestas disfuncionales.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m5-1-t6-p2">En la educación, el supuesto de agencia también es fundamental. Enseñar es creer que el alumno puede dirigir su atención, controlar sus impulsos y reorganizar sus patrones de pensamiento. La neuroplasticidad confirma que el cerebro cambia con el entrenamiento y la práctica, pero sigue pendiente la cuestión de quién dirige ese cambio. Si el modelo de Libet es correcto, la educación no forma la voluntad: forma la capacidad de vetar impulsos que surgen sin nuestro permiso.</p>
+<!-- Grid ✓/✗ -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-teal-400 font-semibold text-sm mb-3">La salud mental y el modelo del veto</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>La TCC te entrena para reconocer y vetar pensamientos automáticos</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>El mindfulness aumenta el intervalo entre el impulso y la acción</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Las compulsiones = falla en el mecanismo de veto</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Los psicofármacos modulan la neurobiología de la inhibición</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
+<h4 class="text-teal-400 font-semibold text-sm mb-3">Educación y agencia</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Enseñar presupone plasticidad y voluntad</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Autodisciplina como entrenamiento de la inhibición</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>El modelo de la «fuerza de voluntad» pura es simplista</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Ignora factores neurobiológicos y ambientales</span></li>
+</ul>
+</div>
+</div>
+<!-- Blue research box -->
+<div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5 mb-6">
+<p class="text-blue-400 font-semibold text-sm mb-1">Investigación: mindfulness y el veto</p>
+<p class="text-neutral-300 text-sm">Los estudios de neuroimagen muestran que la práctica de mindfulness fortalece la corteza prefrontal medial y las conexiones entre la corteza prefrontal y la amígdala, exactamente las áreas involucradas en la inhibición de respuestas automáticas. La meditación, en términos libetianos, es un entrenamiento del veto: ampliar la ventana de 200ms entre el impulso y la acción.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">TCC</p>
+<p class="text-neutral-400 text-xs mt-1">Entrenamiento del veto cognitivo</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Mindfulness</p>
+<p class="text-neutral-400 text-xs mt-1">Amplía la ventana de veto</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Plasticidad</p>
+<p class="text-neutral-400 text-xs mt-1">El cerebro se reorganiza</p>
+</div>
+<div class="bg-dark-800 border border-dark-700 rounded-lg p-3 text-center">
+<p class="text-teal-400 text-sm font-semibold">Compulsión</p>
+<p class="text-neutral-400 text-xs mt-1">Veto comprometido</p>
+</div>
+</div>
+</section>
+<!-- RESUMO DO MÓDULO -->
+<section class="bg-dark-800 border border-teal-500/30 rounded-xl p-6 sm:p-8 mb-8">
+<h2 class="text-xl font-bold mb-4 text-teal-400">Resumen del Módulo 5.1</h2>
+<ul class="space-y-3 text-neutral-300 text-sm mb-6">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Libet (1983) mostró que la actividad neural precede a la conciencia de la intención en 350-500ms</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>El readiness potential sugiere que el cerebro «decide» antes de la experiencia consciente</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Libet propuso que el libre albedrío reside en el veto: "free won't", no "free will"</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Las críticas cuestionan la precisión del método y proponen que el potencial de preparación es ruido neural</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Para el derecho: si el libre albedrío es un veto, la culpabilidad depende de la capacidad neurológica de inhibición</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-0.5">✓</span><span>Para la salud y la educación: la TCC y la atención plena son, esencialmente, entrenamiento del mecanismo de veto</span></li>
+</ul>
+<a class="inline-flex items-center justify-start bg-teal-500/20 border border-teal-500/30 text-teal-400 px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-teal-500/30 transition-colors" href="modulo-5-2.html">Siguiente: Conciencia: el problema difícil →</a>
+</section>
+<!-- NAV INFERIOR -->
+<div class="flex items-center justify-between pt-8 border-t border-dark-700">
+<a class="text-neutral-400 hover:text-teal-400 transition-colors text-sm font-medium" href="index.html">← Ruta 5</a>
+<a class="text-teal-400 hover:text-teal-300 transition-colors text-sm font-medium" href="modulo-5-2.html">Módulo 5.2 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-700 py-8">
+<div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500">
+<a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mente, Poder e Máquina · 2026
+  </div>
+</footer>
+<script>
+function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');var d=h.classList.contains('dark');localStorage.setItem('theme',d?'dark':'light');h.style.colorScheme=d?'dark':'light';try{var p=JSON.parse(localStorage.getItem('inema.prefs')||'{}');p.theme=d?'inema-dark':'claro';localStorage.setItem('inema.prefs',JSON.stringify(p))}catch(e){}}
+function toggleTopic(btn){var exp=btn.nextElementSibling;exp.classList.toggle('active');btn.setAttribute('aria-expanded',exp.classList.contains('active'))}
+</script>
+<script src="../../../assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body>
+</html>
