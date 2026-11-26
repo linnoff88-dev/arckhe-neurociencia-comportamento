@@ -4,18 +4,18 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="neurociencia-comportamento" name="inema-course"/>
-<title>Mind, Power, and Machine — INEMA.CLUB</title>
+<meta content="neurociencia-comportamento" name="ARCKHÉ-course"/>
+<title>Mind, Power, and Machine — ARCKHÉ AI</title>
 <!-- Anti-FOUC (PRIMEIRO, antes de tudo) -->
 <script>
 (function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) {
         var parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
@@ -24,17 +24,17 @@
       } else {
         var legacy = localStorage.getItem('theme');
         if (legacy === 'light') p.theme = 'claro';
-        else if (legacy === 'dark') p.theme = 'inema-dark';
+        else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
       }
     } catch (e) { p = clone(DEF); }
     var THEMES = {
-      'inema-dark': { dark: true, attr: null, cs: 'dark' },
+      'ARCKHÉ-dark': { dark: true, attr: null, cs: 'dark' },
       'claro': { dark: false, attr: null, cs: 'light' },
       'sepia': { dark: false, attr: 'sepia', cs: 'light' },
       'foco': { dark: null, attr: 'foco', cs: null },
       'contraste': { dark: true, attr: 'contraste', cs: 'dark' }
     };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
     if (t.dark === true) html.classList.add('dark');
     else if (t.dark === false) html.classList.remove('dark');
     if (t.attr) html.setAttribute('data-theme', t.attr);
@@ -44,7 +44,7 @@
     html.setAttribute('data-accent', p.accent || 'emerald');
     var s = html.style;
     var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString());
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
     s.setProperty('font-size', scale + '%');
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
     s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -76,7 +76,7 @@ tailwind.config = {
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <!-- Manifesto do curso -->
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "neurociencia-comportamento",
   "tracks": [
@@ -188,8 +188,8 @@ tailwind.config = {
   .dark .border-dark-600 { border-color: #374151; }
   .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
 </style>
-<link href="https://inematds.github.io/neurociencia-comportamento/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- NAV -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -197,7 +197,7 @@ tailwind.config = {
 <div class="flex items-center space-x-4">
 <a class="text-primary font-bold text-xl" href="index.html">🧠 MPC</a>
 <span class="text-neutral-500">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 </div>
 <div class="hidden md:flex items-center space-x-1">
 <a class="px-3 py-2 rounded-lg text-sm font-medium text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="curso/trilha1/index.html">T1 Brain</a>
@@ -255,7 +255,7 @@ tailwind.config = {
 </div>
 <div class="flex justify-start space-x-3">
 <a class="bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 px-6 py-3 rounded-lg font-semibold hover:bg-emerald-500/30 transition-colors" href="curso/trilha1/index.html">Start Track 1 →</a>
-<button class="bg-dark-700 border border-dark-600 text-neutral-300 px-6 py-3 rounded-lg font-semibold hover:bg-dark-600 transition-colors" onclick="if(window.INEMA)INEMA.openJourney()">📊 My Journey</button>
+<button class="bg-dark-700 border border-dark-600 text-neutral-300 px-6 py-3 rounded-lg font-semibold hover:bg-dark-600 transition-colors" onclick="if(window.ARCKHÉ)ARCKHÉ.openJourney()">📊 My Journey</button>
 </div>
 </section>
 <!-- GRADE DE TRILHAS -->
@@ -263,7 +263,7 @@ tailwind.config = {
 <h2 class="text-2xl font-bold mb-8">6 Learning Paths</h2>
 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 <!-- T1 -->
-<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-emerald-500/10 hover:border-emerald-500/30 transition-all" data-inema-track="1" href="curso/trilha1/index.html">
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-emerald-500/10 hover:border-emerald-500/30 transition-all" data-ARCKHÉ-track="1" href="curso/trilha1/index.html">
 <div class="flex items-center space-x-3 mb-4">
 <span class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-xl">🧠</span>
 <div>
@@ -275,7 +275,7 @@ tailwind.config = {
 <span class="text-emerald-400 text-sm font-medium">4 modules →</span>
 </a>
 <!-- T2 -->
-<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-blue-500/10 hover:border-blue-500/30 transition-all" data-inema-track="2" href="curso/trilha2/index.html">
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-blue-500/10 hover:border-blue-500/30 transition-all" data-ARCKHÉ-track="2" href="curso/trilha2/index.html">
 <div class="flex items-center space-x-3 mb-4">
 <span class="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center text-xl">👥</span>
 <div>
@@ -287,7 +287,7 @@ tailwind.config = {
 <span class="text-blue-400 text-sm font-medium">3 modules →</span>
 </a>
 <!-- T3 -->
-<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-purple-500/10 hover:border-purple-500/30 transition-all" data-inema-track="3" href="curso/trilha3/index.html">
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-purple-500/10 hover:border-purple-500/30 transition-all" data-ARCKHÉ-track="3" href="curso/trilha3/index.html">
 <div class="flex items-center space-x-3 mb-4">
 <span class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center text-xl">⚡</span>
 <div>
@@ -299,7 +299,7 @@ tailwind.config = {
 <span class="text-purple-400 text-sm font-medium">3 modules →</span>
 </a>
 <!-- T4 -->
-<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-amber-500/10 hover:border-amber-500/30 transition-all" data-inema-track="4" href="curso/trilha4/index.html">
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-amber-500/10 hover:border-amber-500/30 transition-all" data-ARCKHÉ-track="4" href="curso/trilha4/index.html">
 <div class="flex items-center space-x-3 mb-4">
 <span class="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center text-xl">💰</span>
 <div>
@@ -311,7 +311,7 @@ tailwind.config = {
 <span class="text-amber-400 text-sm font-medium">3 modules →</span>
 </a>
 <!-- T5 -->
-<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-teal-500/10 hover:border-teal-500/30 transition-all" data-inema-track="5" href="curso/trilha5/index.html">
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-teal-500/10 hover:border-teal-500/30 transition-all" data-ARCKHÉ-track="5" href="curso/trilha5/index.html">
 <div class="flex items-center space-x-3 mb-4">
 <span class="w-10 h-10 rounded-xl bg-teal-500/20 flex items-center justify-center text-xl">🔮</span>
 <div>
@@ -323,7 +323,7 @@ tailwind.config = {
 <span class="text-teal-400 text-sm font-medium">3 modules →</span>
 </a>
 <!-- T6 -->
-<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-rose-500/10 hover:border-rose-500/30 transition-all" data-inema-track="6" href="curso/trilha6/index.html">
+<a class="group block bg-dark-800 border border-dark-700 rounded-xl p-6 hover:bg-rose-500/10 hover:border-rose-500/30 transition-all" data-ARCKHÉ-track="6" href="curso/trilha6/index.html">
 <div class="flex items-center space-x-3 mb-4">
 <span class="w-10 h-10 rounded-xl bg-rose-500/20 flex items-center justify-center text-xl">🤖</span>
 <div>
@@ -395,11 +395,11 @@ tailwind.config = {
 <!-- FOOTER -->
 <footer class="border-t border-dark-700 py-8">
 <div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500">
-<a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mind, Power and Machine · 2026
+<a class="text-sky-400 hover:text-sky-300" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a> · Mind, Power and Machine · 2026
   </div>
-<!-- inema-backlink:v1 -->
-<p style="display:block;width:100%;text-align:center;font-size:.85rem;margin:.75rem 0 0;opacity:.85"><a href="https://www.inema.club/cursos/192-mente-poder-e-maquina-neurociencia-vieses-e-comportamento/" style="color:inherit;text-decoration:underline">Full course details on INEMA.CLUB</a> · <a href="https://www.inema.club/aprender-inteligencia-artificial/" style="color:inherit;text-decoration:underline">Guide: how to learn artificial intelligence</a></p>
-<!-- /inema-backlink:v1 -->
+<!-- ARCKHÉ-backlink:v1 -->
+<p style="display:block;width:100%;text-align:center;font-size:.85rem;margin:.75rem 0 0;opacity:.85"><a href="https://www.ARCKHÉ AI/cursos/192-mente-poder-e-maquina-neurociencia-vieses-e-comportamento/" style="color:inherit;text-decoration:underline">Full course details on ARCKHÉ AI</a> · <a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/" style="color:inherit;text-decoration:underline">Guide: how to learn artificial intelligence</a></p>
+<!-- /ARCKHÉ-backlink:v1 -->
 </footer>
 <!-- JS base (tema v1) -->
 <script>
@@ -411,17 +411,17 @@ function toggleTheme() {
   html.style.colorScheme = isDark ? 'dark' : 'light';
   // sync com prefs v2
   try {
-    var p = JSON.parse(localStorage.getItem('inema.prefs') || '{}');
-    p.theme = isDark ? 'inema-dark' : 'claro';
-    localStorage.setItem('inema.prefs', JSON.stringify(p));
+    var p = JSON.parse(localStorage.getItem('ARCKHÉ.prefs') || '{}');
+    p.theme = isDark ? 'ARCKHÉ-dark' : 'claro';
+    localStorage.setItem('ARCKHÉ.prefs', JSON.stringify(p));
   } catch(e){}
 }
 </script>
 <!-- Learn layer -->
 <script src="../assets/learn.js"></script>
 <script>
-  if (window.INEMA && typeof window.INEMA.init === 'function') {
-    window.INEMA.init();
+  if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+    window.ARCKHÉ.init();
   }
 </script>
 </body>

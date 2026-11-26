@@ -4,11 +4,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="neurociencia-comportamento" name="inema-course"/>
+<meta content="neurociencia-comportamento" name="ARCKHÉ-course"/>
 <title>Módulo 1.2 — Heurísticas | MPC</title>
 <!-- Anti-FOUC -->
 <script>
-(function(){try{var h=document.documentElement,D={theme:'inema-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('inema.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='inema-dark'}}catch(e){p=c(D)}var T={'inema-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['inema-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--inema-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
+(function(){try{var h=document.documentElement,D={theme:'ARCKHÉ-dark',font:'inter',fontScale:100,lineWidth:68,leading:1.7,accent:'emerald'};function c(o){var r={};for(var x in o)r[x]=o[x];return r}var p=c(D);try{var raw=localStorage.getItem('ARCKHÉ.prefs');if(raw){var ps=JSON.parse(raw);if(ps&&typeof ps==='object')for(var k in D)if(ps[k]!=null)p[k]=ps[k]}else{var lg=localStorage.getItem('theme');if(lg==='light')p.theme='claro';else if(lg==='dark')p.theme='ARCKHÉ-dark'}}catch(e){p=c(D)}var T={'ARCKHÉ-dark':{dark:true,attr:null,cs:'dark'},'claro':{dark:false,attr:null,cs:'light'},'sepia':{dark:false,attr:'sepia',cs:'light'},'foco':{dark:null,attr:'foco',cs:null},'contraste':{dark:true,attr:'contraste',cs:'dark'}};var t=T[p.theme]||T['ARCKHÉ-dark'];if(t.dark===true)h.classList.add('dark');else if(t.dark===false)h.classList.remove('dark');if(t.attr)h.setAttribute('data-theme',t.attr);else h.removeAttribute('data-theme');h.style.colorScheme=(t.cs?t.cs:(h.classList.contains('dark')?'dark':'light'));h.setAttribute('data-font',p.font||'inter');h.setAttribute('data-accent',p.accent||'emerald');var s=h.style;var sc=(+p.fontScale||100);s.setProperty('--ARCKHÉ-font-scale',(sc/100).toString());s.setProperty('font-size',sc+'%');s.setProperty('--measure',(+p.lineWidth||68)+'ch');s.setProperty('--lh-body',(+p.leading||1.7).toString());var fam=p.font==='system'?'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif':(p.font==='leitura'?'"Atkinson Hyperlegible","Inter",system-ui,sans-serif':'"Inter",system-ui,sans-serif');s.setProperty('--font-body',fam);var A={emerald:[152,76,45],blue:[217,91,60],purple:[258,90,66],amber:[38,92,50],teal:[174,72,41],rose:[350,89,60]};var a=A[p.accent]||A.emerald;s.setProperty('--accent-h',a[0]+'');s.setProperty('--accent-s',a[1]+'%');s.setProperty('--accent-l',a[2]+'%');s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)')}catch(err){try{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark'}catch(e){}}})();
 </script>
 <link href="../../../assets/learn.css" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
@@ -26,7 +26,7 @@ tailwind.config = {
 }
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "neurociencia-comportamento",
   "tracks": [
@@ -67,8 +67,8 @@ html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
 .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
 html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 </style>
-<link href="https://inematds.github.io/neurociencia-comportamento/curso/trilha1/modulo-1-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/en/curso/trilha1/modulo-1-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/neurociencia-comportamento/es/curso/trilha1/modulo-1-2.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha1/modulo-1-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha1/modulo-1-2.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha1/modulo-1-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <!-- NAV -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-700">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,7 +76,7 @@ html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 <div class="flex items-center space-x-4">
 <a class="text-primary font-bold text-xl" href="../../index.html">🧠 MPC</a>
 <span class="text-neutral-500">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 </div>
 <div class="hidden md:flex items-center space-x-1">
 <a class="px-3 py-2 rounded-lg text-sm font-medium text-emerald-400 bg-emerald-500/10" href="../trilha1/index.html">T1 Cerebro</a>
@@ -92,7 +92,7 @@ html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 </div>
 </div>
 </nav>
-<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="1-2">
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-ARCKHÉ-module="1-2">
 <!-- BREADCRUMB -->
 <div class="flex items-center space-x-2 text-sm text-neutral-500 mb-8">
 <a class="hover:text-emerald-400 transition-colors" href="../../index.html">Inicio</a>
@@ -157,13 +157,13 @@ html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 </svg>
 </div>
 <!-- TÓPICO 1 -->
-<section class="mb-12" data-inema-topic="modulo-1-2#topico-1" id="topico-1">
+<section class="mb-12" data-ARCKHÉ-topic="modulo-1-2#topico-1" id="topico-1">
 <div class="flex items-center space-x-3 mb-6">
 <span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
 <h2 class="text-2xl font-bold">Qué son las heurísticas</h2>
 </div>
-<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-2-t1-p1">Las heurísticas son estrategias mentales simplificadas que el cerebro usa para tomar decisiones rápidas en condiciones de incertidumbre. Son herramientas del Sistema 1: reglas prácticas que evolucionaron a lo largo de millones de años para ayudarnos a sobrevivir en entornos peligrosos e impredecibles.</p>
-<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-2-t1-p2">El punto fundamental es que las heurísticas no son errores. Son adaptaciones evolutivas que funcionan bien en la mayoría de los contextos. El problema surge cuando se aplican en contextos para los que no fueron diseñadas: mercados financieros, decisiones médicas complejas, evaluación de estadísticas.</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-ARCKHÉ-block="m1-2-t1-p1">Las heurísticas son estrategias mentales simplificadas que el cerebro usa para tomar decisiones rápidas en condiciones de incertidumbre. Son herramientas del Sistema 1: reglas prácticas que evolucionaron a lo largo de millones de años para ayudarnos a sobrevivir en entornos peligrosos e impredecibles.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-ARCKHÉ-block="m1-2-t1-p2">El punto fundamental es que las heurísticas no son errores. Son adaptaciones evolutivas que funcionan bien en la mayoría de los contextos. El problema surge cuando se aplican en contextos para los que no fueron diseñadas: mercados financieros, decisiones médicas complejas, evaluación de estadísticas.</p>
 <!-- Tip box -->
 <div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5 mb-6">
 <p class="text-sm text-emerald-400 font-semibold mb-1">Kahneman vs. Gigerenzer</p>
@@ -189,13 +189,13 @@ html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 </div>
 </section>
 <!-- TÓPICO 2 -->
-<section class="mb-12" data-inema-topic="modulo-1-2#topico-2" id="topico-2">
+<section class="mb-12" data-ARCKHÉ-topic="modulo-1-2#topico-2" id="topico-2">
 <div class="flex items-center space-x-3 mb-6">
 <span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
 <h2 class="text-2xl font-bold">Heurística de disponibilidad</h2>
 </div>
-<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-2-t2-p1">Estimamos la probabilidad de algo según la facilidad con que nos vienen ejemplos a la mente. Si puedo recordar fácilmente casos de ataques de tiburón (porque los medios los muestran con detalles horribles), concluyo que son comunes. En realidad, los rayos matan a muchas más personas que los tiburones.</p>
-<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-2-t2-p2">Las redes sociales transformaron la heurística de disponibilidad en un arma de manipulación masiva. El algoritmo amplifica el contenido emocional y extremo, que se vuelve «más disponible» en la memoria de los usuarios. El resultado: percepción distorsionada del riesgo, miedo desproporcionado y decisiones basadas en la viralidad, no en la realidad.</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-ARCKHÉ-block="m1-2-t2-p1">Estimamos la probabilidad de algo según la facilidad con que nos vienen ejemplos a la mente. Si puedo recordar fácilmente casos de ataques de tiburón (porque los medios los muestran con detalles horribles), concluyo que son comunes. En realidad, los rayos matan a muchas más personas que los tiburones.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-ARCKHÉ-block="m1-2-t2-p2">Las redes sociales transformaron la heurística de disponibilidad en un arma de manipulación masiva. El algoritmo amplifica el contenido emocional y extremo, que se vuelve «más disponible» en la memoria de los usuarios. El resultado: percepción distorsionada del riesgo, miedo desproporcionado y decisiones basadas en la viralidad, no en la realidad.</p>
 <!-- Grid ✓/✗ -->
 <div class="grid md:grid-cols-2 gap-4 mb-6">
 <div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
@@ -240,13 +240,13 @@ html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 </div>
 </section>
 <!-- TÓPICO 3 -->
-<section class="mb-12" data-inema-topic="modulo-1-2#topico-3" id="topico-3">
+<section class="mb-12" data-ARCKHÉ-topic="modulo-1-2#topico-3" id="topico-3">
 <div class="flex items-center space-x-3 mb-6">
 <span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
 <h2 class="text-2xl font-bold">Heurística de representatividad</h2>
 </div>
-<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-2-t3-p1">Clasificamos las cosas según su parecido con un prototipo mental e ignoramos las estadísticas reales. El ejemplo clásico de Kahneman: «Steve es tímido, organizado, meticuloso y le gusta el orden». ¿Es más probable que Steve sea bibliotecario o agricultor? La mayoría responde que bibliotecario, pero hay muchos más agricultores en el mundo.</p>
-<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-2-t3-p2">El error se llama "base-rate neglect": ignorar la tasa base (la proporción real en la población) a favor de la semejanza con el estereotipo. La representatividad es la base cognitiva del prejuicio: juzgamos a las personas por la apariencia de pertenecer a un grupo, no por las pruebas individuales.</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-ARCKHÉ-block="m1-2-t3-p1">Clasificamos las cosas según su parecido con un prototipo mental e ignoramos las estadísticas reales. El ejemplo clásico de Kahneman: «Steve es tímido, organizado, meticuloso y le gusta el orden». ¿Es más probable que Steve sea bibliotecario o agricultor? La mayoría responde que bibliotecario, pero hay muchos más agricultores en el mundo.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-ARCKHÉ-block="m1-2-t3-p2">El error se llama "base-rate neglect": ignorar la tasa base (la proporción real en la población) a favor de la semejanza con el estereotipo. La representatividad es la base cognitiva del prejuicio: juzgamos a las personas por la apariencia de pertenecer a un grupo, no por las pruebas individuales.</p>
 <!-- Concept box -->
 <div class="bg-gradient-to-r from-emerald-900/20 to-dark-800 border border-emerald-500/30 rounded-xl p-5 mb-6">
 <p class="text-emerald-400 font-semibold text-sm mb-2">El problema de Linda</p>
@@ -277,13 +277,13 @@ html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 </div>
 </section>
 <!-- TÓPICO 4 -->
-<section class="mb-12" data-inema-topic="modulo-1-2#topico-4" id="topico-4">
+<section class="mb-12" data-ARCKHÉ-topic="modulo-1-2#topico-4" id="topico-4">
 <div class="flex items-center space-x-3 mb-6">
 <span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
 <h2 class="text-2xl font-bold">Heurística de anclaje</h2>
 </div>
-<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-2-t4-p1">La primera información que recibimos sobre un tema funciona como un ancla que distorsiona todas las evaluaciones posteriores. En el experimento clásico de Kahneman y Tversky, los participantes giraban una ruleta (manipulada para caer en 10 o 65) y luego estimaban el porcentaje de países africanos en la ONU.</p>
-<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-2-t4-p2">Quien obtuvo 10 en la ruleta estimó ~25 países. Quien obtuvo 65 estimó ~45. Un número completamente aleatorio e irrelevante alteró significativamente el juicio. El ancla funciona incluso cuando sabemos que es arbitraria, incluso cuando intentamos corregirla conscientemente.</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-ARCKHÉ-block="m1-2-t4-p1">La primera información que recibimos sobre un tema funciona como un ancla que distorsiona todas las evaluaciones posteriores. En el experimento clásico de Kahneman y Tversky, los participantes giraban una ruleta (manipulada para caer en 10 o 65) y luego estimaban el porcentaje de países africanos en la ONU.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-ARCKHÉ-block="m1-2-t4-p2">Quien obtuvo 10 en la ruleta estimó ~25 países. Quien obtuvo 65 estimó ~45. Un número completamente aleatorio e irrelevante alteró significativamente el juicio. El ancla funciona incluso cuando sabemos que es arbitraria, incluso cuando intentamos corregirla conscientemente.</p>
 <!-- Grid ✓/✗ -->
 <div class="grid md:grid-cols-2 gap-4 mb-6">
 <div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
@@ -330,13 +330,13 @@ html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 </div>
 </section>
 <!-- TÓPICO 5 -->
-<section class="mb-12" data-inema-topic="modulo-1-2#topico-5" id="topico-5">
+<section class="mb-12" data-ARCKHÉ-topic="modulo-1-2#topico-5" id="topico-5">
 <div class="flex items-center space-x-3 mb-6">
 <span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
 <h2 class="text-2xl font-bold">Heurística del afecto</h2>
 </div>
-<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-2-t5-p1">Paul Slovic descubrió que juzgamos los riesgos y beneficios según nuestros sentimientos, no los datos. Si algo nos parece bueno (sentimiento positivo), automáticamente minimizamos los riesgos y maximizamos los beneficios. Si nos parece malo (sentimiento negativo), hacemos lo contrario.</p>
-<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-2-t5-p2">La energía nuclear es el caso clásico: aunque estadísticamente es una de las fuentes de energía más seguras (muertes por kWh), genera un miedo visceral. En cambio, conducir causa cientos de miles de muertes al año, pero parece «normal». El afecto, no la estadística, gobierna la percepción del riesgo.</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-ARCKHÉ-block="m1-2-t5-p1">Paul Slovic descubrió que juzgamos los riesgos y beneficios según nuestros sentimientos, no los datos. Si algo nos parece bueno (sentimiento positivo), automáticamente minimizamos los riesgos y maximizamos los beneficios. Si nos parece malo (sentimiento negativo), hacemos lo contrario.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-ARCKHÉ-block="m1-2-t5-p2">La energía nuclear es el caso clásico: aunque estadísticamente es una de las fuentes de energía más seguras (muertes por kWh), genera un miedo visceral. En cambio, conducir causa cientos de miles de muertes al año, pero parece «normal». El afecto, no la estadística, gobierna la percepción del riesgo.</p>
 <!-- Timeline -->
 <div class="space-y-4 mb-6">
 <h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide">Cómo el afecto distorsiona la evaluación del riesgo</h4>
@@ -379,13 +379,13 @@ html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 </div>
 </section>
 <!-- TÓPICO 6 -->
-<section class="mb-12" data-inema-topic="modulo-1-2#topico-6" id="topico-6">
+<section class="mb-12" data-ARCKHÉ-topic="modulo-1-2#topico-6" id="topico-6">
 <div class="flex items-center space-x-3 mb-6">
 <span class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
 <h2 class="text-2xl font-bold">Cuándo funcionan las heurísticas (y cuándo fallan)</h2>
 </div>
-<p class="text-neutral-300 leading-relaxed mb-4" data-inema-block="m1-2-t6-p1">Las heurísticas son eficientes en entornos estables, familiares y con retroalimentación rápida. Un bombero experimentado que «siente» que el piso va a derrumbarse está usando patrones aprendidos en cientos de situaciones similares. En este contexto, la heurística es más rápida y confiable que cualquier análisis deliberado.</p>
-<p class="text-neutral-300 leading-relaxed mb-6" data-inema-block="m1-2-t6-p2">Las heurísticas fallan en entornos complejos, nuevos o con retroalimentación tardía. El mercado financiero, las decisiones políticas y los diagnósticos médicos poco frecuentes son ejemplos en los que confiar en las heurísticas genera errores sistemáticos. La metacognición (saber cuándo estás usando una heurística) es la competencia que distingue las buenas decisiones de las pésimas.</p>
+<p class="text-neutral-300 leading-relaxed mb-4" data-ARCKHÉ-block="m1-2-t6-p1">Las heurísticas son eficientes en entornos estables, familiares y con retroalimentación rápida. Un bombero experimentado que «siente» que el piso va a derrumbarse está usando patrones aprendidos en cientos de situaciones similares. En este contexto, la heurística es más rápida y confiable que cualquier análisis deliberado.</p>
+<p class="text-neutral-300 leading-relaxed mb-6" data-ARCKHÉ-block="m1-2-t6-p2">Las heurísticas fallan en entornos complejos, nuevos o con retroalimentación tardía. El mercado financiero, las decisiones políticas y los diagnósticos médicos poco frecuentes son ejemplos en los que confiar en las heurísticas genera errores sistemáticos. La metacognición (saber cuándo estás usando una heurística) es la competencia que distingue las buenas decisiones de las pésimas.</p>
 <!-- Grid ✓/✗ -->
 <div class="grid md:grid-cols-2 gap-4 mb-6">
 <div class="bg-dark-800 border border-dark-700 rounded-xl p-5">
@@ -452,7 +452,7 @@ html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 </main>
 <footer class="border-t border-dark-700 py-8">
 <div class="max-w-7xl mx-auto px-4 text-center text-sm text-neutral-500">
-<a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> · Mente, Poder e Máquina · 2026
+<a class="text-sky-400 hover:text-sky-300" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a> · Mente, Poder e Máquina · 2026
   </div>
 </footer>
 <script>
@@ -462,7 +462,7 @@ function toggleTheme() {
   var isDark = html.classList.contains('dark');
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
   html.style.colorScheme = isDark ? 'dark' : 'light';
-  try { var p = JSON.parse(localStorage.getItem('inema.prefs') || '{}'); p.theme = isDark ? 'inema-dark' : 'claro'; localStorage.setItem('inema.prefs', JSON.stringify(p)); } catch(e){}
+  try { var p = JSON.parse(localStorage.getItem('ARCKHÉ.prefs') || '{}'); p.theme = isDark ? 'ARCKHÉ-dark' : 'claro'; localStorage.setItem('ARCKHÉ.prefs', JSON.stringify(p)); } catch(e){}
 }
 function toggleTopic(btn) {
   var exp = btn.nextElementSibling;
@@ -472,6 +472,6 @@ function toggleTopic(btn) {
 }
 </script>
 <script src="../../../assets/learn.js"></script>
-<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+<script>if(window.ARCKHÉ&&typeof window.ARCKHÉ.init==='function')window.ARCKHÉ.init();</script>
 </body>
 </html>
