@@ -32,8 +32,8 @@ tailwind.config = {
   "course": "neurociencia-comportamento",
   "tracks": [
     {"n":"1","title":"O Cérebro que Decide","modules":[{"id":"1-1","title":"Sistema 1 e Sistema 2","topics":6,"href":"curso/trilha1/modulo-1-1.html"},{"id":"1-2","title":"Heurísticas","topics":6,"href":"curso/trilha1/modulo-1-2.html"},{"id":"1-3","title":"Vieses cognitivos","topics":6,"href":"curso/trilha1/modulo-1-3.html"},{"id":"1-4","title":"Dissonância cognitiva","topics":6,"href":"curso/trilha1/modulo-1-4.html"}]},
-    {"n":"2","title":"Influência Social e Poder do Grupo","modules":[{"id":"2-1","title":"Conformidade: por que seguimos o grupo","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência à autoridade","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulação social e dark patterns","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},
-    {"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina e sistema de recompensa","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala, medo e decisão emocional","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},
+    {"n":"2","title":"Influência Social e Poder do Grupo","modules":[{"id":"2-1","title":"Conformidade: por que seguimos o grupo","topics":6,"href":"curso/trilha2/modulo-2-1.html"},{"id":"2-2","title":"Obediência à autoridade","topics":6,"href":"curso/trilha2/modulo-2-2.html"},{"id":"2-3","title":"Manipulaçêo social e dark patterns","topics":6,"href":"curso/trilha2/modulo-2-3.html"}]},
+    {"n":"3","title":"Neurociência do Comportamento","modules":[{"id":"3-1","title":"Neuroplasticidade","topics":6,"href":"curso/trilha3/modulo-3-1.html"},{"id":"3-2","title":"Dopamina e sistema de recompensa","topics":6,"href":"curso/trilha3/modulo-3-2.html"},{"id":"3-3","title":"Amígdala, medo e decisêo emocional","topics":6,"href":"curso/trilha3/modulo-3-3.html"}]},
     {"n":"4","title":"Economia Comportamental","modules":[{"id":"4-1","title":"A crítica ao Homo Economicus","topics":6,"href":"curso/trilha4/modulo-4-1.html"},{"id":"4-2","title":"Nudge Theory","topics":6,"href":"curso/trilha4/modulo-4-2.html"},{"id":"4-3","title":"Contabilidade mental","topics":6,"href":"curso/trilha4/modulo-4-3.html"}]},
     {"n":"5","title":"Filosofia da Mente e Consciência","modules":[{"id":"5-1","title":"Livre-arbítrio: Libet","topics":6,"href":"curso/trilha5/modulo-5-1.html"},{"id":"5-2","title":"Consciência: o problema difícil","topics":6,"href":"curso/trilha5/modulo-5-2.html"},{"id":"5-3","title":"Semiótica da mente: Bruzzo","topics":6,"href":"curso/trilha5/modulo-5-3.html"}]},
     {"n":"6","title":"IA, Vieses e Ética Comportamental","modules":[{"id":"6-1","title":"Vieses algorítmicos","topics":6,"href":"curso/trilha6/modulo-6-1.html"},{"id":"6-2","title":"Bolhas epistêmicas","topics":6,"href":"curso/trilha6/modulo-6-2.html"},{"id":"6-3","title":"Ética, tecnologia e o espaço humano","topics":6,"href":"curso/trilha6/modulo-6-3.html"}]}
@@ -132,7 +132,7 @@ html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 <div class="topic-explanation mt-4 space-y-6">
 <p class="text-neutral-300 leading-relaxed">Stanley Milgram, a social psychologist at Yale, was intrigued by a question that haunted the post-Holocaust world: how did ordinary people manage to take part in atrocities? His answer was an experiment that would become one of psychology’s most famous and controversial.</p>
 <p class="text-neutral-300 leading-relaxed">The design was apparently simple. The participant (the "teacher") was instructed by a researcher in a white lab coat to administer increasingly strong electric shocks to another "participant" (actually an actor) each time he got a memory question wrong. The shocks ranged from 15 to 450 volts, in 15-volt increments. The labels on the panel ranged from "Mild Shock" to "XXX" (along with "Danger: Severe Shock").</p>
-<!-- SVG: Diagrama hierárquico autoridade → instrução → participante → vítima -->
+<!-- SVG: Diagrama hierárquico autoridade → instruçêo → participante → vítima -->
 <div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
 <h4 class="text-sm font-semibold text-blue-400 mb-4">DIAGRAM: Milgram's Obedience Chain</h4>
 <svg aria-label="Hierarchical diagram: authority gives an instruction to the participant, who administers a shock to the victim" class="w-full h-auto" role="img" viewbox="0 0 700 300">
@@ -147,13 +147,13 @@ html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 <text fill="#60a5fa" font-size="11" font-weight="700" text-anchor="middle" x="110" y="60">AUTHORITY</text>
 <text fill="#93c5fd" font-size="9" text-anchor="middle" x="110" y="78">Researcher</text>
 <text fill="#93c5fd" font-size="9" text-anchor="middle" x="110" y="92">white lab coat</text>
-<!-- Seta Autoridade → Instrução -->
+<!-- Seta Autoridade → Instruçêo -->
 <line marker-end="url(#m22-arrow)" stroke="#60a5fa" stroke-width="2" x1="180" x2="230" y1="70" y2="70"></line>
-<!-- Instrução -->
+<!-- Instruçêo -->
 <rect fill="none" height="60" rx="8" stroke="#38bdf8" stroke-width="1.5" width="130" x="235" y="40"></rect>
 <text fill="#38bdf8" font-size="10" font-weight="600" text-anchor="middle" x="300" y="65">"Continue."</text>
 <text fill="#7dd3fc" font-size="9" text-anchor="middle" x="300" y="80">"The experiment requires it."</text>
-<!-- Seta Instrução → Participante -->
+<!-- Seta Instruçêo → Participante -->
 <line marker-end="url(#m22-arrow)" stroke="#60a5fa" stroke-width="2" x1="365" x2="415" y1="70" y2="70"></line>
 <!-- Participante -->
 <rect fill="#1e3a5f" height="80" rx="10" stroke="#3b82f6" stroke-width="2" width="120" x="420" y="30"></rect>
